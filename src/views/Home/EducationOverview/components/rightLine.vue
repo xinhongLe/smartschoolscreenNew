@@ -1,7 +1,9 @@
 <template>
   <div>
     <module-header title="满意度变化趋势">
-      <echart :options="options" width="4.85rem"></echart>
+      <div class="right-line">
+        <echart :options="options" width="4.85rem"></echart>
+      </div>
     </module-header>
   </div>
 </template>
@@ -23,75 +25,101 @@ export default {
           ["2019-06", 80],
           ["2019-07", 89],
       ],
-      options: {
-        xAxis: {
-          type: 'category',
-          // data: this.echartsData.map(item => item[0])
-        },
-        yAxis: {
-          type: 'value'
-        },
-        visualMap: {
-          top: 100,
-          right: 10,
-          pieces: [{
-            gt: 0,
-            lte: 20,
-            color: '#93CE07'
-          }, {
-            gt: 20,
-            lte: 40,
-            color: '#FBDB0F'
-          }, {
-            gt: 40,
-            lte: 60,
-            color: '#FC7D02'
-          }, {
-            gt: 60,
-            lte: 80,
-            color: '#FD0100'
-          }, {
-            gt: 80,
-            lte:100,
-            color: '#AA069F'
-          }],
-          outOfRange: {
-            color: '#999'
-          }
-        },
-        series: {
-          type: 'line',
-          data: [],
-          markLine: {
-            silent: true,
-            lineStyle: {
-              color: '#333'
-            },
-            data: [{
-              yAxis: 0
-            }, {
-              yAxis: 20
-            }, {
-              yAxis: 40
-            }, {
-              yAxis: 60
-            }, {
-              yAxis: 80
-            }, {
-              yAxis: 100
-            }]
-          }
-        }
-      }
+      options: {}
     }
   },
   mounted() {
-    this.options.xAxis.data = this.echartsData.map(item => item[0])
-    this.options.series.data = this.echartsData.map(item => item[1])
+    // setInterval(() => {
+    //   this.options.xAxis.data = this.echartsData.map(item => item[0])
+    //   this.options.series.data = this.echartsData.map(item => item[1])
+    // },5000)
+    const options = {
+      // animationDuration: 10000,
+      tooltip: {
+        trigger: 'axis'
+      },
+      grid: {
+        left: '5%',
+        right: '0%',
+        bottom: '10%'
+      },
+      xAxis: {
+        data: this.echartsData.map(item => item[0]),
+        axisLine: {
+          lineStyle: {
+            color: '#96ACC3',
+          }
+        }
+      },
+      yAxis: {
+        name: '百分比',
+        axisLine: {
+          lineStyle: {
+            color: '#96ACC3',
+          }
+        }
+      },
+      visualMap: {
+        top: 100,
+        right: 10,
+        pieces: [{
+          gt: 0,
+          lte: 20,
+          color: '#EF3B3B'
+        }, {
+          gt: 20,
+          lte: 40,
+          color: '#FEFD00'
+        }, {
+          gt: 40,
+          lte: 60,
+          color: '#30A2FD'
+        }, {
+          gt: 60,
+          lte: 80,
+          color: '#0DFFFF'
+        }, {
+          gt: 80,
+          lte:100,
+          color: '#0DFF60'
+        }],
+        show: false
+      },
+      series: {
+        name: '满意度',
+        type: 'line',
+        data: this.echartsData.map(item => item[1]),
+        markLine: {
+          // silent: true,
+          symbol: ["none", "none"],
+          lineStyle: {
+            color: '#fff'
+          },
+          data: [{
+            yAxis: 20
+          }, {
+            yAxis: 40
+          }, {
+            yAxis: 60
+          }, {
+            yAxis: 80
+          }, {
+            yAxis: 100
+          }]
+        }
+      }
+    }
+    // this.options.xAxis.data = this.echartsData.map(item => item[0])
+    // this.options.series.data = this.echartsData.map(item => item[1])
+    this.options = options
+
   }
 }
 </script>
 
-<style scoped>
-
+<style scoped lang="scss">
+.right-line{
+  width: 4.85rem;
+  height: 2rem;
+}
 </style>

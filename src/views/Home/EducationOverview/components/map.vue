@@ -33,13 +33,13 @@ export default {
             this.map = new AMap.Map(this.$refs.map, {
                 resizeEnable: true,
                 rotateEnable: true,
-                zoom: 16,
+                zoom: 14,
                 pitch: 80,
                 rotation: -15,
                 viewMode: "3D", //开启3D视图,默认为关闭
                 buildingAnimation: true, //楼块出现是否带动画
                 expandZoomRange: true,
-                zooms: [7, 20],
+                zooms: [4, 20],
                 showLabel: false
             });
 
