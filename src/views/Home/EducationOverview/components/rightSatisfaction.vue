@@ -1,19 +1,17 @@
 <template>
- <div>
-   <module-border>
-     <div class="rightSatisfaction">
-       <div>
-         <div class="img-class">
-           <right-satisfaction-animation></right-satisfaction-animation>
-         </div>
-         <div class="text-box">
-           <p class="text-count">96%</p>
-           <span class="text">办学满意度</span>
-         </div>
-       </div>
-     </div>
-   </module-border>
- </div>
+ <module-border autoHeight>
+  <div class="rightSatisfaction">
+    <div>
+      <div class="img-class">
+        <right-satisfaction-animation></right-satisfaction-animation>
+      </div>
+      <div class="text-box">
+        <p class="text-count">96%</p>
+        <span class="text">办学满意度</span>
+      </div>
+    </div>
+  </div>
+</module-border>
 </template>
 
 <script>
