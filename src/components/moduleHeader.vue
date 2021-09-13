@@ -1,5 +1,5 @@
 <template>
-    <div class="module-box">
+    <div class="module-box" :class="autoHeight && 'autoHeight'">
         <div class="module-header">
             {{title}}
         </div>
@@ -14,6 +14,11 @@ export default {
         title: {
             type: String,
             default: ""
+        },
+
+        autoHeight: {
+            type: Boolean,
+            default: false
         }
     }
 }
@@ -24,6 +29,10 @@ export default {
         position: relative;
         width: 100%;
         height: 100%;
+    }
+
+    .module-box.autoHeight {
+        height: auto;
     }
 
     .module-header {
