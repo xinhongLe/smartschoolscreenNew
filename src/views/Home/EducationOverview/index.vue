@@ -2,9 +2,9 @@
     <div class="content">
         <div class="h-line"></div>
         <Flex :flex="1" column>
-            <Flex :flex="3">
+            <!-- <Flex :flex="3"> -->
                 <countScroll></countScroll>
-            </Flex>
+            <!-- </Flex> -->
             <div class="v-line"></div>
             <Flex :flex="5"> </Flex>
             <div class="v-line"></div>

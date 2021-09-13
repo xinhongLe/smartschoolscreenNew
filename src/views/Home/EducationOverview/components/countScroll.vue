@@ -1,5 +1,5 @@
 <template>
-  <ModuleBorder>
+  <ModuleBorder :autoHeight="true">
     <div class="countToBox">
       <div class="city_info">
         <span class="city_name" @click="onstart">苏州市</span>
@@ -20,7 +20,7 @@
             ref="example2"
             class="personnel_sum"
             :start-val="0"
-            :end-val="1000"
+            :end-val="720068"
             :duration="3000"
           ></CountTo>
           <span class="personnel_text">总学生人数</span>
@@ -30,7 +30,7 @@
             ref="example3"
             class="personnel_sum"
             :start-val="0"
-            :end-val="1000"
+            :end-val="2021"
             :duration="3000"
           ></CountTo>
           <span class="personnel_text">总教师人数</span>
@@ -40,7 +40,7 @@
             ref="example4"
             class="personnel_sum"
             :start-val="0"
-            :end-val="1000000"
+            :end-val="3209"
             :duration="3000"
           ></CountTo>
           <span class="personnel_text">总职工人数</span>
@@ -92,10 +92,7 @@ span {
   // height: 1.7rem;
   width: 100%;
   height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  padding: 0.125rem 0;
   .city_info {
     width: 100%;
     display: flex;
