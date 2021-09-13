@@ -26,6 +26,10 @@ export default {
                 animationData: animationData
             });
         });
+    },
+
+    beforeDestroy() {
+        this.animation.destroy();
     }
 };
 </script>

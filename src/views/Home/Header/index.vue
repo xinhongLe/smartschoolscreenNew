@@ -4,12 +4,12 @@
             <div class="tab-box">
                 <div
                     class="tab-item"
-                    :class="selected == index && 'active'"
+                    :class="$route.name == item.name && 'active'"
                     v-for="(item, index) in tabList"
                     :key="index"
-                    @click="tabSwitch(index)"
+                    @click="tabSwitch(item)"
                 >
-                    <img :src="selected == index ? item.selected : item.url" />
+                    <img :src="$route.name == item.name ? item.selected : item.url" />
                     <div class="tab-title">{{ item.title }}</div>
                 </div>
             </div>
@@ -27,39 +27,45 @@ export default {
     },
     data() {
         return {
-            selected: 0,
             tabList: [
                 {
+                    name: "educationOverview",
                     title: "苏州市教育概况",
                     url: require("./imgs/icon_suzhoushi_default@2x.png"),
                     selected: require("./imgs/icon_suzhoushi_selected@2x.png")
                 },
                 {
+                    name: "studentData",
                     title: "学生数据",
                     url: require("./imgs/icon_xuesheng_default@2x.png"),
                     selected: require("./imgs/icon_xuesheng_selected@2x.png")
                 },
                 {
+                    name: "teacherData",
                     title: "教师数据",
                     url: require("./imgs/icon_laoshi_default@2x.png"),
                     selected: require("./imgs/icon_laoshi_selected@2x.png")
                 },
                 {
+                    name: "classTeach",
                     title: "课堂教学",
                     url: require("./imgs/icon_ketang_default@2x.png"),
                     selected: require("./imgs/icon_ketang_selected@2x.png")
                 },
                 {
+                    name: "teachingData",
                     title: "教研数据",
                     url: require("./imgs/icon_jiaoyan_default@2x.png"),
                     selected: require("./imgs/icon_jiaoyan_selected@2x.png")
                 },
                 {
+                    name: "school",
                     title: "校园安全",
                     url: require("./imgs/icon_xiaoyuan_default@2x.png"),
                     selected: require("./imgs/icon_xiaoyuan_selected@2x.png")
                 },
                 {
+                    name: "resources",
                     title: "资源建设",
                     url: require("./imgs/icon_ziyuani_default@2x.png"),
                     selected: require("./imgs/icon_ziyuani_selected@2x.png")
@@ -68,9 +74,8 @@ export default {
         };
     },
     methods: {
-        tabSwitch(i) {
-            this.selected = i;
-            this.$emit("change", i);
+        tabSwitch(item) {
+            this.$router.push(item.name);
         }
     }
 };
