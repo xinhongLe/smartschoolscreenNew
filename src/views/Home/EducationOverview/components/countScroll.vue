@@ -2,7 +2,7 @@
   <ModuleBorder :autoHeight="true">
     <div class="countToBox">
       <div class="city_info">
-        <span class="city_name" @click="onstart">苏州市</span>
+        <span class="city_name">苏州市</span>
         <div class="schoolsum">
           <CountTo
             ref="example1"
@@ -75,12 +75,7 @@ export default {
         this.$refs.example4.start();
       }, 0);
     }, 20000);
-  },
-  methods: {
-    onstart() {
-      this.$refs.example3.start();
-    },
-  },
+  }
 };
 </script>
 <style lang="scss" scoped>

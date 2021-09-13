@@ -1,4 +1,4 @@
-import { debounce } from "@/utils";
+// import { debounce } from "@/utils";
 
 export default {
     data() {
@@ -21,7 +21,12 @@ export default {
     },
     methods: {
         // 防抖函数来控制 resize 的频率
-        resizeChart: debounce(function () {
+        // resizeChart: debounce(function () {
+        //     if (this.chart) {
+        //         this.chart.resize();
+        //     }
+        // }, 300),
+        resizeChart: (function () {
             if (this.chart) {
                 this.chart.resize();
             }

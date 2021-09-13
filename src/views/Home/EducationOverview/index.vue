@@ -3,7 +3,7 @@
         <div class="h-line"></div>
         <Flex :flex="1" column>
             <!-- <Flex :flex="3"> -->
-                <countScroll></countScroll>
+            <countScroll></countScroll>
             <!-- </Flex> -->
             <div class="v-line"></div>
             <Flex :flex="5"> 
@@ -15,15 +15,21 @@
         </Flex>
         <div class="h-line"></div>
         <Flex :flex="2" column>
-            <Flex :flex="1"> 4 </Flex>
+            <Flex :flex="1">
+                <Map />
+            </Flex>
         </Flex>
         <div class="h-line"></div>
         <Flex :flex="1" column>
-            <Flex :flex="3"> 7 </Flex>
+            <right-satisfaction></right-satisfaction>
             <div class="v-line"></div>
-            <Flex :flex="5"> 8 </Flex>
+            <Flex :flex="5">
+                <right-line></right-line>
+            </Flex>
             <div class="v-line"></div>
-            <Flex :flex="5"> 8 </Flex>
+            <Flex :flex="5">
+                <right-table></right-table>
+            </Flex>
             <div class="v-line"></div>
         </Flex>
         <div class="h-line"></div>
@@ -34,10 +40,18 @@
 import countScroll from "./components/countScroll.vue"
 import SchoolType from "./components/schoolType.vue"
 import Flex from "@/components/flex";
+import Map from "./components/map";
+import RightLine from "./components/rightLine";
+import RightSatisfaction from "./components/rightSatisfaction";
+import RightTable from "./components/rightTable";
 export default {
     components: {
+        RightTable,
+        RightSatisfaction,
+        RightLine,
         Flex,
         countScroll,
+        Map,
         SchoolType
     }
 };
