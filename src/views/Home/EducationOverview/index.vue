@@ -6,7 +6,9 @@
             <countScroll></countScroll>
             <!-- </Flex> -->
             <div class="v-line"></div>
-            <Flex :flex="5"> </Flex>
+            <Flex :flex="5"> 
+                <SchoolType></SchoolType>
+            </Flex>
             <div class="v-line"></div>
             <Flex :flex="5"> 3 </Flex>
             <div class="v-line"></div>
@@ -35,7 +37,8 @@
 </template>
 
 <script>
-import countScroll from "./components/countScroll";
+import countScroll from "./components/countScroll.vue"
+import SchoolType from "./components/schoolType.vue"
 import Flex from "@/components/flex";
 import Map from "./components/map";
 import RightLine from "./components/rightLine";
@@ -48,7 +51,8 @@ export default {
         RightLine,
         Flex,
         countScroll,
-        Map
+        Map,
+        SchoolType
     }
 };
 </script>
