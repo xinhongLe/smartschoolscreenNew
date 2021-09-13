@@ -1,76 +1,80 @@
 <template>
-  <div class="countToBox">
-    <div class="city_info">
-      <span class="city_name" @click="onstart">苏州市</span>
-      <div class="schoolsum">
-        <CountTo
-          ref="example1"
-          class="school_count"
-          :start-val="CountOne.startval"
-          :end-val="998"
-          :duration="3000"
-        ></CountTo>
-        <span class="school_text">学校总数</span>
+  <ModuleBorder>
+    <div class="countToBox">
+      <div class="city_info">
+        <span class="city_name" @click="onstart">苏州市</span>
+        <div class="schoolsum">
+          <CountTo
+            ref="example1"
+            class="school_count"
+            :start-val="CountOne.startval"
+            :end-val="998"
+            :duration="3000"
+          ></CountTo>
+          <span class="school_text">学校总数</span>
+        </div>
+      </div>
+      <div class="personnel_info">
+        <div class="personnel">
+          <CountTo
+            ref="example2"
+            class="personnel_sum"
+            :start-val="0"
+            :end-val="1000"
+            :duration="3000"
+          ></CountTo>
+          <span class="personnel_text">总学生人数</span>
+        </div>
+        <div class="personnel">
+          <CountTo
+            ref="example3"
+            class="personnel_sum"
+            :start-val="0"
+            :end-val="1000"
+            :duration="3000"
+          ></CountTo>
+          <span class="personnel_text">总教师人数</span>
+        </div>
+        <div class="personnel">
+          <CountTo
+            ref="example4"
+            class="personnel_sum"
+            :start-val="0"
+            :end-val="1000000"
+            :duration="3000"
+          ></CountTo>
+          <span class="personnel_text">总职工人数</span>
+        </div>
       </div>
     </div>
-    <div class="personnel_info">
-      <div class="personnel">
-        <CountTo
-          ref="example2"
-          class="personnel_sum"
-          :start-val="0"
-          :end-val="1000"
-          :duration="3000"
-        ></CountTo>
-        <span class="personnel_text">总学生人数</span>
-      </div>
-      <div class="personnel">
-        <CountTo
-          ref="example3"
-          class="personnel_sum"
-          :start-val="0"
-          :end-val="1000"
-          :duration="3000"
-        ></CountTo>
-        <span class="personnel_text">总教师人数</span>
-      </div>
-      <div class="personnel">
-        <CountTo
-          ref="example4"
-          class="personnel_sum"
-          :start-val="0"
-          :end-val="1000000"
-          :duration="3000"
-        ></CountTo>
-        <span class="personnel_text">总职工人数</span>
-      </div>
-    </div>
-  </div>
+  </ModuleBorder>
 </template>
 <script>
+import ModuleBorder from "@/components/moduleBorder";
 import CountTo from "vue-count-to";
 export default {
   components: {
     CountTo,
+    ModuleBorder,
   },
-  data(){
-    return{
-        CountOne:{
-            startval:0,
-            endval:1000,
-            duration:3000
-        }
-    }
+  data() {
+    return {
+      CountOne: {
+        startval: 0,
+        endval: 1000,
+        duration: 3000,
+      },
+    };
   },
   mounted() {
-    window.setInterval( ()=> {
-      setTimeout( ()=> {
+    window.setInterval(() => {
+      setTimeout(() => {
         this.$refs.example1.start();
         this.$refs.example2.start();
         this.$refs.example3.start();
         this.$refs.example4.start();
       }, 0);
-    }, 8000);
+    }, 20000);
   },
   methods: {
     onstart() {
@@ -84,12 +88,14 @@ span {
   display: block;
 }
 .countToBox {
-  width: 4.8rem;
-  height: 1.7rem;
-  margin: 0 auto;
-  background: #000916;
-  padding: 0.1rem;
-  //   box-sizing: border-box;
+  // width: 4.8rem;
+  // height: 1.7rem;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   .city_info {
     width: 100%;
     display: flex;
