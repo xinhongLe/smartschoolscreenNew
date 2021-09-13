@@ -11,7 +11,9 @@
         </Flex>
         <div class="h-line"></div>
         <Flex :flex="2" column>
-            <Flex :flex="1"> 4 </Flex>
+            <Flex :flex="1">
+                <Map />
+            </Flex>
         </Flex>
         <div class="h-line"></div>
         <Flex :flex="1" column>
@@ -28,9 +30,11 @@
 
 <script>
 import Flex from "@/components/flex";
+import Map from "./components/map";
 export default {
     components: {
-        Flex
+        Flex,
+        Map
     }
 };
 </script>

@@ -82,6 +82,11 @@ export default {
 </script>
 
 <style scoped>
+.screen-header-box {
+    position: relative;
+    z-index: 10;
+}
+
 .screen-header {
     height: 0.75rem;
     background-color: #04172e;
