@@ -107,8 +107,8 @@ export default {
 
 .tab-item img {
     display: block;
-    width: .15rem;
-    margin-right: .1rem;
+    width: .2rem;
+    margin-right: .05rem;
 }
 
 .tab-title {
