@@ -88,8 +88,6 @@ span {
   display: block;
 }
 .countToBox {
-  // width: 4.8rem;
-  // height: 1.7rem;
   width: 100%;
   height: 100%;
   padding: 0.125rem 0;

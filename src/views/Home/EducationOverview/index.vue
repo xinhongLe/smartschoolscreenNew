@@ -6,7 +6,9 @@
                 <countScroll></countScroll>
             <!-- </Flex> -->
             <div class="v-line"></div>
-            <Flex :flex="5"> </Flex>
+            <Flex :flex="5"> 
+                <SchoolType></SchoolType>
+            </Flex>
             <div class="v-line"></div>
             <Flex :flex="5"> 3 </Flex>
             <div class="v-line"></div>
@@ -30,11 +32,13 @@
 
 <script>
 import countScroll from "./components/countScroll.vue"
+import SchoolType from "./components/schoolType.vue"
 import Flex from "@/components/flex";
 export default {
     components: {
         Flex,
-        countScroll
+        countScroll,
+        SchoolType
     }
 };
 </script>
