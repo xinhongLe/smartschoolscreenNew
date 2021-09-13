@@ -1,5 +1,5 @@
 <template>
-    <div class="module-box">
+    <div class="module-box" :class="autoHeight && 'autoHeight'">
         <div class="module-border-top"></div>
         <div class="module-border-right"></div>
         <div class="module-border-left"></div>
@@ -9,7 +9,13 @@
 
 <script>
 export default {
-    name: "ModuleBorder"
+    name: "ModuleBorder",
+    props: {
+        autoHeight: {
+            type: Boolean,
+            default: false
+        }
+    }
 }
 </script>
 
@@ -18,6 +24,10 @@ export default {
         position: relative;
         width: 100%;
         height: 100%;
+    }
+
+    .module-box.autoHeight {
+        height: auto;
     }
 
     .module-border-top {
