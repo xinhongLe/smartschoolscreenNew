@@ -68,21 +68,35 @@ export default {
     width: 0.5rem;
   }
   .progress_number {
-    width: 0.5rem;
+    width: 0.4rem;
+    text-align: center;
   }
   span {
     color: ghostwhite;
   }
   .progress_border {
     flex: 1;
-    height: 0.1rem;
-    margin: 0 0.2rem;
+    height: 0.12rem;
+    margin: 0 0.1rem;
+    display: flex;
+    align-items: center;
     background: rgba(255, 255, 255, 0.1);
   }
   .progress_cont {
     width: 0px;
-    height: 100%;
+    height: 0.08rem;
+    position: relative;
     background: linear-gradient(90deg, #70bfff 0%, #0dffff 100%);
+  }
+  .progress_cont::after{
+    content: " ";
+    display: block;
+    width: 0.002rem;
+    height: 0.12rem;
+    position: absolute;
+    right: -0.005rem;
+    top: -0.015rem;
+    background: #FFFFFF;
   }
   .progress_active {
     transition: width 2s;
