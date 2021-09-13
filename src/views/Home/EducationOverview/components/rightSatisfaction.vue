@@ -3,7 +3,9 @@
    <module-border>
      <div class="rightSatisfaction">
        <div>
-         <img class="img-class" src="" alt="">
+         <div class="img-class">
+           <right-satisfaction-animation></right-satisfaction-animation>
+         </div>
          <div class="text-box">
            <p class="text-count">96%</p>
            <span class="text">办学满意度</span>
@@ -16,9 +18,10 @@
 
 <script>
 import ModuleBorder from "../../../../components/moduleBorder";
+import RightSatisfactionAnimation from "./rightSatisfactionAnimation";
 export default {
   name: "rightSatisfaction",
-  components: {ModuleBorder}
+  components: {RightSatisfactionAnimation, ModuleBorder}
 }
 </script>
 
@@ -36,8 +39,7 @@ export default {
    .img-class{
      width: 1.1rem;
      height: 1.1rem;
-     background-color: pink;
-     margin-right: 0.2rem;
+     margin-right: 0.4rem;
    }
    .text-box{
      text-align: center;
