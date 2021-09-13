@@ -29,6 +29,7 @@ export default {
         position: relative;
         width: 100%;
         height: 100%;
+        z-index: 99;
     }
 
     .module-box.autoHeight {

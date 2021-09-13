@@ -2,15 +2,15 @@
     <div class="content">
         <div class="h-line"></div>
         <Flex :flex="1" column>
-            <!-- <Flex :flex="3"> -->
             <countScroll></countScroll>
-            <!-- </Flex> -->
             <div class="v-line"></div>
             <Flex :flex="5"> 
                 <SchoolType></SchoolType>
             </Flex>
             <div class="v-line"></div>
-            <Flex :flex="5"> 3 </Flex>
+            <Flex :flex="5">
+                <SchoolArea></SchoolArea>
+            </Flex>
             <div class="v-line"></div>
         </Flex>
         <div class="h-line"></div>
@@ -39,6 +39,7 @@
 <script>
 import countScroll from "./components/countScroll.vue"
 import SchoolType from "./components/schoolType.vue"
+import SchoolArea from "./components/schoolArea.vue"
 import Flex from "@/components/flex";
 import Map from "./components/map";
 import RightLine from "./components/rightLine";
@@ -52,7 +53,8 @@ export default {
         Flex,
         countScroll,
         Map,
-        SchoolType
+        SchoolType,
+        SchoolArea
     }
 };
 </script>
