@@ -39,7 +39,7 @@ export default {
    .img-class{
      width: 1.1rem;
      height: 1.1rem;
-     margin-right: 0.4rem;
+     margin-right: 0.3rem;
    }
    .text-box{
      text-align: center;
