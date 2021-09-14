@@ -65,7 +65,7 @@ export default {
                     offset: new AMap.Pixel(-30, -38)
                 });
                 markers.push(marker);
-                marker.on("click", () => {
+                marker.on("mouseover", () => {
                     const position = marker.getPosition();
                     this.openInfoWindow(position);
                     this.updateMarkers(marker);
