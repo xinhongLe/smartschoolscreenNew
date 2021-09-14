@@ -178,7 +178,7 @@ export default {
     display: flex;
     position: relative;
     user-select: none;
-    padding-top: 10px;
+    padding-top: 0.125rem;
     .echart {
         width: 200px;
         height: 200px;
@@ -189,26 +189,26 @@ export default {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        padding: 0px 16px 25px 1px;
+        padding: 0px 0.2rem 0.31rem 1px;
         .ageRatioContentItem {
             display: flex;
             align-items: center;
-            height: 30px;
+            height: 0.375rem;
             .span {
                 display: block;
                 width:0.141rem !important;
                 height:0.1rem;
                 border-radius: 100%;
-                margin: -1px 8px 0 0;
+                margin: -1px 0.1rem 0 0;
             }
             p {
-                font-size: 12px;
+                font-size: 0.15rem;
                 font-family: PingFangSC-Regular, PingFang SC;
                 font-weight: 400;
                 color: #96acc3;
                 white-space: nowrap;
-                width: 60px;
-                margin: -1px 18px 0 0;
+                width: 0.75rem;
+                margin: -1px 0.225rem 0 0;
             }
         }
     }

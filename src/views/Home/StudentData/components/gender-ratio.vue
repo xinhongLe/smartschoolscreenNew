@@ -8,7 +8,7 @@
                            <img src="../images/pic_nan.png" alt=""> 
                            <div>
                                 <p >男生</p>
-                                <p style="color: #0DFFFF;">12345</p>
+                                <p style="color:#0DFFFF;">62262</p>
                             </div>
                             <span style="color: #0DFFFF;">71%</span>
                         </div>
@@ -42,7 +42,7 @@
     </div>
 </template>
 <script>
-import ProgressB from '@/components/ProgressB'
+import ProgressB from '@/components/ProgressE'
 import ProgressD from '@/components/ProgressD'
 import moduleHeader from "@/components/moduleHeader";
 export default {
@@ -72,7 +72,7 @@ export default {
               {
                   name:'高中',
                   progressNum:2560,
-                  id:44
+                  id:442
               }
           ],
           wanList:[
@@ -99,7 +99,7 @@ export default {
               {
                   name:'高中',
                   progressNum:2560,
-                  id:441
+                  id:4412
               }
           ]
       }
@@ -129,12 +129,12 @@ export default {
                     img{
                         width: 0.43rem;
                         height: 0.7rem;
-                        margin-right: 12px;
+                        margin-right: 0.18rem;
                     }
                     div{
                         width: 0.6rem;
                         height: 0.6rem;
-                        margin-right: 28px;
+                        margin-right: 0.2rem;
                         display: flex;
                         flex-direction: column;
                         justify-content: center;

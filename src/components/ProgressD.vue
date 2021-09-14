@@ -48,7 +48,7 @@ export default {
                 let dompro = document.getElementById(
                     `pregress_${this.progressData.id}`
                 );
-                let num = (this.progressData.progressNum / 1000) * 100;
+                let num = (this.progressData.progressNum / 10000) * 200;
                 this.Interval = setInterval(() => {
                     dompro.style.width = 0 + "%";
                     this.isActive = false;
@@ -83,7 +83,7 @@ export default {
     /*兼容IE*/
     filter: FlipH;
     .progress_name {
-        width: 0.8rem;
+        width: 0.6rem;
         font-size: 0.15rem;
         color: #96acc3;
         -moz-transform: scaleX(-1);
