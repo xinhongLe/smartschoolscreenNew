@@ -1,6 +1,6 @@
 <template>
   <moduleHeader title="各区学校分布">
-    <Echart :options="options" height="3rem"></Echart>
+    <Echart :options="options" height="100%"></Echart>
   </moduleHeader>
 </template>
 <script>
@@ -28,6 +28,7 @@ export default {
       legend: {
         data: ["幼儿园", "小学", "初中", "高中", "中职", "高职"],
         icon: "diamond",
+         top: 15,
         itemWidth: 8, // 图例标记的图形宽度。
         itemGap: 20, // 图例每项之间的间隔。
         itemHeight: 8, //  图例标记的图形高度。
@@ -38,8 +39,8 @@ export default {
       },
       grid: {
         left: "3%",
-        right: "2%",
-        bottom: "2%",
+        right: "4%",
+        bottom: "3%",
         containLabel: true,
       },
       yAxis: {
