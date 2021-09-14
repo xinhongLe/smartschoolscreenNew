@@ -3,6 +3,10 @@
         <div class="module-header">
             {{title}}
         </div>
+        <div class="rightLink" v-if="rightTitle.length>0">
+            <span>{{rightTitle}}</span>
+            <img src="" alt="">
+        </div>
         <slot />
     </div>
 </template>
@@ -19,6 +23,10 @@ export default {
         autoHeight: {
             type: Boolean,
             default: false
+        },
+        rightTitle:{
+            type:String,
+            default:''
         }
     }
 }
@@ -66,5 +74,16 @@ export default {
         position: absolute;
         right: 0;
         bottom: -0.0125rem;
+    }
+    .rightLink{
+        position: absolute;
+        top: 0.1rem;
+        right:0;
+        padding: 0.1rem 0.15rem;
+        font-size: 12px;
+        font-family: PingFangSC-Light, PingFang SC;
+        font-weight: 300;
+        color: #70BFFF;
+        line-height: 17px;
     }
 </style>

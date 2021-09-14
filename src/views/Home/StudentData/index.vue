@@ -16,10 +16,12 @@
         <div class="h-line"></div>
         <Flex :flex="3" column>
             <!-- tab 写在这里 -->
+            <Regional></Regional>
             <div class="v-line"></div>
             <Flex :flex="1">
                 <Flex :flex="2" column>
                     <!-- 苏州工业园区 -->
+                    <!-- <Instructions></Instructions> -->
                     <div class="v-line"></div>
                     <Flex :flex="1">
                         <!-- 地图部分 -->
@@ -28,7 +30,7 @@
                 <div class="h-line"></div>
                 <Flex :flex="1" column>
                     <Flex :flex="1">
-                        
+                        <AgeRatio></AgeRatio>
                     </Flex>
                     <div class="v-line"></div>
                     <Flex :flex="1">
@@ -36,7 +38,7 @@
                     </Flex>
                     <div class="v-line"></div>
                     <Flex :flex="1">
-                        
+                        <ParentInfo></ParentInfo>
                     </Flex>
                 </Flex>
             </Flex>
@@ -47,10 +49,14 @@
 </template>
 
 <script>
+// import Instructions from './components/instructions.vue'
 import Flex from "@/components/flex";
+import AgeRatio from './components/age-ratio.vue'
+import Regional from './components/regional.vue'
+import ParentInfo from  './components/parent-info.vue'
 export default {
     components: {
-        Flex
+        Flex,Regional,AgeRatio,ParentInfo
     }
 };
 </script>
