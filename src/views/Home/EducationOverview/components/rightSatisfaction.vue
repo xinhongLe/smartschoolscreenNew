@@ -29,7 +29,7 @@ export default {
   justify-content: center;
   align-items: center;
   width: 100%;
-  //height: 2rem;
+  height: 100%;
  >div{
    display: flex;
    justify-content: center;

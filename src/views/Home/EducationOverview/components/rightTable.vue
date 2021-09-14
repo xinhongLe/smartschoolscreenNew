@@ -78,6 +78,7 @@ mounted() {
     animation-play-state:paused;
   }
   >div{
+    overflow: hidden;
     animation: marquee 10s linear infinite;
   }
   @keyframes marquee {

@@ -1,8 +1,6 @@
 <template>
   <module-header title="满意度变化趋势">
-    <div class="right-line">
       <echart :options="options" width="100%" height="100%"></echart>
-    </div>
   </module-header>
 </template>
 
@@ -122,8 +120,4 @@ export default {
 </script>
 
 <style scoped lang="scss">
-.right-line{
-  width: 100%;
-  height: 100%;
-}
 </style>

@@ -14,7 +14,9 @@
                 </div>
             </div>
         </div>
-        <slot />
+        <div class="module-content">
+          <slot />
+        </div>
     </div>
 </template>
 
@@ -51,6 +53,8 @@ export default {
     width: 100%;
     height: 100%;
     z-index: 99;
+    display: flex;
+    flex-direction: column;
 }
 
 .module-box.autoHeight {
@@ -101,5 +105,11 @@ export default {
 
 .tab-item.active {
     color: #ffffff;
+}
+
+.module-content {
+  flex: 1;
+  min-height: 0;
+  height: 100%;
 }
 </style>
