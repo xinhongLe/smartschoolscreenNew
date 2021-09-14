@@ -58,9 +58,6 @@ export default {
         })
       });
     },
-  },
-  beforeDestroy(){
-
   }
 };
 </script>
@@ -70,9 +67,9 @@ export default {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 0.3rem auto;
+  margin: 0.2rem auto;
   .progress_name {
-    width: 0.5rem;
+    width: 0.6rem;
   }
   .progress_number {
     width: 0.4rem;

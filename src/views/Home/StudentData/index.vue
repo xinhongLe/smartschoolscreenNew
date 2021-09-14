@@ -16,13 +16,19 @@
         <div class="h-line"></div>
         <Flex :flex="3" column>
             <!-- tab 写在这里 -->
+            <Regional></Regional>
             <div class="v-line"></div>
             <Flex :flex="1">
                 <Flex :flex="2" column>
                     <!-- 苏州工业园区 -->
+                    <!-- <Instructions></Instructions> -->
                     <div class="v-line"></div>
                     <Flex :flex="1">
-                        <module-header :title="['学生居住地', '学生户口(户籍)来源']" :selected="mapSelected" @change="i => mapSelected = i">
+                        <module-header
+                            :title="['学生居住地', '学生户口(户籍)来源']"
+                            :selected="mapSelected"
+                            @change="(i) => (mapSelected = i)"
+                        >
                             <Map v-if="mapSelected == 0" />
                             <China v-if="mapSelected == 1" />
                         </module-header>
@@ -30,11 +36,15 @@
                 </Flex>
                 <div class="h-line"></div>
                 <Flex :flex="1" column>
-                    <Flex :flex="1"> </Flex>
+                    <Flex :flex="1">
+                        <AgeRatio></AgeRatio>
+                    </Flex>
                     <div class="v-line"></div>
                     <Flex :flex="1"> </Flex>
                     <div class="v-line"></div>
-                    <Flex :flex="1"> </Flex>
+                    <Flex :flex="1">
+                        <ParentInfo></ParentInfo>
+                    </Flex>
                 </Flex>
             </Flex>
             <div class="v-line"></div>
@@ -44,21 +54,28 @@
 </template>
 
 <script>
+// import Instructions from './components/instructions.vue'
 import Flex from "@/components/flex";
 import ModuleHeader from "@/components/moduleHeader";
 import Map from "./components/map";
 import China from "./components/china";
+import AgeRatio from "./components/age-ratio.vue";
+import Regional from "./components/regional.vue";
+import ParentInfo from "./components/parent-info.vue";
 export default {
     components: {
         Flex,
         ModuleHeader,
         Map,
-        China
+        China,
+        Regional,
+        AgeRatio,
+        ParentInfo
     },
     data() {
         return {
             mapSelected: 1
-        }
+        };
     }
 };
 </script>

@@ -37,7 +37,7 @@
 </template>
 
 <script>
-import countScroll from "./components/countScroll.vue"
+import countScroll from "@/components/countScroll.vue"
 import SchoolType from "./components/schoolType.vue"
 import SchoolArea from "./components/schoolArea.vue"
 import Flex from "@/components/flex";

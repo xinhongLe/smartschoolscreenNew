@@ -1,30 +1,21 @@
 <template>
   <module-header  title="各区满意度排名">
-    <div>
-      <div class="row header-color">
-        <div>序号</div>
-        <div>区域名称</div>
-        <div>办学满意度</div>
-      </div>
-      <div class="right-table" id="table">
-        <div>
-          <div v-for="(item,index) in tableList" :key="index" class="row">
-            <div>{{index + 1 }}</div>
-            <div>{{item.name}}</div>
-            <div>{{item.pre}}</div>
-          </div>
-        </div>
-      </div>
-    </div>
+    <table-common :headerList="headerList" :tableList="tableList"></table-common>
   </module-header>
 </template>
 <script>
 import ModuleHeader from "../../../../components/moduleHeader";
+import TableCommon from "../../../../components/tableCommon";
 export default {
   name: "rightTable",
-  components: {ModuleHeader},
+  components: {TableCommon, ModuleHeader},
   data() {
     return {
+      headerList: [
+        {name: '序号',},
+        {name: '区域名称'},
+        {name: '办学满意度'},
+      ],
       tableList: [
         {name: '吴中区', pre: '87'},
         {name: '吴江区', pre: '67'},
@@ -38,56 +29,8 @@ export default {
       ]
     }
   },
-mounted() {
-  const marquee = document.getElementById('table');
-  const contents =  marquee.innerHTML;
-  marquee.innerHTML = contents + contents
-}
 }
 </script>
 
 <style scoped lang="scss">
-.row{
-  padding: 0.1rem 0;
-  height: 0.4rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  color: #fff;
-  border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
-  >div{
-    &:first-child{
-      width: 0.5rem;
-      text-align: center;
-    }
-    &:last-child{
-      width: 1rem;
-      text-align: center;
-    }
-  }
-}
-.header-color{
-  color: #70BFFF;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-}
-.right-table{
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  &:hover>div{
-    animation-play-state:paused;
-  }
-  >div{
-    overflow: hidden;
-    animation: marquee 10s linear infinite;
-  }
-  @keyframes marquee {
-    0% {
-      transform: translateY(0%);
-    }
-    100% {
-      transform: translateY(-100%);
-    }
-  }
-}
 </style>

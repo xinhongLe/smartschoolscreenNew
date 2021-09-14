@@ -1,7 +1,9 @@
 <template>
+  <div class="map-wrapper">
     <ModuleHeader title="教研开展情况">
-        <SortMap :schoolList="schoolList" />
+      <SortMap :schoolList="schoolList" />
     </ModuleHeader>
+  </div>
 </template>
 
 <script>
@@ -49,5 +51,10 @@ export default {
 </script>
 
 <style scoped>
-
+.map-wrapper{
+  position: relative;
+  z-index: 1;
+  height: 100%;
+  width: 100%;
+}
 </style>
