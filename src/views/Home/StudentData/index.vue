@@ -4,7 +4,7 @@
         <Flex :flex="1" column>
             <!-- <countScroll></countScroll> -->
             <div class="v-line"></div>
-            <Flex :flex="5"> 
+            <Flex :flex="5">
                 <!-- <SchoolType></SchoolType> -->
             </Flex>
             <div class="v-line"></div>
@@ -24,7 +24,9 @@
                     <!-- <Instructions></Instructions> -->
                     <div class="v-line"></div>
                     <Flex :flex="1">
-                        <!-- 地图部分 -->
+                        <module-header :title="['学生居住地', '学生户口(户籍)来源']" :selected="mapSelected" @change="i => mapSelected = i">
+                            <Map v-if="mapSelected == 0" />
+                        </module-header>
                     </Flex>
                 </Flex>
                 <div class="h-line"></div>
@@ -33,9 +35,7 @@
                         <AgeRatio></AgeRatio>
                     </Flex>
                     <div class="v-line"></div>
-                    <Flex :flex="1">
-                        
-                    </Flex>
+                    <Flex :flex="1"> </Flex>
                     <div class="v-line"></div>
                     <Flex :flex="1">
                         <ParentInfo></ParentInfo>

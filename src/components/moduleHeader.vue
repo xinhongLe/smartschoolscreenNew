@@ -1,7 +1,21 @@
 <template>
     <div class="module-box" :class="autoHeight && 'autoHeight'">
         <div class="module-header">
-            {{title}}
+            <div v-if="typeof title == 'string'">{{ title }}</div>
+            <div class="tab-box" v-else>
+                <div
+                    class="tab-item"
+                    v-for="(item, index) in title"
+                    :key="index"
+                    @click="tabClick(index)"
+                    :class="selected == index && 'active'"
+                >
+                    {{ item }}
+                </div>
+            </div>
+        </div>
+        <div class="module-content">
+            <slot />
         </div>
         <div class="rightLink" v-if="rightTitle.length>0">
             <span>{{rightTitle}}</span>
@@ -16,7 +30,7 @@ export default {
     name: "ModuleHeader",
     props: {
         title: {
-            type: String,
+            type: [String, Array],
             default: ""
         },
 
@@ -29,41 +43,44 @@ export default {
             default:''
         }
     }
-}
+};
 </script>
 
 <style scoped>
-    .module-box {
-        position: relative;
-        width: 100%;
-        height: 100%;
-        z-index: 99;
-    }
+.module-box {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    z-index: 99;
+    display: flex;
+    flex-direction: column;
+}
 
-    .module-box.autoHeight {
-        height: auto;
-    }
+.module-box.autoHeight {
+    height: auto;
+}
 
-    .module-header {
-        position: relative;
-        padding: 0.1rem 0.15rem;
-        font-size: 0.2rem;
-        color: #ffffff;
-        font-weight: 600;
-        display: flex;
-        align-items: center;
-        border-bottom: 0.0125rem solid rgba(25, 52, 88, 0.8);
-    }
+.module-header {
+    position: relative;
+    padding: 0.1rem 0.15rem;
+    font-size: 0.2rem;
+    color: #ffffff;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    border-bottom: 0.0125rem solid rgba(25, 52, 88, 0.8);
+    z-index: 10;
+}
 
-    .module-header:before {
-        content: "";
-        display: block;
-        height: 0.1rem;
-        width: 0.1rem;
-        background-color: #ffffff;
-        transform: rotate(45deg);
-        margin-right: .15rem;
-    }
+.module-header:before {
+    content: "";
+    display: block;
+    height: 0.1rem;
+    width: 0.1rem;
+    background-color: #ffffff;
+    transform: rotate(45deg);
+    margin-right: 0.15rem;
+}
 
     .module-header::after {
         content: "";

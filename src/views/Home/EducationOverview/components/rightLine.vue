@@ -1,11 +1,7 @@
 <template>
-  <div>
-    <module-header title="满意度变化趋势">
-      <div class="right-line">
-        <echart :options="options" width="4.85rem"></echart>
-      </div>
-    </module-header>
-  </div>
+  <module-header title="满意度变化趋势">
+      <echart :options="options" width="100%" height="100%"></echart>
+  </module-header>
 </template>
 
 <script>
@@ -39,7 +35,7 @@ export default {
         trigger: 'axis'
       },
       grid: {
-        left: '5%',
+        left: '8%',
         right: '0%',
         bottom: '10%'
       },
@@ -112,14 +108,16 @@ export default {
     // this.options.xAxis.data = this.echartsData.map(item => item[0])
     // this.options.series.data = this.echartsData.map(item => item[1])
     this.options = options
-
+    // setInterval(() => {
+    //   this.options = options
+    // },2000)
+    setInterval(() => {
+      this.options = {}
+      this.options = options
+    },2000)
   }
 }
 </script>
 
 <style scoped lang="scss">
-.right-line{
-  width: 4.85rem;
-  height: 2rem;
-}
 </style>

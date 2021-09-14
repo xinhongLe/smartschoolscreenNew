@@ -12,7 +12,9 @@
                 </Flex>
                 <div class="h-line"></div>
                 <Flex :flex="2" column>
-                    <Flex :flex="2"> 4 </Flex>
+                    <Flex :flex="2">
+                        <Map />
+                    </Flex>
                     <div class="v-line"></div>
                     <Flex :flex="1"> 
                         <!-- 活跃度 -->
@@ -33,9 +35,11 @@
 
 <script>
 import Flex from "@/components/flex";
+import Map from "./components/map";
 export default {
     components: {
-        Flex
+        Flex,
+        Map
     }
 };
 </script>
