@@ -1,20 +1,21 @@
 <template>
   <div class="progressBox">
-    <span class="progress_number">{{ proDta.progressNum }}</span>
+    <span class="progress_number">{{ proData.progressNum }}</span>
     <div class="progress_border">
       <div
-        :id="`pregress_${proDta.id}`"
+        :id="`pregress_${proData.id}`"
         class="progress_cont"
         v-bind:class="{ progress_active: isActive }"
       ></div>
     </div>
-    <span class="progress_name">{{ proDta.name }}</span>
+    <span class="progress_name">{{ proData.name }}</span>
   </div>
 </template>
 <script>
 export default {
+  name:'progressA',
   props: {
-    proDta: {
+    proData: {
       type: Object,
       default: () => {},
     },
@@ -29,7 +30,7 @@ export default {
     this.initProgress();
   },
   watch: {
-    proDta: {
+    proData: {
       handler(data) {
         console.log("data", data);
         this.initProgress();
@@ -40,8 +41,8 @@ export default {
   methods: {
     initProgress() {
       this.$nextTick(() => {
-        let dompro = document.getElementById(`pregress_${this.proDta.id}`);
-        let num = (this.proDta.progressNum / 1000) * 100;
+        let dompro = document.getElementById(`pregress_${this.proData.id}`);
+        let num = (this.proData.progressNum / 1000) * 100;
         let timer = setInterval(() => {
           dompro.style.height = 0 + "%";
           this.isActive = false;

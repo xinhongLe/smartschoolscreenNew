@@ -24,7 +24,7 @@
     </div>
     <div class="schoolData">
       <div v-for="item in progressList" :key="item.id">
-        <ProgressB :proDta="item"></ProgressB>
+        <ProgressB :proData="item"></ProgressB>
       </div>
     </div>
   </moduleHeader>
