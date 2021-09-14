@@ -2,14 +2,14 @@
   <ModuleBorder :autoHeight="true">
     <div class="countToBox">
       <div class="city_info">
-        <span class="city_name">苏州市</span>
+        <span class="city_name">{{ cityNmae }}</span>
         <div class="schoolsum">
           <CountTo
             ref="example1"
             class="school_count"
-            :start-val="CountOne.startval"
-            :end-val="998"
-            :duration="3000"
+            :start-val="schoolSum.startval"
+            :end-val="schoolSum.endval"
+            :duration="schoolSum.duration"
           ></CountTo>
           <span class="school_text">学校总数</span>
         </div>
@@ -19,9 +19,9 @@
           <CountTo
             ref="example2"
             class="personnel_sum"
-            :start-val="0"
-            :end-val="720068"
-            :duration="3000"
+            :start-val="studentSum.startval"
+            :end-val="studentSum.endval"
+            :duration="studentSum.duration"
           ></CountTo>
           <span class="personnel_text">总学生人数</span>
         </div>
@@ -29,9 +29,9 @@
           <CountTo
             ref="example3"
             class="personnel_sum"
-            :start-val="0"
-            :end-val="2021"
-            :duration="3000"
+            :start-val="teacherSum.startval"
+            :end-val="teacherSum.endval"
+            :duration="teacherSum.duration"
           ></CountTo>
           <span class="personnel_text">总教师人数</span>
         </div>
@@ -39,9 +39,9 @@
           <CountTo
             ref="example4"
             class="personnel_sum"
-            :start-val="0"
-            :end-val="3209"
-            :duration="3000"
+            :start-val="workerSum.startval"
+            :end-val="workerSum.endval"
+            :duration="workerSum.duration"
           ></CountTo>
           <span class="personnel_text">总职工人数</span>
         </div>
@@ -57,14 +57,54 @@ export default {
     CountTo,
     ModuleBorder,
   },
-  data() {
-    return {
-      CountOne: {
-        startval: 0,
-        endval: 1000,
-        duration: 3000,
+  props: {
+    cityNmae: {
+      type: String,
+      default: "苏州",
+    },
+    schoolSum: {
+      type: Object,
+      default: () => {
+        return {
+          startval: 0,
+          endval: 1000,
+          duration: 3000,
+        };
       },
-    };
+    },
+    studentSum: {
+      type: Object,
+      default: () => {
+        return {
+          startval: 0,
+          endval: 1000,
+          duration: 3000,
+        };
+      },
+    },
+    teacherSum: {
+      type: Object,
+      default: () => {
+        return {
+          startval: 0,
+          endval: 1000,
+          duration: 3000,
+        };
+      },
+    },
+    workerSum: {
+      type: Object,
+      default: () => {
+        return {
+          startval: 0,
+          endval: 1000,
+          duration: 3000,
+        };
+      },
+    },
+  },
+  data() {
+    return {};
   },
   mounted() {
     let timer = setInterval(() => {
@@ -75,10 +115,10 @@ export default {
         this.$refs.example4.start();
       }, 0);
     }, 20000);
-    this.$once('hook:beforeDestroy', () =>{
-      clearInterval(timer)
-    })
-  }
+    this.$once("hook:beforeDestroy", () => {
+      clearInterval(timer);
+    });
+  },
 };
 </script>
 <style lang="scss" scoped>

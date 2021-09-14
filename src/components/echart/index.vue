@@ -50,11 +50,18 @@ export default {
     },
     mounted() {
         this.initChart();
+        let timer = setInterval(() => {
+        this.initChart() //你获取echarts数据的方法
+        }, 6000)
+        this.$once("hook:beforeDestroy",()=>{
+            clearInterval(timer)
+        })
     },
     methods: {
         initChart() {
             // 初始化echart
             this.chart = this.$echarts.init(this.$el);
+            this.chart.clear()
             this.chart.setOption(this.options, true);
         }
     }
