@@ -24,6 +24,7 @@
                     <Flex :flex="1">
                         <module-header :title="['学生居住地', '学生户口(户籍)来源']" :selected="mapSelected" @change="i => mapSelected = i">
                             <Map v-if="mapSelected == 0" />
+                            <China v-if="mapSelected == 1" />
                         </module-header>
                     </Flex>
                 </Flex>
@@ -46,15 +47,17 @@
 import Flex from "@/components/flex";
 import ModuleHeader from "@/components/moduleHeader";
 import Map from "./components/map";
+import China from "./components/china";
 export default {
     components: {
         Flex,
         ModuleHeader,
-        Map
+        Map,
+        China
     },
     data() {
         return {
-            mapSelected: 0
+            mapSelected: 1
         }
     }
 };
