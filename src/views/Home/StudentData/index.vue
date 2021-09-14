@@ -4,7 +4,7 @@
         <Flex :flex="1" column>
             <!-- <countScroll></countScroll> -->
             <div class="v-line"></div>
-            <Flex :flex="5"> 
+            <Flex :flex="5">
                 <!-- <SchoolType></SchoolType> -->
             </Flex>
             <div class="v-line"></div>
@@ -22,22 +22,16 @@
                     <!-- 苏州工业园区 -->
                     <div class="v-line"></div>
                     <Flex :flex="1">
-                        <!-- 地图部分 -->
+                        <module-header :title="['学生居住地', '学生户口(户籍)来源']" :selected="mapSelected" @change="i => mapSelected = i"></module-header>
                     </Flex>
                 </Flex>
                 <div class="h-line"></div>
                 <Flex :flex="1" column>
-                    <Flex :flex="1">
-                        
-                    </Flex>
+                    <Flex :flex="1"> </Flex>
                     <div class="v-line"></div>
-                    <Flex :flex="1">
-                        
-                    </Flex>
+                    <Flex :flex="1"> </Flex>
                     <div class="v-line"></div>
-                    <Flex :flex="1">
-                        
-                    </Flex>
+                    <Flex :flex="1"> </Flex>
                 </Flex>
             </Flex>
             <div class="v-line"></div>
@@ -48,9 +42,16 @@
 
 <script>
 import Flex from "@/components/flex";
+import ModuleHeader from "@/components/moduleHeader.vue";
 export default {
     components: {
-        Flex
+        Flex,
+        ModuleHeader
+    },
+    data() {
+        return {
+            mapSelected: 0
+        }
     }
 };
 </script>
