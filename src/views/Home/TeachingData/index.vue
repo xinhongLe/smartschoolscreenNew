@@ -8,7 +8,9 @@
                 <Flex :flex="1" column>
                     <!-- 教师教研参与情况 -->
                     <div class="v-line"></div>
-                    <Flex :flex="1"> </Flex>
+                    <Flex :flex="1">
+                      <left-school-type></left-school-type>
+                    </Flex>
                 </Flex>
                 <div class="h-line"></div>
                 <Flex :flex="2" column>
@@ -36,8 +38,10 @@
 <script>
 import Flex from "@/components/flex";
 import Map from "./components/map";
+import LeftSchoolType from "./components/leftSchoolType";
 export default {
     components: {
+        LeftSchoolType,
         Flex,
         Map
     }

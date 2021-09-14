@@ -16,7 +16,7 @@
         <div class="h-line"></div>
         <Flex :flex="3" column>
             <!-- tab 写在这里 -->
-            <Regional></Regional>
+            <!-- <Regional></Regional> -->
             <div class="v-line"></div>
             <Flex :flex="1">
                 <Flex :flex="2" column>
@@ -24,8 +24,13 @@
                     <!-- <Instructions></Instructions> -->
                     <div class="v-line"></div>
                     <Flex :flex="1">
-                        <module-header :title="['学生居住地', '学生户口(户籍)来源']" :selected="mapSelected" @change="i => mapSelected = i">
+                        <module-header
+                            :title="['学生居住地', '学生户口(户籍)来源']"
+                            :selected="mapSelected"
+                            @change="(i) => (mapSelected = i)"
+                        >
                             <Map v-if="mapSelected == 0" />
+                            <China v-if="mapSelected == 1" />
                         </module-header>
                     </Flex>
                 </Flex>
@@ -35,7 +40,9 @@
                         <AgeRatio></AgeRatio>
                     </Flex>
                     <div class="v-line"></div>
-                    <Flex :flex="1"> </Flex>
+                    <Flex :flex="1">
+                        <GenderRatio></GenderRatio>
+                    </Flex>
                     <div class="v-line"></div>
                     <Flex :flex="1">
                         <ParentInfo></ParentInfo>
@@ -53,13 +60,31 @@
 import Flex from "@/components/flex";
 import CountScroll from '@/components/countScroll.vue'
 import AgeRatio from './components/age-ratio.vue'
-import Regional from './components/regional.vue'
+// import Regional from './components/regional.vue'
+import ModuleHeader from "@/components/moduleHeader";
+import Map from "./components/map";
+import China from "./components/china";
 import ParentInfo from  './components/parent-info.vue'
-import CityClass from './components/cityClass.vue'
+import GenderRatio from './components/gender-ratio.vue'
 import CityStuNum from './components/cityStuNum.vue'
+import CityClass from './components/cityClass.vue'
 export default {
     components: {
-        Flex,Regional,AgeRatio,ParentInfo,CountScroll,CityClass,CityStuNum
+        Flex,
+        ModuleHeader,
+        Map,
+        China,
+        AgeRatio,
+        ParentInfo,
+        GenderRatio,
+        CountScroll,
+        CityStuNum,
+        CityClass
+    },
+    data() {
+        return {
+            mapSelected: 1
+        };
     }
 };
 </script>
