@@ -7,8 +7,8 @@
                     <div>100%</div>
                 </div>
                 <div class="ageRatioContent">
-                    <div v-for="(item, index) in list" :key="index">
-                        <span :style="item.style"></span>
+                    <div class="ageRatioContentItem" v-for="(item, index) in list" :key="index">
+                        <div class="span" :style="item.style"></div>
                         <p>{{ item.font }}</p>
                         <Progress :proDta="item"></Progress>
                     </div>
@@ -190,17 +190,16 @@ export default {
         flex-direction: column;
         justify-content: space-between;
         padding: 0px 16px 25px 1px;
-        div {
+        .ageRatioContentItem {
             display: flex;
             align-items: center;
             height: 30px;
-            span {
-                display: inline-block;
-                width: 8px;
-                height: 8px;
+            .span {
+                display: block;
+                width:0.141rem !important;
+                height:0.1rem;
                 border-radius: 100%;
                 margin: -1px 8px 0 0;
-                
             }
             p {
                 font-size: 12px;

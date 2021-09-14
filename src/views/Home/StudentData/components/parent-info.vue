@@ -14,18 +14,12 @@
                     <div class="parentsListItem">
                         <div>
                             <span
-                                style="
-                                    background: linear-gradient(
-                                        180deg,
-                                        #96acc3 0%,
-                                        #ffffff 100%
-                                    );
-                                "
+                                style="background-color:#96ACC3"
                             ></span>
                             <p>90后家长</p>
                         </div>
                         <div>
-                            <span></span>
+                            <span style="background-color:#7833E2"></span>
                             <p>85后/90前家长</p>
                         </div>
                     </div>
@@ -41,11 +35,11 @@
                     </div>
                     <div class="parentsListItem">
                         <div>
-                            <span></span>
+                            <span style="background-color:#FFFF00"></span>
                             <p>80后/85前家长</p>
                         </div>
                         <div>
-                            <span></span>
+                            <span style="background-color:#FC5AD3"></span>
                             <p>75后/80前家长</p>
                         </div>
                     </div>
@@ -61,11 +55,11 @@
                     </div>
                     <div class="parentsListItem">
                         <div>
-                            <span></span>
+                            <span style="background-color:#30A2FD"></span>
                             <p>70后/75前家长</p>
                         </div>
                         <div>
-                            <span></span>
+                            <span style="background-color:#0DFFFF"></span>
                             <p>70前家长</p>
                         </div>
                     </div>
@@ -79,6 +73,24 @@
                             <p>25.5%</p>
                         </div>
                     </div>
+                </div>
+            </div>
+            <div class="parent-supervision">
+                <div class="parent-supervision-item">
+                    <p>无家长监管</p>
+                    <p>450 <span>|</span> <font>2%</font></p>
+                </div>
+                <div class="parent-supervision-item">
+                    <p>双家长监管</p>
+                    <p>7633 <span>|</span> <font>36%</font></p>
+                </div>
+                <div class="parent-supervision-item">
+                    <p>双家长监管</p>
+                    <p>10982 <span>|</span> <font>62%</font></p>
+                </div>
+                <div class="parent-supervision-item">
+                    <p>多家长监管</p>
+                    <p>69 <span>|</span> <font>忽略不计</font></p>
                 </div>
             </div>
         </module-header>
@@ -323,6 +335,27 @@ export default {
                 white-space: nowrap;
                 padding: 0;
                 margin: 0;
+            }
+        }
+    }
+}
+.parent-supervision{
+    flex: 1;
+    height: 0.8rem;
+    display: flex;
+    justify-content: space-around;
+    .parent-supervision-item{
+        p:nth-of-type(1){
+            color: #96ACC3;
+        }
+        p:nth-of-type(2){
+            color:#ffffff;
+            font{
+                color: #0DFFFF;
+            }
+            span{     
+                color: #1A222D;
+                padding: 0 6px;
             }
         }
     }
