@@ -3,7 +3,7 @@
     <span class="progress_number">{{ proData.progressNum }}</span>
     <div class="progress_border">
       <div
-        :id="`pregress_${proData.id}`"
+        :id="`progress${proData.id}`"
         class="progress_cont"
         v-bind:class="{ progress_active: isActive }"
       ></div>
@@ -23,43 +23,44 @@ export default {
   data() {
     return {
       isActive: true,
-      Interval: null,
+      timer: null,
     };
   },
   mounted() {
     this.initProgress();
   },
-  watch: {
-    proData: {
-      handler(data) {
-        console.log("data", data);
-        this.initProgress();
+  watch:{
+    proData:{
+      handler(newData){
+        console.log(newData)
+        clearInterval(this.timer)
+        this.initProgress()
       },
-      deep: true,
-    },
+      deep:true
+    }
   },
   methods: {
     initProgress() {
       this.$nextTick(() => {
-        let dompro = document.getElementById(`pregress_${this.proData.id}`);
+        let myprogress = document.getElementById(`progress${this.proData.id}`);
         let num = (this.proData.progressNum / 1000) * 100;
-        let timer = setInterval(() => {
-          dompro.style.height = 0 + "%";
+        this.timer = setInterval(() => {
+          myprogress.style.height = 0 + "%";
           this.isActive = false;
           setTimeout(() => {
             this.isActive = true;
-            dompro.style.height = num.toFixed(0) + "%";
+            myprogress.style.height = num.toFixed(0) + "%";
           }, 100);
         }, 5000);
         setTimeout(() => {
-          dompro.style.height = num.toFixed(0) + "%";
+          myprogress.style.height = num.toFixed(0) + "%";
         }, 200);
-        this.$once("hook:beforeDestroy", () => {
-          clearInterval(timer);
-        });
       });
     },
   },
+  beforeDestroy(){
+    clearInterval(this.timer)
+  }
 };
 </script>
 <style lang="scss" scoped>

@@ -1,5 +1,5 @@
 <template>
-  <moduleHeader title="全市校均人数">
+  <module-header title="全市校均人数">
     <div class="tabItem">
       <div
         class="item"
@@ -17,15 +17,15 @@
         <ProgressB :proData="item"></ProgressB>
       </div>
     </div>
-  </moduleHeader>
+  </module-header>
 </template>
 <script>
-import moduleHeader from "@/components/moduleHeader";
-import ProgressB from "@/components/ProgressB"
+import ModuleHeader from "@/components/moduleHeader";
+import ProgressB from "@/components/ProgressB";
 export default {
   components: {
-    moduleHeader,
-    ProgressB
+    ModuleHeader,
+    ProgressB,
   },
   data() {
     return {
@@ -61,7 +61,7 @@ export default {
             },
             {
               name: "4001人以上",
-              progressNum: 4,
+              progressNum: 99,
               id: 6,
             },
           ],
@@ -108,7 +108,7 @@ export default {
           dataList: [
             {
               name: "高职",
-              progressNum: 39,
+              progressNum: 49,
               id: 1,
             },
             {
@@ -123,7 +123,7 @@ export default {
             },
             {
               name: "初中",
-              progressNum: 78,
+              progressNum: 68,
               id: 4,
             },
             {
@@ -154,7 +154,7 @@ export default {
             },
             {
               name: "高中",
-              progressNum: 46,
+              progressNum: 96,
               id: 3,
             },
             {
@@ -169,7 +169,7 @@ export default {
             },
             {
               name: "幼儿园",
-              progressNum: 456,
+              progressNum: 46,
               id: 6,
             },
           ],

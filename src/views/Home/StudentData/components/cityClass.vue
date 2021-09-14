@@ -212,7 +212,7 @@ export default {
     };
   },
   mounted() {
-    // this.progressList = this.schoolData[0].dataList;
+    this.progressList = this.schoolData[0].dataList;
   },
   methods: {
     changeIndex(index) {

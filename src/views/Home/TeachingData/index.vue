@@ -26,7 +26,9 @@
                 <Flex :flex="1" column>
                     <!-- 文字泡 -->
                     <div class="v-line"></div>
-                    <Flex :flex="1"> 8 </Flex>
+                    <Flex :flex="1"> 
+                        <TeachingHot></TeachingHot>
+                    </Flex>
                 </Flex>
             </Flex>
             <div class="v-line"></div>
@@ -39,11 +41,13 @@
 import Flex from "@/components/flex";
 import Map from "./components/map";
 import LeftSchoolType from "./components/leftSchoolType";
+import TeachingHot from './components/teachingHot'
 export default {
     components: {
         LeftSchoolType,
         Flex,
-        Map
+        Map,
+        TeachingHot
     }
 };
 </script>
