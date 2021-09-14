@@ -67,7 +67,7 @@ export default {
     };
   },
   mounted() {
-    window.setInterval(() => {
+    let timer = setInterval(() => {
       setTimeout(() => {
         this.$refs.example1.start();
         this.$refs.example2.start();
@@ -75,6 +75,9 @@ export default {
         this.$refs.example4.start();
       }, 0);
     }, 20000);
+    this.$once('hook:beforeDestroy', () =>{
+      clearInterval(timer)
+    })
   }
 };
 </script>

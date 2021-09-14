@@ -22,6 +22,7 @@ export default {
   data() {
     return {
       isActive: true,
+      Interval: null
     };
   },
   mounted() {
@@ -41,7 +42,7 @@ export default {
       this.$nextTick(() => {
         let dompro = document.getElementById(`pregress_${this.proDta.id}`);
         let num = (this.proDta.progressNum / 1000) * 100;
-        setInterval(() => {
+        let timer = setInterval(() => {
           dompro.style.width = 0 + "%";
           this.isActive = false;
           setTimeout(() => {
@@ -52,9 +53,15 @@ export default {
         setTimeout(() => {
           dompro.style.width = num.toFixed(0) + "%";
         }, 200);
+        this.$once('hook:beforeDestroy', () => {            
+            clearInterval(timer);                                    
+        })
       });
     },
   },
+  beforeDestroy(){
+
+  }
 };
 </script>
 <style lang="scss" scoped>
@@ -94,7 +101,7 @@ export default {
     width: 0.002rem;
     height: 0.12rem;
     position: absolute;
-    right: -0.005rem;
+    right: 0;
     top: -0.015rem;
     background: #FFFFFF;
   }

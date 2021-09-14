@@ -28,8 +28,8 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 4.85rem;
-  height: 1.75rem;
+  width: 100%;
+  //height: 2rem;
  >div{
    display: flex;
    justify-content: center;
