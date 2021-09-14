@@ -4,7 +4,7 @@
         <Flex :flex="1" column>
             <!-- <countScroll></countScroll> -->
             <div class="v-line"></div>
-            <Flex :flex="5"> 
+            <Flex :flex="5">
                 <!-- <SchoolType></SchoolType> -->
             </Flex>
             <div class="v-line"></div>
@@ -16,27 +16,29 @@
         <div class="h-line"></div>
         <Flex :flex="3" column>
             <!-- tab 写在这里 -->
+            <Regional></Regional>
             <div class="v-line"></div>
             <Flex :flex="1">
                 <Flex :flex="2" column>
                     <!-- 苏州工业园区 -->
+                    <!-- <Instructions></Instructions> -->
                     <div class="v-line"></div>
                     <Flex :flex="1">
-                        <!-- 地图部分 -->
+                        <module-header :title="['学生居住地', '学生户口(户籍)来源']" :selected="mapSelected" @change="i => mapSelected = i">
+                            <Map v-if="mapSelected == 0" />
+                        </module-header>
                     </Flex>
                 </Flex>
                 <div class="h-line"></div>
                 <Flex :flex="1" column>
                     <Flex :flex="1">
-                        
+                        <AgeRatio></AgeRatio>
                     </Flex>
                     <div class="v-line"></div>
-                    <Flex :flex="1">
-                        
-                    </Flex>
+                    <Flex :flex="1"> </Flex>
                     <div class="v-line"></div>
                     <Flex :flex="1">
-                        
+                        <ParentInfo></ParentInfo>
                     </Flex>
                 </Flex>
             </Flex>
@@ -47,10 +49,14 @@
 </template>
 
 <script>
+// import Instructions from './components/instructions.vue'
 import Flex from "@/components/flex";
+import AgeRatio from './components/age-ratio.vue'
+import Regional from './components/regional.vue'
+import ParentInfo from  './components/parent-info.vue'
 export default {
     components: {
-        Flex
+        Flex,Regional,AgeRatio,ParentInfo
     }
 };
 </script>
