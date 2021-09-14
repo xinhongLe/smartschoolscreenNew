@@ -2,14 +2,14 @@
     <div class="content">
         <div class="h-line"></div>
         <Flex :flex="1" column>
-            <!-- <countScroll></countScroll> -->
+            <CountScroll></CountScroll>
             <div class="v-line"></div>
             <Flex :flex="5">
-                <!-- <SchoolType></SchoolType> -->
+                <CityStuNum></CityStuNum>
             </Flex>
             <div class="v-line"></div>
             <Flex :flex="5">
-                <!-- <SchoolArea></SchoolArea> -->
+               <CityClass></CityClass>
             </Flex>
             <div class="v-line"></div>
         </Flex>
@@ -51,12 +51,15 @@
 <script>
 // import Instructions from './components/instructions.vue'
 import Flex from "@/components/flex";
+import CountScroll from '@/components/countScroll.vue'
 import AgeRatio from './components/age-ratio.vue'
 import Regional from './components/regional.vue'
 import ParentInfo from  './components/parent-info.vue'
+import CityClass from './components/cityClass.vue'
+import CityStuNum from './components/cityStuNum.vue'
 export default {
     components: {
-        Flex,Regional,AgeRatio,ParentInfo
+        Flex,Regional,AgeRatio,ParentInfo,CountScroll,CityClass,CityStuNum
     }
 };
 </script>
