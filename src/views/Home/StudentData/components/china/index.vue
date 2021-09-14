@@ -197,10 +197,10 @@ export default {
                 if (fromCoord && toCoord) {
                     res.push([
                         {
-                            coord: fromCoord
+                            coord: toCoord
                         },
                         {
-                            coord: toCoord
+                            coord: fromCoord
                         }
                     ]);
                 }
