@@ -2,32 +2,27 @@
     <div class="map-box">
         <div class="filter-blur"></div>
         <div class="map-container" ref="map"></div>
+        <slot />
     </div>
 </template>
 
 <script>
 const AMap = window.AMap;
 export default {
+    props: {
+        schoolList: {
+            type: Array,
+            default: () => []
+        }
+    },
+
     data() {
         return {
             map: null,
-            activeMarker: null,
-            schoolList: [
-                {
-                    lng: 120.619585,
-                    lat: 31.299379
-                },
-                {
-                    lng: 120.62585,
-                    lat: 31.300379
-                },
-                {
-                    lng: 120.629585,
-                    lat: 31.294379
-                }
-            ]
+            activeMarker: null
         };
     },
+
     mounted() {
         this.$nextTick(() => {
             this.map = new AMap.Map(this.$refs.map, {
@@ -53,10 +48,8 @@ export default {
     methods: {
         addMarkers() {
             const markers = [];
-            this.schoolList.forEach((item) => {
-                const icon = this.getIcon(
-                    require("./imgs/pic_dingwei1@2x.png")
-                );
+            this.schoolList.forEach((item, index) => {
+                const icon = this.getIcon(index);
                 const marker = new AMap.Marker({
                     position: new AMap.LngLat(item.lng, item.lat),
                     // 将一张图片的地址设置为 icon
@@ -65,62 +58,35 @@ export default {
                     offset: new AMap.Pixel(-30, -38)
                 });
                 markers.push(marker);
-                marker.on("click", () => {
-                    const position = marker.getPosition();
-                    this.openInfoWindow(position);
-                    this.updateMarkers(marker);
+                marker.setLabel({
+                    offset: new AMap.Pixel(-5, -20), //设置文本标注偏移量
+                    content: `<div><div style="color: #ffffff;font-size: 0.2rem;margin-bottom: 0.05rem">${
+                        item.num
+                    }</div><div style="color: rgba(255, 255, 255, 0.6);font-size: 0.15rem">${
+                        item.address
+                    }(No.${index + 1})</div></div>`, // 设置文本标注内容
+                    direction: "right" //设置文本标注方位
                 });
             });
 
             this.map.add(markers);
-            if (markers.length > 0) {
-                this.updateMarkers(markers[0]);
-                const position = markers[0].getPosition();
-                this.openInfoWindow(position);
-            }
         },
 
-        getIcon(img) {
+        getIcon(sort) {
+            const img =
+                sort > 2
+                    ? require("./imgs/pic_dian4@2x.png")
+                    : [
+                          require("./imgs/pic_dian1@2x.png"),
+                          require("./imgs/pic_dian2@2x.png"),
+                          require("./imgs/pic_dian3@2x.png")
+                      ][sort];
             return new AMap.Icon({
                 size: new AMap.Size(82, 88),
                 image: img,
                 imageSize: new AMap.Size(82, 88),
                 imageOffset: new AMap.Pixel(0, 0)
             });
-        },
-
-        updateMarkers(marker) {
-            if (this.activeMarker) {
-                const icon = this.getIcon(
-                    require("./imgs/pic_dingwei1@2x.png")
-                );
-                this.activeMarker.setIcon(icon);
-            }
-            this.activeMarker = marker;
-            const icon = this.getIcon(require("./imgs/pic_dingwei2@2x.png"));
-            marker.setIcon(icon);
-        },
-
-        openInfoWindow(position) {
-            const infoWindow = new AMap.InfoWindow({
-                isCustom: true,
-                content: this.getInfoWindowDom("苏州市敬文实验小学"),
-                offset: new AMap.Pixel(10, -30)
-            });
-
-            infoWindow.open(this.map, position);
-        },
-
-        getInfoWindowDom(text) {
-            const div = document.createElement("div");
-            const bg = require("./imgs/pic_bg_selected@2x.png");
-            div.style.background = `url(${bg}) no-repeat`;
-            div.style.backgroundSize = "100% 100%";
-            div.style.padding = ".2rem .3rem";
-            div.style.color = "#0DFFFF";
-            div.style.fontSize = "0.18rem";
-            div.innerText = text;
-            return div;
         }
     },
 
@@ -159,5 +125,12 @@ export default {
     border-radius: 20%;
     box-shadow: 0 0 2rem 2rem #000916 inset;
     pointer-events: none;
+}
+</style>
+
+<style>
+.amap-marker-label {
+    border: none;
+    background-color: transparent;
 }
 </style>

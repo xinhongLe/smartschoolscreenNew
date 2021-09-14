@@ -15,7 +15,7 @@
             </div>
         </div>
         <div class="module-content">
-          <slot />
+            <slot />
         </div>
     </div>
 </template>
@@ -37,6 +37,11 @@ export default {
         selected: {
             type: Number,
             default: 0
+        },
+
+        transparent: {
+            type: Boolean,
+            default: false
         }
     },
     methods: {
@@ -100,7 +105,7 @@ export default {
 
 .tab-item {
     margin-right: 1rem;
-    color: #96ACC3;
+    color: #96acc3;
     cursor: pointer;
 }
 
@@ -109,8 +114,8 @@ export default {
 }
 
 .module-content {
-  flex: 1;
-  min-height: 0;
-  height: 100%;
+    flex: 1;
+    min-height: 0;
+    height: 100%;
 }
 </style>
