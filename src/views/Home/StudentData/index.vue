@@ -21,7 +21,7 @@
             <Flex :flex="1">
                 <Flex :flex="2" column>
                     <!-- 苏州工业园区 -->
-                    <!-- <Instructions></Instructions> -->
+                     <Instructions></Instructions>
                     <div class="v-line"></div>
                     <Flex :flex="1">
                         <module-header
@@ -56,7 +56,7 @@
 </template>
 
 <script>
-// import Instructions from './components/instructions.vue'
+import Instructions from './components/instructions.vue'
 import Flex from "@/components/flex";
 import CountScroll from '@/components/countScroll.vue'
 import AgeRatio from './components/age-ratio.vue'
@@ -77,6 +77,7 @@ export default {
         AgeRatio,
         ParentInfo,
         GenderRatio,
+        Instructions,
         CountScroll,
         CityStuNum,
         CityClass

@@ -60,6 +60,7 @@ export default {
       padding: 0.08rem 0.15rem;
       border: 1px solid rgba(16, 163, 190, 0.23);
       margin-right: 0.2rem;
+      cursor: pointer;
     }
   }
 }

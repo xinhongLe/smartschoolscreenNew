@@ -81,32 +81,9 @@ export default {
         name: '满意度',
         type: 'line',
         data: this.echartsData.map(item => item[1]),
-        markLine: {
-          // silent: true,
-          symbol: ["none", "none"],
-          lineStyle: {
-            color: '#fff'
-          },
-          data: [{
-            yAxis: 20
-          }, {
-            yAxis: 40
-          }, {
-            yAxis: 60
-          }, {
-            yAxis: 80
-          }, {
-            yAxis: 100
-          }]
-        }
       }
     }
-    // this.options.xAxis.data = this.echartsData.map(item => item[0])
-    // this.options.series.data = this.echartsData.map(item => item[1])
     this.options = options
-    // setInterval(() => {
-    //   this.options = {...this.options}
-    // },5000)
   }
 }
 </script>
