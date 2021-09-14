@@ -1,25 +1,9 @@
 <template>
-  <moduleHeader title="学校类型分布">
-    <div class="personnelBox">
-      <div class="personnel">
-        <CountTo
-          ref="example1"
-          class="personnel_sum"
-          :start-val="0"
-          :end-val="73"
-          :duration="3000"
-        ></CountTo>
-        <span class="personnel_text">民办学校</span>
-      </div>
-      <div class="personnel">
-        <CountTo
-          ref="example2"
-          class="personnel_sum"
-          :start-val="0"
-          :end-val="905"
-          :duration="3000"
-        ></CountTo>
-        <span class="personnel_text">公办学校</span>
+  <moduleHeader title="教师职称分布情况">
+    <div class="tools">
+      <div class="item" v-for="(item, index) in teacherTitle" :key="index">
+        <span class="lablenum">{{ item.num }}</span>
+        <span class="lableName">{{ item.title }}</span>
       </div>
     </div>
     <div class="schoolData">
@@ -32,63 +16,89 @@
 <script>
 import moduleHeader from "@/components/moduleHeader";
 import ProgressB from "@/components/ProgressB.vue";
-import CountTo from "vue-count-to";
 export default {
   components: {
     moduleHeader,
-    CountTo,
     ProgressB,
   },
   data() {
     return {
+      teacherTitle: [
+        {
+          title: "正高级",
+          num: 472,
+        },
+        {
+          title: "高级教师",
+          num: 1472,
+        },
+        {
+          title: "一级教师",
+          num: 7472,
+        },
+        {
+          title: "二级教师",
+          num: 10472,
+        },
+        {
+          title: "三级教师",
+          num: 4472,
+        },
+      ],
       progressList: [
         {
-          name: "高职",
+          name: "正高级教师",
           progressNum: 39,
-          id: 1,
+          id: 11,
         },
         {
-          name: "中职",
+          name: "高级教师",
           progressNum: 12,
-          id: 2,
+          id: 22,
         },
         {
-          name: "高中",
+          name: "一级教师",
           progressNum: 46,
-          id: 3,
+          id: 33,
         },
         {
-          name: "初中",
+          name: "二级教师",
           progressNum: 78,
-          id: 4,
+          id: 44,
         },
         {
-          name: "小学",
+          name: "三级教师",
           progressNum: 233,
-          id: 5,
-        },
-        {
-          name: "幼儿园",
-          progressNum: 456,
-          id: 6,
+          id: 55,
         },
       ],
     };
   },
-  mounted() {
-    let timer = setInterval(() => {
-      setTimeout(() => {
-        this.$refs.example1.start();
-        this.$refs.example2.start();
-      }, 0);
-    }, 20000);
-    this.$once("hook:beforeDestroy", () => {
-      clearInterval(timer);
-    });
-  },
 };
 </script>
 <style lang="scss" scoped>
+.tools {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  .item {
+    width: 1rem;
+    height: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .lablenum {
+      font-size: 0.175rem;
+      color: #0dffff;
+      display: block;
+    }
+    .lableName {
+      font-size: 0.125rem;
+      color: #96acc3;
+    }
+  }
+}
 .personnelBox {
   width: 60%;
   margin-top: 0.2rem;

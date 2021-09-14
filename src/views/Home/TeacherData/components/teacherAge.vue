@@ -1,27 +1,5 @@
 <template>
-  <moduleHeader title="学校类型分布">
-    <div class="personnelBox">
-      <div class="personnel">
-        <CountTo
-          ref="example1"
-          class="personnel_sum"
-          :start-val="0"
-          :end-val="73"
-          :duration="3000"
-        ></CountTo>
-        <span class="personnel_text">民办学校</span>
-      </div>
-      <div class="personnel">
-        <CountTo
-          ref="example2"
-          class="personnel_sum"
-          :start-val="0"
-          :end-val="905"
-          :duration="3000"
-        ></CountTo>
-        <span class="personnel_text">公办学校</span>
-      </div>
-    </div>
+  <moduleHeader title="教师教龄分布情况">
     <div class="schoolData">
       <div v-for="item in progressList" :key="item.id">
         <ProgressB :proData="item"></ProgressB>
@@ -32,60 +10,42 @@
 <script>
 import moduleHeader from "@/components/moduleHeader";
 import ProgressB from "@/components/ProgressB.vue";
-import CountTo from "vue-count-to";
 export default {
   components: {
     moduleHeader,
-    CountTo,
     ProgressB,
   },
   data() {
     return {
       progressList: [
         {
-          name: "高职",
+          name: "20年以上",
           progressNum: 39,
           id: 1,
         },
         {
-          name: "中职",
+          name: "15-20年",
           progressNum: 12,
           id: 2,
         },
         {
-          name: "高中",
+          name: "10-15年",
           progressNum: 46,
           id: 3,
         },
         {
-          name: "初中",
+          name: "3-10年",
           progressNum: 78,
           id: 4,
         },
         {
-          name: "小学",
+          name: "0-3年",
           progressNum: 233,
           id: 5,
-        },
-        {
-          name: "幼儿园",
-          progressNum: 456,
-          id: 6,
-        },
+        }
       ],
     };
-  },
-  mounted() {
-    let timer = setInterval(() => {
-      setTimeout(() => {
-        this.$refs.example1.start();
-        this.$refs.example2.start();
-      }, 0);
-    }, 20000);
-    this.$once("hook:beforeDestroy", () => {
-      clearInterval(timer);
-    });
-  },
+  }
 };
 </script>
 <style lang="scss" scoped>

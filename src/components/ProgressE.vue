@@ -1,20 +1,21 @@
 <template>
   <div class="progressBox">
-    <span class="progress_name">{{ proDta.name }}</span>
+    <span class="progress_name">{{ progressData.name }}</span>
     <div class="progress_border">
       <div
-        :id="`pregress_${proDta.id}`"
+        :id="`pregress_${progressData.id}`"
         class="progress_cont"
         v-bind:class="{ progress_active: isActive }"
       ></div>
     </div>
-    <span class="progress_number">{{ proDta.progressNum }}</span>
+    <span class="progress_number">{{ progressData.progressNum }}</span>
   </div>
 </template>
 <script>
 export default {
+  name:'progressB',
   props: {
-    proDta: {
+    proData: {
       type: Object,
       default: () => {},
     },
@@ -22,15 +23,20 @@ export default {
   data() {
     return {
       isActive: true,
+      Interval: null,
+      progressData:this.proData
     };
   },
   mounted() {
     this.initProgress();
   },
   watch: {
-    proDta: {
+    proData: {
       handler(data) {
-        console.log("data", data);
+        console.log(data)
+        this.progressData = data
+        this.Interval = null
+        clearInterval(this.Interval)
         this.initProgress();
       },
       deep: true,
@@ -39,9 +45,9 @@ export default {
   methods: {
     initProgress() {
       this.$nextTick(() => {
-        let dompro = document.getElementById(`pregress_${this.proDta.id}`);
-        let num = (this.proDta.progressNum / 1000) * 100;
-        setInterval(() => {
+        let dompro = document.getElementById(`pregress_${this.progressData.id}`);
+        let num = (this.progressData.progressNum / 10000) * 200;
+        this.Interval = setInterval(() => {
           dompro.style.width = 0 + "%";
           this.isActive = false;
           setTimeout(() => {
@@ -55,6 +61,10 @@ export default {
       });
     },
   },
+  beforeDestroy(){
+    this.Interval = null
+    clearInterval(this.Interval)
+  }
 };
 </script>
 <style lang="scss" scoped>
@@ -63,16 +73,17 @@ export default {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 0.3rem auto;
+  margin: 0.2rem auto;
   .progress_name {
-    width: 0.5rem;
+    width: 0.6rem;
+    font-size: 0.15rem;
+    color: #96ACC3;
   }
   .progress_number {
     width: 0.4rem;
     text-align: center;
-  }
-  span {
-    color: ghostwhite;
+    font-size: 0.15rem;
+    color: #7AB3E2;
   }
   .progress_border {
     flex: 1;
@@ -94,7 +105,7 @@ export default {
     width: 0.002rem;
     height: 0.12rem;
     position: absolute;
-    right: -0.005rem;
+    right: 0;
     top: -0.015rem;
     background: #FFFFFF;
   }

@@ -1,25 +1,15 @@
 <template>
-  <moduleHeader title="学校类型分布">
-    <div class="personnelBox">
-      <div class="personnel">
-        <CountTo
-          ref="example1"
-          class="personnel_sum"
-          :start-val="0"
-          :end-val="73"
-          :duration="3000"
-        ></CountTo>
-        <span class="personnel_text">民办学校</span>
-      </div>
-      <div class="personnel">
-        <CountTo
-          ref="example2"
-          class="personnel_sum"
-          :start-val="0"
-          :end-val="905"
-          :duration="3000"
-        ></CountTo>
-        <span class="personnel_text">公办学校</span>
+  <moduleHeader title="教研热词">
+      <slot></slot>
+    <div class="tools">
+      <div
+        class="item"
+        :class="activeIndex === index ? 'active' : ''"
+        @click="changeIndex(index)"
+        v-for="(item, index) in teachingHotList"
+        :key="index"
+      >
+        <span class="lableName">{{ item.title }}</span>
       </div>
     </div>
     <div class="schoolData">
@@ -32,63 +22,85 @@
 <script>
 import moduleHeader from "@/components/moduleHeader";
 import ProgressB from "@/components/ProgressB.vue";
-import CountTo from "vue-count-to";
 export default {
   components: {
     moduleHeader,
-    CountTo,
     ProgressB,
   },
   data() {
     return {
+      activeIndex: 0,
+      teachingHotList: [
+        {
+          title: "今日热词",
+        },
+        {
+          title: "本周热词",
+        },
+        {
+          title: "本月热词",
+        },
+      ],
       progressList: [
         {
-          name: "高职",
+          name: "20年以上",
           progressNum: 39,
           id: 1,
         },
         {
-          name: "中职",
+          name: "15-20年",
           progressNum: 12,
           id: 2,
         },
         {
-          name: "高中",
+          name: "10-15年",
           progressNum: 46,
           id: 3,
         },
         {
-          name: "初中",
+          name: "3-10年",
           progressNum: 78,
           id: 4,
         },
         {
-          name: "小学",
+          name: "0-3年",
           progressNum: 233,
           id: 5,
-        },
-        {
-          name: "幼儿园",
-          progressNum: 456,
-          id: 6,
         },
       ],
     };
   },
-  mounted() {
-    let timer = setInterval(() => {
-      setTimeout(() => {
-        this.$refs.example1.start();
-        this.$refs.example2.start();
-      }, 0);
-    }, 20000);
-    this.$once("hook:beforeDestroy", () => {
-      clearInterval(timer);
-    });
+  methods: {
+    changeIndex(index) {
+      this.activeIndex = index;
+    },
   },
 };
 </script>
 <style lang="scss" scoped>
+.tools {
+  width: 70%;
+  display: flex;
+  justify-content: space-around;
+  .item {
+    width: 1rem;
+    height: 0.3rem;
+    border: 1px solid rgba(16, 163, 190, 0.23);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .lableName {
+      font-size: 0.125rem;
+      font-weight: 500;
+      color: #70bfff;
+    }
+  }
+  .active {
+    background: rgba(3, 86, 176, 0.31);
+    border: 1px solid rgba(16, 163, 190, 0.23);
+  }
+}
 .personnelBox {
   width: 60%;
   margin-top: 0.2rem;

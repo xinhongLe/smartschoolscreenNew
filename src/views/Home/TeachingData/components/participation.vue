@@ -164,7 +164,6 @@ export default {
 <style scoped lang="scss">
 .participation-box {
     width: 100%;
-    margin-top: .1rem;
     .inner {
         width: 100%;
         height: 1.2875rem;

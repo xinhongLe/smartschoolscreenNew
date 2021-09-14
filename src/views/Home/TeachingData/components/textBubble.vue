@@ -1,20 +1,14 @@
 <template>
     <div class="text">
-        <ModuleHeader>
-            <div :class="'active'+activeIndex" class="inner">
-                <span v-for="(item, index) in list" :key="index">{{ item }}</span>
-            </div>
-        </ModuleHeader>
+        <div :class="'active'+activeIndex" class="inner">
+            <span v-for="(item, index) in list" :key="index">{{ item }}</span>
+        </div>
     </div>
 </template>
 
 <script>
-import ModuleHeader from "@/components/moduleBorder"
 export default {
     name: "text-bubble",
-    components: {
-        ModuleHeader,
-    },
     data() {
         return {
             activeIndex: 0,
@@ -45,10 +39,10 @@ export default {
 <style scoped lang="scss">
 .text {
     width: 100%;
+    height: 3rem;
     display: flex;
-    margin-top: .1rem;
+    position: relative;
     .inner {
-        position: relative;
         span {
             position: absolute;
         }

@@ -1,23 +1,21 @@
 <template>
-  <div>
-    <module-header title="各区满意度排名">
-      <div class="right-table">
-        <div v-for="(item,index) in tableList" :key="index" class="row">
-          <div>{{index + 1 }}</div>
-          <div>{{item.name}}</div>
-          <div>{{item.pre}}</div>
-        </div>
-      </div>
-    </module-header>
-  </div>
+  <module-header  title="各区满意度排名">
+    <table-common :headerList="headerList" :tableList="tableList"></table-common>
+  </module-header>
 </template>
 <script>
 import ModuleHeader from "../../../../components/moduleHeader";
+import TableCommon from "../../../../components/tableCommon";
 export default {
   name: "rightTable",
-  components: {ModuleHeader},
+  components: {TableCommon, ModuleHeader},
   data() {
     return {
+      headerList: [
+        {name: '序号',},
+        {name: '区域名称'},
+        {name: '办学满意度'},
+      ],
       tableList: [
         {name: '吴中区', pre: '87'},
         {name: '吴江区', pre: '67'},
@@ -25,6 +23,9 @@ export default {
         {name: '昆山市', pre: '77'},
         {name: '相城区', pre: '57'},
         {name: '姑苏区', pre: '66'},
+        {name: '虎丘区', pre: '66'},
+        {name: '常熟市', pre: '66'},
+        {name: '张家港市', pre: '66'},
       ]
     }
   },
@@ -32,13 +33,4 @@ export default {
 </script>
 
 <style scoped lang="scss">
-.right-table{
-  width: 4.85rem;
-  height: 1.75rem;
-  color: #fff;
-  .row{
-    display: flex;
-    justify-content: space-between;
-  }
-}
 </style>

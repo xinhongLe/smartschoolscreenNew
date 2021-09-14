@@ -1,11 +1,7 @@
 <template>
-  <div>
-    <module-header title="满意度变化趋势">
-      <div class="right-line">
-        <echart :options="options" width="4.85rem"></echart>
-      </div>
-    </module-header>
-  </div>
+  <module-header title="满意度变化趋势">
+      <echart :options="options" width="100%" height="100%"></echart>
+  </module-header>
 </template>
 
 <script>
@@ -29,19 +25,15 @@ export default {
     }
   },
   mounted() {
-    // setInterval(() => {
-    //   this.options.xAxis.data = this.echartsData.map(item => item[0])
-    //   this.options.series.data = this.echartsData.map(item => item[1])
-    // },5000)
     const options = {
       // animationDuration: 10000,
       tooltip: {
         trigger: 'axis'
       },
       grid: {
-        left: '5%',
+        left: '30px',
         right: '0%',
-        bottom: '10%'
+        bottom: '30px'
       },
       xAxis: {
         data: this.echartsData.map(item => item[0]),
@@ -89,37 +81,12 @@ export default {
         name: '满意度',
         type: 'line',
         data: this.echartsData.map(item => item[1]),
-        markLine: {
-          // silent: true,
-          symbol: ["none", "none"],
-          lineStyle: {
-            color: '#fff'
-          },
-          data: [{
-            yAxis: 20
-          }, {
-            yAxis: 40
-          }, {
-            yAxis: 60
-          }, {
-            yAxis: 80
-          }, {
-            yAxis: 100
-          }]
-        }
       }
     }
-    // this.options.xAxis.data = this.echartsData.map(item => item[0])
-    // this.options.series.data = this.echartsData.map(item => item[1])
     this.options = options
-
   }
 }
 </script>
 
 <style scoped lang="scss">
-.right-line{
-  width: 4.85rem;
-  height: 2rem;
-}
 </style>
