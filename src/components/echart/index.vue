@@ -50,6 +50,9 @@ export default {
     },
     mounted() {
         this.initChart();
+        window.addEventListener("resize", () => {
+            this.chart.resize();
+        })
     },
     methods: {
         initChart() {
