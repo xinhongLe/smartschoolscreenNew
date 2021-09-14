@@ -31,7 +31,7 @@
 </template>
 <script>
 import moduleHeader from "@/components/moduleHeader";
-import ProgressB from "./ProgressB.vue";
+import ProgressB from "@/components/ProgressB.vue";
 import CountTo from "vue-count-to";
 export default {
   components: {
@@ -82,9 +82,9 @@ export default {
         this.$refs.example2.start();
       }, 0);
     }, 20000);
-    this.$once('hook:beforeDestroy', () => {            
-        clearInterval(timer);                                    
-    })
+    this.$once("hook:beforeDestroy", () => {
+      clearInterval(timer);
+    });
   },
 };
 </script>
@@ -123,28 +123,6 @@ export default {
   padding-left: 0.3rem;
   box-sizing: border-box;
   margin-top: 0.3rem;
-  .progressBox {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    span {
-      color: ghostwhite;
-    }
-    .progress_border {
-      flex: 1;
-      height: 0.1rem;
-      margin: 0 0.2rem;
-      background: rgba(255, 255, 255, 0.1);
-    }
-    .progress_cont {
-      width: 0px;
-      height: 100%;
-      background: linear-gradient(90deg, #70bfff 0%, #0dffff 100%);
-      transition: width 3s 1s;
-      //   animation: linear 2s 1 normal forwards running moveProfress;
-    }
-  }
 }
 
 @keyframes moveProfress {
