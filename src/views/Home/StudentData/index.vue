@@ -5,7 +5,7 @@
             <CountScroll></CountScroll>
             <div class="v-line"></div>
             <Flex :flex="5">
-                <CityStuNum></CityStuNum>
+                <CitySchool></CitySchool>
             </Flex>
             <div class="v-line"></div>
             <Flex :flex="5">
@@ -66,7 +66,7 @@ import Map from "./components/map";
 import China from "./components/china";
 import ParentInfo from  './components/parent-info.vue'
 import GenderRatio from './components/gender-ratio.vue'
-import CityStuNum from './components/cityStuNum.vue'
+import CitySchool from './components/citySchool.vue'
 import CityClass from './components/cityClass.vue'
 export default {
     components: {
@@ -79,7 +79,7 @@ export default {
         GenderRatio,
         Instructions,
         CountScroll,
-        CityStuNum,
+        CitySchool,
         CityClass
     },
     data() {

@@ -33,18 +33,18 @@ export default {
   watch: {
     proData: {
       handler(data) {
-        console.log(data)
+        console.log('wacth监听',data)
+        console.log('wwwww',this.Interval)
         this.progressData = data
         this.Interval = null
         clearInterval(this.Interval)
-        this.initProgress();
+        console.log('123456',this.Interval)
       },
       deep: true,
     },
   },
   methods: {
     initProgress() {
-      this.$nextTick(() => {
         let dompro = document.getElementById(`pregress_${this.progressData.id}`);
         let num = (this.progressData.progressNum / 1000) * 100;
         this.Interval = setInterval(() => {
@@ -53,12 +53,14 @@ export default {
           setTimeout(() => {
             this.isActive = true;
             dompro.style.width = num.toFixed(0) + "%";
+            this.Interval = null
+            clearInterval(this.Interval)
           }, 100);
         }, 5000);
+        console.log('mmm',this.Interval)
         setTimeout(() => {
           dompro.style.width = num.toFixed(0) + "%";
-        }, 200);
-      });
+        }, 100);
     },
   },
   beforeDestroy(){

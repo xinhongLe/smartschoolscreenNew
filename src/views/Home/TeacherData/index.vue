@@ -2,10 +2,10 @@
     <div class="content">
         <div class="h-line"></div>
         <Flex :flex="1" column>
-            <!-- <countScroll></countScroll> -->
+            <countScroll></countScroll>
             <div class="v-line"></div>
             <Flex :flex="5"> 
-                <!-- <SchoolType></SchoolType> -->
+                <TeacherAge></TeacherAge>
             </Flex>
             <div class="v-line"></div>
             <Flex :flex="5">
@@ -34,7 +34,7 @@
                     </Flex>
                     <div class="v-line"></div>
                     <Flex :flex="2">
-                        
+                        <TeacherTitle></TeacherTitle>
                     </Flex>
                 </Flex>
             </Flex>
@@ -46,9 +46,12 @@
 
 <script>
 import Flex from "@/components/flex";
+import CountScroll from '@/components/countScroll.vue'
+import TeacherAge from './components/teacherAge'
+import TeacherTitle from './components/teacherTitle'
 export default {
     components: {
-        Flex
+        Flex,CountScroll,TeacherAge,TeacherTitle
     }
 };
 </script>
