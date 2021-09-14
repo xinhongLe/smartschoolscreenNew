@@ -25,19 +25,15 @@ export default {
     }
   },
   mounted() {
-    // setInterval(() => {
-    //   this.options.xAxis.data = this.echartsData.map(item => item[0])
-    //   this.options.series.data = this.echartsData.map(item => item[1])
-    // },5000)
     const options = {
       // animationDuration: 10000,
       tooltip: {
         trigger: 'axis'
       },
       grid: {
-        left: '8%',
+        left: '30px',
         right: '0%',
-        bottom: '10%'
+        bottom: '30px'
       },
       xAxis: {
         data: this.echartsData.map(item => item[0]),
@@ -109,12 +105,8 @@ export default {
     // this.options.series.data = this.echartsData.map(item => item[1])
     this.options = options
     // setInterval(() => {
-    //   this.options = options
-    // },2000)
-    setInterval(() => {
-      this.options = {}
-      this.options = options
-    },2000)
+    //   this.options = {...this.options}
+    // },5000)
   }
 }
 </script>
