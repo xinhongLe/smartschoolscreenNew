@@ -66,6 +66,7 @@ export default {
     display: flex;
     align-items: center;
     border-bottom: 0.0125rem solid rgba(25, 52, 88, 0.8);
+    z-index: 10;
 }
 
 .module-header:before {

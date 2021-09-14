@@ -34,7 +34,7 @@ export default {
                 resizeEnable: true,
                 rotateEnable: true,
                 zoom: 14,
-                pitch: 80,
+                pitch: 60,
                 rotation: -15,
                 viewMode: "3D", //开启3D视图,默认为关闭
                 buildingAnimation: true, //楼块出现是否带动画
@@ -132,7 +132,7 @@ export default {
     height: calc(100% + 2rem);
     margin: -1rem -2rem;
     overflow: hidden;
-    border-radius: 50%;
+    border-radius: 20%;
     position: relative;
     z-index: 0;
 }
@@ -152,8 +152,8 @@ export default {
     left: -0.1rem;
     right: -0.1rem;
     z-index: 10;
-    border-radius: 50%;
-    box-shadow: 0 0 1.5rem 1.5rem #000916 inset;
+    border-radius: 20%;
+    box-shadow: 0 0 2rem 2rem #000916 inset;
     pointer-events: none;
 }
 </style>
