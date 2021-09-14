@@ -13,6 +13,13 @@
                     <div class="tab-title">{{ item.title }}</div>
                 </div>
             </div>
+            <div class="update-time-box">
+                <div class="update-time-title">数据更新于</div>
+                <div class="update-time-text">
+                    <img src="./imgs/icon_time@2x.png" alt="">
+                    2021-01-22 03:00
+                </div>
+            </div>
         </div>
         <Title title="苏州市教育信息化数据大屏" />
     </div>
@@ -135,5 +142,32 @@ export default {
     background: none;
     -webkit-background-clip: unset;
     -webkit-text-fill-color: unset;
+}
+
+.update-time-box {
+    position: absolute;
+    right: .3rem;
+}
+
+.update-time-title {
+    font-size: .15rem;
+    color: #EDF2F8;
+    padding-left: 0.18rem;
+}
+
+.update-time-text {
+    display: flex;
+    align-items: center;
+    margin-top: .05rem;
+    font-size: .15rem;
+    color: #70BFFF;
+}
+
+.update-time-text img {
+    display: block;
+    width: 0.13rem;
+    margin-right: 0.05rem;
+    position: relative;
+    top: -0.008rem;
 }
 </style>
