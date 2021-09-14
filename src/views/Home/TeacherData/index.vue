@@ -2,24 +2,42 @@
     <div class="content">
         <div class="h-line"></div>
         <Flex :flex="1" column>
-            <Flex :flex="3"> </Flex>
+            <!-- <countScroll></countScroll> -->
             <div class="v-line"></div>
-            <Flex :flex="5"> </Flex>
+            <Flex :flex="5"> 
+                <!-- <SchoolType></SchoolType> -->
+            </Flex>
             <div class="v-line"></div>
-            <Flex :flex="5"> 3 </Flex>
+            <Flex :flex="5">
+                <!-- <SchoolArea></SchoolArea> -->
+            </Flex>
             <div class="v-line"></div>
         </Flex>
         <div class="h-line"></div>
-        <Flex :flex="2" column>
-            <Flex :flex="1"> 4 </Flex>
-        </Flex>
-        <div class="h-line"></div>
-        <Flex :flex="1" column>
-            <Flex :flex="3"> 7 </Flex>
+        <Flex :flex="3" column>
+            <!-- tab 写在这里 -->
             <div class="v-line"></div>
-            <Flex :flex="5"> 8 </Flex>
-            <div class="v-line"></div>
-            <Flex :flex="5"> 8 </Flex>
+            <Flex :flex="1">
+                <Flex :flex="2" column>
+                    <Flex :flex="2">
+                        <!-- 地图部分 -->
+                    </Flex>
+                    <div class="v-line"></div>
+                    <Flex :flex="1">
+                        <!-- 教师数据量变化趋势 -->
+                    </Flex>
+                </Flex>
+                <div class="h-line"></div>
+                <Flex :flex="1" column>
+                    <Flex :flex="1">
+                        
+                    </Flex>
+                    <div class="v-line"></div>
+                    <Flex :flex="2">
+                        
+                    </Flex>
+                </Flex>
+            </Flex>
             <div class="v-line"></div>
         </Flex>
         <div class="h-line"></div>
