@@ -53,12 +53,14 @@ export default {
         font-family: PingFangSC-Semibold, PingFang SC;
         color: #ffffff;
         line-height: 20px;
+        cursor: pointer;
     }
     .active {
         background: rgba(3, 86, 176, 0.31);
         border: 1px solid rgba(16, 163, 190, 0.23);
         color: #6fe5f7;
         white-space: nowrap;
+        cursor: pointer;
     }
 }
 </style>

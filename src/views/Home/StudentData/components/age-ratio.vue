@@ -1,10 +1,17 @@
 <template>
-    <div style="width:100%">
+    <div style="width: 100%">
         <module-header title="学生年龄比例(园区)"
             ><div class="ageRatio">
                 <div class="echart" id="ageRatioCharts"></div>
                 <div class="fraction">
                     <div>100%</div>
+                </div>
+                <div class="ageRatioContent">
+                    <div v-for="(item, index) in list" :key="index">
+                        <span :style="item.style"></span>
+                        <p>{{ item.font }}</p>
+                        <Progress :proDta="item"></Progress>
+                    </div>
                 </div>
             </div>
         </module-header>
@@ -12,12 +19,44 @@
 </template>
 <script>
 import * as echarts from "echarts";
-import moduleHeader from '@/components/moduleHeader'
+import moduleHeader from "@/components/moduleHeader";
+import Progress from "@/components/ProgressC";
 export default {
     data() {
-        return {};
+        return {
+            list: [
+                {
+                    style: "background-color:#0DFFFF",
+                    font: "3-6岁",
+                    name: "37.5%",
+                    progressNum: "43205",
+                    id: 43205
+                },
+                {
+                    style: "background-color:#B921D0",
+                    font: "7-12岁",
+                    name: "25%",
+                    progressNum: "30408",
+                    id: 30408
+                },
+                {
+                    style: "background-color:#DBB001",
+                    font: "13-15岁",
+                    name: "12.5%",
+                    progressNum: "27203",
+                    id: 27203
+                },
+                {
+                    style: "background-color:#376CCB",
+                    font: "16-18岁",
+                    name: "25%",
+                    progressNum: "30406",
+                    id: 30406
+                }
+            ]
+        };
     },
-    components:{moduleHeader},
+    components: { moduleHeader, Progress },
     created() {},
     mounted() {
         let chartDom = document.getElementById("ageRatioCharts");
@@ -43,7 +82,7 @@ export default {
                     hoverAnimation: false,
                     name: "面积模式",
                     type: "pie",
-                    radius: [40, 80],
+                    radius: [50, 90],
                     center: ["50%", "50%"],
                     roseType: "area",
                     itemStyle: {
@@ -139,15 +178,45 @@ export default {
     display: flex;
     position: relative;
     user-select: none;
+    padding-top: 10px;
     .echart {
         width: 200px;
         height: 200px;
-        transform: rotate(-45deg);
+        animation: rotation 5s linear infinite;
+    }
+    .ageRatioContent {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 0px 16px 25px 1px;
+        div {
+            display: flex;
+            align-items: center;
+            height: 30px;
+            span {
+                display: inline-block;
+                width: 8px;
+                height: 8px;
+                border-radius: 100%;
+                margin: -1px 8px 0 0;
+                
+            }
+            p {
+                font-size: 12px;
+                font-family: PingFangSC-Regular, PingFang SC;
+                font-weight: 400;
+                color: #96acc3;
+                white-space: nowrap;
+                width: 60px;
+                margin: -1px 18px 0 0;
+            }
+        }
     }
 }
 .fraction {
     position: absolute;
-    top: 0;
+    top: 10px;
     left: 0;
     color: #dfffdf;
     width: 200px;
@@ -156,15 +225,24 @@ export default {
     justify-content: space-around;
     align-items: center;
     div {
-        width: 50px;
-        height: 50px;
+        width: 60px;
+        height: 60px;
         border: 1px solid #142e52;
         border-radius: 100%;
         font-size: 14px;
         font-family: Bahnschrift_SemiBold;
         color: #ffffff;
-        line-height: 50px;
+        line-height: 60px;
         text-align: center;
+    }
+}
+@keyframes rotation {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
     }
 }
 </style>

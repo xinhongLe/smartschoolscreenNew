@@ -1,10 +1,84 @@
 <template>
-    <div style="width:100%">
+    <div style="width: 100%">
         <module-header title="家长信息统计(园区)">
             <div class="parentInfo">
-                <div class="echart" id="parentInfoCharts"></div>
+                <div
+                    class="echart"
+                    id="parentInfoCharts"
+                    style="width: 200px; height: 200px"
+                ></div>
                 <div class="fraction">
                     <div>100%</div>
+                </div>
+                <div class="parentsList">
+                    <div class="parentsListItem">
+                        <div>
+                            <span
+                                style="
+                                    background: linear-gradient(
+                                        180deg,
+                                        #96acc3 0%,
+                                        #ffffff 100%
+                                    );
+                                "
+                            ></span>
+                            <p>90后家长</p>
+                        </div>
+                        <div>
+                            <span></span>
+                            <p>85后/90前家长</p>
+                        </div>
+                    </div>
+                    <div class="parentsListItem">
+                        <div>
+                            <span></span>
+                            <p>9.5%</p>
+                        </div>
+                        <div>
+                            <span></span>
+                            <p>12.5</p>
+                        </div>
+                    </div>
+                    <div class="parentsListItem">
+                        <div>
+                            <span></span>
+                            <p>80后/85前家长</p>
+                        </div>
+                        <div>
+                            <span></span>
+                            <p>75后/80前家长</p>
+                        </div>
+                    </div>
+                    <div class="parentsListItem">
+                        <div>
+                            <span></span>
+                            <p>15.5%</p>
+                        </div>
+                        <div>
+                            <span></span>
+                            <p>18.75%</p>
+                        </div>
+                    </div>
+                    <div class="parentsListItem">
+                        <div>
+                            <span></span>
+                            <p>70后/75前家长</p>
+                        </div>
+                        <div>
+                            <span></span>
+                            <p>70前家长</p>
+                        </div>
+                    </div>
+                    <div class="parentsListItem">
+                        <div>
+                            <span></span>
+                            <p>18.75%</p>
+                        </div>
+                        <div>
+                            <span></span>
+                            <p>25.5%</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </module-header>
@@ -12,12 +86,23 @@
 </template>
 <script>
 import * as echarts from "echarts";
-import moduleHeader from '@/components/moduleHeader'
+import moduleHeader from "@/components/moduleHeader";
 export default {
     data() {
-        return {};
+        return {
+            list: [
+                {
+                    style: "background: linear-gradient(180deg, #96ACC3 0%, #FFFFFF 100%);",
+                    label: "90后家长"
+                },
+                {
+                    style: "background: linear-gradient(180deg, #A962F3 0%, #7833E2 100%);",
+                    label: "85后/90前家长"
+                }
+            ]
+        };
     },
-    components:{moduleHeader},
+    components: { moduleHeader },
     created() {},
     mounted() {
         var chartDom = document.getElementById("parentInfoCharts");
@@ -182,6 +267,7 @@ export default {
     .echart {
         width: 200px;
         height: 200px;
+        animation: rotation 5s linear infinite;
     }
 }
 .fraction {
@@ -204,6 +290,50 @@ export default {
         color: #ffffff;
         line-height: 88px;
         text-align: center;
+    }
+}
+.parentsList {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 10px 10px;
+    .parentsListItem {
+        flex: 1;
+        display: flex;
+        justify-content: space-between;
+        div {
+            display: flex;
+            align-items: center;
+            span {
+                display: block;
+                width: 0.1rem;
+                height: 0.1rem;
+                border-radius: 100%;
+                margin-right: 6px;
+                white-space: nowrap;
+                line-height: 16px;
+            }
+            p {
+                width: 1rem;
+                font-size: 12px;
+                font-family: PingFangSC-Regular, PingFang SC;
+                font-weight: 400;
+                line-height: 16px;
+                color: #96acc3;
+                white-space: nowrap;
+                padding: 0;
+                margin: 0;
+            }
+        }
+    }
+}
+@keyframes rotation {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
     }
 }
 </style>

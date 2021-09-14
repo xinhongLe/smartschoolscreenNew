@@ -16,7 +16,7 @@
         <div class="h-line"></div>
         <Flex :flex="3" column>
             <!-- tab 写在这里 -->
-            <Regional></Regional>
+            <!-- <Regional></Regional> -->
             <div class="v-line"></div>
             <Flex :flex="1">
                 <Flex :flex="2" column>
@@ -35,7 +35,9 @@
                         <AgeRatio></AgeRatio>
                     </Flex>
                     <div class="v-line"></div>
-                    <Flex :flex="1"> </Flex>
+                    <Flex :flex="1">
+                        <GenderRatio></GenderRatio>
+                    </Flex>
                     <div class="v-line"></div>
                     <Flex :flex="1">
                         <ParentInfo></ParentInfo>
@@ -52,11 +54,12 @@
 // import Instructions from './components/instructions.vue'
 import Flex from "@/components/flex";
 import AgeRatio from './components/age-ratio.vue'
-import Regional from './components/regional.vue'
+// import Regional from './components/regional.vue'
 import ParentInfo from  './components/parent-info.vue'
+import GenderRatio from './components/gender-ratio.vue'
 export default {
     components: {
-        Flex,Regional,AgeRatio,ParentInfo
+        Flex,AgeRatio,ParentInfo,GenderRatio
     }
 };
 </script>
