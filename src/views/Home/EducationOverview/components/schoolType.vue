@@ -6,7 +6,7 @@
           ref="example1"
           class="personnel_sum"
           :start-val="0"
-          :end-val="73"
+          :end-val="330"
           :duration="3000"
         ></CountTo>
         <span class="personnel_text">民办学校</span>
@@ -16,7 +16,7 @@
           ref="example2"
           class="personnel_sum"
           :start-val="0"
-          :end-val="905"
+          :end-val="1316"
           :duration="3000"
         ></CountTo>
         <span class="personnel_text">公办学校</span>
@@ -44,32 +44,32 @@ export default {
       progressList: [
         {
           name: "高职",
-          progressNum: 39,
+          progressNum: 10,
           id: 1,
         },
         {
           name: "中职",
-          progressNum: 12,
+          progressNum: 38,
           id: 2,
         },
         {
           name: "高中",
-          progressNum: 46,
+          progressNum: 108,
           id: 3,
         },
         {
           name: "初中",
-          progressNum: 77,
+          progressNum: 199,
           id: 4,
         },
         {
           name: "小学",
-          progressNum: 230,
+          progressNum: 424,
           id: 5,
         },
         {
           name: "幼儿园",
-          progressNum: 458,
+          progressNum: 867,
           id: 6,
         },
       ],

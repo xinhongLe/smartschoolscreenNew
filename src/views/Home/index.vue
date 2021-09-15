@@ -1,16 +1,19 @@
 <template>
     <div class="container">
-        <Header :showSelect="$route.name != 'educationOverview'" />
+        <Title title="*州市教育信息化数据大屏" />
         <router-view />
+        <Header />
     </div>
 </template>
 
 <script>
+import Title from "./Header/title";
 import Header from "./Header";
 export default {
     name: "home",
     components: {
-        Header
+        Header,
+        Title
     }
 };
 </script>

@@ -23,6 +23,10 @@ export default {
       type: Boolean,
       default: false,
     },
+    max: {
+      type: Number,
+      default: 1000
+    }
   },
   data() {
     return {
@@ -47,7 +51,7 @@ export default {
   methods: {
     initProgress() {
       let dompro = document.getElementById(`pregress_${this.progressData.id}`);
-      let num = (this.progressData.progressNum / 1000) * 100;
+      let num = (this.progressData.progressNum / this.max) * 100;
       this.Interval = setInterval(() => {
         dompro.style.width = 0 + "%";
         this.isActive = false;

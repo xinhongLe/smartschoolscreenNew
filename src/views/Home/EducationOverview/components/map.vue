@@ -104,7 +104,7 @@ export default {
         openInfoWindow(position) {
             const infoWindow = new AMap.InfoWindow({
                 isCustom: true,
-                content: this.getInfoWindowDom("苏州市敬文实验小学"),
+                content: this.getInfoWindowDom("*州市**小学"),
                 offset: new AMap.Pixel(10, -30)
             });
 

@@ -55,24 +55,24 @@ export default {
         return {
           timer: null,
           imgIndex: -1,
-          title: '苏州工业园区',
+          title: '*州**区',
           headerList: [
-            {name: '学校总数', count: '77所'},
-            {name: '学生总数', count: '88人'},
+            {name: '学校总数', count: '172所'},
+            {name: '学生总数', count: '282741人'},
           ],
           contentList: [
-            {type: 1, name: '新生入学(人)', count: 1299, countDetatil: '', color: '#70BFFF'},
+            {type: 1, name: '新生入学(人)', count: 12612, countDetatil: '', color: '#70BFFF'},
             {type: 'img'},
-            {type: 2, name: '幼儿园(所)', count: 88, countDetatil: 122434, color: '#0DFFFF'},
+            {type: 2, name: '幼儿园(所)', count: 52, countDetatil: 36140, color: '#0DFFFF'},
             {type: 'img'},
-            {type: 3, name: '小学(所)', count: 77, countDetatil: 32324, color: '#FA4A4F'},
+            {type: 3, name: '小学(所)', count: 26, countDetatil: 120406, color: '#FA4A4F'},
             {type: 'img'},
-            {type: 4, name: '初中(所)', count: 19, countDetatil: 42321, color: '#FFD01D'},
+            {type: 4, name: '初中(所)', count: 17, countDetatil: 67203, color: '#FFD01D'},
             {type: 'img',count: 2},
           ],
           contentListLast: [
-            {type: 1, name: '高中(所)', count: 1299, countDetatil: 232311, color: '#733EFA'},
-            {type: 2, name: '中职(所)', count: 88, countDetatil: 122434, color: '#733EFA'},
+            {type: 1, name: '高中(所)', count: 14, countDetatil: 30675, color: '#733EFA'},
+            {type: 2, name: '中职(所)', count: 9, countDetatil: 28317, color: '#733EFA'},
           ],
         };
     },

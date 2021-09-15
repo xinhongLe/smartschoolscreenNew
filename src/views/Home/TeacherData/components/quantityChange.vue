@@ -88,7 +88,7 @@ export default {
                         color: "rgba(255, 255, 255, .1)"
                     }
                 },
-                max: 60000,
+                max: 100000,
                 min: 0,
                 splitNumber: 4,
                 axisLabel: {
@@ -105,7 +105,7 @@ export default {
                 {
                     name: "教师总人数",
                     type: "line",
-                    data: [39000, 55000, 47000, 60060, 55876, 62000],
+                    data: [80000, 98000, 82000, 99000, 90000, 95000],
                     symbol: "none",
                     lineStyle: {
                         width: 2,
@@ -132,7 +132,7 @@ export default {
                 {
                     name: "新招聘教师",
                     type: "line",
-                    data: [666, 2001, 1678, 35647, 1878, 19980].map((v) => {
+                    data: [1100, 2600, 2500, 3900, 3000, 3600].map((v) => {
                         if (v < 2000) {
                             return v * 10;
                         } else if (v >= 2000 && v < 20000) {

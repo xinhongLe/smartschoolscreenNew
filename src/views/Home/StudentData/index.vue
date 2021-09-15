@@ -2,7 +2,13 @@
     <div class="content">
         <div class="h-line"></div>
         <Flex :flex="1" column>
-            <CountScroll></CountScroll>
+            <div class="v-line"></div>
+            <CountScroll
+                :schoolSum="schoolSum"
+                :studentSum="studentSum"
+                :teacherSum="teacherSum"
+                :workerSum="workerSum"
+            ></CountScroll>
             <div class="v-line"></div>
             <Flex :flex="5">
                 <CitySchool></CitySchool>
@@ -11,12 +17,9 @@
             <Flex :flex="5">
                <CityClass></CityClass>
             </Flex>
-            <div class="v-line"></div>
         </Flex>
         <div class="h-line"></div>
         <Flex :flex="3" column>
-            <!-- tab 写在这里 -->
-            <!-- <Regional></Regional> -->
             <div class="v-line"></div>
             <Flex :flex="1">
                 <Flex :flex="2" column>
@@ -46,7 +49,6 @@
                     </Flex>
                 </Flex>
             </Flex>
-            <div class="v-line"></div>
         </Flex>
         <div class="h-line"></div>
     </div>
@@ -81,7 +83,27 @@ export default {
     },
     data() {
         return {
-            mapSelected: 0
+            mapSelected: 0,
+            schoolSum: {
+                startval: 0,
+                endval: 1646,
+                duration: 3000
+            },
+            studentSum: {
+                startval: 0,
+                endval: 1767744,
+                duration: 3000
+            },
+            teacherSum: {
+                startval: 0,
+                endval: 117746,
+                duration: 3000,
+            },
+            workerSum: {
+                startval: 0,
+                endval: 15266,
+                duration: 3000,
+            }
         };
     }
 };
@@ -92,6 +114,7 @@ export default {
     flex: 1;
     display: flex;
     min-height: 0;
+    overflow: hidden;
 }
 .v-line {
     height: 0.4rem;

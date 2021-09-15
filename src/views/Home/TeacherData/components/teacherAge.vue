@@ -2,7 +2,7 @@
   <moduleHeader title="教师教龄分布情况">
     <div class="schoolData">
       <div class="progressitem" v-for="item in progressList" :key="item.id">
-        <ProgressB :proData="item"></ProgressB>
+        <ProgressB :proData="item" :max="50000"></ProgressB>
       </div>
     </div>
   </moduleHeader>
@@ -20,27 +20,27 @@ export default {
       progressList: [
         {
           name: "20年以上",
-          progressNum: 39,
+          progressNum: 14322,
           id: 1,
         },
         {
           name: "15-20年",
-          progressNum: 12,
+          progressNum: 10296,
           id: 2,
         },
         {
           name: "10-15年",
-          progressNum: 46,
+          progressNum: 31143,
           id: 3,
         },
         {
           name: "3-10年",
-          progressNum: 78,
+          progressNum: 42856,
           id: 4,
         },
         {
           name: "0-3年",
-          progressNum: 233,
+          progressNum: 19129,
           id: 5,
         }
       ],

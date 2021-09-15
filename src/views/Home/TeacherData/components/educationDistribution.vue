@@ -74,7 +74,7 @@ export default {
             series: [
                 {
                     type: "bar",
-                    data: [18, 25, 30, 64, 29, 7],
+                    data: [8, 10, 21, 48, 31, 10],
                     barWidth: 8,
                     itemStyle: {
                         normal: {

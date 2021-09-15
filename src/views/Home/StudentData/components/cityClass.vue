@@ -36,7 +36,7 @@ export default {
       schoolData: [
         {
           lable: "幼儿园(人)",
-          number: "37",
+          number: 37,
           dataList: [
             {
               name: "0-30人",
@@ -72,7 +72,7 @@ export default {
         },
         {
           lable: "小学(人)",
-          number: "42",
+          number: 46,
           dataList: [
             {
               name: "0-30人",
@@ -108,7 +108,7 @@ export default {
         },
         {
           lable: "初中(人)",
-          number: "49",
+          number: 49,
           dataList: [
             {
               name: "0-30人",
@@ -144,7 +144,7 @@ export default {
         },
         {
           lable: "高中(人)",
-          number: "53",
+          number: 53,
           dataList: [
             {
               name: "0-30人",
@@ -186,7 +186,7 @@ export default {
   },
   mounted() {
     this.progressList = this.schoolData[0].dataList;
-    this.titleNum = this.schoolData[0].number
+    this.titleNum = 45
   },
   methods: {
     changeIndex(index) {

@@ -78,15 +78,15 @@
             <div class="parent-supervision">
                 <div class="parent-supervision-item">
                     <p>无家长监管</p>
-                    <p>450 <span>|</span> <font>2%</font></p>
+                    <p>5362 <span>|</span> <font>2%</font></p>
                 </div>
                 <div class="parent-supervision-item">
                     <p>双家长监管</p>
-                    <p>7633 <span>|</span> <font>36%</font></p>
+                    <p>10633 <span>|</span> <font>36%</font></p>
                 </div>
                 <div class="parent-supervision-item">
                     <p>双家长监管</p>
-                    <p>10982 <span>|</span> <font>62%</font></p>
+                    <p>17982 <span>|</span> <font>62%</font></p>
                 </div>
                 <div class="parent-supervision-item">
                     <p>多家长监管</p>

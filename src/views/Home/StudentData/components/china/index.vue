@@ -11,13 +11,13 @@
       </div>
     </div>
     <div class="treatment">
-      <div class="treatment-proportion">89%</div>
+      <div class="treatment-proportion">88.67%</div>
       <div class="treatment-desc">随迁学生享受同等待遇</div>
     </div>
     <echart :options="options" width="100%" height="100%"></echart>
     <div class="lineone"></div>
     <div class="linetow"></div>
-    <div class="suzhou">苏州总部</div>
+    <div class="suzhou">*州总部</div>
   </div>
 </template>
 
@@ -88,19 +88,19 @@ export default {
           lng: 120.619585,
           lat: 31.259379,
           num: 8876,
-          address: "吴江区",
+          address: "*区",
         },
         {
           lng: 120.61585,
           lat: 31.300379,
           num: 6876,
-          address: "工业园区",
+          address: "*园区",
         },
         {
           lng: 120.629585,
           lat: 31.294379,
           num: 5676,
-          address: "虎丘区",
+          address: "*区",
         },
       ],
       options: {},

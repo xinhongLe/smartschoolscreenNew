@@ -2,7 +2,12 @@
     <div class="content">
         <div class="h-line"></div>
         <Flex :flex="1" column>
-            <countScroll></countScroll>
+            <countScroll
+                :schoolSum="schoolSum"
+                :studentSum="studentSum"
+                :teacherSum="teacherSum"
+                :workerSum="workerSum"
+            ></countScroll>
             <div class="v-line"></div>
             <Flex :flex="5"> 
                 <SchoolType></SchoolType>
@@ -37,9 +42,9 @@
 </template>
 
 <script>
-import countScroll from "@/components/countScroll.vue"
-import SchoolType from "./components/schoolType.vue"
-import SchoolArea from "./components/schoolArea.vue"
+import countScroll from "@/components/countScroll"
+import SchoolType from "./components/schoolType"
+import SchoolArea from "./components/schoolArea"
 import Flex from "@/components/flex";
 import Map from "./components/map";
 import RightLine from "./components/rightLine";
@@ -55,6 +60,30 @@ export default {
         Map,
         SchoolType,
         SchoolArea
+    },
+    data() {
+        return {
+            schoolSum: {
+                startval: 0,
+                endval: 1646,
+                duration: 3000
+            },
+            studentSum: {
+                startval: 0,
+                endval: 1767744,
+                duration: 3000
+            },
+            teacherSum: {
+                startval: 0,
+                endval: 117746,
+                duration: 3000,
+            },
+            workerSum: {
+                startval: 0,
+                endval: 15266,
+                duration: 3000,
+            }
+        }
     }
 };
 </script>
@@ -64,6 +93,7 @@ export default {
     flex: 1;
     min-height: 0;
     display: flex;
+    overflow: hidden;
 }
 .v-line {
     height: 0.4rem;

@@ -40,6 +40,7 @@ export default {
     flex: 1;
     display: flex;
     min-height: 0;
+    overflow: hidden;
 }
 .v-line {
     height: 0.4rem;

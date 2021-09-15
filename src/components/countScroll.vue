@@ -60,7 +60,7 @@ export default {
   props: {
     cityNmae: {
       type: String,
-      default: "苏州",
+      default: "*州市",
     },
     schoolSum: {
       type: Object,

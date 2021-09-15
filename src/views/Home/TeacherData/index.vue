@@ -2,7 +2,13 @@
     <div class="content">
         <div class="h-line"></div>
         <Flex :flex="1" column>
-            <countScroll></countScroll>
+            <div class="v-line"></div>
+            <countScroll
+                :schoolSum="schoolSum"
+                :studentSum="studentSum"
+                :teacherSum="teacherSum"
+                :workerSum="workerSum"
+            ></countScroll>
             <div class="v-line"></div>
             <Flex :flex="4"> 
                 <TeacherAge></TeacherAge>
@@ -53,6 +59,30 @@ import Map from "./components/map";
 export default {
     components: {
         Flex,CountScroll,TeacherAge,TeacherTitle,GenderRatio,Map,QuantityChange,EducationDistribution
+    },
+    data() {
+        return {
+            schoolSum: {
+                startval: 0,
+                endval: 1646,
+                duration: 3000
+            },
+            studentSum: {
+                startval: 0,
+                endval: 1767744,
+                duration: 3000
+            },
+            teacherSum: {
+                startval: 0,
+                endval: 117746,
+                duration: 3000,
+            },
+            workerSum: {
+                startval: 0,
+                endval: 15266,
+                duration: 3000,
+            }
+        }
     }
 };
 </script>
@@ -62,6 +92,7 @@ export default {
     flex: 1;
     display: flex;
     min-height: 0;
+    overflow: hidden;
 }
 .v-line {
     height: 0.4rem;

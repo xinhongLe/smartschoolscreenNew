@@ -9,15 +9,15 @@
                            <img src="../images/pic_nan.png" alt=""> 
                            <div>
                                 <p >男生</p>
-                                <p style="color:#0DFFFF;">62262</p>
+                                <p style="color:#0DFFFF;">146155</p>
                             </div>
-                            <span style="color: #0DFFFF;">71%</span>
+                            <span style="color: #0DFFFF;">51.7%</span>
                         </div>
                         
                     </div>
                     <div class="man-list">
                        <div class="man-list-item" v-for="(item,index) in manList" :key="index">
-                            <ProgressB :proData="item"></ProgressB>
+                            <ProgressB :proData="item" :max="100000"></ProgressB>
                        </div>
                     </div>
                 </div>
@@ -27,14 +27,14 @@
                             <img src="../images/pic_nv.png" alt="">
                             <div>
                                 <p>女生</p>
-                                <p>12345</p>
+                                <p>136543</p>
                             </div>
-                            <span>71%</span>
+                            <span>48.3%</span>
                         </div>
                     </div>
                     <div class="man-list">
                        <div class="man-list-item" v-for="(item,index) in wanList" :key="index">
-                            <ProgressD :proData="item"></ProgressD>
+                            <ProgressD :proData="item" :max="100000"></ProgressD>
                        </div>
                     </div>
                 </div>
@@ -52,54 +52,54 @@ export default {
           manList:[
               {
                   name:'幼儿园',
-                  progressNum:562,
+                  progressNum: 29221,
                   id:11
               },
               {
                   name:'小学',
-                  progressNum:1005,
+                  progressNum: 58464,
                   id:22
               },
               {
                   name:'初中',
-                  progressNum:1419,
+                  progressNum: 28365,
                   id:33
               },
               {
                   name:'中职',
-                  progressNum:3042,
+                  progressNum: 12156,
                   id:44
               },
               {
                   name:'高中',
-                  progressNum:2560,
+                  progressNum: 14560,
                   id:442
               }
           ],
           wanList:[
               {
                   name:'幼儿园',
-                  progressNum:562,
+                  progressNum: 25562,
                   id:111
               },
               {
                   name:'小学',
-                  progressNum:1005,
+                  progressNum: 54006,
                   id:221
               },
               {
                   name:'初中',
-                  progressNum:1419,
+                  progressNum: 25809,
                   id:331
               },
               {
                   name:'中职',
-                  progressNum:3042,
+                  progressNum: 12042,
                   id:441
               },
               {
                   name:'高中',
-                  progressNum:2560,
+                  progressNum: 12560,
                   id:4412
               }
           ]

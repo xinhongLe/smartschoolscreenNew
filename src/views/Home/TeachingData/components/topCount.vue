@@ -19,7 +19,7 @@
                     ref="example2"
                     class="num num2"
                     :start-val="0"
-                    :end-val="74"
+                    :end-val="1327"
                     :duration="3000"
                 ></CountTo>
                 <p>区级公开课</p>
@@ -32,7 +32,7 @@
                     ref="example2"
                     class="num num3"
                     :start-val="0"
-                    :end-val="74"
+                    :end-val="1556"
                     :duration="3000"
                 ></CountTo>
                 <p>教研活动</p>
@@ -45,7 +45,7 @@
                     ref="example2"
                     class="num num4"
                     :start-val="0"
-                    :end-val="74"
+                    :end-val="385"
                     :duration="3000"
                 ></CountTo>
                 <p>教研成功</p>

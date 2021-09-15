@@ -10,7 +10,7 @@
                                 ref="example2"
                                 class="num"
                                 :start-val="0"
-                                :end-val="2342"
+                                :end-val="62342"
                                 :duration="3000"
                             ></CountTo>
                             <span>教研参与人数</span>
@@ -21,13 +21,13 @@
                                 ref="example2"
                                 class="num"
                                 :start-val="0"
-                                :end-val="233"
+                                :end-val="687219"
                                 :duration="3000"
                             ></CountTo>
                             <span>教研参与次数</span>
                         </div>
                         <Flex :flex="1"></Flex>
-                        <Ring type="1" :count="35">
+                        <Ring type="1" :count="83">
                             <p>教师满意度</p>
                         </Ring>
                     </Flex>
@@ -38,7 +38,7 @@
                                 ref="example2"
                                 class="num"
                                 :start-val="0"
-                                :end-val="2342"
+                                :end-val="8342"
                                 :duration="3000"
                             ></CountTo>
                             <span>教师开课次数</span>
@@ -49,7 +49,7 @@
                                 ref="example2"
                                 class="num"
                                 :start-val="0"
-                                :end-val="233"
+                                :end-val="6332"
                                 :duration="3000"
                             ></CountTo>
                             <span>工作室成员人数</span>

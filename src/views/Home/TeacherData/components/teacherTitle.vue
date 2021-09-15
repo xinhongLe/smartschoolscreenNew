@@ -8,7 +8,7 @@
     </div>
     <div class="schoolData">
       <div class="progressitem" v-for="item in progressList" :key="item.id">
-        <ProgressB :proData="item"></ProgressB>
+        <ProgressB :proData="item" :max="50000"></ProgressB>
       </div>
     </div>
   </moduleHeader>
@@ -30,45 +30,45 @@ export default {
         },
         {
           title: "高级教师",
-          num: 1472,
+          num: 1762,
         },
         {
           title: "一级教师",
-          num: 7472,
+          num: 7210,
         },
         {
           title: "二级教师",
-          num: 10472,
+          num: 10210,
         },
         {
           title: "三级教师",
-          num: 4472,
+          num: 4410,
         },
       ],
       progressList: [
         {
           name: "正高级教师",
-          progressNum: 39,
+          progressNum: 72,
           id: 't1',
         },
         {
           name: "高级教师",
-          progressNum: 12,
+          progressNum: 18762,
           id: 't2',
         },
         {
           name: "一级教师",
-          progressNum: 46,
+          progressNum: 47210,
           id: 't3',
         },
         {
           name: "二级教师",
-          progressNum: 78,
+          progressNum: 33212,
           id: 't4',
         },
         {
           name: "三级教师",
-          progressNum: 233,
+          progressNum: 14411,
           id: 't5',
         },
       ],

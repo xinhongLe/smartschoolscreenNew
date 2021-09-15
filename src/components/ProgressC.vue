@@ -18,6 +18,10 @@ export default {
       type: Object,
       default: () => {},
     },
+    max: {
+        type: Number,
+        default: 50000
+    }
   },
   data() {
     return {
@@ -41,7 +45,7 @@ export default {
     initProgress() {
       this.$nextTick(() => {
         let dompro = document.getElementById(`pregress_${this.proDta.id}`);
-        let num = (this.proDta.progressNum / 100000) * 200;
+        let num = (this.proDta.progressNum / 200000) * 100;
         let timer = setInterval(() => {
           dompro.style.width = 0 + "%";
           this.isActive = false;

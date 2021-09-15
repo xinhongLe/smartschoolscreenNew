@@ -18,6 +18,10 @@ export default {
         proData: {
             type: Object,
             default: () => {}
+        },
+        max: {
+            type: Number,
+            default: 50000
         }
     },
     data() {
@@ -48,7 +52,7 @@ export default {
                 let dompro = document.getElementById(
                     `pregress_${this.progressData.id}`
                 );
-                let num = (this.progressData.progressNum / 10000) * 200;
+                let num = (this.progressData.progressNum / this.max) * 100;
                 this.Interval = setInterval(() => {
                     dompro.style.width = 0 + "%";
                     this.isActive = false;

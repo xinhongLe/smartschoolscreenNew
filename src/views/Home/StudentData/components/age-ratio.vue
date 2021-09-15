@@ -34,29 +34,29 @@ export default {
                 {
                     style: "background-color:#0DFFFF",
                     font: "3-6岁",
-                    name: "37.5%",
-                    progressNum: "43205",
+                    name: "17.9%",
+                    progressNum: "48406",
                     id: 43205
                 },
                 {
                     style: "background-color:#B921D0",
                     font: "7-12岁",
-                    name: "25%",
-                    progressNum: "30408",
+                    name: "39.6%",
+                    progressNum: "83205",
                     id: 30408
                 },
                 {
                     style: "background-color:#DBB001",
                     font: "13-15岁",
-                    name: "12.5%",
-                    progressNum: "27203",
+                    name: "18.5%",
+                    progressNum: "51203",
                     id: 27203
                 },
                 {
                     style: "background-color:#376CCB",
                     font: "16-18岁",
-                    name: "25%",
-                    progressNum: "30406",
+                    name: "24%",
+                    progressNum: "67406",
                     id: 30406
                 }
             ]

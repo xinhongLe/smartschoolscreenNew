@@ -1,7 +1,7 @@
 <template>
   <div class="box">
     <module-header title="全市校均人数">
-      <div slot="header-right">{{titleNum}}人</div>
+      <div slot="header-right">1299人</div>
       <div class="tabItem">
         <div
           class="item"
@@ -35,7 +35,7 @@ export default {
       schoolData: [
         {
           lable: "幼儿园(人)",
-          number: "1279",
+          number: 421,
           dataList: [
             {
               name: "500人以下",
@@ -71,7 +71,7 @@ export default {
         },
         {
           lable: "小学(人)",
-          number: "1379",
+          number: 1936,
           dataList: [
             {
               name: "高职",
@@ -107,7 +107,7 @@ export default {
         },
         {
           lable: "初中(人)",
-          number: "989",
+          number: 1343,
           dataList: [
             {
               name: "高职",
@@ -143,7 +143,7 @@ export default {
         },
         {
           lable: "高中(人)",
-          number: "1139",
+          number: 1198,
           dataList: [
             {
               name: "高职",
