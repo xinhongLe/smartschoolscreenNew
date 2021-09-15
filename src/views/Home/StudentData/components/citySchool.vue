@@ -36,32 +36,32 @@ export default {
           dataList: [
             {
               name: "500人以下",
-              progressNum: 39,
+              progressNum: 639,
               id: 1,
             },
             {
               name: "500-1000人",
-              progressNum: 12,
+              progressNum: 512,
               id: 2,
             },
             {
               name: "1001-2000人",
-              progressNum: 46,
+              progressNum: 446,
               id: 3,
             },
             {
               name: "2001-3000人",
-              progressNum: 78,
+              progressNum: 778,
               id: 4,
             },
             {
               name: "3001-4000人",
-              progressNum: 233,
+              progressNum: 1000,
               id: 5,
             },
             {
               name: "4001人以上",
-              progressNum: 99,
+              progressNum: 699,
               id: 6,
             },
           ],
@@ -72,27 +72,27 @@ export default {
           dataList: [
             {
               name: "高职",
-              progressNum: 39,
+              progressNum: 139,
               id: 1,
             },
             {
               name: "中职",
-              progressNum: 12,
+              progressNum: 412,
               id: 2,
             },
             {
               name: "高中",
-              progressNum: 46,
+              progressNum: 546,
               id: 3,
             },
             {
               name: "初中",
-              progressNum: 78,
+              progressNum: 1000,
               id: 4,
             },
             {
               name: "小学",
-              progressNum: 233,
+              progressNum: 733,
               id: 5,
             },
             {
@@ -108,32 +108,32 @@ export default {
           dataList: [
             {
               name: "高职",
-              progressNum: 49,
+              progressNum: 249,
               id: 1,
             },
             {
               name: "中职",
-              progressNum: 12,
+              progressNum: 212,
               id: 2,
             },
             {
               name: "高中",
-              progressNum: 46,
+              progressNum: 1000,
               id: 3,
             },
             {
               name: "初中",
-              progressNum: 68,
+              progressNum: 468,
               id: 4,
             },
             {
               name: "小学",
-              progressNum: 233,
+              progressNum: 633,
               id: 5,
             },
             {
               name: "幼儿园",
-              progressNum: 456,
+              progressNum: 756,
               id: 6,
             },
           ],
@@ -144,32 +144,32 @@ export default {
           dataList: [
             {
               name: "高职",
-              progressNum: 39,
+              progressNum: 739,
               id: 1,
             },
             {
               name: "中职",
-              progressNum: 12,
+              progressNum: 832,
               id: 2,
             },
             {
               name: "高中",
-              progressNum: 96,
+              progressNum: 496,
               id: 3,
             },
             {
               name: "初中",
-              progressNum: 78,
+              progressNum: 578,
               id: 4,
             },
             {
               name: "小学",
-              progressNum: 233,
+              progressNum: 633,
               id: 5,
             },
             {
               name: "幼儿园",
-              progressNum: 46,
+              progressNum: 646,
               id: 6,
             },
           ],
@@ -232,7 +232,7 @@ export default {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  .progressitem{
+  .progressitem {
     flex: 1;
   }
 }

@@ -1,19 +1,19 @@
 <template>
   <div class="progressBox">
-    <span class="progress_number">{{ proData.progressNum }}</span>
+    <span class="progress_number">{{ progressData.progressNum }}</span>
     <div class="progress_border">
       <div
-        :id="`progress${proData.id}`"
+        :id="`progress${progressData.id}`"
         class="progress_cont"
         v-bind:class="{ progress_active: isActive }"
       ></div>
     </div>
-    <span class="progress_name">{{ proData.name }}</span>
+    <span class="progress_name">{{ progressData.name }}</span>
   </div>
 </template>
 <script>
 export default {
-  name:'progressA',
+  name: "progressA",
   props: {
     proData: {
       type: Object,
@@ -24,26 +24,29 @@ export default {
     return {
       isActive: true,
       timer: null,
+      progressData: this.proData,
     };
   },
   mounted() {
     this.initProgress();
   },
-  watch:{
-    proData:{
-      handler(newData){
-        console.log(newData)
-        clearInterval(this.timer)
-        this.initProgress()
+  watch: {
+    proData: {
+      handler(newData) {
+        this.progressData = newData;
+        clearInterval(this.timer);
+        this.initProgress();
       },
-      deep:true
-    }
+      deep: true,
+    },
   },
   methods: {
     initProgress() {
       this.$nextTick(() => {
-        let myprogress = document.getElementById(`progress${this.proData.id}`);
-        let num = (this.proData.progressNum / 1000) * 100;
+        let myprogress = document.getElementById(
+          `progress${this.progressData.id}`
+        );
+        let num = (this.progressData.progressNum / 1000) * 100;
         this.timer = setInterval(() => {
           myprogress.style.height = 0 + "%";
           this.isActive = false;
@@ -58,9 +61,9 @@ export default {
       });
     },
   },
-  beforeDestroy(){
-    clearInterval(this.timer)
-  }
+  beforeDestroy() {
+    clearInterval(this.timer);
+  },
 };
 </script>
 <style lang="scss" scoped>
