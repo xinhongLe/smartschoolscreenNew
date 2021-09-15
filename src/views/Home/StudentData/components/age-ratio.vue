@@ -84,7 +84,7 @@ export default {
             series: [
                 {
                     label: { show: false },
-                    animation: false,
+                    animation: true,
                     hoverAnimation: false,
                     name: "面积模式",
                     type: "pie",
@@ -94,7 +94,7 @@ export default {
                     itemStyle: {
                         borderRadius: 0
                     },
-
+                    startAngle:135,
                     data: [
                         {
                             value: 180,
@@ -195,7 +195,7 @@ export default {
     .echart {
         width: 200px;
         height: 200px;
-        animation: rotation 5s linear infinite;
+        // animation: rotation 5s linear infinite;
     }
     .ageRatioContent {
         flex: 1;

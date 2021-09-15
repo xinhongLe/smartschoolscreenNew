@@ -1,6 +1,7 @@
 <template>
     <div class="gender-ratio">
-        <module-header title="学生男女比例(园区)">
+        <module-header title="学生男女比例(园区)" autoHeight>
+            <div slot="header-right" style="color:#96ACC3;font-size: 10px;">注释：0.3%的学生未录入性别数据</div>
             <div class="gender-ratio-content">
                 <div class="gender-ratio-item">
                     <div class="man-header">
@@ -111,7 +112,7 @@ export default {
 </script>
 <style lang="scss" scoped>
 .gender-ratio{
-    flex:1;
+    width: 100%;
     .gender-ratio-content{
         width: 100%;
         display: flex;
