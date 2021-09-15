@@ -1,5 +1,5 @@
 <template>
-  <div class="progressBox">
+  <div class="progressBox" :class="{ mar_gin: m20 }">
     <span class="progress_name">{{ progressData.name }}</span>
     <div class="progress_border">
       <div
@@ -13,18 +13,22 @@
 </template>
 <script>
 export default {
-  name:'progressB',
+  name: "progressB",
   props: {
     proData: {
       type: Object,
       default: () => {},
+    },
+    m20: {
+      type: Boolean,
+      default: false,
     },
   },
   data() {
     return {
       isActive: true,
       Interval: null,
-      progressData:this.proData
+      progressData: this.proData,
     };
   },
   mounted() {
@@ -33,63 +37,59 @@ export default {
   watch: {
     proData: {
       handler(data) {
-        console.log('wacth监听',data)
-        console.log('wwwww',this.Interval)
-        this.progressData = data
-        this.Interval = null
-        clearInterval(this.Interval)
-        console.log('123456',this.Interval)
+        this.progressData = data;
+        clearInterval(this.Interval);
+        this.initProgress();
       },
       deep: true,
     },
   },
   methods: {
     initProgress() {
-        let dompro = document.getElementById(`pregress_${this.progressData.id}`);
-        let num = (this.progressData.progressNum / 1000) * 100;
-        this.Interval = setInterval(() => {
-          dompro.style.width = 0 + "%";
-          this.isActive = false;
-          setTimeout(() => {
-            this.isActive = true;
-            dompro.style.width = num.toFixed(0) + "%";
-            this.Interval = null
-            clearInterval(this.Interval)
-          }, 100);
-        }, 5000);
-        console.log('mmm',this.Interval)
+      let dompro = document.getElementById(`pregress_${this.progressData.id}`);
+      let num = (this.progressData.progressNum / 1000) * 100;
+      this.Interval = setInterval(() => {
+        dompro.style.width = 0 + "%";
+        this.isActive = false;
         setTimeout(() => {
+          this.isActive = true;
           dompro.style.width = num.toFixed(0) + "%";
         }, 100);
+      }, 5000);
+      setTimeout(() => {
+        dompro.style.width = num.toFixed(0) + "%";
+      }, 100);
     },
   },
-  beforeDestroy(){
-    this.Interval = null
-    clearInterval(this.Interval)
-  }
+  beforeDestroy() {
+    clearInterval(this.Interval);
+  },
 };
 </script>
 <style lang="scss" scoped>
 .progressBox {
   width: 100%;
+  height: 100%;
+  box-sizing: border-box;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 0.2rem auto;
+  // margin: 0.2rem auto;
   .progress_name {
     width: 0.9rem;
     font-size: 0.15rem;
-    color: #96ACC3;
+    color: #96acc3;
   }
   .progress_number {
     width: 0.4rem;
     text-align: center;
     font-size: 0.15rem;
-    color: #7AB3E2;
+    color: #7ab3e2;
   }
   .progress_border {
     flex: 1;
-    height: 0.12rem;
+    height: 50%;
+    max-height: 0.25rem;
     margin: 0 0.1rem;
     display: flex;
     align-items: center;
@@ -97,19 +97,19 @@ export default {
   }
   .progress_cont {
     width: 0px;
-    height: 0.08rem;
+    height: 80%;
     position: relative;
     background: linear-gradient(90deg, #70bfff 0%, #0dffff 100%);
   }
-  .progress_cont::after{
+  .progress_cont::after {
     content: " ";
     display: block;
     width: 0.002rem;
-    height: 0.12rem;
+    height: 115%;
     position: absolute;
     right: 0;
-    top: -0.015rem;
-    background: #FFFFFF;
+    top: -0.01rem;
+    background: #ffffff;
   }
   .progress_active {
     transition: width 2s;

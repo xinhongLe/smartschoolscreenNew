@@ -23,7 +23,7 @@
       </div>
     </div>
     <div class="schoolData">
-      <div v-for="item in progressList" :key="item.id">
+      <div class="progressitem" v-for="item in progressList" :key="item.id">
         <ProgressB :proData="item"></ProgressB>
       </div>
     </div>
@@ -91,7 +91,7 @@ export default {
 <style lang="scss" scoped>
 .personnelBox {
   width: 60%;
-  margin-top: 0.2rem;
+  margin: 0.2rem 0;
   display: flex;
   .personnel:first-child {
     border-right: 1px solid rgba(255, 255, 255, 0.1);
@@ -120,9 +120,15 @@ export default {
 
 .schoolData {
   width: 100%;
+  height: calc(100% - 1.3rem);
   padding-left: 0.3rem;
   box-sizing: border-box;
-  margin-top: 0.3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  .progressitem{
+    flex: 1;
+  }
 }
 
 @keyframes moveProfress {
