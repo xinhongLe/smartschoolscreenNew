@@ -85,7 +85,7 @@ export default {
     align-items: center;
 }
 
-.module-header .title:before {
+.module-header .title:before, .tab-box:before {
   content: "";
   display: block;
   height: 0.1rem;
@@ -94,6 +94,8 @@ export default {
   transform: rotate(45deg);
   margin-right: 0.15rem;
 }
+
+
 
 .module-header::after {
   content: "";
@@ -108,6 +110,7 @@ export default {
 
 .tab-box {
   display: flex;
+  align-items: center;
 }
 
 .tab-item {
@@ -118,6 +121,18 @@ export default {
 
 .tab-item.active {
   color: #ffffff;
+  position: relative;
+}
+
+.tab-item.active:after {
+    content: "";
+    display: block;
+    height: .03rem;
+    position: absolute;
+    left: 20%;
+    width: 60%; 
+    bottom: -.12rem;
+    background: linear-gradient(90deg, #70BFFF 0%, #0DFFFF 100%);
 }
 
 .module-content {

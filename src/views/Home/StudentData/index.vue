@@ -20,8 +20,7 @@
             <div class="v-line"></div>
             <Flex :flex="1">
                 <Flex :flex="2" column>
-                    <!-- 苏州工业园区 -->
-                     <Instructions></Instructions>
+                    <Instructions></Instructions>
                     <div class="v-line"></div>
                     <Flex :flex="1">
                         <module-header
@@ -36,15 +35,13 @@
                 </Flex>
                 <div class="h-line"></div>
                 <Flex :flex="1" column>
-                    <Flex :flex="1">
+                    <Flex :flex="3">
                         <AgeRatio></AgeRatio>
                     </Flex>
                     <div class="v-line"></div>
-                    <Flex :flex="1">
-                        <GenderRatio></GenderRatio>
-                    </Flex>
+                    <GenderRatio></GenderRatio>
                     <div class="v-line"></div>
-                    <Flex :flex="1">
+                    <Flex :flex="4">
                         <ParentInfo></ParentInfo>
                     </Flex>
                 </Flex>

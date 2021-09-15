@@ -2,11 +2,13 @@
     <div class="v-select-box" v-click-outside="close">
         <div
             class="v-select-view"
-            :class="open && 'active'"
+            :style="style"
+            :class="`${open && 'active'} ${customClass}`"
             @click="() => (open = !open)"
         >
             {{ selectValue || placeholder }}
-            <img src="./imgs/icon_arrow@2x.png" alt="" />
+            <img v-if="!customIcon" src="./imgs/icon_arrow@2x.png" alt="" />
+            <img v-if="customIcon" :src="customIcon" alt="" />
         </div>
 
         <div class="v-select-list" :class="open && 'active'">
@@ -42,6 +44,21 @@ export default {
         options: {
             type: Array,
             default: () => []
+        },
+
+        customClass: {
+            type: String,
+            default: ""
+        },
+
+        style: {
+            type: Object,
+            default: () => {}
+        },
+
+        customIcon: {
+            type: String,
+            default: ""
         }
     },
     data() {
