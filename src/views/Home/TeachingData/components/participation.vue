@@ -1,60 +1,64 @@
 <template>
     <div class="participation-box">
-        <module-header title="教师教研参与情况">
+        <module-header autoHeight title="教师教研参与情况">
             <div class="inner">
-                <Flex :flex="1">
-                    <div>
-                        <CountTo
-                            ref="example2"
-                            class="num"
-                            :start-val="0"
-                            :end-val="2342"
-                            :duration="3000"
-                        ></CountTo>
-                        <span>教研参与人数</span>
-                    </div>
-                    <Flex :flex="1"><div class="v-line"></div></Flex>
-                    <div>
-                         <CountTo
-                            ref="example2"
-                            class="num"
-                            :start-val="0"
-                            :end-val="233"
-                            :duration="3000"
-                        ></CountTo>
-                        <span>教研参与次数</span>
-                    </div>
-                    <Flex :flex="1"><div class="v-line"></div></Flex>
-                    <Ring type="1" count="35">
-                        <p>教师满意度</p>
-                    </Ring>
-                </Flex>
-                <Flex :flex="1">
-                    <div>
-                        <CountTo
-                            ref="example2"
-                            class="num"
-                            :start-val="0"
-                            :end-val="2342"
-                            :duration="3000"
-                        ></CountTo>
-                        <span>教师开课次数</span>
-                    </div>
-                    <Flex :flex="1"><div class="v-line"></div></Flex>
-                    <div>
-                         <CountTo
-                            ref="example2"
-                            class="num"
-                            :start-val="0"
-                            :end-val="233"
-                            :duration="3000"
-                        ></CountTo>
-                        <span>工作室成员人数</span>
-                    </div>
-                    <Flex :flex="1"><div class="v-line"></div></Flex>
-                    <Ring type="2" count="56">
-                        <p>教师参与率</p>
-                    </Ring>
+                <div class="v-line"></div>
+                <Flex column>
+                    <Flex :flex="1">
+                        <div>
+                            <CountTo
+                                ref="example2"
+                                class="num"
+                                :start-val="0"
+                                :end-val="2342"
+                                :duration="3000"
+                            ></CountTo>
+                            <span>教研参与人数</span>
+                        </div>
+                        <Flex :flex="1"></Flex>
+                        <div>
+                            <CountTo
+                                ref="example2"
+                                class="num"
+                                :start-val="0"
+                                :end-val="233"
+                                :duration="3000"
+                            ></CountTo>
+                            <span>教研参与次数</span>
+                        </div>
+                        <Flex :flex="1"></Flex>
+                        <Ring type="1" count="35">
+                            <p>教师满意度</p>
+                        </Ring>
+                    </Flex>
+                    <div class="v-line"></div>
+                    <Flex :flex="1">
+                        <div>
+                            <CountTo
+                                ref="example2"
+                                class="num"
+                                :start-val="0"
+                                :end-val="2342"
+                                :duration="3000"
+                            ></CountTo>
+                            <span>教师开课次数</span>
+                        </div>
+                        <Flex :flex="1"></Flex>
+                        <div>
+                            <CountTo
+                                ref="example2"
+                                class="num"
+                                :start-val="0"
+                                :end-val="233"
+                                :duration="3000"
+                            ></CountTo>
+                            <span>工作室成员人数</span>
+                        </div>
+                        <Flex :flex="1"></Flex>
+                        <Ring type="2" count="56">
+                            <p>教师参与率</p>
+                        </Ring>
+                    </Flex>
                 </Flex>
             </div>
         </module-header>
@@ -64,7 +68,7 @@
 <script>
 import Flex from "@/components/flex";
 import ModuleHeader from "../../../../components/moduleHeader";
-import Ring from './ring.vue'
+import Ring from "./ring.vue";
 import CountTo from "vue-count-to";
 export default {
     name: "participation",
@@ -166,28 +170,23 @@ export default {
     width: 100%;
     .inner {
         width: 100%;
-        height: 1.2875rem;
         padding: 0.15rem;
         box-sizing: border-box;
     }
     .num {
-        font-size: .25rem;
-        color: #70BFFF;
-        line-height: .3rem;
+        font-size: 0.25rem;
+        color: #70bfff;
+        line-height: 0.3rem;
     }
     span {
         display: block;
         margin-top: 0.0625rem;
         font-size: 0.125rem;
-        color: #96ACC3;
+        color: #96acc3;
         line-height: 0.175rem;
     }
     .v-line {
-        height: 0.45rem;
-        width: 0.0125rem;
-        background: rgba(255, 255, 255, .1);
-        margin: auto;
-        margin-top: .12rem;
+        height: 0.3rem;
     }
     .h-line {
         width: 0.4rem;
