@@ -50,9 +50,9 @@ export default {
     },
     mounted() {
         this.initChart();
-        window.addEventListener("resize", () => {
-            this.chart.resize();
-        });
+        // window.addEventListener("resize", () => {
+        //     this.chart.resize();
+        // });
         let timer = setInterval(() => {
             this.initChart(); //你获取echarts数据的方法
         }, 6000);
