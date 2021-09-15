@@ -1,6 +1,6 @@
 <template>
     <div class="instructions">
-      <module-header :title="title">
+      <module-header :title="title" autoHeight>
          <div>
            <div class="header">
              <div v-for="(item, index) in headerList" :key="index">
@@ -77,7 +77,6 @@ export default {
 <style lang="scss" scoped>
 .instructions {
     width: 100%;
-    height: 2rem;
     color: #96ACC3;
     position: relative;
     z-index: 100;

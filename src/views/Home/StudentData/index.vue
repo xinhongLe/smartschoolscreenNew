@@ -20,8 +20,7 @@
             <div class="v-line"></div>
             <Flex :flex="1">
                 <Flex :flex="2" column>
-                    <!-- 苏州工业园区 -->
-                     <Instructions></Instructions>
+                    <Instructions></Instructions>
                     <div class="v-line"></div>
                     <Flex :flex="1">
                         <module-header
