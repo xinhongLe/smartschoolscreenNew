@@ -3,9 +3,11 @@
         <module-header title="学生年龄比例(园区)"
             ><div class="ageRatio">
                 <div class="echart" id="ageRatioCharts"></div>
-                <!-- <div class="fraction">
-                    <div>100%</div>
-                </div> -->
+                <div class="fraction">
+                    <div>
+                        <p>100%</p>
+                    </div>
+                </div>
                 <div class="ageRatioContent">
                     <div
                         class="ageRatioContentItem"
@@ -77,18 +79,6 @@ export default {
                     dataView: { show: false, readOnly: false },
                     restore: { show: false },
                     saveAsImage: { show: false }
-                }
-            },
-            graphic:{
-                type:"text",
-                left:"center",
-                top:"40%",
-                style:{
-                    text:"运动达标率",
-                    textAlign:"center",
-                    fill:"#333",
-                    fontSize:20,
-                    fontWeight:700
                 }
             },
             series: [
@@ -200,10 +190,9 @@ export default {
     height: 100%;
     display: flex;
     user-select: none;
-    align-items: center;
+    position: relative;
     align-items: center;
     .echart {
-        position: relative;
         width: 200px;
         height: 200px;
         animation: rotation 5s linear infinite;
@@ -238,24 +227,33 @@ export default {
 }
 .fraction {
     position: absolute;
-    top:0;
+    top: 0;
     left: 0;
     color: #dfffdf;
+    height: 100%;
     width: 200px;
-    height: 200px;
     display: flex;
     justify-content: space-around;
     align-items: center;
     div {
-        width: 60px;
-        height: 60px;
-        border: 1px solid #142e52;
-        border-radius: 100%;
-        font-size: 14px;
-        font-family: Bahnschrift_SemiBold;
-        color: #ffffff;
-        line-height: 60px;
-        text-align: center;
+        width: 200px;
+        height: 200px;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        p {
+            width: 60px;
+            height: 60px;
+            border: 1px solid #142e52;
+            border-radius: 100%;
+            font-size: 14px;
+            font-family: Bahnschrift_SemiBold;
+            color: #ffffff;
+            line-height: 60px;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
     }
 }
 @keyframes rotation {
