@@ -1,6 +1,6 @@
 <template>
   <moduleHeader title="教研热词">
-      <slot></slot>
+    <slot></slot>
     <div class="tools">
       <div
         class="item"
@@ -34,104 +34,179 @@ export default {
         {
           title: "今日热词",
           progressData: [
-        {
-          name: "热词1",
-          progressNum: 139,
-          id: 1,
-        },
-        {
-          name: "热词2",
-          progressNum: 112,
-          id: 2,
-        },
-        {
-          name: "热词3",
-          progressNum: 146,
-          id: 3,
-        },
-        {
-          name: "热词4",
-          progressNum: 178,
-          id: 4,
-        },
-        {
-          name: "热词5",
-          progressNum: 233,
-          id: 5,
-        },
-      ],
+            {
+              name: "热词1",
+              progressNum: 139,
+              id: 1,
+            },
+            {
+              name: "热词2",
+              progressNum: 112,
+              id: 2,
+            },
+            {
+              name: "热词3",
+              progressNum: 146,
+              id: 3,
+            },
+            {
+              name: "热词4",
+              progressNum: 178,
+              id: 4,
+            },
+            {
+              name: "热词5",
+              progressNum: 233,
+              id: 5,
+            },
+            {
+              name: "热词6",
+              progressNum: 139,
+              id: 6,
+            },
+            {
+              name: "热词7",
+              progressNum: 112,
+              id: 7,
+            },
+            {
+              name: "热词8",
+              progressNum: 146,
+              id: 8,
+            },
+            {
+              name: "热词9",
+              progressNum: 178,
+              id: 9,
+            },
+            {
+              name: "热词10",
+              progressNum: 233,
+              id: 10,
+            },
+          ],
         },
         {
           title: "本周热词",
-           progressData: [
-        {
-          name: "热词1",
-          progressNum: 239,
-          id: 1,
-        },
-        {
-          name: "热词2",
-          progressNum: 312,
-          id: 2,
-        },
-        {
-          name: "热词3",
-          progressNum: 246,
-          id: 3,
-        },
-        {
-          name: "热词4",
-          progressNum: 278,
-          id: 4,
-        },
-        {
-          name: "热词5",
-          progressNum: 233,
-          id: 5,
-        },
-      ],
+          progressData: [
+            {
+              name: "热词1",
+              progressNum: 239,
+              id: 1,
+            },
+            {
+              name: "热词2",
+              progressNum: 312,
+              id: 2,
+            },
+            {
+              name: "热词3",
+              progressNum: 246,
+              id: 3,
+            },
+            {
+              name: "热词4",
+              progressNum: 278,
+              id: 4,
+            },
+            {
+              name: "热词5",
+              progressNum: 233,
+              id: 5,
+            },
+             {
+              name: "热词6",
+              progressNum: 139,
+              id: 6,
+            },
+            {
+              name: "热词7",
+              progressNum: 112,
+              id: 7,
+            },
+            {
+              name: "热词8",
+              progressNum: 146,
+              id: 8,
+            },
+            {
+              name: "热词9",
+              progressNum: 178,
+              id: 9,
+            },
+            {
+              name: "热词10",
+              progressNum: 233,
+              id: 10,
+            },
+          ],
         },
         {
           title: "本月热词",
-           progressData: [
-        {
-          name: "热词1",
-          progressNum: 239,
-          id: 1,
-        },
-        {
-          name: "热词2",
-          progressNum: 312,
-          id: 2,
-        },
-        {
-          name: "热词3",
-          progressNum: 346,
-          id: 3,
-        },
-        {
-          name: "热词4",
-          progressNum: 378,
-          id: 4,
-        },
-        {
-          name: "热词5",
-          progressNum: 633,
-          id: 5,
+          progressData: [
+            {
+              name: "热词1",
+              progressNum: 239,
+              id: 1,
+            },
+            {
+              name: "热词2",
+              progressNum: 312,
+              id: 2,
+            },
+            {
+              name: "热词3",
+              progressNum: 346,
+              id: 3,
+            },
+            {
+              name: "热词4",
+              progressNum: 378,
+              id: 4,
+            },
+            {
+              name: "热词5",
+              progressNum: 633,
+              id: 5,
+            },
+             {
+              name: "热词6",
+              progressNum: 139,
+              id: 6,
+            },
+            {
+              name: "热词7",
+              progressNum: 112,
+              id: 7,
+            },
+            {
+              name: "热词8",
+              progressNum: 146,
+              id: 8,
+            },
+            {
+              name: "热词9",
+              progressNum: 178,
+              id: 9,
+            },
+            {
+              name: "热词10",
+              progressNum: 233,
+              id: 10,
+            },
+          ],
         },
       ],
-        },
-      ],
-      progressList:[]
+      progressList: [],
     };
   },
-  mounted(){
-    this.progressList = this.teachingHotList[0].progressData
+  mounted() {
+    this.progressList = this.teachingHotList[0].progressData;
   },
   methods: {
     changeIndex(index) {
       this.activeIndex = index;
-      this.progressList = this.teachingHotList[index].progressData
+      this.progressList = this.teachingHotList[index].progressData;
     },
   },
 };
@@ -139,6 +214,8 @@ export default {
 <style lang="scss" scoped>
 .tools {
   width: 70%;
+  margin-bottom: 0.2rem;
+  margin-left: 0.15rem;
   display: flex;
   justify-content: space-around;
   .item {
@@ -196,8 +273,8 @@ export default {
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  .progressitem{
-    margin: 0.1rem 0;
+  .progressitem {
+    margin: 0.12rem 0;
   }
 }
 
