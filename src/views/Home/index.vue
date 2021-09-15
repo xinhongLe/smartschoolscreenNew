@@ -1,6 +1,6 @@
 <template>
     <div class="container">
-        <Header showSelect />
+        <Header :showSelect="$route.name != 'educationOverview'" />
         <router-view />
     </div>
 </template>

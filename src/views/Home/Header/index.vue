@@ -21,7 +21,7 @@
                 </div>
             </div>
         </div>
-        <Title title="苏州市教育信息化数据大屏" showSelect />
+        <Title title="苏州市教育信息化数据大屏" :showSelect="showSelect" />
     </div>
 </template>
 
