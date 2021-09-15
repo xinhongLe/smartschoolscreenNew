@@ -4,7 +4,7 @@
       <div :class="[index === 0 ? 'col-first' : 'col']" v-for="(item, index) in headerList" :key="index">{{item.name}}</div>
     </div>
     <div class="right-table" id="table">
-      <div>
+      <div :class="[animateScroll ? 'animate-scroll' : '']">
         <div v-for="(item,index) in tableList" :key="index" class="row">
           <div class="col-first">{{index + 1 }}</div>
           <div class="col" v-for="(col, i) in item" :key="i">{{col}}</div>
@@ -29,12 +29,19 @@ export default {
   },
   data() {
     return {
+      animateScroll: false
     }
   },
   mounted() {
     const marquee = document.getElementById('table');
-    const contents =  marquee.innerHTML;
-    marquee.innerHTML = contents + contents
+    if(this.tableList.length >= marquee.offsetHeight / 80 / 0.6){
+      this.animateScroll = true
+      this.$nextTick(() => {
+        const contents =  marquee.innerHTML;
+        marquee.innerHTML = contents + contents
+      })
+    }
+
   }
 }
 </script>
@@ -79,6 +86,8 @@ export default {
     }
     >div{
       overflow: hidden;
+    }
+    .animate-scroll{
       animation: marquee 15s linear infinite;
     }
     @keyframes marquee {
