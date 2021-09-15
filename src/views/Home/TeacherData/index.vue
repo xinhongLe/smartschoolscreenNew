@@ -61,6 +61,7 @@ export default {
 .content {
     flex: 1;
     display: flex;
+    min-height: 0;
 }
 .v-line {
     height: 0.4rem;
