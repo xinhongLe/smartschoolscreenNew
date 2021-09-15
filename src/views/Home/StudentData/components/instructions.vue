@@ -1,6 +1,6 @@
 <template>
     <div class="instructions">
-      <module-header :title="title">
+      <module-header :title="title" autoHeight>
          <div>
            <div class="header">
              <div v-for="(item, index) in headerList" :key="index">
@@ -13,11 +13,11 @@
               <div class="content-col">
                 <p class="count" :style="{color: item.color}">{{item.count}}</p>
                 <p>{{item.name}}</p>
-                <p class="count-detail text-blue">{{item.countDetatil}}人</p>
+                <p class="count-detail text-blue">{{item.countDetatil ?  item.countDetatil+'人' : ''}}</p>
               </div>
               <div class="img-box">
-                <img class="animation-img" src="../images/pic_arrow@2x.png" alt="">
-                <img class="animation-img" v-if="item.type === 4" src="../images/pic_arrow@2x.png" alt="">
+                <img :class="[imgIndex === index ? 'animation-img' : '']" src="../images/pic_arrow@2x.png" alt="">
+                <img :class="[imgIndex === index ? 'animation-img' : '']" v-if="item.type === 4" src="../images/pic_arrow@2x.png" alt="">
               </div>
             </div>
              <div>
@@ -35,8 +35,11 @@
 <script>
 import ModuleHeader from "@/components/moduleHeader";
 export default {
-    data() {
+  components: { ModuleHeader },
+  data() {
         return {
+          timer: null,
+          imgIndex: -1,
           title: '苏州工业园区',
           headerList: [
             {name: '学校总数', count: '77所'},
@@ -54,14 +57,29 @@ export default {
           ],
         };
     },
-    components: { ModuleHeader }
+  mounted(){
+    this.timer = setInterval(() => {
+       if(this.imgIndex === 3){
+         this.imgIndex = -1
+       }
+       this.imgIndex ++
+     },2000)
+
+
+    this.$once("hook:beforeDestroy", () => {
+      clearInterval(this.timer)
+      this.timer = null
+    })
+  },
+
 };
 </script>
 <style lang="scss" scoped>
 .instructions {
     width: 100%;
-    height: 2rem;
     color: #96ACC3;
+    position: relative;
+    z-index: 100;
     .text-blue{
       color: #0DFFFF;
     }
@@ -76,12 +94,12 @@ export default {
     }
     .content{
       display: flex;
-      justify-content: flex-start;
+      justify-content: space-between;
       margin-top: 0.2rem;
       padding: 0 0.1rem;
       .content-box{
         display: flex;
-        justify-content: flex-start;
+        justify-content: space-between;
         align-items: center;
         .content-col{
           position: relative;
@@ -101,7 +119,7 @@ export default {
           }
           .count-detail{
             position: absolute;
-            bottom: -0.2rem;
+            bottom: -0.3rem;
           }
         }
         .img-box{
@@ -132,13 +150,13 @@ export default {
           margin-bottom: 0.2rem;
           .count-detail-last{
             position: absolute;
-            top: -0.2rem;
+            top: -0.3rem;
           }
         }
         &:last-child{
           .count-detail-last{
             position: absolute;
-            bottom: -0.2rem;
+            bottom: -0.3rem;
           }
         }
         p{

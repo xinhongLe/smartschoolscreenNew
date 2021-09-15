@@ -1,14 +1,13 @@
 <template>
     <div class="gender-ratio">
-        <module-header title="学生男女比例(园区)" autoHeight>
-            <div slot="header-right" style="color:#96ACC3;font-size: 10px;">注释：0.3%的学生未录入性别数据</div>
+        <module-header title="教师性别分布情况">
             <div class="gender-ratio-content">
                 <div class="gender-ratio-item">
                     <div class="man-header">
                         <div class="center">
-                           <img src="../images/pic_nan.png" alt=""> 
+                           <img src="../../StudentData/images/pic_nan.png" alt=""> 
                            <div>
-                                <p >男生</p>
+                                <p >男教师</p>
                                 <p style="color:#0DFFFF;">62262</p>
                             </div>
                             <span style="color: #0DFFFF;">71%</span>
@@ -24,9 +23,9 @@
                 <div class="gender-ratio-item">
                     <div class="man-header">
                         <div class="center">
-                            <img src="../images/pic_nv.png" alt="">
+                            <img src="../../StudentData/images/pic_nv.png" alt="">
                             <div>
-                                <p>女生</p>
+                                <p>女教师</p>
                                 <p>12345</p>
                             </div>
                             <span>71%</span>
@@ -112,7 +111,7 @@ export default {
 </script>
 <style lang="scss" scoped>
 .gender-ratio{
-    width: 100%;
+    flex:1;
     .gender-ratio-content{
         width: 100%;
         display: flex;

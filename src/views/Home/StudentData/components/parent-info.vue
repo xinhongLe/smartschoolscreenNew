@@ -139,12 +139,12 @@ export default {
                     type: "pie",
                     radius: [60, 80],
                     center: ["50%", "50%"],
-                    avoidLabelOverlap: false,
+                    avoidLabelOverlap: true,
                     label: {
                         show: false,
                         position: "center"
                     },
-                    animation: false, //经常动画
+                    animation: true, //经常动画
                     hoverAnimation: false, //鼠标移入不放大
                     itemStyle: {
                         borderWidth: 5,
@@ -279,7 +279,7 @@ export default {
     .echart {
         width: 200px;
         height: 200px;
-        animation: rotation 5s linear infinite;
+        // animation: rotation 5s linear infinite;
     }
 }
 .fraction {

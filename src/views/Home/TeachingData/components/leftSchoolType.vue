@@ -4,14 +4,16 @@
      <div class="title-box">
        <div @click="activeIndex = index" :class="['title', activeIndex === index ? 'title-active' : '']" v-for="(item,index) in titleList" :key="index">{{item.name}}</div>
      </div>
-     <table-common :headerList="headerList" :tableList="tableList"></table-common>
+     <div class="content-box">
+       <table-common :headerList="headerList" :tableList="tableList"></table-common>
+     </div>
    </div>
   </module-header>
 </template>
 
 <script>
-import ModuleHeader from "../../../../components/moduleHeader";
-import TableCommon from "../../../../components/tableCommon";
+import ModuleHeader from "@/components/moduleHeader";
+import TableCommon from "@/components/tableCommon";
 export default {
   name: "leftSchoolType",
   components: {TableCommon, ModuleHeader},
@@ -49,6 +51,8 @@ export default {
 
 <style scoped lang="scss">
 .school-type{
+  display: flex;
+  flex-direction: column;
   width: 100%;
   height: 100%;
   overflow: hidden;
@@ -66,6 +70,10 @@ export default {
     .title-active{
       background: rgba(3, 86, 176, 0.31);
     }
+  }
+  .content-box{
+    flex: 1;
+    min-height: 0;
   }
 }
 </style>

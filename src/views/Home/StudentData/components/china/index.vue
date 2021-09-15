@@ -1,12 +1,17 @@
 <template>
     <div class="china-box">
         <echart :options="options" width="100%" height="100%"></echart>
+        <div class="lineone"></div>
+        <div class="linetow"></div>
+        <div class="suzhou">
+            苏州总部
+        </div>
     </div>
 </template>
 
 <script>
 import Echart from "@/components/echart";
-const geoGpsMap = [121.4648, 31.2891];
+const geoGpsMap = [120.6, 31.3];
 const geoCoordMap = {
     江苏: [118.8062, 31.9208],
     黑龙江: [127.9688, 45.368],
@@ -214,6 +219,38 @@ export default {
 <style scoped>
 .china-box {
     position: relative;
-    height: 100%;
+    width: 12rem;
+    height: 8.275rem;
+}
+.lineone{
+    width: 0.4rem;
+    height: 1px;
+    background:#47F5FC ;
+    position: absolute;
+    top: 4.48rem;
+    right: 3.75rem;
+    transform: rotate(-45deg);
+}
+.linetow{
+    width: 0.33rem;
+    height: 1px;
+    background:#47F5FC ;
+    position: absolute;
+    top: 4.34rem;
+    right: 3.5rem;
+}
+.suzhou{
+    width: 1.6rem;
+    height: 0.6rem;
+    position: absolute;
+    top: 4rem;
+    right: 2rem;
+    background: url('../../images/pic_suzhou_bg@2x.png') no-repeat;
+    background-size: 100% 100%;
+    font-size: 0.175rem;
+    font-weight: 600;
+    color: #0DFFFF;
+    line-height: 0.65rem;
+    text-align: center;
 }
 </style>

@@ -1,19 +1,19 @@
 <template>
   <div class="progressBox">
-    <span class="progress_number">{{ proData.progressNum }}</span>
+    <span class="progress_number">{{ progressData.progressNum }}</span>
     <div class="progress_border">
       <div
-        :id="`progress${proData.id}`"
+        :id="`progress${progressData.id}`"
         class="progress_cont"
         v-bind:class="{ progress_active: isActive }"
       ></div>
     </div>
-    <span class="progress_name">{{ proData.name }}</span>
+    <span class="progress_name">{{ progressData.name }}</span>
   </div>
 </template>
 <script>
 export default {
-  name:'progressA',
+  name: "progressA",
   props: {
     proData: {
       type: Object,
@@ -24,26 +24,29 @@ export default {
     return {
       isActive: true,
       timer: null,
+      progressData: this.proData,
     };
   },
   mounted() {
     this.initProgress();
   },
-  watch:{
-    proData:{
-      handler(newData){
-        console.log(newData)
-        clearInterval(this.timer)
-        this.initProgress()
+  watch: {
+    proData: {
+      handler(newData) {
+        this.progressData = newData;
+        clearInterval(this.timer);
+        this.initProgress();
       },
-      deep:true
-    }
+      deep: true,
+    },
   },
   methods: {
     initProgress() {
       this.$nextTick(() => {
-        let myprogress = document.getElementById(`progress${this.proData.id}`);
-        let num = (this.proData.progressNum / 1000) * 100;
+        let myprogress = document.getElementById(
+          `progress${this.progressData.id}`
+        );
+        let num = (this.progressData.progressNum / 1000) * 100;
         this.timer = setInterval(() => {
           myprogress.style.height = 0 + "%";
           this.isActive = false;
@@ -58,9 +61,9 @@ export default {
       });
     },
   },
-  beforeDestroy(){
-    clearInterval(this.timer)
-  }
+  beforeDestroy() {
+    clearInterval(this.timer);
+  },
 };
 </script>
 <style lang="scss" scoped>
@@ -70,11 +73,11 @@ export default {
   flex-direction: column;
   align-items: center;
   .progress_name {
-    width: 0.6rem;
+    // width: 90%;
     text-align: center;
   }
   .progress_number {
-    width: 0.4rem;
+    // width: 0.4rem;
     text-align: center;
   }
   span {
@@ -82,7 +85,8 @@ export default {
   }
   .progress_border {
     flex: 1;
-    width: 0.12rem;
+    width: 50%;
+    max-width: 0.25rem;
     margin: 0.1rem 0;
     display: flex;
     align-items: flex-end;
@@ -91,7 +95,7 @@ export default {
   }
   .progress_cont {
     height: 0px;
-    width: 0.08rem;
+    width: 80%;
     position: relative;
     background: linear-gradient(90deg, #70bfff 0%, #0dffff 100%);
   }
@@ -99,9 +103,9 @@ export default {
     content: " ";
     display: block;
     height: 0.002rem;
-    width: 0.12rem;
+    width: 115%;
     position: absolute;
-    right: -0.02rem;
+    right: -0.015rem;
     top: 0;
     background: #ffffff;
   }

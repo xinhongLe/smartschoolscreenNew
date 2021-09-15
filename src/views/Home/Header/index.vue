@@ -21,7 +21,7 @@
                 </div>
             </div>
         </div>
-        <Title title="苏州市教育信息化数据大屏" />
+        <Title title="苏州市教育信息化数据大屏" :showSelect="showSelect" />
     </div>
 </template>
 
@@ -29,6 +29,12 @@
 import Title from "./title";
 export default {
     name: "Header",
+    props: {
+        showSelect: {
+            type: Boolean,
+            default: false
+        }
+    },
     components: {
         Title
     },
@@ -91,7 +97,7 @@ export default {
 <style scoped>
 .screen-header-box {
     position: relative;
-    z-index: 10;
+    z-index: 100;
 }
 
 .screen-header {

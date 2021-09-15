@@ -1,5 +1,6 @@
 <template>
-  <moduleHeader title="全市平均班额">
+  <div class="box">
+    <moduleHeader title="全市平均班额">
     <div class="tabItem">
       <div
         class="item"
@@ -13,19 +14,21 @@
       </div>
     </div>
     <div class="schoolData">
-      <div v-for="item in progressList" :key="item.id">
+      <div class="progressitem" v-for="item in progressList" :key="item.id">
         <ProgressA :proData="item"></ProgressA>
       </div>
     </div>
   </moduleHeader>
+  </div>
+  
 </template>
 <script>
 import moduleHeader from "@/components/moduleHeader";
-import ProgressA from "@/components/ProgressA"
+import ProgressA from "@/components/ProgressA";
 export default {
   components: {
     moduleHeader,
-    ProgressA
+    ProgressA,
   },
   data() {
     return {
@@ -36,32 +39,32 @@ export default {
           dataList: [
             {
               name: "500人以下",
-              progressNum: 39,
+              progressNum: 1000,
               id: 1,
             },
             {
               name: "500-1000人",
-              progressNum: 12,
+              progressNum: 712,
               id: 2,
             },
             {
               name: "1001-2000人",
-              progressNum: 46,
+              progressNum: 646,
               id: 3,
             },
             {
               name: "2001-3000人",
-              progressNum: 78,
+              progressNum: 378,
               id: 4,
             },
             {
               name: "3001-4000人",
-              progressNum: 233,
+              progressNum: 533,
               id: 5,
             },
             {
               name: "4001人以上",
-              progressNum: 4,
+              progressNum: 794,
               id: 6,
             },
           ],
@@ -72,32 +75,32 @@ export default {
           dataList: [
             {
               name: "高职",
-              progressNum: 39,
+              progressNum: 1000,
               id: 1,
             },
             {
               name: "中职",
-              progressNum: 12,
+              progressNum: 312,
               id: 2,
             },
             {
               name: "高中",
-              progressNum: 46,
+              progressNum: 646,
               id: 3,
             },
             {
               name: "初中",
-              progressNum: 78,
+              progressNum: 278,
               id: 4,
             },
             {
               name: "小学",
-              progressNum: 233,
+              progressNum: 533,
               id: 5,
             },
             {
               name: "幼儿园",
-              progressNum: 456,
+              progressNum: 1000,
               id: 6,
             },
           ],
@@ -108,32 +111,32 @@ export default {
           dataList: [
             {
               name: "高职",
-              progressNum: 39,
+              progressNum:839,
               id: 1,
             },
             {
               name: "中职",
-              progressNum: 12,
+              progressNum: 312,
               id: 2,
             },
             {
               name: "高中",
-              progressNum: 46,
+              progressNum: 646,
               id: 3,
             },
             {
               name: "初中",
-              progressNum: 78,
+              progressNum: 678,
               id: 4,
             },
             {
               name: "小学",
-              progressNum: 233,
+              progressNum: 433,
               id: 5,
             },
             {
               name: "幼儿园",
-              progressNum: 456,
+              progressNum: 656,
               id: 6,
             },
           ],
@@ -144,68 +147,67 @@ export default {
           dataList: [
             {
               name: "高职",
-              progressNum: 39,
+              progressNum: 439,
               id: 1,
             },
             {
               name: "中职",
-              progressNum: 12,
+              progressNum: 512,
               id: 2,
             },
             {
               name: "高中",
-              progressNum: 46,
+              progressNum: 446,
               id: 3,
             },
             {
               name: "初中",
-              progressNum: 78,
+              progressNum: 678,
               id: 4,
             },
             {
               name: "小学",
-              progressNum: 233,
+              progressNum: 833,
               id: 5,
             },
             {
               name: "幼儿园",
-              progressNum: 456,
+              progressNum: 756,
               id: 6,
             },
           ],
         },
       ],
       activeIndex: 0,
-    //   progressList: [],
-       progressList: [
+      progressList: [
         {
           name: "高职",
-          progressNum: 39,
+          progressNum: 399,
           id: 1,
         },
         {
           name: "中职",
-          progressNum: 12,
+          progressNum: 112,
           id: 2,
         },
         {
           name: "高中",
-          progressNum: 46,
+          progressNum: 446,
           id: 3,
         },
         {
           name: "初中",
-          progressNum: 78,
+          progressNum: 6278,
           id: 4,
         },
         {
           name: "小学",
-          progressNum: 233,
+          progressNum: 533,
           id: 5,
         },
         {
           name: "幼儿园",
-          progressNum: 456,
+          progressNum: 256,
           id: 6,
         },
       ],
@@ -223,11 +225,20 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
+.box{
+  width: 100%;
+  height: 100%;
+  position: relative;
+  z-index: 100;
+}
 .tabItem {
   width: 100%;
+  padding-left: 0.1rem;
+  margin-top: 0.2rem;
+  box-sizing: border-box;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
   .item {
     width: 1rem;
     height: 0.5rem;
@@ -259,5 +270,8 @@ export default {
   box-sizing: border-box;
   margin-top: 0.3rem;
   display: flex;
+  .progressitem {
+    flex: 1;
+  }
 }
 </style>

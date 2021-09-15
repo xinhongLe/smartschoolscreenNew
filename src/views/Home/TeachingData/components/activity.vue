@@ -1,16 +1,12 @@
 <template>
-    <div class="activity-box">
-        <module-header title="活跃度">
-            <div class="inner">
-                <echart :options="options" width="100%" height="100%"></echart>
-            </div>
-        </module-header>
-    </div>
+    <module-header title="活跃度">
+        <echart :options="options" height="100%" width="100%"></echart>
+    </module-header>
 </template>
 
 <script>
-import Echart from "../../../../components/echart";
-import ModuleHeader from "../../../../components/moduleHeader";
+import Echart from "@/components/echart";
+import ModuleHeader from "@/components/moduleHeader";
 export default {
     name: "activity",
     components: { ModuleHeader, Echart },
@@ -106,14 +102,3 @@ export default {
     }
 };
 </script>
-
-<style scoped lang="scss">
-.activity-box {
-    width: 100%;
-    height: 100%;
-    .inner {
-        width: 100%;
-        height: 100%;
-    }
-}
-</style>

@@ -13,7 +13,7 @@
       </div>
     </div>
     <div class="schoolData">
-      <div v-for="item in progressList" :key="item.id">
+      <div class="progressitem" v-for="item in progressList" :key="item.id">
         <ProgressB :proData="item"></ProgressB>
       </div>
     </div>
@@ -33,46 +33,105 @@ export default {
       teachingHotList: [
         {
           title: "今日热词",
-        },
+          progressData: [
         {
-          title: "本周热词",
-        },
-        {
-          title: "本月热词",
-        },
-      ],
-      progressList: [
-        {
-          name: "20年以上",
-          progressNum: 39,
+          name: "热词1",
+          progressNum: 139,
           id: 1,
         },
         {
-          name: "15-20年",
-          progressNum: 12,
+          name: "热词2",
+          progressNum: 112,
           id: 2,
         },
         {
-          name: "10-15年",
-          progressNum: 46,
+          name: "热词3",
+          progressNum: 146,
           id: 3,
         },
         {
-          name: "3-10年",
-          progressNum: 78,
+          name: "热词4",
+          progressNum: 178,
           id: 4,
         },
         {
-          name: "0-3年",
+          name: "热词5",
           progressNum: 233,
           id: 5,
         },
       ],
+        },
+        {
+          title: "本周热词",
+           progressData: [
+        {
+          name: "热词1",
+          progressNum: 239,
+          id: 1,
+        },
+        {
+          name: "热词2",
+          progressNum: 312,
+          id: 2,
+        },
+        {
+          name: "热词3",
+          progressNum: 246,
+          id: 3,
+        },
+        {
+          name: "热词4",
+          progressNum: 278,
+          id: 4,
+        },
+        {
+          name: "热词5",
+          progressNum: 233,
+          id: 5,
+        },
+      ],
+        },
+        {
+          title: "本月热词",
+           progressData: [
+        {
+          name: "热词1",
+          progressNum: 239,
+          id: 1,
+        },
+        {
+          name: "热词2",
+          progressNum: 312,
+          id: 2,
+        },
+        {
+          name: "热词3",
+          progressNum: 346,
+          id: 3,
+        },
+        {
+          name: "热词4",
+          progressNum: 378,
+          id: 4,
+        },
+        {
+          name: "热词5",
+          progressNum: 633,
+          id: 5,
+        },
+      ],
+        },
+      ],
+      progressList:[]
     };
+  },
+  mounted(){
+    this.progressList = this.teachingHotList[0].progressData
   },
   methods: {
     changeIndex(index) {
       this.activeIndex = index;
+      this.progressList = this.teachingHotList[index].progressData
     },
   },
 };
@@ -132,9 +191,14 @@ export default {
 
 .schoolData {
   width: 100%;
+  height: calc(100% - 1rem);
   padding-left: 0.3rem;
   box-sizing: border-box;
-  margin-top: 0.3rem;
+  display: flex;
+  flex-direction: column;
+  .progressitem{
+    margin: 0.1rem 0;
+  }
 }
 
 @keyframes moveProfress {

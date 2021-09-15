@@ -26,10 +26,10 @@ export default {
         //         this.chart.resize();
         //     }
         // }, 300),
-        resizeChart: (function () {
+        resizeChart() {
             if (this.chart) {
                 this.chart.resize();
             }
-        }, 300)
+        }
     }
 };

@@ -1,13 +1,19 @@
 <template>
-    <div style="width: 100%">
+    <div class="ageRatioComp">
         <module-header title="学生年龄比例(园区)"
             ><div class="ageRatio">
                 <div class="echart" id="ageRatioCharts"></div>
                 <div class="fraction">
-                    <div>100%</div>
+                    <div>
+                        <p>100%</p>
+                    </div>
                 </div>
                 <div class="ageRatioContent">
-                    <div class="ageRatioContentItem" v-for="(item, index) in list" :key="index">
+                    <div
+                        class="ageRatioContentItem"
+                        v-for="(item, index) in list"
+                        :key="index"
+                    >
                         <div class="span" :style="item.style"></div>
                         <p>{{ item.font }}</p>
                         <Progress :proDta="item"></Progress>
@@ -78,7 +84,7 @@ export default {
             series: [
                 {
                     label: { show: false },
-                    animation: false,
+                    animation: true,
                     hoverAnimation: false,
                     name: "面积模式",
                     type: "pie",
@@ -88,7 +94,7 @@ export default {
                     itemStyle: {
                         borderRadius: 0
                     },
-
+                    startAngle:135,
                     data: [
                         {
                             value: 180,
@@ -173,16 +179,23 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
+.ageRatioComp {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
 .ageRatio {
     width: 100%;
+    height: 100%;
     display: flex;
-    position: relative;
     user-select: none;
-    padding-top: 0.125rem;
+    position: relative;
+    align-items: center;
     .echart {
         width: 200px;
         height: 200px;
-        animation: rotation 5s linear infinite;
+        // animation: rotation 5s linear infinite;
     }
     .ageRatioContent {
         flex: 1;
@@ -193,11 +206,10 @@ export default {
         .ageRatioContentItem {
             display: flex;
             align-items: center;
-            height: 0.375rem;
             .span {
                 display: block;
-                width:0.141rem !important;
-                height:0.1rem;
+                width: 0.141rem !important;
+                height: 0.1rem;
                 border-radius: 100%;
                 margin: -1px 0.1rem 0 0;
             }
@@ -215,24 +227,33 @@ export default {
 }
 .fraction {
     position: absolute;
-    top: 10px;
+    top: 0;
     left: 0;
     color: #dfffdf;
+    height: 100%;
     width: 200px;
-    height: 200px;
     display: flex;
     justify-content: space-around;
     align-items: center;
     div {
-        width: 60px;
-        height: 60px;
-        border: 1px solid #142e52;
-        border-radius: 100%;
-        font-size: 14px;
-        font-family: Bahnschrift_SemiBold;
-        color: #ffffff;
-        line-height: 60px;
-        text-align: center;
+        width: 200px;
+        height: 200px;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        p {
+            width: 60px;
+            height: 60px;
+            border: 1px solid #142e52;
+            border-radius: 100%;
+            font-size: 14px;
+            font-family: Bahnschrift_SemiBold;
+            color: #ffffff;
+            line-height: 60px;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
     }
 }
 @keyframes rotation {

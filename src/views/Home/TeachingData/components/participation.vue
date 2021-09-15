@@ -27,7 +27,7 @@
                             <span>教研参与次数</span>
                         </div>
                         <Flex :flex="1"></Flex>
-                        <Ring type="1" count="35">
+                        <Ring type="1" :count="35">
                             <p>教师满意度</p>
                         </Ring>
                     </Flex>
@@ -55,7 +55,7 @@
                             <span>工作室成员人数</span>
                         </div>
                         <Flex :flex="1"></Flex>
-                        <Ring type="2" count="56">
+                        <Ring type="2" :count="56">
                             <p>教师参与率</p>
                         </Ring>
                     </Flex>
@@ -67,7 +67,7 @@
 
 <script>
 import Flex from "@/components/flex";
-import ModuleHeader from "../../../../components/moduleHeader";
+import ModuleHeader from "@/components/moduleHeader";
 import Ring from "./ring.vue";
 import CountTo from "vue-count-to";
 export default {
