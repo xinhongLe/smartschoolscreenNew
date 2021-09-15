@@ -1,6 +1,6 @@
 <template>
     <div class="img-content" ref="content">
-        <img ref="img" :style="style" @load="imgLoad" src="https://up.enterdesk.com/edpic_360_360/54/47/32/54473277c698848d82235953dd2c1f63.jpg" alt="">
+        <img ref="img" :style="style" @load="imgLoad" src="@/assets/screen/学生_综合素质评价数据.png" alt="">
     </div>
 </template>
 
@@ -37,5 +37,6 @@ export default {
 
 .img-content img {
     display: block;
+    margin: -1rem 0;
 }
 </style>

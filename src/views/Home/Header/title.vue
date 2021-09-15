@@ -85,7 +85,7 @@ export default {
 <style scoped>
 .title-header {
     position: relative;
-    background-color: #000916;
+    /* background-color: #000916; */
 }
 .title {
     position: absolute;
