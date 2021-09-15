@@ -2,7 +2,7 @@
     <div class="activity-box">
         <module-header title="活跃度">
             <div class="inner">
-                <echart :options="options" width="100%"></echart>
+                <echart :options="options" width="100%" height="100%"></echart>
             </div>
         </module-header>
     </div>
@@ -41,12 +41,13 @@ export default {
             grid: {
                 left: "5%",
                 right: "0%",
-                bottom: "10%"
+                bottom: "24"
             },
             xAxis: {
                 data: this.echartsData.map((item) => item[0]),
                 axisLabel: {
-                    interval: 2
+                    interval: 2,
+                    lineHeight: 20
                 },
                 axisLine: {
                     lineStyle: {
@@ -109,9 +110,10 @@ export default {
 <style scoped lang="scss">
 .activity-box {
     width: 100%;
+    height: 100%;
     .inner {
         width: 100%;
-        height: 2rem;
+        height: 100%;
     }
 }
 </style>
