@@ -139,6 +139,8 @@ export default {
 <style lang="scss" scoped>
 .tools {
   width: 70%;
+  margin-bottom: 0.2rem;
+  margin-left: 0.15rem;
   display: flex;
   justify-content: space-around;
   .item {

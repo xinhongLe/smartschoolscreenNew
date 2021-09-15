@@ -49,27 +49,27 @@ export default {
         {
           name: "正高级教师",
           progressNum: 39,
-          id: 11,
+          id: 't1',
         },
         {
           name: "高级教师",
           progressNum: 12,
-          id: 22,
+          id: 't2',
         },
         {
           name: "一级教师",
           progressNum: 46,
-          id: 33,
+          id: 't3',
         },
         {
           name: "二级教师",
           progressNum: 78,
-          id: 44,
+          id: 't4',
         },
         {
           name: "三级教师",
           progressNum: 233,
-          id: 55,
+          id: 't5',
         },
       ],
     };
@@ -80,6 +80,7 @@ export default {
 .tools {
   width: 100%;
   display: flex;
+  margin: 0.2rem 0;
   justify-content: space-between;
   .item {
     width: 1rem;
@@ -92,6 +93,7 @@ export default {
       font-size: 0.175rem;
       color: #0dffff;
       display: block;
+      line-height: 2;
     }
     .lableName {
       font-size: 0.125rem;
