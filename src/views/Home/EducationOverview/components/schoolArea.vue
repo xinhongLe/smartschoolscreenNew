@@ -80,7 +80,19 @@ export default {
           stack: "总量",
           data: [32, 30, 31, 34, 39, 30, 32, 29, 33, 32],
           itemStyle: {
-            color: "#0DFFFF",
+            color: {
+              type: 'linear',
+              x: 0,
+              y: 0,
+              x2: 0,
+              y2: 1,
+              colorStops: [{
+                  offset: 0, color: '#0DFFFF' // 0% 处的颜色
+              }, {
+                  offset: 1, color: '#70BFFF' // 100% 处的颜色
+              }],
+              global: false // 缺省为 false
+            },
           },
           barWidth: 12, //柱图宽度
         },
@@ -90,7 +102,19 @@ export default {
           stack: "总量",
           data: [20, 32, 11, 14, 90, 30, 20, 20, 30, 20],
           itemStyle: {
-            color: "#30A2FD",
+            color: {
+              type: 'linear',
+              x: 0,
+              y: 0,
+              x2: 0,
+              y2: 1,
+              colorStops: [{
+                  offset: 0, color: '#30A2FD' // 0% 处的颜色
+              }, {
+                  offset: 1, color: '#376CCB' // 100% 处的颜色
+              }],
+              global: false // 缺省为 false
+            },
           },
           barWidth: 12, //柱图宽度
         },
@@ -100,7 +124,19 @@ export default {
           stack: "总量",
           data: [22, 12, 11, 24, 29, 33, 31, 29, 13, 13],
           itemStyle: {
-            color: "#A962F3",
+            color: {
+              type: 'linear',
+              x: 0,
+              y: 0,
+              x2: 0,
+              y2: 1,
+              colorStops: [{
+                  offset: 0, color: '#A962F3' // 0% 处的颜色
+              }, {
+                  offset: 1, color: '#7833E2' // 100% 处的颜色
+              }],
+              global: false // 缺省为 false
+            },
           },
           barWidth: 12, //柱图宽度
         },
@@ -109,8 +145,20 @@ export default {
           type: "bar",
           stack: "总量",
           data: [12, 21, 21, 14, 19, 33, 41, 29, 33, 12],
-          itemStyle: {
-            color: "#FC5AD3",
+         itemStyle: {
+            color: {
+              type: 'linear',
+              x: 0,
+              y: 0,
+              x2: 0,
+              y2: 1,
+              colorStops: [{
+                  offset: 0, color: '#FC5AD3' // 0% 处的颜色
+              }, {
+                  offset: 1, color: '#B921D0' // 100% 处的颜色
+              }],
+              global: false // 缺省为 false
+            },
           },
           barWidth: 12, //柱图宽度
         },
@@ -119,8 +167,20 @@ export default {
           type: "bar",
           stack: "总量",
           data: [20, 32, 91, 34, 29, 33, 20, 20, 33, 30],
-          itemStyle: {
-            color: "#96ACC3",
+         itemStyle: {
+            color: {
+              type: 'linear',
+              x: 0,
+              y: 0,
+              x2: 0,
+              y2: 1,
+              colorStops: [{
+                  offset: 0, color: '#96ACC3' // 0% 处的颜色
+              }, {
+                  offset: 1, color: '#FFFFFF' // 100% 处的颜色
+              }],
+              global: false // 缺省为 false
+            },
           },
           barWidth: 12, //柱图宽度
         },
@@ -129,8 +189,20 @@ export default {
           type: "bar",
           stack: "总量",
           data: [20, 32, 91, 34, 29, 30, 32, 20, 33, 32],
-          itemStyle: {
-            color: "#FFFF00",
+         itemStyle: {
+            color: {
+              type: 'linear',
+              x: 0,
+              y: 0,
+              x2: 0,
+              y2: 1,
+              colorStops: [{
+                  offset: 0, color: '#FFFF00' // 0% 处的颜色
+              }, {
+                  offset: 1, color: '#DBB001' // 100% 处的颜色
+              }],
+              global: false // 缺省为 false
+            },
           },
           barWidth: 12, //柱图宽度
         },
