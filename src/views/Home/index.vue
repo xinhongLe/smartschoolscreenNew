@@ -1,6 +1,6 @@
 <template>
     <div class="container">
-        <Header />
+        <Header showSelect />
         <router-view />
     </div>
 </template>
