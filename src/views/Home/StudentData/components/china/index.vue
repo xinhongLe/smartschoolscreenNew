@@ -6,7 +6,7 @@
 
 <script>
 import Echart from "@/components/echart";
-const geoGpsMap = [121.4648, 31.2891];
+const geoGpsMap = [120.6, 31.3];
 const geoCoordMap = {
     江苏: [118.8062, 31.9208],
     黑龙江: [127.9688, 45.368],
