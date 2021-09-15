@@ -67,7 +67,7 @@
 
 <script>
 import Flex from "@/components/flex";
-import ModuleHeader from "../../../../components/moduleHeader";
+import ModuleHeader from "@/components/moduleHeader";
 import Ring from "./ring.vue";
 import CountTo from "vue-count-to";
 export default {

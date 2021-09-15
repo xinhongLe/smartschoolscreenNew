@@ -15,7 +15,7 @@
 </template>
 
 <script>
-import ModuleBorder from "../../../../components/moduleBorder";
+import ModuleBorder from "@/components/moduleBorder";
 import RightSatisfactionAnimation from "./rightSatisfactionAnimation";
 export default {
   name: "rightSatisfaction",
@@ -30,6 +30,7 @@ export default {
   align-items: center;
   width: 100%;
   height: 100%;
+  padding: .2rem;
  >div{
    display: flex;
    justify-content: center;

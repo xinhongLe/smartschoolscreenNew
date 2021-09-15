@@ -5,8 +5,8 @@
 </template>
 
 <script>
-import Echart from "../../../../components/echart";
-import ModuleHeader from "../../../../components/moduleHeader";
+import Echart from "@/components/echart";
+import ModuleHeader from "@/components/moduleHeader";
 export default {
     name: "activity",
     components: { ModuleHeader, Echart },
@@ -37,12 +37,13 @@ export default {
             grid: {
                 left: "5%",
                 right: "0%",
-                bottom: "10%"
+                bottom: "24"
             },
             xAxis: {
                 data: this.echartsData.map((item) => item[0]),
                 axisLabel: {
-                    interval: 2
+                    interval: 2,
+                    lineHeight: 20
                 },
                 axisLine: {
                     lineStyle: {

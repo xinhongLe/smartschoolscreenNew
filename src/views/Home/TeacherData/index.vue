@@ -22,12 +22,16 @@
                 </Flex>
                 <div class="h-line"></div>
                 <Flex :flex="1" column>
-                    <Flex :flex="1">
-                        
+                    <Flex :flex="1">  
+                        <EducationDistribution></EducationDistribution>
                     </Flex>
                     <div class="v-line"></div>
                     <Flex :flex="2">
                         <TeacherTitle></TeacherTitle>
+                    </Flex>
+                    <div class="v-line"></div>
+                    <Flex :flex="2">
+                        <QuantityChange></QuantityChange>
                     </Flex>
                 </Flex>
             </Flex>
@@ -42,11 +46,13 @@ import Flex from "@/components/flex";
 import CountScroll from '@/components/countScroll.vue'
 import TeacherAge from './components/teacherAge'
 import TeacherTitle from './components/teacherTitle'
+import QuantityChange from './components/quantityChange'
+import EducationDistribution from './components/educationDistribution'
 import GenderRatio from './components/gender-ratio.vue'
 import Map from "./components/map";
 export default {
     components: {
-        Flex,CountScroll,TeacherAge,TeacherTitle,GenderRatio,Map
+        Flex,CountScroll,TeacherAge,TeacherTitle,GenderRatio,Map,QuantityChange,EducationDistribution
     }
 };
 </script>
