@@ -13,7 +13,7 @@
               <div class="content-col">
                 <p class="count" :style="{color: item.color}">{{item.count}}</p>
                 <p>{{item.name}}</p>
-                <p class="count-detail text-blue">{{item.countDetatil}}人</p>
+                <p class="count-detail text-blue">{{item.countDetatil ?  item.countDetatil+'人' : ''}}</p>
               </div>
               <div class="img-box">
                 <img class="animation-img" src="../images/pic_arrow@2x.png" alt="">
@@ -101,7 +101,7 @@ export default {
           }
           .count-detail{
             position: absolute;
-            bottom: -0.2rem;
+            bottom: -0.3rem;
           }
         }
         .img-box{
@@ -132,13 +132,13 @@ export default {
           margin-bottom: 0.2rem;
           .count-detail-last{
             position: absolute;
-            top: -0.2rem;
+            top: -0.25rem;
           }
         }
         &:last-child{
           .count-detail-last{
             position: absolute;
-            bottom: -0.2rem;
+            bottom: -0.25rem;
           }
         }
         p{

@@ -1,5 +1,6 @@
 <template>
   <moduleHeader title="教研热词">
+      <slot></slot>
     <div class="tools">
       <div
         class="item"

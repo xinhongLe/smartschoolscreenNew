@@ -9,7 +9,7 @@
             </Flex>
             <div class="v-line"></div>
             <Flex :flex="5">
-                <!-- <SchoolArea></SchoolArea> -->
+                <GenderRatio></GenderRatio>
             </Flex>
             <div class="v-line"></div>
         </Flex>
@@ -49,9 +49,10 @@ import Flex from "@/components/flex";
 import CountScroll from '@/components/countScroll.vue'
 import TeacherAge from './components/teacherAge'
 import TeacherTitle from './components/teacherTitle'
+import GenderRatio from './components/gender-ratio.vue'
 export default {
     components: {
-        Flex,CountScroll,TeacherAge,TeacherTitle
+        Flex,CountScroll,TeacherAge,TeacherTitle,GenderRatio
     }
 };
 </script>
