@@ -26,23 +26,23 @@ export default {
       teacherTitle: [
         {
           title: "正高级",
-          num: 472,
+          num: 72,
         },
         {
           title: "高级教师",
-          num: 1762,
+          num: 18762,
         },
         {
           title: "一级教师",
-          num: 7210,
+          num: 47210,
         },
         {
           title: "二级教师",
-          num: 10210,
+          num: 33212,
         },
         {
           title: "三级教师",
-          num: 4410,
+          num: 14411,
         },
       ],
       progressList: [
