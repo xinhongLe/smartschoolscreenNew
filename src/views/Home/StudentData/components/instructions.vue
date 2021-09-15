@@ -16,8 +16,8 @@
                 <p class="count-detail text-blue">{{item.countDetatil ?  item.countDetatil+'人' : ''}}</p>
               </div>
               <div class="img-box">
-                <img class="animation-img" src="../images/pic_arrow@2x.png" alt="">
-                <img class="animation-img" v-if="item.type === 4" src="../images/pic_arrow@2x.png" alt="">
+                <img :class="[imgIndex === index ? 'animation-img' : '']" src="../images/pic_arrow@2x.png" alt="">
+                <img :class="[imgIndex === index ? 'animation-img' : '']" v-if="item.type === 4" src="../images/pic_arrow@2x.png" alt="">
               </div>
             </div>
              <div>
@@ -35,8 +35,11 @@
 <script>
 import ModuleHeader from "@/components/moduleHeader";
 export default {
-    data() {
+  components: { ModuleHeader },
+  data() {
         return {
+          timer: null,
+          imgIndex: -1,
           title: '苏州工业园区',
           headerList: [
             {name: '学校总数', count: '77所'},
@@ -54,7 +57,21 @@ export default {
           ],
         };
     },
-    components: { ModuleHeader }
+  mounted(){
+    this.timer = setInterval(() => {
+       if(this.imgIndex === 3){
+         this.imgIndex = -1
+       }
+       this.imgIndex ++
+     },2000)
+
+
+    this.$once("hook:beforeDestroy", () => {
+      clearInterval(this.timer)
+      this.timer = null
+    })
+  },
+
 };
 </script>
 <style lang="scss" scoped>
@@ -132,13 +149,13 @@ export default {
           margin-bottom: 0.2rem;
           .count-detail-last{
             position: absolute;
-            top: -0.25rem;
+            top: -0.3rem;
           }
         }
         &:last-child{
           .count-detail-last{
             position: absolute;
-            bottom: -0.25rem;
+            bottom: -0.3rem;
           }
         }
         p{
