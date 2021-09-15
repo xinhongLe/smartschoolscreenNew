@@ -1,23 +1,25 @@
 <template>
-  <module-header title="全市校均人数">
-    <div class="tabItem">
-      <div
-        class="item"
-        :class="activeIndex === index ? 'active' : ''"
-        @click="changeIndex(index)"
-        v-for="(item, index) in schoolData"
-        :key="index"
-      >
-        <span class="lablenum">{{ item.number }}</span>
-        <span class="lableName">{{ item.lable }}</span>
+  <div class="box">
+    <module-header title="全市校均人数">
+      <div class="tabItem">
+        <div
+          class="item"
+          :class="activeIndex === index ? 'active' : ''"
+          @click="changeIndex(index)"
+          v-for="(item, index) in schoolData"
+          :key="index"
+        >
+          <span class="lablenum">{{ item.number }}</span>
+          <span class="lableName">{{ item.lable }}</span>
+        </div>
       </div>
-    </div>
-    <div class="schoolData">
-      <div class="progressitem" v-for="item in progressList" :key="item.id">
-        <ProgressB :proData="item"></ProgressB>
+      <div class="schoolData">
+        <div class="progressitem" v-for="item in progressList" :key="item.id">
+          <ProgressB :proData="item"></ProgressB>
+        </div>
       </div>
-    </div>
-  </module-header>
+    </module-header>
+  </div>
 </template>
 <script>
 import ModuleHeader from "@/components/moduleHeader";
@@ -191,6 +193,12 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
+.box{
+  width: 100%;
+  height: 100%;
+  position: relative;
+  z-index: 100;
+}
 .tabItem {
   width: 100%;
   padding-left: 0.1rem;

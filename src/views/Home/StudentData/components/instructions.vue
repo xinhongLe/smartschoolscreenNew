@@ -62,6 +62,8 @@ export default {
     width: 100%;
     height: 2rem;
     color: #96ACC3;
+    position: relative;
+    z-index: 100;
     .text-blue{
       color: #0DFFFF;
     }

@@ -84,7 +84,7 @@ export default {
     },
     data() {
         return {
-            mapSelected: 1
+            mapSelected: 0
         };
     }
 };
