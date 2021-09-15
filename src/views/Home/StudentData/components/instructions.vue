@@ -94,12 +94,12 @@ export default {
     }
     .content{
       display: flex;
-      justify-content: flex-start;
+      justify-content: space-between;
       margin-top: 0.2rem;
       padding: 0 0.1rem;
       .content-box{
         display: flex;
-        justify-content: flex-start;
+        justify-content: space-between;
         align-items: center;
         .content-col{
           position: relative;

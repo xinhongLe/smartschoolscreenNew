@@ -15,17 +15,10 @@
         </Flex>
         <div class="h-line"></div>
         <Flex :flex="3" column>
-            <!-- tab 写在这里 -->
             <div class="v-line"></div>
             <Flex :flex="1">
                 <Flex :flex="2" column>
-                    <Flex :flex="2">
-                        <!-- 地图部分 -->
-                    </Flex>
-                    <div class="v-line"></div>
-                    <Flex :flex="1">
-                        <!-- 教师数据量变化趋势 -->
-                    </Flex>
+                    <Map />
                 </Flex>
                 <div class="h-line"></div>
                 <Flex :flex="1" column>
@@ -50,9 +43,10 @@ import CountScroll from '@/components/countScroll.vue'
 import TeacherAge from './components/teacherAge'
 import TeacherTitle from './components/teacherTitle'
 import GenderRatio from './components/gender-ratio.vue'
+import Map from "./components/map";
 export default {
     components: {
-        Flex,CountScroll,TeacherAge,TeacherTitle,GenderRatio
+        Flex,CountScroll,TeacherAge,TeacherTitle,GenderRatio,Map
     }
 };
 </script>
