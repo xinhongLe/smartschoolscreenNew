@@ -70,11 +70,11 @@ export default {
   flex-direction: column;
   align-items: center;
   .progress_name {
-    width: 0.6rem;
+    // width: 90%;
     text-align: center;
   }
   .progress_number {
-    width: 0.4rem;
+    // width: 0.4rem;
     text-align: center;
   }
   span {
@@ -82,7 +82,8 @@ export default {
   }
   .progress_border {
     flex: 1;
-    width: 0.12rem;
+    width: 50%;
+    max-width: 0.25rem;
     margin: 0.1rem 0;
     display: flex;
     align-items: flex-end;
@@ -91,7 +92,7 @@ export default {
   }
   .progress_cont {
     height: 0px;
-    width: 0.08rem;
+    width: 80%;
     position: relative;
     background: linear-gradient(90deg, #70bfff 0%, #0dffff 100%);
   }
@@ -99,9 +100,9 @@ export default {
     content: " ";
     display: block;
     height: 0.002rem;
-    width: 0.12rem;
+    width: 115%;
     position: absolute;
-    right: -0.02rem;
+    right: -0.015rem;
     top: 0;
     background: #ffffff;
   }

@@ -1,5 +1,5 @@
 <template>
-  <div class="progressBox">
+  <div class="progressBox" :class='{"mar_gin":m20}'>
     <span class="progress_name">{{ progressData.name }}</span>
     <div class="progress_border">
       <div
@@ -19,6 +19,10 @@ export default {
       type: Object,
       default: () => {},
     },
+    m20:{
+      type:Boolean,
+      default:false
+    }
   },
   data() {
     return {
@@ -72,10 +76,12 @@ export default {
 <style lang="scss" scoped>
 .progressBox {
   width: 100%;
+  height: 100%;
+  box-sizing: border-box;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 0.2rem auto;
+  // margin: 0.2rem auto;
   .progress_name {
     width: 0.9rem;
     font-size: 0.15rem;
@@ -89,7 +95,8 @@ export default {
   }
   .progress_border {
     flex: 1;
-    height: 0.12rem;
+    height: 50%;
+    max-height: 0.25rem;
     margin: 0 0.1rem;
     display: flex;
     align-items: center;
@@ -97,7 +104,7 @@ export default {
   }
   .progress_cont {
     width: 0px;
-    height: 0.08rem;
+    height: 80%;
     position: relative;
     background: linear-gradient(90deg, #70bfff 0%, #0dffff 100%);
   }
@@ -105,10 +112,10 @@ export default {
     content: " ";
     display: block;
     width: 0.002rem;
-    height: 0.12rem;
+    height: 115%;
     position: absolute;
     right: 0;
-    top: -0.015rem;
+    top: -0.01rem;
     background: #FFFFFF;
   }
   .progress_active {

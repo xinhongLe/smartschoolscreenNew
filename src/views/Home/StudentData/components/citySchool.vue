@@ -13,7 +13,7 @@
       </div>
     </div>
     <div class="schoolData">
-      <div v-for="item in progressList" :key="item.id">
+      <div class="progressitem" v-for="item in progressList" :key="item.id">
         <ProgressB :proData="item"></ProgressB>
       </div>
     </div>
@@ -193,9 +193,12 @@ export default {
 <style lang="scss" scoped>
 .tabItem {
   width: 100%;
+  padding-left: 0.1rem;
+  margin: 0.2rem 0;
+  box-sizing: border-box;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
   .item {
     width: 1rem;
     height: 0.5rem;
@@ -223,8 +226,14 @@ export default {
 }
 .schoolData {
   width: 100%;
+  height: calc(100% - 1rem);
   padding-left: 0.3rem;
   box-sizing: border-box;
-  margin-top: 0.3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  .progressitem{
+    flex: 1;
+  }
 }
 </style>

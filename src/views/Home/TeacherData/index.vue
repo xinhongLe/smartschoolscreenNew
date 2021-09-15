@@ -4,7 +4,7 @@
         <Flex :flex="1" column>
             <countScroll></countScroll>
             <div class="v-line"></div>
-            <Flex :flex="5"> 
+            <Flex :flex="4"> 
                 <TeacherAge></TeacherAge>
             </Flex>
             <div class="v-line"></div>
