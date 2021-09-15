@@ -1,7 +1,7 @@
 <template>
   <div class="module-box" :class="autoHeight && 'autoHeight'">
     <div class="module-header">
-      <div v-if="typeof title == 'string'">{{ title }}</div>
+      <div class="title" v-if="typeof title == 'string'">{{ title }}</div>
       <div class="tab-box" v-else>
         <div
             class="tab-item"
@@ -13,6 +13,7 @@
           {{ item }}
         </div>
       </div>
+      <slot name="header-right" />
     </div>
     <div class="module-content">
       <slot />
@@ -74,11 +75,17 @@ export default {
   font-weight: 600;
   display: flex;
   align-items: center;
+  justify-content: space-between;
   border-bottom: 0.0125rem solid rgba(25, 52, 88, 0.8);
   z-index: 10;
 }
 
-.module-header:before {
+.title {
+    display: flex;
+    align-items: center;
+}
+
+.module-header .title:before {
   content: "";
   display: block;
   height: 0.1rem;
