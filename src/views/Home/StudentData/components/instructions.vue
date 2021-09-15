@@ -13,7 +13,14 @@
                <div v-if="item.type !== 'img'" class="content-col">
                  <p class="count" :style="{color: item.color}">{{item.count}}</p>
                  <p>{{item.name}}</p>
-                 <p class="count-detail text-blue">{{item.countDetatil ?  item.countDetatil+'人' : ''}}</p>
+                 <p class="count-detail text-blue">
+                   <count-to
+                       v-if="item.countDetatil"
+                       :start-val="0"
+                       :end-val="item.countDetatil"
+                       :duration="3000">
+                   </count-to>
+                 </p>
                </div>
                <div v-else class="img-box">
                  <img :class="[imgIndex === index ? 'animation-img' : '']" src="../images/pic_arrow@2x.png" alt="">
@@ -24,7 +31,14 @@
                <div class="col-last"  v-for="(item, index) in contentListLast" :key="index">
                  <p class="count-last" :style="{color: item.color}">{{item.count}}</p>
                  <p>{{item.name}}</p>
-                 <p class="count-detail-last text-blue">{{item.countDetatil}}人</p>
+                 <p class="count-detail-last text-blue">
+                   <count-to
+                     :start-val="0"
+                     :end-val="item.countDetatil"
+                     :duration="3000">
+                   </count-to>
+                   <span>人</span>
+                 </p>
                </div>
              </div>
            </div>
@@ -34,8 +48,9 @@
 </template>
 <script>
 import ModuleHeader from "@/components/moduleHeader";
+import CountTo from 'vue-count-to'
 export default {
-  components: { ModuleHeader },
+  components: { ModuleHeader, CountTo },
   data() {
         return {
           timer: null,
