@@ -67,7 +67,7 @@ export default {
       default: () => {
         return {
           startval: 0,
-          endval: 1000,
+          endval: 978,
           duration: 3000,
         };
       },
@@ -77,7 +77,7 @@ export default {
       default: () => {
         return {
           startval: 0,
-          endval: 1000,
+          endval: 1234098,
           duration: 3000,
         };
       },
@@ -87,7 +87,7 @@ export default {
       default: () => {
         return {
           startval: 0,
-          endval: 1000,
+          endval: 52345,
           duration: 3000,
         };
       },
@@ -97,7 +97,7 @@ export default {
       default: () => {
         return {
           startval: 0,
-          endval: 1000,
+          endval: 73301,
           duration: 3000,
         };
       },

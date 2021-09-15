@@ -118,7 +118,7 @@ export default {
 
 .treatment {
     position: absolute;
-    bottom: 1.7rem;
+    bottom: 1.45rem;
     left: 2.3rem;
     z-index: 100;
     text-align: left;

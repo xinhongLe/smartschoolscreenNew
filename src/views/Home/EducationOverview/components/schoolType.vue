@@ -59,17 +59,17 @@ export default {
         },
         {
           name: "初中",
-          progressNum: 78,
+          progressNum: 77,
           id: 4,
         },
         {
           name: "小学",
-          progressNum: 233,
+          progressNum: 230,
           id: 5,
         },
         {
           name: "幼儿园",
-          progressNum: 456,
+          progressNum: 458,
           id: 6,
         },
       ],

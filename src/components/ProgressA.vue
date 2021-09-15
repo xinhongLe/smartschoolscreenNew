@@ -33,8 +33,8 @@ export default {
   watch: {
     proData: {
       handler(newData) {
-        this.progressData = newData;
         clearInterval(this.timer);
+        this.progressData = newData;
         this.initProgress();
       },
       deep: true,
@@ -46,7 +46,7 @@ export default {
         let myprogress = document.getElementById(
           `progress${this.progressData.id}`
         );
-        let num = (this.progressData.progressNum / 1000) * 100;
+        let num = (this.progressData.progressNum / 100) * 100;
         this.timer = setInterval(() => {
           myprogress.style.height = 0 + "%";
           this.isActive = false;
@@ -73,11 +73,9 @@ export default {
   flex-direction: column;
   align-items: center;
   .progress_name {
-    // width: 90%;
     text-align: center;
   }
   .progress_number {
-    // width: 0.4rem;
     text-align: center;
   }
   span {

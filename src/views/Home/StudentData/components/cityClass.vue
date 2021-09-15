@@ -1,6 +1,7 @@
 <template>
   <div class="box">
     <moduleHeader title="全市平均班额">
+    <div slot="header-right">{{titleNum}}人</div>
     <div class="tabItem">
       <div
         class="item"
@@ -35,191 +36,163 @@ export default {
       schoolData: [
         {
           lable: "幼儿园(人)",
-          number: "1279",
+          number: "37",
           dataList: [
             {
-              name: "500人以下",
-              progressNum: 1000,
+              name: "0-30人",
+              progressNum: 11,
               id: 1,
             },
             {
-              name: "500-1000人",
-              progressNum: 712,
+              name: "31-40人",
+              progressNum: 72,
               id: 2,
             },
             {
-              name: "1001-2000人",
-              progressNum: 646,
+              name: "41-45人",
+              progressNum: 53,
               id: 3,
             },
             {
-              name: "2001-3000人",
-              progressNum: 378,
+              name: "41-50人",
+              progressNum: 46,
               id: 4,
             },
             {
-              name: "3001-4000人",
-              progressNum: 533,
+              name: "51-55人",
+              progressNum: 38,
               id: 5,
             },
             {
-              name: "4001人以上",
-              progressNum: 794,
+              name: "56人以上",
+              progressNum: 74,
               id: 6,
             },
           ],
         },
         {
           lable: "小学(人)",
-          number: "1379",
+          number: "42",
           dataList: [
             {
-              name: "高职",
-              progressNum: 1000,
+              name: "0-30人",
+              progressNum: 21,
               id: 1,
             },
             {
-              name: "中职",
-              progressNum: 312,
+              name: "31-40人",
+              progressNum: 12,
               id: 2,
             },
             {
-              name: "高中",
-              progressNum: 646,
+              name: "41-45人",
+              progressNum: 46,
               id: 3,
             },
             {
-              name: "初中",
-              progressNum: 278,
+              name: "46-50人",
+              progressNum: 28,
               id: 4,
             },
             {
-              name: "小学",
-              progressNum: 533,
+              name: "51-55人",
+              progressNum: 53,
               id: 5,
             },
             {
-              name: "幼儿园",
-              progressNum: 1000,
+              name: "56人以上",
+              progressNum: 21,
               id: 6,
             },
           ],
         },
         {
           lable: "初中(人)",
-          number: "989",
+          number: "49",
           dataList: [
             {
-              name: "高职",
-              progressNum:839,
+              name: "0-30人",
+              progressNum:39,
               id: 1,
             },
             {
-              name: "中职",
-              progressNum: 312,
+              name: "31-40人",
+              progressNum: 12,
               id: 2,
             },
             {
-              name: "高中",
-              progressNum: 646,
+              name: "41-45人",
+              progressNum: 46,
               id: 3,
             },
             {
-              name: "初中",
-              progressNum: 678,
+              name: "46-50人",
+              progressNum: 78,
               id: 4,
             },
             {
-              name: "小学",
-              progressNum: 433,
+              name: "51-55人",
+              progressNum: 33,
               id: 5,
             },
             {
-              name: "幼儿园",
-              progressNum: 656,
+              name: "56人以上",
+              progressNum: 56,
               id: 6,
             },
           ],
         },
         {
           lable: "高中(人)",
-          number: "1139",
+          number: "53",
           dataList: [
             {
-              name: "高职",
-              progressNum: 439,
+              name: "0-30人",
+              progressNum: 29,
               id: 1,
             },
             {
-              name: "中职",
-              progressNum: 512,
+              name: "31-40人",
+              progressNum: 22,
               id: 2,
             },
             {
-              name: "高中",
-              progressNum: 446,
+              name: "41-45人",
+              progressNum: 56,
               id: 3,
             },
             {
-              name: "初中",
-              progressNum: 678,
+              name: "46-50人",
+              progressNum: 68,
               id: 4,
             },
             {
-              name: "小学",
-              progressNum: 833,
+              name: "51-55人",
+              progressNum: 23,
               id: 5,
             },
             {
-              name: "幼儿园",
-              progressNum: 756,
+              name: "56人以上",
+              progressNum: 26,
               id: 6,
             },
           ],
         },
       ],
       activeIndex: 0,
-      progressList: [
-        {
-          name: "高职",
-          progressNum: 399,
-          id: 1,
-        },
-        {
-          name: "中职",
-          progressNum: 112,
-          id: 2,
-        },
-        {
-          name: "高中",
-          progressNum: 446,
-          id: 3,
-        },
-        {
-          name: "初中",
-          progressNum: 6278,
-          id: 4,
-        },
-        {
-          name: "小学",
-          progressNum: 533,
-          id: 5,
-        },
-        {
-          name: "幼儿园",
-          progressNum: 256,
-          id: 6,
-        },
-      ],
+      progressList: [],
+      titleNum:0
     };
   },
   mounted() {
     this.progressList = this.schoolData[0].dataList;
+    this.titleNum = this.schoolData[0].number
   },
   methods: {
     changeIndex(index) {
       this.activeIndex = index;
       this.progressList = this.schoolData[index].dataList;
+       this.titleNum = this.schoolData[index].number
     },
   },
 };

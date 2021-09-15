@@ -1,6 +1,7 @@
 <template>
   <div class="box">
     <module-header title="全市校均人数">
+      <div slot="header-right">{{titleNum}}人</div>
       <div class="tabItem">
         <div
           class="item"
@@ -42,7 +43,7 @@ export default {
               id: 1,
             },
             {
-              name: "500-1000人",
+              name: "500-121人",
               progressNum: 512,
               id: 2,
             },
@@ -58,7 +59,7 @@ export default {
             },
             {
               name: "3001-4000人",
-              progressNum: 1000,
+              progressNum: 121,
               id: 5,
             },
             {
@@ -89,7 +90,7 @@ export default {
             },
             {
               name: "初中",
-              progressNum: 1000,
+              progressNum: 121,
               id: 4,
             },
             {
@@ -120,7 +121,7 @@ export default {
             },
             {
               name: "高中",
-              progressNum: 1000,
+              progressNum: 121,
               id: 3,
             },
             {
@@ -179,15 +180,18 @@ export default {
       ],
       activeIndex: 0,
       progressList: [],
+      titleNum:0
     };
   },
   mounted() {
     this.progressList = this.schoolData[0].dataList;
+    this.titleNum = this.schoolData[0].number
   },
   methods: {
     changeIndex(index) {
       this.activeIndex = index;
       this.progressList = this.schoolData[index].dataList;
+      this.titleNum = this.schoolData[index].number
     },
   },
 };
