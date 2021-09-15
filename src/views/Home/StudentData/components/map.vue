@@ -12,11 +12,12 @@
                 </div>
             </div>
 
-            <div class="treatment">
+           
+        </div>
+         <div class="treatment">
                 <div class="treatment-proportion">89%</div>
                 <div class="treatment-desc">随迁学生享受同等待遇</div>
             </div>
-        </div>
     </SortMap>
 </template>
 
@@ -66,9 +67,9 @@ export default {
 <style scoped>
 .footer-box {
     position: absolute;
-    bottom: 2rem;
-    left: 1rem;
-    right: 1rem;
+    top: 1.2rem;
+    left: 2.3rem;
+    /* right: 1rem; */
     display: flex;
     z-index: 100;
     justify-content: space-between;
@@ -116,7 +117,11 @@ export default {
 }
 
 .treatment {
-    text-align: right;
+    position: absolute;
+    bottom: 1.7rem;
+    left: 2.3rem;
+    z-index: 100;
+    text-align: left;
 }
 
 .treatment-proportion {

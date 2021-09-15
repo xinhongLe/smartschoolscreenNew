@@ -1,5 +1,6 @@
 <template>
-  <moduleHeader title="全市平均班额">
+  <div class="box">
+    <moduleHeader title="全市平均班额">
     <div class="tabItem">
       <div
         class="item"
@@ -18,6 +19,8 @@
       </div>
     </div>
   </moduleHeader>
+  </div>
+  
 </template>
 <script>
 import moduleHeader from "@/components/moduleHeader";
@@ -222,6 +225,12 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
+.box{
+  width: 100%;
+  height: 100%;
+  position: relative;
+  z-index: 100;
+}
 .tabItem {
   width: 100%;
   padding-left: 0.1rem;
