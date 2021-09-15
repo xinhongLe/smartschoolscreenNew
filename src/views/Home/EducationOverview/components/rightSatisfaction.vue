@@ -15,7 +15,7 @@
 </template>
 
 <script>
-import ModuleBorder from "../../../../components/moduleBorder";
+import ModuleBorder from "@/components/moduleBorder";
 import RightSatisfactionAnimation from "./rightSatisfactionAnimation";
 export default {
   name: "rightSatisfaction",

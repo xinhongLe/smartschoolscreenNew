@@ -5,8 +5,8 @@
 </template>
 
 <script>
-import Echart from "../../../../components/echart";
-import ModuleHeader from "../../../../components/moduleHeader";
+import Echart from "@/components/echart";
+import ModuleHeader from "@/components/moduleHeader";
 export default {
     name: "activity",
     components: { ModuleHeader, Echart },

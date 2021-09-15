@@ -18,7 +18,7 @@
 </template>
 
 <script>
-import Echart from "../../../../components/echart";
+import Echart from "@/components/echart";
 import CountTo from "vue-count-to";
 export default {
     name: "ring",

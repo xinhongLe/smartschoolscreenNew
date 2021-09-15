@@ -4,8 +4,8 @@
   </module-header>
 </template>
 <script>
-import ModuleHeader from "../../../../components/moduleHeader";
-import TableCommon from "../../../../components/tableCommon";
+import ModuleHeader from "@/components/moduleHeader";
+import TableCommon from "@/components/tableCommon";
 export default {
   name: "rightTable",
   components: {TableCommon, ModuleHeader},
