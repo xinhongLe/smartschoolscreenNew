@@ -1,13 +1,17 @@
 <template>
-    <div style="width: 100%">
+    <div class="ageRatioComp">
         <module-header title="学生年龄比例(园区)"
             ><div class="ageRatio">
                 <div class="echart" id="ageRatioCharts"></div>
-                <div class="fraction">
+                <!-- <div class="fraction">
                     <div>100%</div>
-                </div>
+                </div> -->
                 <div class="ageRatioContent">
-                    <div class="ageRatioContentItem" v-for="(item, index) in list" :key="index">
+                    <div
+                        class="ageRatioContentItem"
+                        v-for="(item, index) in list"
+                        :key="index"
+                    >
                         <div class="span" :style="item.style"></div>
                         <p>{{ item.font }}</p>
                         <Progress :proDta="item"></Progress>
@@ -73,6 +77,18 @@ export default {
                     dataView: { show: false, readOnly: false },
                     restore: { show: false },
                     saveAsImage: { show: false }
+                }
+            },
+            graphic:{
+                type:"text",
+                left:"center",
+                top:"40%",
+                style:{
+                    text:"运动达标率",
+                    textAlign:"center",
+                    fill:"#333",
+                    fontSize:20,
+                    fontWeight:700
                 }
             },
             series: [
@@ -173,13 +189,21 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
+.ageRatioComp {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
 .ageRatio {
     width: 100%;
+    height: 100%;
     display: flex;
-    position: relative;
     user-select: none;
-    padding-top: 0.125rem;
+    align-items: center;
+    align-items: center;
     .echart {
+        position: relative;
         width: 200px;
         height: 200px;
         animation: rotation 5s linear infinite;
@@ -193,11 +217,10 @@ export default {
         .ageRatioContentItem {
             display: flex;
             align-items: center;
-            height: 0.375rem;
             .span {
                 display: block;
-                width:0.141rem !important;
-                height:0.1rem;
+                width: 0.141rem !important;
+                height: 0.1rem;
                 border-radius: 100%;
                 margin: -1px 0.1rem 0 0;
             }
@@ -215,7 +238,7 @@ export default {
 }
 .fraction {
     position: absolute;
-    top: 10px;
+    top:0;
     left: 0;
     color: #dfffdf;
     width: 200px;
