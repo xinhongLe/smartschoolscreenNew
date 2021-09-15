@@ -12,8 +12,8 @@
 </template>
 
 <script>
-import ModuleHeader from "../../../../components/moduleHeader";
-import TableCommon from "../../../../components/tableCommon";
+import ModuleHeader from "@/components/moduleHeader";
+import TableCommon from "@/components/tableCommon";
 export default {
   name: "leftSchoolType",
   components: {TableCommon, ModuleHeader},
