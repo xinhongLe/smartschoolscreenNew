@@ -19,7 +19,7 @@
     <Flex :flex="2" column>
       <Flex :flex="1"> 4 </Flex>
       <Flex :flex="1"> 
-          <!-- <knowledge></knowledge> -->
+          <teach-radar></teach-radar>
       </Flex>
     </Flex>
     <div class="h-line"></div>
@@ -47,8 +47,10 @@ import TitleDistribution from './components/titleDistribution.vue';
 import SchoolAgeDistribution from './components/schoolAgeDistribution.vue';
 import TeachingResearch from './components/teachingResearch.vue';
 import TeacherTraining from './components/teacherTraining.vue';
+import TeachRadar from "./components/teachRadar";
 export default {
   components: {
+    TeachRadar,
     Flex,
     TitleDistribution,
     SchoolAgeDistribution,

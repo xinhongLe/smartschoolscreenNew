@@ -4,15 +4,12 @@
     <Flex :flex="1" column>
       <div class="v-line"></div>
       <Flex :flex="1">
-        1
+        <exam-radar></exam-radar>
       </Flex>
       <Flex :flex="1">
         2
       </Flex>
       <div class="v-line"></div>
-      <Flex :flex="1">
-        3
-      </Flex>
       <div class="v-line"></div>
     </Flex>
     <div class="h-line"></div>
@@ -51,9 +48,11 @@
 
 <script>
 import Flex from "@/components/flex";
+import ExamRadar from "./components/examRadar";
 export default {
   name: "index",
   components: {
+    ExamRadar,
     Flex
   }
 }

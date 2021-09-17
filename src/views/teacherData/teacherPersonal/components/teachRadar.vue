@@ -8,7 +8,7 @@
 import ModuleHeader from "@/components/moduleHeader";
 import Echart from "@/components/echart";
 export default {
-  name: "examRadar",
+  name: "teachRadar",
   components: {Echart, ModuleHeader},
   data() {
     return {
@@ -21,11 +21,11 @@ export default {
         trigger: 'axis'
       },
       legend: {
-        data: ['三年级', '四年级', '五年级', '六年级'],
+        data: ['一年级', '二年级','三年级', '四年级', '五年级', '六年级'],
         icon: "diamond",
-        // orient: 'vertical',
-        left: 10,
-        top: 5,
+        orient: 'vertical',
+        right: 20,
+        top: 20,
         itemWidth: 8, // 图例标记的图形宽度。
         itemHeight: 8, //  图例标记的图形高度。
         itemGap: 10, // 图例每项之间的间隔。
@@ -43,11 +43,12 @@ export default {
           lineHeight: -10
         },
         indicator: [
-          { name: '主观题', max: 65000 },
-          { name: '解答题', max: 65000 },
-          { name: '选择题', max: 65000 },
-          { name: '判断题', max: 65000 },
-          { name: '客观题', max: 65000 },
+          { name: '市级教学竞赛', max: 65000 },
+          { name: '国家级荣誉奖项', max: 65000 },
+          { name: '省级荣誉奖项', max: 65000 },
+          { name: '市级荣誉奖项', max: 65000 },
+          { name: '国家级教学竞赛', max: 65000 },
+          { name: '省级教学竞赛', max: 65000 },
         ],
         axisLine : {
           show : true,
@@ -80,46 +81,68 @@ export default {
         },
         data: [
           {
-            value: [40000, 40000, 40000, 30000, 45000],
+            value: [40000, 40000, 40000, 30000, 45000, 35000],
+            name: '一年级',
+            itemStyle: {
+              color: '#0BFFFF',
+            },
+            areaStyle: {
+              color: '#0BFFFF',
+              opacity: 0.2
+            },
+          },
+          {
+            value: [20000, 25000, 45000, 30000, 20000,38000],
+            name: '二年级',
+            itemStyle: {
+              color: '#D337D0',
+            },
+            areaStyle: {
+              color: '#D337D0',
+              opacity: 0.2
+            },
+          },
+          {
+            value: [45000, 20000, 35000, 45000, 30000, 20000],
             name: '三年级',
             itemStyle: {
-              color: '#0BFFFF',
+              color: '#7AB3E2',
             },
             areaStyle: {
-              color: '#0BFFFF',
+              color: '#7AB3E2',
               opacity: 0.2
             },
           },
           {
-            value: [20000, 25000, 45000, 30000, 20000],
+            value: [45000, 20000, 35000, 45000, 30000,40000],
             name: '四年级',
             itemStyle: {
-              color: '#D337D0',
+              color: '#556CEC',
             },
             areaStyle: {
-              color: '#D337D0',
+              color: '#556CEC',
               opacity: 0.2
             },
           },
           {
-            value: [45000, 20000, 35000, 45000, 30000],
+            value: [35000, 40000, 40000, 30000, 45000, 30000],
             name: '五年级',
             itemStyle: {
-              color: '#7AB3E2',
+              color: '#FFA500',
             },
             areaStyle: {
-              color: '#7AB3E2',
+              color: '#FFA500',
               opacity: 0.2
             },
           },
           {
-            value: [30000, 45000, 30000, 30000, 35000],
+            value: [30000, 45000, 30000, 30000, 35000, 30000],
             name: '六年级',
             itemStyle: {
-              color: '#FFA500',
+              color: '#49E99E',
             },
             areaStyle: {
-              color: '#FFA500',
+              color: '#49E99E',
               opacity: 0.2
             },
           },
@@ -134,7 +157,7 @@ export default {
 
 <style scoped>
 .echart-box{
-  padding-top: 0.2rem;
+  padding-top: 0.1rem;
   box-sizing: border-box
 }
 </style>
