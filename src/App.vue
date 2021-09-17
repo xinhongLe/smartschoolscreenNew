@@ -1,7 +1,7 @@
 <template>
     <div id="app">
         <div class="container">
-            <Title :title="`*州市教育信息化数据大屏`" :style="{position: ['educationData', 'areaEducationData', 'teacherBasic', 'studentBasic'].indexOf($route.name) > -1 ? 'relative' : 'absolute'}" />
+            <Title :title="`*州市教育信息化数据大屏`" :style="{position: ['educationData', 'areaEducationData', 'teacherBasic', 'studentBasic','behavior'].indexOf($route.name) > -1 ? 'relative' : 'absolute'}" />
             <div class="route-content">
                 <router-view />
             </div>
@@ -47,18 +47,18 @@ export default {
 
     methods: {
         startCount() {
-            clearInterval(this.timer);
-            this.timer = setInterval(() => {
-                if (this.sort < 17) {
-                    this.$router.push({
-                        name: this.list[this.sort + 1].name
-                    })
-                } else {
-                    this.$router.push({
-                        name: this.list[0].name
-                    })
-                }
-            }, 60000);
+            // clearInterval(this.timer);
+            // this.timer = setInterval(() => {
+            //     if (this.sort < 17) {
+            //         this.$router.push({
+            //             name: this.list[this.sort + 1].name
+            //         })
+            //     } else {
+            //         this.$router.push({
+            //             name: this.list[0].name
+            //         })
+            //     }
+            // }, 60000);
         }
     }
 };

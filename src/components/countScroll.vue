@@ -2,8 +2,8 @@
   <ModuleBorder :autoHeight="true">
     <div class="countToBox">
       <div class="city_info">
-        <span class="city_name">{{ cityNmae }}</span>
-        <div class="schoolsum">
+        <span class="city_name" :style="{textAlign:(istrnum ? 'left' : 'center')}">{{ cityNmae }}</span>
+        <div v-if="istrnum" class="schoolsum">
           <CountTo
             ref="example1"
             class="school_count"
@@ -11,7 +11,7 @@
             :end-val="schoolSum.endval"
             :duration="schoolSum.duration"
           ></CountTo>
-          <span class="school_text">学校总数</span>
+          <span class="school_text">{{schoolSum.name}}</span>
         </div>
       </div>
       <div class="personnel_info">
@@ -23,7 +23,7 @@
             :end-val="studentSum.endval"
             :duration="studentSum.duration"
           ></CountTo>
-          <span class="personnel_text">总学生人数</span>
+          <span class="personnel_text">{{studentSum.name}}</span>
         </div>
         <div class="personnel">
           <CountTo
@@ -33,7 +33,7 @@
             :end-val="teacherSum.endval"
             :duration="teacherSum.duration"
           ></CountTo>
-          <span class="personnel_text">总教师人数</span>
+          <span class="personnel_text">{{teacherSum.name}}</span>
         </div>
         <div class="personnel">
           <CountTo
@@ -43,7 +43,7 @@
             :end-val="workerSum.endval"
             :duration="workerSum.duration"
           ></CountTo>
-          <span class="personnel_text">总职工人数</span>
+          <span class="personnel_text">{{workerSum.name}}</span>
         </div>
       </div>
     </div>
@@ -58,9 +58,13 @@ export default {
     ModuleBorder,
   },
   props: {
+    istrnum:{
+      type:Boolean,
+      default:true
+    },
     cityNmae: {
       type: String,
-      default: "*州市",
+      default: "苏州",
     },
     schoolSum: {
       type: Object,
@@ -69,6 +73,7 @@ export default {
           startval: 0,
           endval: 978,
           duration: 3000,
+          name:'学校总数'
         };
       },
     },
@@ -79,6 +84,7 @@ export default {
           startval: 0,
           endval: 1234098,
           duration: 3000,
+          name:'总学生人数'
         };
       },
     },
@@ -89,6 +95,7 @@ export default {
           startval: 0,
           endval: 52345,
           duration: 3000,
+          name:'总教师人数'
         };
       },
     },
@@ -99,6 +106,7 @@ export default {
           startval: 0,
           endval: 73301,
           duration: 3000,
+          name:'总职工人数'
         };
       },
     },
@@ -136,7 +144,7 @@ span {
     margin-bottom: 0.25rem;
     .city_name {
       flex: 2;
-      font-size: 0.5rem;
+      font-size: 0.4rem;
       font-family: PingFangSC-Semibold, PingFang SC;
       font-weight: 600;
       color: #ffffff;
