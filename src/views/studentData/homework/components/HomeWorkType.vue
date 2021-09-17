@@ -18,19 +18,12 @@ export default {
   },
   mounted() {
     const options = {
-      tooltip: {
-        trigger: "axis",
-        axisPointer: {
-          // 坐标轴指示器，坐标轴触发有效
-          type: "shadow", // 默认为直线，可选为：'line' | 'shadow'
-        },
-      },
       legend: {
         type: "scroll",
-        left: "1%",
+        left: "center",
         data: ["巩固型作业", "创造型作业", "实践型作业", "综合性作业"],
         icon: "diamond",
-        top: 10,
+        top: 70,
         itemWidth: 8, // 图例标记的图形宽度。
         itemGap: 20, // 图例每项之间的间隔。
         itemHeight: 8, //  图例标记的图形高度。
@@ -50,8 +43,9 @@ export default {
         type: "value",
         name: "单位: %",
         nameTextStyle: {
-          color: "#96ACC3",
           align: "right",
+          lineHeight:86,
+          padding:[-20,0,0,0]
         },
         splitNumber:4,
         axisLabel: {
@@ -61,7 +55,7 @@ export default {
         splitLine: {
           lineStyle: {
             color: "rgba(255, 255, 255, .1)",
-          },
+          }
         },
       },
       xAxis: {
