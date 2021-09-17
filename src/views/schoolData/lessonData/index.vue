@@ -13,7 +13,6 @@
             <Flex :flex="1">
                 <circle-components></circle-components>
             </Flex>
-            <div class="v-line"></div>
         </Flex>
         <div class="h-line"></div>
         <Flex :flex="2" column>

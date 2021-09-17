@@ -1,58 +1,34 @@
 <template>
   <div class="progressBox">
-    <span class="progress_name" v-if="islable">{{ progressData.name }}</span>
+    <span class="progress_name">{{ progressData.name }}</span>
     <div class="progress_border">
       <div
+        :id="`pregress_${progressData.id}`"
         class="progress_cont"
-        ref="pregressref"
-        :style="styleObject"
         v-bind:class="{ progress_active: isActive }"
       ></div>
     </div>
-    <span class="progress_number" v-if="islable"
-      >{{ progressData.progressNum }}<i v-if="ispercent">%</i>
-    </span>
+    <span class="progress_number">{{ progressData.progressNum }}</span>
   </div>
 </template>
 <script>
 export default {
-  name: "progressB",
+  name:'progressB',
   props: {
     proData: {
-      // 进度条数据对象
       type: Object,
       default: () => {},
     },
-    ratioNum: {
-      // 计算进度条的比例值
+    max: {
       type: Number,
-      default: 1000,
-    },
-    islable: {
-      // 是否显示进度条的名字和占比数 默认显示
-      type: Boolean,
-      default: true,
-    },
-    ispercent: {
-      // 是否显示百分号 默认不显示
-      type: Boolean,
-      default: false,
-    },
-    styleObject: {
-      // 控制进度条颜色的对象 默认为蓝色渐变
-      type: Object,
-      default: () => {
-        return {
-          background: "linear-gradient(90deg, #70bfff 0%, #0dffff 100%)",
-        };
-      },
-    },
+      default: 10000
+    }
   },
   data() {
     return {
       isActive: true,
       Interval: null,
-      progressData: this.proData,
+      progressData:this.proData
     };
   },
   mounted() {
@@ -61,8 +37,10 @@ export default {
   watch: {
     proData: {
       handler(data) {
-        this.progressData = data;
-        clearInterval(this.Interval);
+        console.log(data)
+        this.progressData = data
+        this.Interval = null
+        clearInterval(this.Interval)
         this.initProgress();
       },
       deep: true,
@@ -70,11 +48,9 @@ export default {
   },
   methods: {
     initProgress() {
-      // let dompro = document.getElementById(`pregress_${this.progressData.id}`);
       this.$nextTick(() => {
-        console.log(this.$refs.pregressref);
-        let dompro = this.$refs.pregressref;
-        let num = (this.progressData.progressNum / this.ratioNum) * 100;
+        let dompro = document.getElementById(`pregress_${this.progressData.id}`);
+        let num = (this.progressData.progressNum / this.max) * 100;
         this.Interval = setInterval(() => {
           dompro.style.width = 0 + "%";
           this.isActive = false;
@@ -85,40 +61,37 @@ export default {
         }, 5000);
         setTimeout(() => {
           dompro.style.width = num.toFixed(0) + "%";
-        }, 100);
+        }, 200);
       });
     },
   },
-  beforeDestroy() {
-    clearInterval(this.Interval);
-  },
+  beforeDestroy(){
+    this.Interval = null
+    clearInterval(this.Interval)
+  }
 };
 </script>
 <style lang="scss" scoped>
 .progressBox {
   width: 100%;
-  height: 100%;
-  box-sizing: border-box;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  // margin: 0.2rem auto;
+  margin: 0.2rem auto;
   .progress_name {
-    width: 0.9rem;
+    width: 0.6rem;
     font-size: 0.15rem;
-    color: #96acc3;
+    color: #96ACC3;
   }
   .progress_number {
     width: 0.4rem;
     text-align: center;
     font-size: 0.15rem;
-    color: #7ab3e2;
+    color: #7AB3E2;
   }
   .progress_border {
     flex: 1;
-    height: 50%;
-    max-height: 0.25rem;
-    min-height: 0.15rem;
+    height: 0.12rem;
     margin: 0 0.1rem;
     display: flex;
     align-items: center;
@@ -126,20 +99,19 @@ export default {
   }
   .progress_cont {
     width: 0px;
-    height: 80%;
-    min-height: 0.1rem;
+    height: 0.08rem;
     position: relative;
     background: linear-gradient(90deg, #70bfff 0%, #0dffff 100%);
   }
-  .progress_cont::after {
+  .progress_cont::after{
     content: " ";
     display: block;
     width: 0.002rem;
-    height: 120%;
+    height: 0.12rem;
     position: absolute;
     right: 0;
-    top: -0.02rem;
-    background: #ffffff;
+    top: -0.015rem;
+    background: #FFFFFF;
   }
   .progress_active {
     transition: width 2s;
