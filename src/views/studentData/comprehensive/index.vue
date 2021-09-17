@@ -6,11 +6,11 @@
           1
       <div class="v-line"></div>
       <Flex :flex="4">
-       2
+       <left-thought></left-thought>
       </Flex>
       <div class="v-line"></div>
       <Flex :flex="5">
-        3
+        <left-activity></left-activity>
       </Flex>
       <div class="v-line"></div>
     </Flex>
@@ -18,25 +18,27 @@
     <Flex :flex="3" column>
       <div class="v-line"></div>
       <Flex :flex="1">
-        <Flex :flex="1" column>
-          4
-        </Flex>
-        <div class="v-line"></div>
-        <Flex :flex="1">
-          5
-        </Flex>
+        <Flex :flex="2" column>
+         <Flex :flex="1">
+           <comprehensive-radar></comprehensive-radar>
+         </Flex>
+         <div class="v-line"></div>
+         <Flex :flex="1">
+           5
+         </Flex>
+       </Flex>
         <div class="h-line"></div>
         <Flex :flex="1" column>
           <Flex :flex="1">
-            6
+            <right-academic></right-academic>
           </Flex>
           <div class="v-line"></div>
           <Flex :flex="1">
-            7
+            <right-health></right-health>
           </Flex>
           <div class="v-line"></div>
           <Flex :flex="1">
-            8
+            <right-activity></right-activity>
           </Flex>
         </Flex>
       </Flex>
@@ -48,9 +50,21 @@
 
 <script>
 import Flex from "@/components/flex";
+import ComprehensiveRadar from "./components/comprehensiveRadar";
+import RightAcademic from "./components/rightAcademic";
+import RightHealth from "./components/rightHealth";
+import RightActivity from "./components/rightActivity";
+import LeftThought from "./components/leftThought";
+import LeftActivity from "./components/leftActivity";
 export default {
   name: "index",
   components: {
+    LeftActivity,
+    LeftThought,
+    RightActivity,
+    RightHealth,
+    RightAcademic,
+    ComprehensiveRadar,
     Flex
   },
 }

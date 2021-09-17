@@ -1,0 +1,183 @@
+<template>
+  <module-header title="身心健康指数">
+    <title-common :titleList="titleList"></title-common>
+    <echart  width="100%" height="100%" :options="options"></echart>
+  </module-header>
+</template>
+
+<script>
+import ModuleHeader from "@/components/moduleHeader";
+import TitleCommon from "@/components/titleCommon";
+import Echart from "@/components/echart";
+import * as echarts from "echarts";
+export default {
+  name: "rightHealth",
+  components: {Echart, TitleCommon, ModuleHeader},
+  data() {
+    return {
+      options: {},
+      titleList: [
+        {name: '体质状况'},
+        {name: '健康生活'},
+        {name: '心理健康'},
+        {name: '安全素养'},
+      ]
+    }
+  },
+  mounted() {
+    const options = {
+      xAxis: {
+        type: "category",
+        data: ["50米跑", "25*2往返", "立定跳远", "掷实心球", "坐立体前屈", "跳绳", "仰卧起坐"],
+        axisLabel:{
+          interval:0,
+          rotate:20,
+          margin:8,
+        },
+      },
+      yAxis: {
+        type: "value"
+      },
+      series: [
+        {
+          barWidth:14,
+          data: [
+            {
+              value: 35,
+              itemStyle: {
+                normal: {
+                  color: new echarts.graphic.LinearGradient(
+                      0,
+                      0,
+                      0,
+                      1,
+                      [
+                        { offset: 0, color: "#0DFFFF" },
+                        { offset: 0.6, color: "#70BFFF" },
+                        { offset: 1, color: "#70BFFF" }
+                      ]
+                  )
+                }
+              }
+            },
+            {
+              value: 45,
+              itemStyle: {
+                normal: {
+                  color: new echarts.graphic.LinearGradient(
+                      0,
+                      0,
+                      0,
+                      1,
+                      [
+                        { offset: 0, color: "#0DFFFF" },
+                        { offset: 0.6, color: "#70BFFF" },
+                        { offset: 1, color: "#70BFFF" }
+                      ]
+                  )
+                }
+              }
+            },
+            {
+              value: 95,
+              itemStyle: {
+                normal: {
+                  color: new echarts.graphic.LinearGradient(
+                      0,
+                      0,
+                      0,
+                      1,
+                      [
+                        { offset: 0, color: "#0DFFFF" },
+                        { offset: 0.6, color: "#70BFFF" },
+                        { offset: 1, color: "#70BFFF" }
+                      ]
+                  )
+                }
+              }
+            },
+            {
+              value: 45,
+              itemStyle: {
+                normal: {
+                  color: new echarts.graphic.LinearGradient(
+                      0,
+                      0,
+                      0,
+                      1,
+                      [
+                        { offset: 0, color: "#0DFFFF" },
+                        { offset: 0.6, color: "#70BFFF" },
+                        { offset: 1, color: "#70BFFF" }
+                      ]
+                  )
+                }
+              }
+            },
+            {
+              value: 10,
+              itemStyle: {
+                normal: {
+                  color: new echarts.graphic.LinearGradient(
+                      0,
+                      0,
+                      0,
+                      1,
+                      [
+                        { offset: 0, color: "#0DFFFF" },
+                        { offset: 0.6, color: "#70BFFF" },
+                        { offset: 1, color: "#70BFFF" }
+                      ]
+                  )
+                }
+              }
+            },
+            {
+              value: 45,
+              itemStyle: {
+                normal: {
+                  color: new echarts.graphic.LinearGradient(
+                      0,
+                      0,
+                      0,
+                      1,
+                      [
+                        { offset: 0, color: "#0DFFFF" },
+                        { offset: 0.6, color: "#70BFFF" },
+                        { offset: 1, color: "#70BFFF" }
+                      ]
+                  )
+                }
+              }
+            },
+            {
+              value: 28,
+              itemStyle: {
+                normal: {
+                  color: new echarts.graphic.LinearGradient(
+                      0,
+                      0,
+                      0,
+                      1,
+                      [
+                        { offset: 0, color: "#0DFFFF" },
+                        { offset: 0.6, color: "#70BFFF" },
+                        { offset: 1, color: "#70BFFF" }
+                      ]
+                  )
+                }
+              }
+            },
+          ],
+          type: "bar"
+        }
+      ]
+    };
+    this.options = options;
+  }
+}
+</script>
+
+<style scoped>
+
+</style>
