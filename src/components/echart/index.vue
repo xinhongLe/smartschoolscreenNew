@@ -32,31 +32,40 @@ export default {
         options: {
             type: Object,
             default: () => ({})
+        },
+        animation: {
+            type: Boolean,
+            default: true
         }
     },
     data() {
         return {
-            chart: null
+            chart: null,
+            timer: null
         };
     },
-    // watch: {
-    //     options: {
-    //         handler(options) {
-    //             // 设置true清空echart缓存
-    //             this.chart.setOption(options, true);
-    //         },
-    //         deep: true
-    //     }
-    // },
+    watch: {
+        options: {
+            handler(options) {
+                // 设置true清空echart缓存
+                this.chart && this.chart.setOption(options, true);
+            },
+            deep: true
+        }
+    },
     mounted() {
         this.$nextTick(() => {
             this.initChart();
         })
-        let timer = setInterval(() => {
-            this.initChart(); //你获取echarts数据的方法
-        }, 6000);
+
+        if (this.animation) {
+            this.timer = setInterval(() => {
+                this.initChart(); //你获取echarts数据的方法
+            }, 6000);
+        }
+        
         this.$once("hook:beforeDestroy", () => {
-            clearInterval(timer);
+            clearInterval(this.timer);
         });
     },
     methods: {
