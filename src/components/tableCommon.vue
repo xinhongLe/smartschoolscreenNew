@@ -1,14 +1,9 @@
 <template>
   <div class="common-table">
-    <div class="row header-color">
-      <div :class="[index === 0 ? 'col-first' : 'col']" v-for="(item, index) in headerList" :key="index">{{item.name}}</div>
-    </div>
+      <slot name="table-header"></slot>
     <div class="right-table" id="table">
       <div :class="[animateScroll ? 'animate-scroll' : '']">
-        <div v-for="(item,index) in tableList" :key="index" class="row">
-          <div class="col-first">{{index + 1 }}</div>
-          <div class="col" v-for="(col, i) in item" :key="i">{{col}}</div>
-        </div>
+        <slot></slot>
       </div>
     </div>
   </div>
@@ -63,10 +58,6 @@ export default {
       width: 0.4rem;
       text-align: center;
     }
-    //.col-last{
-    //  width: 0.8rem;
-    //  text-align: center;
-    //}
     .col{
       flex: 1;
       text-align: center;
