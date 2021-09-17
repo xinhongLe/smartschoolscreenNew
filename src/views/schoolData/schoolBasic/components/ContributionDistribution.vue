@@ -1,6 +1,10 @@
 <template>
     <moduleHeader title="资源贡献量分布">
         <Echart class="echart" width="100%" height="100%" :options="options"></Echart>
+        <div class='header-title'>
+            <p class='number'>107</p>
+            <p class="class">平均贡献量</p>
+        </div>
     </moduleHeader>
 </template>
 <script>
@@ -20,7 +24,7 @@ export default {
         let option = {
             legend: {
                 top: "10%",
-                left: "60%",
+                left: "70%",
                 orient: "vertical",
                 itemWidth: 10,
                 itemHeight: 10,
@@ -44,9 +48,9 @@ export default {
             },
             title: [
                 {
-                    text: "{name|" + "89" + "}\n{val|" + "个" + "}",
+                    text: "{name|" + "贡献量" + "}",
                     top: "center",
-                    left: "28%",
+                    left: "35%",
                     // borderWidth: 1,
                     // borderColor: "#142e52",
                     // backgroundColor:'rgba(20, 46, 82, 0.7)',
@@ -60,7 +64,7 @@ export default {
                                 lineHeight: 20,
                                 fontSize: 20,
                                 fontWeight: "normal",
-                                color: "rgba(13, 255, 255, 1)",
+                                color: "#ffff",
                                 padding: [10, 0, 0, -6]
                             },
                             val: {
@@ -84,7 +88,7 @@ export default {
                     type: "pie",
                     roseType: 'angle',
                     radius: [50, 80],
-                    center: ["30%", "50%"],
+                    center: ["40%", "50%"],
                     itemStyle: {
                         borderRadius: 0,
                         // borderWidth: 5,
@@ -233,4 +237,24 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
+.header-title{
+    position:absolute;
+    top: 80px;
+    left: 35px;
+    p{
+        margin: 0;
+        padding: 0;
+    }
+    .number{
+        font-size: 24px;
+        font-family: Bahnschrift_SemiBold;
+        color: #0DFFFF;
+    }
+    .class{
+        font-size: 12px;
+        font-family: PingFangSC-Regular, PingFang SC;
+        font-weight: 400;
+        color: #EDF2F8;
+    }
+}
 </style>
