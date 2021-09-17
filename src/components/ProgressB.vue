@@ -3,13 +3,15 @@
     <span class="progress_name" v-if="islable">{{ progressData.name }}</span>
     <div class="progress_border">
       <div
-        :id="`pregress_${progressData.id}`"
         class="progress_cont"
+        ref="pregressref"
         :style="styleObject"
         v-bind:class="{ progress_active: isActive }"
       ></div>
     </div>
-    <span class="progress_number" v-if="islable">{{ progressData.progressNum }}<i v-if="ispercent">%</i> </span>
+    <span class="progress_number" v-if="islable"
+      >{{ progressData.progressNum }}<i v-if="ispercent">%</i>
+    </span>
   </div>
 </template>
 <script>
@@ -24,26 +26,26 @@ export default {
       type: Boolean,
       default: false,
     },
-    ratioNum:{
-      type:Number,
-      default:1000
+    ratioNum: {
+      type: Number,
+      default: 1000,
     },
-    islable:{
-      type:Boolean,
-      default:true
+    islable: {
+      type: Boolean,
+      default: true,
     },
-    ispercent:{
-      type:Boolean,
-      default:false
+    ispercent: {
+      type: Boolean,
+      default: false,
     },
     styleObject: {
-      type:Object,
-      default:()=>{
-        return{
-          background: 'linear-gradient(90deg, #70bfff 0%, #0dffff 100%)'
-        }
-      }
-    }
+      type: Object,
+      default: () => {
+        return {
+          background: "linear-gradient(90deg, #70bfff 0%, #0dffff 100%)",
+        };
+      },
+    },
   },
   data() {
     return {
@@ -67,19 +69,23 @@ export default {
   },
   methods: {
     initProgress() {
-      let dompro = document.getElementById(`pregress_${this.progressData.id}`);
-      let num = (this.progressData.progressNum / this.ratioNum) * 100;
-      this.Interval = setInterval(() => {
-        dompro.style.width = 0 + "%";
-        this.isActive = false;
+      // let dompro = document.getElementById(`pregress_${this.progressData.id}`);
+      this.$nextTick(() => {
+        console.log(this.$refs.pregressref);
+        let dompro = this.$refs.pregressref;
+        let num = (this.progressData.progressNum / this.ratioNum) * 100;
+        this.Interval = setInterval(() => {
+          dompro.style.width = 0 + "%";
+          this.isActive = false;
+          setTimeout(() => {
+            this.isActive = true;
+            dompro.style.width = num.toFixed(0) + "%";
+          }, 100);
+        }, 5000);
         setTimeout(() => {
-          this.isActive = true;
           dompro.style.width = num.toFixed(0) + "%";
         }, 100);
-      }, 5000);
-      setTimeout(() => {
-        dompro.style.width = num.toFixed(0) + "%";
-      }, 100);
+      });
     },
   },
   beforeDestroy() {

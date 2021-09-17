@@ -57,6 +57,11 @@ export default {
           // formatter:'{value}min',
           color: "#96ACC3",
         },
+        splitLine: {
+          lineStyle: {
+            color: "rgba(255, 255, 255, .1)",
+          },
+        },
       },
       xAxis: {
         type: "category",

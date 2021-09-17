@@ -51,6 +51,11 @@ export default {
         axisLabel: {
           color: "#96ACC3",
         },
+        splitLine: {
+          lineStyle: {
+            color: "rgba(255, 255, 255, .1)",
+          },
+        },
       },
       yAxis: {
         type: "category",

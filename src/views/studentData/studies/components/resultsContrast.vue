@@ -196,6 +196,11 @@ export default {
           color: "#96ACC3",
           align: "right",
         },
+        splitLine: {
+          lineStyle: {
+            color: "rgba(255, 255, 255, .1)",
+          },
+        },
       },
       series: [
         {

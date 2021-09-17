@@ -18,33 +18,38 @@ export default {
   },
   mounted() {
     const options = {
-        grid: {
+      grid: {
         left: "3%",
         right: "4%",
         bottom: "2%",
-        top:"15%",
+        top: "15%",
         containLabel: true,
       },
       xAxis: {
         type: "category",
         data: ["一年级", "二年级", "三年级", "四年级", "五年级", "六年级"],
-         axisTick: {
+        axisTick: {
           show: false,
         },
       },
       yAxis: {
         type: "value",
-         name: "单位:%",
+        name: "单位:%",
         nameTextStyle: {
           color: "#96ACC3",
           align: "right",
+        },
+        splitLine: {
+          lineStyle: {
+            color: "rgba(255, 255, 255, .1)",
+          },
         },
       },
       series: [
         {
           data: [84, 89, 76, 80, 79, 78],
           type: "bar",
-           itemStyle: {
+          itemStyle: {
             color: {
               type: "linear",
               x: 0,
