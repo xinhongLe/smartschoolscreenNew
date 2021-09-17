@@ -23,7 +23,7 @@
             </Flex>
             <div class="v-line"></div>
             <Flex :flex="1"> 
-                
+                <PatternDistribution></PatternDistribution>
             </Flex>
             <div class="v-line"></div>
         </Flex>
@@ -38,7 +38,9 @@
                     <HeatDistribution></HeatDistribution>
                 </Flex>
                 <div class="h-line"></div>
-                <Flex :flex="1"> </Flex>
+                <Flex :flex="1"> 
+                    <Resources></Resources>
+                </Flex>
                 <div class="h-line"></div>
             </Flex>
             <div class="v-line"></div>
@@ -53,13 +55,17 @@ import HeatDistribution from './components/heatDistribution.vue'
 import Coverage from "./components/coverage"
 import JobType from "./components/jobType.vue"
 import Speed from "./components/speed"
+import Resources from "./components/resources"
+import PatternDistribution from "./components/patternDistribution"
 export default {
     components: {
         Flex,
         HeatDistribution,
         Coverage,
         JobType,
-        Speed
+        Speed,
+        PatternDistribution,
+        Resources
     }
 };
 </script>
