@@ -18,7 +18,7 @@ const routes = [
             {
                 path: "comprehensive",
                 name: "comprehensive",
-                component: () => import("@/views/studentData/comprehensive")
+                component: () => import("@/views/studentData/comprehensive/index")
             },
 
             {

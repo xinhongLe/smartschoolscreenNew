@@ -1,41 +1,80 @@
 <template>
-    <div class="img-content" ref="content">
-        <img ref="img" :style="style" @load="imgLoad" src="@/assets/screen/学生_学业评价.png" alt="">
-    </div>
+  <div class="content">
+    <div class="h-line"></div>
+    <Flex :flex="1" column>
+      <Flex :flex="1">
+        <job-type></job-type>
+      </Flex>
+      <div class="v-line"></div>
+      <Flex :flex="1">
+        <job-time></job-time>  
+      </Flex>
+      <div class="v-line"></div>
+      <Flex :flex="1">
+        <job-correct></job-correct>
+      </Flex>
+      <div class="v-line"></div>
+    </Flex>
+    <div class="h-line"></div>
+    <Flex :flex="2" column>
+      <Flex :flex="1"> 4 </Flex>
+      <Flex :flex="1"> 
+          <knowledge></knowledge>
+      </Flex>
+    </Flex>
+    <div class="h-line"></div>
+    <Flex :flex="1" column>
+      <Flex :flex="5">
+        <results-contrast></results-contrast>
+      </Flex>
+      <div class="v-line"></div>
+        <Flex :flex="5"> 
+            <grade-scores></grade-scores>
+        </Flex>
+      <div class="v-line"></div>
+      <Flex :flex="5">
+        <results-layered></results-layered>
+      </Flex>
+      <div class="v-line"></div>
+    </Flex>
+    <div class="h-line"></div>
+  </div>
 </template>
 
 <script>
+import Flex from "@/components/flex";
+import JobType from "./components/jobType.vue";
+import JobTime from './components/jobTime.vue';
+import JobCorrect from './components/jobCorrect.vue';
+import Knowledge from './components/knowledge.vue';
+import ResultsContrast from './components/resultsContrast.vue';
+import GradeScores from './components/gradeScores.vue';
+import ResultsLayered from './components/resultsLayered.vue';
 export default {
-    data() {
-        return {
-            style: {}
-        }
-    },
+  components: {
+    Flex,
+    JobType,
+    JobTime,
+    JobCorrect,
+    Knowledge,
+    ResultsContrast,
+    GradeScores,
+    ResultsLayered
+  },
+};
 
-    methods: {
-        imgLoad() {
-            const imgScale = this.$refs.img.clientWidth / this.$refs.img.clientHeight;
-            const scale = this.$refs.content.clientWidth / this.$refs.content.clientHeight;
-            if (imgScale > scale) {
-                this.style = { width: '100%' }
-            } else {
-                this.style = { height: '100%' }
-            }
-        }
-    }
-}
 </script>
 
 <style scoped>
-.img-content {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.content {
+  flex: 1;
+  display: flex;
+  min-height: 0;
 }
-
-.img-content img {
-    display: block;
+.v-line {
+  height: 0.4rem;
+}
+.h-line {
+  width: 0.4rem;
 }
 </style>

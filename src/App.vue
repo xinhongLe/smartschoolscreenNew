@@ -1,7 +1,7 @@
 <template>
     <div id="app">
         <div class="container">
-            <Title :title="`*州市教育信息化数据大屏`" :style="{position: ['classData', 'schoolBasic', 'areaResource', 'schoolSecurity', 'lessonData', 'educationData', 'areaEducationData', 'teacherBasic', 'studentBasic','behavior'].indexOf($route.name) > -1 ? 'relative' : 'absolute'}" />
+            <Title :title="`*州市教育信息化数据大屏`" :style="{position: ['classData', 'schoolBasic', 'areaResource', 'schoolSecurity', 'lessonData', 'educationData', 'areaEducationData', 'teacherBasic', 'studentBasic','behavior','comprehensive'].indexOf($route.name) > -1 ? 'relative' : 'absolute'}" />
             <div class="route-content">
                 <router-view />
             </div>
@@ -42,7 +42,7 @@ export default {
             return item.path.indexOf('/studentData/') > -1 || item.path.indexOf('/teacherData/') > -1 || item.path.indexOf('/schoolData/') > -1 || item.path.indexOf('/areaData/') > -1
         })
 
-        this.startCount();
+        // this.startCount();
     },
 
     methods: {
