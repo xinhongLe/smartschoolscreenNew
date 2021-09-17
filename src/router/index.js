@@ -126,7 +126,7 @@ const routes = [
             {
                 path: "evaluationData",
                 name: "evaluationData",
-                component: () => import("@/views/areaData/evaluationData")
+                component: () => import("@/views/areaData/evaluationData/index")
             },
 
             {
