@@ -60,7 +60,7 @@ import OutsideReading from "./components/OutsideReading.vue";
 import PracticeComplete from "./components/PracticeComplete.vue";
 import TeachingModel from "./components/TeachingModel.vue";
 import WrongQuestion from "./components/WrongQuestion.vue";
-import ClassActivity from "./components/ClassActivity1.vue";
+import ClassActivity1 from "./components/ClassActivity1.vue";
 import CreditBank from './components/CreditBank.vue'
 export default {
     data() {
@@ -77,7 +77,7 @@ export default {
         PracticeComplete,
         TeachingModel,
         WrongQuestion,
-        ClassActivity,
+        ClassActivity1,
         CreditBank
     },
     methods: {
