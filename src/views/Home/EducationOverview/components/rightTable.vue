@@ -1,6 +1,19 @@
 <template>
   <module-header  title="各区满意度排名">
-    <table-common :headerList="headerList" :tableList="tableList"></table-common>
+    <table-common :headerList="headerList" :tableList="tableList">
+      <template slot="table-header">
+        <div class="header-color row">
+          <div :class="[index === 0 ? 'col-first' : 'col']" v-for="(item, index) in headerList" :key="index">{{item.name}}</div>
+        </div>
+      </template>
+      <template>
+        <div v-for="(item,index) in tableList" :key="index" class="row">
+          <div class="col-first">{{index + 1 }}</div>
+          <div class="col">{{ item.name }}</div>
+          <div class="col">{{ item.pre }}</div>
+        </div>
+      </template>
+    </table-common>
   </module-header>
 </template>
 <script>

@@ -5,7 +5,23 @@
        <div @click="activeIndex = index" :class="['title', activeIndex === index ? 'title-active' : '']" v-for="(item,index) in titleList" :key="index">{{item.name}}</div>
      </div>
      <div class="content-box">
-       <table-common :headerList="headerList" :tableList="tableList"></table-common>
+       <table-common :headerList="headerList" :tableList="tableList">
+         <template slot="table-header">
+           <div class="header-color row">
+             <div :class="[index === 0 ? 'col-first' : 'col']" v-for="(item, index) in headerList" :key="index">{{item.name}}</div>
+           </div>
+         </template>
+         <template>
+           <div v-for="(item,index) in tableList" :key="index" class="row">
+             <div class="col-first">{{index + 1 }}</div>
+             <div class="col">{{ item.name }}</div>
+             <div class="col">{{ item.gzs }}</div>
+             <div class="col">{{ item.gkk }}</div>
+             <div class="col">{{ item.hd }}</div>
+             <div class="col">{{ item.cg }}</div>
+           </div>
+         </template>
+       </table-common>
      </div>
    </div>
   </module-header>
