@@ -1,5 +1,5 @@
 <template>
-    <ModuleHeader title="课程时间占比">
+    <ModuleHeader title="知识点覆盖率">
         <div class="coverage-box">
             <div class="chart-box">
                 <echart
