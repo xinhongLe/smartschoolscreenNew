@@ -72,7 +72,6 @@ export default {
     initProgress() {
       // let dompro = document.getElementById(`pregress_${this.progressData.id}`);
       this.$nextTick(() => {
-        console.log(this.$refs.pregressref);
         let dompro = this.$refs.pregressref;
         let num = (this.progressData.progressNum / this.ratioNum) * 100;
         this.Interval = setInterval(() => {
