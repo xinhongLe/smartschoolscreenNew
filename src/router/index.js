@@ -24,7 +24,7 @@ const routes = [
             {
                 path: "behavior",
                 name: "behavior",
-                component: () => import("@/views/studentData/behavior")
+                component: () => import("@/views/studentData/behavior/index.vue")
             },
 
             {

@@ -47,18 +47,18 @@ export default {
 
     methods: {
         startCount() {
-            clearInterval(this.timer);
-            this.timer = setInterval(() => {
-                if (this.sort < 17) {
-                    this.$router.push({
-                        name: this.list[this.sort + 1].name
-                    })
-                } else {
-                    this.$router.push({
-                        name: this.list[0].name
-                    })
-                }
-            }, 60000);
+            // clearInterval(this.timer);
+            // this.timer = setInterval(() => {
+            //     if (this.sort < 17) {
+            //         this.$router.push({
+            //             name: this.list[this.sort + 1].name
+            //         })
+            //     } else {
+            //         this.$router.push({
+            //             name: this.list[0].name
+            //         })
+            //     }
+            // }, 60000);
         }
     }
 };
