@@ -9,7 +9,7 @@
         v-bind:class="{ progress_active: isActive }"
       ></div>
     </div>
-    <span class="progress_number" v-if="islable">{{ progressData.progressNum }}</span>
+    <span class="progress_number" v-if="islable">{{ progressData.progressNum }}<i v-if="ispercent">%</i> </span>
   </div>
 </template>
 <script>
@@ -31,6 +31,10 @@ export default {
     islable:{
       type:Boolean,
       default:true
+    },
+    ispercent:{
+      type:Boolean,
+      default:false
     },
     styleObject: {
       type:Object,
