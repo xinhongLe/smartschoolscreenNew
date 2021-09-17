@@ -1,25 +1,24 @@
 <template>
   <module-header :title="'隐患实时动态'">
-    <div class="right-table" id="table">
-      <div :class="[animateScroll ? 'animate-scroll' : '']">
-        <div v-for="(item,index) in tableList" :key="index" class="row">
-          <div class="first-col">
-            <img v-if="item.type === 1" src="../images/icon_ganhao@2x.png" alt="">
-            <img v-if="item.type === 3" src="../images/icon_duigou@2x.png" alt="">
-            <span>{{item.name}}</span>
-          </div>
-          <p>{{item.pre}}</p>
+    <table-common :tableList="tableList">
+      <div v-for="(item,index) in tableList" :key="index" class="row">
+        <div class="first-col">
+          <img v-if="item.type === 1" src="../images/icon_ganhao@2x.png" alt="">
+          <img v-if="item.type === 3" src="../images/icon_duigou@2x.png" alt="">
+          <span>{{item.name}}</span>
         </div>
+        <p class="col">{{item.pre}}</p>
       </div>
-    </div>
+    </table-common>
   </module-header>
 </template>
 
 <script>
 import ModuleHeader from "@/components/moduleHeader";
+import TableCommon from "../../../../components/tableCommon";
 export default {
   name: "rightDynamic",
-  components: { ModuleHeader},
+  components: {TableCommon, ModuleHeader},
   data() {
     return {
       animateScroll: false,
@@ -32,29 +31,11 @@ export default {
       ]
     }
   },
-  mounted() {
-    const marquee = document.getElementById('table');
-    if(this.tableList.length >= marquee.offsetHeight / 80 / 0.6){
-      this.animateScroll = true
-      this.$nextTick(() => {
-        const contents =  marquee.innerHTML;
-        marquee.innerHTML = contents + contents
-      })
-    }
-  }
 }
 </script>
 
 <style scoped lang="scss">
 .row{
-  width: 100%;
-  padding: 0.1rem 0;
-  height: 0.4rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  color: #fff;
-  border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
   .first-col{
     width: 70%;
     white-space: nowrap;
@@ -66,28 +47,6 @@ export default {
     height: 0.225rem;
     margin-right: 0.1rem;
     vertical-align: text-bottom;
-  }
-}
-.right-table{
-  height: 100%;
-  width: 100%;
-  overflow: hidden;
-  &:hover>div{
-    animation-play-state:paused;
-  }
-  >div{
-    overflow: hidden;
-  }
-  .animate-scroll{
-    animation: marquee 15s linear infinite;
-  }
-  @keyframes marquee {
-    0% {
-      transform: translateY(0%);
-    }
-    100% {
-      transform: translateY(-100%);
-    }
   }
 }
 </style>
