@@ -1,5 +1,5 @@
 <template>
-  <div class="progressBox" :class="{ mar_gin: m20 }">
+  <div class="progressBox">
     <span class="progress_name" v-if="islable">{{ progressData.name }}</span>
     <div class="progress_border">
       <div
@@ -19,26 +19,27 @@ export default {
   name: "progressB",
   props: {
     proData: {
+      // 进度条数据对象
       type: Object,
       default: () => {},
     },
-    m20: {
-      type: Boolean,
-      default: false,
-    },
     ratioNum: {
+      // 计算进度条的比例值
       type: Number,
       default: 1000,
     },
     islable: {
+      // 是否显示进度条的名字和占比数 默认显示
       type: Boolean,
       default: true,
     },
     ispercent: {
+      // 是否显示百分号 默认不显示
       type: Boolean,
       default: false,
     },
     styleObject: {
+      // 控制进度条颜色的对象 默认为蓝色渐变
       type: Object,
       default: () => {
         return {
