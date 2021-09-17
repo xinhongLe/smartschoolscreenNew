@@ -5,7 +5,6 @@
             <echart :options="options" height="100%" width="100%"></echart>
         </div>
         <div class="v-line"></div>
-        <div class="v-line"></div>
         <div class="rank-item" v-for="(item, index) in rankList" :key="index"> 
             <div class="rank-sort" :class="['red', 'yellow', 'blue'][index] || ''">
                 No.{{index + 1}}
@@ -261,17 +260,18 @@ export default {
     display: flex;
     align-items: center;
     border: 0.0175rem solid rgba(16, 163, 190, 0.23);
-    margin-bottom: .4rem;
+    margin-bottom: .1rem;
+    height: 1rem;
 }
 
 .rank-sort {
-    width: 1.4rem;
-    height: 1.4rem;
+    width: 1rem;
+    height: 1rem;
     display: flex;
     align-items: center;
     justify-content: center;
     background-color: rgba(3, 86, 176, 0.13);
-    font-size: .3rem;
+    font-size: .25rem;
     font-weight: 600;
     color: rgba(112, 191, 255, 1);
 }
@@ -290,11 +290,11 @@ export default {
 
 .rank-message {
     flex: 1;
-    padding: .2rem .3rem;
+    padding: .1rem .3rem;
 }
 
 .rank-grade {
-    font-size: .225rem;
+    font-size: .175rem;
     font-weight: 600;
     color: #ffffff;
 }
@@ -303,7 +303,7 @@ export default {
     color: #ffffff;
     font-size: .15rem;
     display: flex;
-    margin-top: .1rem;
+    margin-top: .05rem;
 }
 
 .rank-label {
@@ -312,14 +312,14 @@ export default {
 }
 
 .score-text {
-    font-size: 0.375rem;
+    font-size: 0.3rem;
     font-weight: 600;
     color: rgba(13, 255, 255, 1);
 }
 
 .rank-score {
     color: rgba(255, 255, 255, 1);
-    font-size: .175rem;
+    font-size: .15rem;
     text-align: center;
     padding-right: .2rem;
 }
