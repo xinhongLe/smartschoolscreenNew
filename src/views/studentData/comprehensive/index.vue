@@ -3,13 +3,12 @@
     <div class="h-line"></div>
     <Flex :flex="1" column>
       <div class="v-line"></div>
-          1
-      <div class="v-line"></div>
-      <Flex :flex="4">
+      <left-title></left-title>
+      <Flex :flex="5">
        <left-thought></left-thought>
       </Flex>
       <div class="v-line"></div>
-      <Flex :flex="5">
+      <Flex :flex="4">
         <left-activity></left-activity>
       </Flex>
       <div class="v-line"></div>
@@ -24,7 +23,7 @@
          </Flex>
          <div class="v-line"></div>
          <Flex :flex="1">
-           5
+          <comprehensive></comprehensive>
          </Flex>
        </Flex>
         <div class="h-line"></div>
@@ -56,9 +55,13 @@ import RightHealth from "./components/rightHealth";
 import RightActivity from "./components/rightActivity";
 import LeftThought from "./components/leftThought";
 import LeftActivity from "./components/leftActivity";
+import LeftTitle from "./components/leftTitle";
+import Comprehensive from "./components/comprehensive";
 export default {
   name: "index",
   components: {
+    Comprehensive,
+    LeftTitle,
     LeftActivity,
     LeftThought,
     RightActivity,

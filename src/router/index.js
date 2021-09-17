@@ -42,7 +42,7 @@ const routes = [
             {
                 path: "homework",
                 name: "homework",
-                component: () => import("@/views/studentData/homework")
+                component: () => import("@/views/studentData/homework/index.vue")
             },
 
             {
@@ -126,7 +126,7 @@ const routes = [
             {
                 path: "evaluationData",
                 name: "evaluationData",
-                component: () => import("@/views/areaData/evaluationData")
+                component: () => import("@/views/areaData/evaluationData/index")
             },
 
             {
