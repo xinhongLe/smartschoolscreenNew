@@ -36,7 +36,7 @@ const routes = [
             {
                 path: "exam",
                 name: "exam",
-                component: () => import("@/views/studentData/exam")
+                component: () => import("@/views/studentData/exam/index")
             },
 
             {

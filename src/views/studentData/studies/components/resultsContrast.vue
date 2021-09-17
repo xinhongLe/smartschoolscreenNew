@@ -179,7 +179,7 @@ export default {
         left: "3%",
         right: "4%",
         bottom: "2%",
-        top:"15%",
+        top:"20%",
         containLabel: true,
       },
       xAxis: {
@@ -194,7 +194,7 @@ export default {
          name: "单位:min",
         nameTextStyle: {
           color: "#96ACC3",
-          align: "right",
+          align: "center",
         },
         splitLine: {
           lineStyle: {
@@ -206,6 +206,12 @@ export default {
         {
           data: [84, 89, 76, 80],
           type: "bar",
+           label: {
+            show: true,
+            position: "top",
+            color: '#0DFFFF',
+            fontSize: 16
+          },
            itemStyle: {
             color: {
               type: "linear",
@@ -226,7 +232,7 @@ export default {
               global: false, // 缺省为 false
             },
           },
-           barWidth: 16, //柱图宽度
+           barWidth: 24, //柱图宽度
         },
       ],
     };

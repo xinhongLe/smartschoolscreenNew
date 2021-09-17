@@ -59,7 +59,8 @@ export default {
       },
       yAxis: {
         type: "category",
-        name: "单位:min",
+        name: "单位: min",
+        splitNumber:5,
         nameTextStyle: {
           color: "#96ACC3",
           align: "right",

@@ -3,39 +3,37 @@
     <div class="h-line"></div>
     <Flex :flex="1" column>
       <Flex :flex="1">
-        <job-type></job-type>
+        <title-distribution></title-distribution>
       </Flex>
       <div class="v-line"></div>
       <Flex :flex="1">
-        <job-time></job-time>  
+        <school-age-distribution></school-age-distribution>
       </Flex>
       <div class="v-line"></div>
       <Flex :flex="1">
-        <job-correct></job-correct>
+        <!-- <job-correct></job-correct> -->
       </Flex>
       <div class="v-line"></div>
     </Flex>
     <div class="h-line"></div>
     <Flex :flex="2" column>
-      <Flex :flex="3">
-        <KnowledgeCoverage />
-      </Flex>
-      <Flex :flex="2"> 
-          <knowledge></knowledge>
+      <Flex :flex="1"> 4 </Flex>
+      <Flex :flex="1"> 
+          <teach-radar></teach-radar>
       </Flex>
     </Flex>
     <div class="h-line"></div>
     <Flex :flex="1" column>
       <Flex :flex="5">
-        <results-contrast></results-contrast>
+        <!-- <results-contrast></results-contrast> -->
       </Flex>
       <div class="v-line"></div>
         <Flex :flex="5"> 
-            <grade-scores></grade-scores>
+            <teaching-research></teaching-research>
         </Flex>
       <div class="v-line"></div>
       <Flex :flex="5">
-        <results-layered></results-layered>
+        <teacher-training></teacher-training>
       </Flex>
       <div class="v-line"></div>
     </Flex>
@@ -45,25 +43,19 @@
 
 <script>
 import Flex from "@/components/flex";
-import JobType from "./components/jobType.vue";
-import JobTime from './components/jobTime.vue';
-import JobCorrect from './components/jobCorrect.vue';
-import Knowledge from './components/knowledge.vue';
-import ResultsContrast from './components/resultsContrast.vue';
-import GradeScores from './components/gradeScores.vue';
-import ResultsLayered from './components/resultsLayered.vue';
-import KnowledgeCoverage from "./components/knowledgeCoverage";
+import TitleDistribution from './components/titleDistribution.vue';
+import SchoolAgeDistribution from './components/schoolAgeDistribution.vue';
+import TeachingResearch from './components/teachingResearch.vue';
+import TeacherTraining from './components/teacherTraining.vue';
+import TeachRadar from "./components/teachRadar";
 export default {
   components: {
+    TeachRadar,
     Flex,
-    JobType,
-    JobTime,
-    JobCorrect,
-    Knowledge,
-    ResultsContrast,
-    GradeScores,
-    ResultsLayered,
-    KnowledgeCoverage
+    TitleDistribution,
+    SchoolAgeDistribution,
+    TeachingResearch,
+    TeacherTraining,
   },
 };
 

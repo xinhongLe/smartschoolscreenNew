@@ -1,16 +1,13 @@
 <template>
-  <moduleHeader title="作业类型">
+  <module-header title="职称分布">
     <Echart :options="options" height="100%"></Echart>
-  </moduleHeader>
+  </module-header>
 </template>
 <script>
 import moduleHeader from "@/components/moduleHeader.vue";
 import Echart from "@/components/echart";
 export default {
-  components: {
-    moduleHeader,
-    Echart,
-  },
+  components: { moduleHeader, Echart },
   data() {
     return {
       options: {},
@@ -28,7 +25,7 @@ export default {
       legend: {
         type: "scroll",
         left: "1%",
-        data: ["巩固型作业", "创造型作业", "实践型作业", "综合性作业"],
+        data: ["正高级", "[80,90]", "[70,80]", "[60,70]", "[0,60]"],
         icon: "diamond",
         top: 10,
         itemWidth: 8, // 图例标记的图形宽度。
@@ -42,41 +39,20 @@ export default {
       grid: {
         left: "3%",
         right: "4%",
-        bottom: "3%",
-        top: "30%",
+        bottom: "1%",
+        top: "15%",
         containLabel: true,
       },
-      yAxis: {
-        type: "value",
-        name: "单位: %",
-        nameTextStyle: {
-          color: "#96ACC3",
-          align: "right",
-        },
-        splitNumber:4,
-        axisLabel: {
-          // formatter:'{value}min',
-          color: "#96ACC3",
-        },
-        splitLine: {
-          lineStyle: {
-            color: "rgba(255, 255, 255, .1)",
-          },
-        },
-      },
       xAxis: {
+        type: "value",
+        show: false,
+      },
+      yAxis: {
         type: "category",
-        data: [
-          "一年级",
-          "二年级",
-          "三年级",
-          "四年级",
-          "五年级",
-          "六年级",
-          "七年级",
-          "八年级",
-          "九年级",
-        ],
+        data: ["三年级", "四年级", "五年级", "六年级"],
+        axisLine: {
+          show: false,
+        },
         axisLabel: {
           show: true,
           textStyle: {
@@ -92,10 +68,16 @@ export default {
       },
       series: [
         {
-          name: "巩固型作业",
+          name: "正高级",
           type: "bar",
           stack: "总量",
-          data: [32, 30, 31, 34, 39, 30, 32, 29, 33],
+          data: [30, 32, 29, 33],
+          label: {
+            show: true,
+            formatter: "{c}人",
+            position: "bottom",
+            color: "#0DFFFF",
+          },
           itemStyle: {
             color: {
               type: "linear",
@@ -119,10 +101,16 @@ export default {
           barWidth: 12, //柱图宽度
         },
         {
-          name: "创造型作业",
+          name: "[80,90]",
           type: "bar",
           stack: "总量",
-          data: [20, 32, 11, 14, 90, 30, 20, 20, 30],
+          data: [20, 32, 11, 14],
+          label: {
+            show: true,
+            formatter: "{c}人",
+            position: "bottom",
+            color: "#30A2FD",
+          },
           itemStyle: {
             color: {
               type: "linear",
@@ -146,10 +134,16 @@ export default {
           barWidth: 12, //柱图宽度
         },
         {
-          name: "实践型作业",
+          name: "[70,80]",
           type: "bar",
           stack: "总量",
-          data: [22, 12, 11, 24, 29, 33, 31, 29, 13],
+          data: [33, 31, 29, 13],
+          label: {
+            show: true,
+            formatter: "{c}人",
+            position: "bottom",
+            color: "#A962F3",
+          },
           itemStyle: {
             color: {
               type: "linear",
@@ -173,10 +167,16 @@ export default {
           barWidth: 12, //柱图宽度
         },
         {
-          name: "综合性作业",
+          name: "[60,70]",
           type: "bar",
           stack: "总量",
-          data: [12, 21, 21, 14, 19, 33, 41, 29, 33],
+          data: [33, 41, 29, 33],
+          label: {
+            show: true,
+            formatter: "{c}人",
+            position: "bottom",
+            color: "#FC5AD3",
+          },
           itemStyle: {
             color: {
               type: "linear",
@@ -199,53 +199,41 @@ export default {
           },
           barWidth: 12, //柱图宽度
         },
-        // {
-        //   name: "作业环节",
-        //   type: "bar",
-        //   stack: "总量",
-        //   data: [20, 32, 91, 34, 29, 33, 20, 20, 33],
-        //  itemStyle: {
-        //     color: {
-        //       type: 'linear',
-        //       x: 0,
-        //       y: 0,
-        //       x2: 0,
-        //       y2: 1,
-        //       colorStops: [{
-        //           offset: 0, color: '#96ACC3' // 0% 处的颜色
-        //       }, {
-        //           offset: 1, color: '#FFFFFF' // 100% 处的颜色
-        //       }],
-        //       global: false // 缺省为 false
-        //     },
-        //   },
-        //   barWidth: 12, //柱图宽度
-        // },
-        // {
-        //   name: "其他",
-        //   type: "bar",
-        //   stack: "总量",
-        //   data: [20, 32, 91, 34, 29, 30, 32, 20, 33],
-        //  itemStyle: {
-        //     color: {
-        //       type: 'linear',
-        //       x: 0,
-        //       y: 0,
-        //       x2: 0,
-        //       y2: 1,
-        //       colorStops: [{
-        //           offset: 0, color: '#FFFF00' // 0% 处的颜色
-        //       }, {
-        //           offset: 1, color: '#DBB001' // 100% 处的颜色
-        //       }],
-        //       global: false // 缺省为 false
-        //     },
-        //   },
-        //   barWidth: 12, //柱图宽度
-        // },
+        {
+          name: "[0,60]",
+          type: "bar",
+          stack: "总量",
+          data: [33, 20, 20, 33],
+          label: {
+            show: true,
+            formatter: "{c}人",
+            position: "bottom",
+            color: "#96ACC3",
+          },
+          itemStyle: {
+            color: {
+              type: "linear",
+              x: 0,
+              y: 0,
+              x2: 0,
+              y2: 1,
+              colorStops: [
+                {
+                  offset: 0,
+                  color: "#96ACC3", // 0% 处的颜色
+                },
+                {
+                  offset: 1,
+                  color: "#FFFFFF", // 100% 处的颜色
+                },
+              ],
+              global: false, // 缺省为 false
+            },
+          },
+          barWidth: 12, //柱图宽度
+        },
       ],
     };
-
     this.options = options;
   },
 };
