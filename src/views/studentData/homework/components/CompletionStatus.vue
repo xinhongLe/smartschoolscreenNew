@@ -28,9 +28,9 @@ export default {
             },
             legend: {
                 data: ["作业布置量", "作业完成率"],
-                left:'right',
-                textStyle:{
-                    color:'#fff'
+                left: "right",
+                textStyle: {
+                    color: "#fff"
                 }
             },
             xAxis: [
@@ -57,6 +57,11 @@ export default {
                     max: 80,
                     axisLabel: {
                         formatter: "{value}"
+                    },
+                    splitLine: {
+                        lineStyle: {
+                            color: "rgba(255, 255, 255, .1)"
+                        }
                     }
                 },
                 {
@@ -66,6 +71,11 @@ export default {
                     max: 80,
                     axisLabel: {
                         formatter: "{value}%"
+                    },
+                    splitLine: {
+                        lineStyle: {
+                            color: "rgba(255, 255, 255, .1)"
+                        }
                     }
                 }
             ],

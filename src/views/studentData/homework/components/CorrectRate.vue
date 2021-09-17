@@ -32,7 +32,12 @@ export default {
                 data: data
             },
             yAxis: {
-                type: "value"
+                type: "value",
+                splitLine: {
+                    lineStyle: {
+                        color: "rgba(255, 255, 255, .1)"
+                    }
+                }
                 // min: 20,
                 // max: 60,
                 // axisLabel: {
@@ -172,8 +177,8 @@ export default {
                             label: {
                                 show: true,
                                 position: "top",
-                                formatter: function(a) {
-                                    return a.value+'%'
+                                formatter: function (a) {
+                                    return a.value + "%";
                                 },
                                 textStyle: {
                                     color: "#0DFFFF",
