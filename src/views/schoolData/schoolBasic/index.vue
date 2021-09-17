@@ -4,7 +4,10 @@
         <LeftRender />
         <div class="h-line"></div>
         <Flex :flex="1" column>
-            <Flex :flex="1"></Flex>
+            <Flex :flex="1">
+                <PersonalComposition />
+            </Flex>
+            <AttentionStudent />
             <div class="v-line"></div>
             <Flex :flex="1">
                 <ClassDistribution></ClassDistribution>
@@ -37,14 +40,17 @@
 import Flex from "@/components/flex";
 import LeftRender from "./components/leftRender";
 import Evaluate from "./components/evaluate";
-
 import ClassDistribution from './components/ClassDistribution.vue'
+import PersonalComposition from "./components/personalComposition";
+import AttentionStudent from "./components/attentionStudent";
 export default {
     components: {
       Flex,
       LeftRender,
       Evaluate,
-      ClassDistribution
+      ClassDistribution,
+      PersonalComposition,
+      AttentionStudent
     }
 };
 </script>

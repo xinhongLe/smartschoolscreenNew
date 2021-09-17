@@ -277,7 +277,7 @@ export default {
 .header-title{
     position:absolute;
     top: 100px;
-    left: 0;
+    left: 35px;
     p{
         margin: 0;
         padding: 0;
