@@ -35,7 +35,7 @@
                 v-for="item in progressList"
                 :key="item.id"
             >
-                <ProgressB :proData="item" :ratioNum="400"></ProgressB>
+                <ProgressB :proData="item" :ratioNum="5000"></ProgressB>
             </div>
         </div>
         <div class="v-line"></div>
@@ -61,22 +61,22 @@ export default {
                         {
                             name: "*苏区",
                             progressNum: 4323,
-                            id: 1
+                            id: 9
                         },
                         {
                             name: "**园区",
                             progressNum: 4102,
-                            id: 2
+                            id: 10
                         },
                         {
                             name: "*中区",
                             progressNum: 3827,
-                            id: 3
+                            id: 11
                         },
                         {
                             name: "*城区",
                             progressNum: 2112,
-                            id: 4
+                            id: 12
                         }
                     ]
                 },
@@ -231,9 +231,9 @@ export default {
 }
 
 .tree-img {
-    width: 88%;
+    width: 90%;
     display: block;
-    padding: .5rem 0;
+    padding: .2rem 0;
 }
 .schoolData {
     width: 100%;

@@ -1,10 +1,10 @@
 <template>
-  <moduleHeader title="教学进度监控">
+  <moduleHeader title="知识点教学进度">
     <div class="schoolData">
-        <p>进度均值：<span>32.6%</span></p>
+        <p>进度均值：<span>63%</span></p>
         <div class="progress-box">
             <div class="progressitem" v-for="item in progressList" :key="item.id">
-                <ProgressB :proData="item" :ratioNum="100" :ispercent="true"></ProgressB>
+                <ProgressB :proData="item" :ratioNum="100"></ProgressB>
             </div>
         </div>
     </div>
@@ -24,23 +24,48 @@ export default {
             progressList: [
                 {
                     name: "一年级",
-                    progressNum: 24,
+                    progressNum: 57,
                     id: 1
                 },
                 {
                     name: "二年级",
-                    progressNum: 28,
+                    progressNum: 60,
                     id: 2
                 },
                 {
                     name: "三年级",
-                    progressNum: 39,
+                    progressNum: 62,
                     id: 3
                 },
                 {
                     name: "四年级",
-                    progressNum: 36,
+                    progressNum: 61,
                     id: 4
+                },
+                {
+                    name: "五年级",
+                    progressNum: 65,
+                    id: 2
+                },
+                {
+                    name: "六年级",
+                    progressNum: 73,
+                    id: 3
+                },
+                {
+                    name: "七年级",
+                    progressNum: 60,
+                    id: 4
+                },
+                {
+                    name: "八年级",
+                    progressNum: 63,
+                    id: 2
+                },
+                {
+                    name: "九年级",
+                    progressNum: 66,
+                    id: 3
                 }
             ]
         };

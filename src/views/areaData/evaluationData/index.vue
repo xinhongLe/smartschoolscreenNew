@@ -5,7 +5,7 @@
             <TopCount></TopCount>
             <div class="v-line"></div>
             <Flex :flex="1">
-                <Flex :flex="2" column>
+                <Flex :flex="3" column>
                     <Flex :flex="1">
                         <Speed></Speed>
                     </Flex>
@@ -17,7 +17,7 @@
                     </Flex>
                 </Flex>
                 <div class="h-line"></div>
-                <Flex :flex="3" column>
+                <Flex :flex="4" column>
                     <Flex :flex="1">
                         <ClassDistribution></ClassDistribution>
                     </Flex>

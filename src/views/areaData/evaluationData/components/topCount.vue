@@ -52,6 +52,19 @@
                 <span><i></i><i></i><i></i></span>
             </div>
         </ModuleBorder>
+        <ModuleBorder :autoHeight="true">     
+            <div class="inner">
+                <CountTo
+                    ref="example2"
+                    class="num num5"
+                    :start-val="0"
+                    :end-val="873728"
+                    :duration="3000"
+                ></CountTo>
+                <p>考试次数</p>
+                <span><i></i><i></i><i></i></span>
+            </div>
+        </ModuleBorder>
     </div>
 </template>
 
@@ -102,6 +115,9 @@ export default {
         }
         .num4 {
             color: #FA4A4F;
+        }
+        .num5 {
+            color: #733EFA;
         }
         >p {
             margin: 0;

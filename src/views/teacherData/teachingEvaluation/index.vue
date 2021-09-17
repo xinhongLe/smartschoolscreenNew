@@ -2,21 +2,29 @@
     <div class="content">
         <div class="h-line"></div>
         <Flex :flex="2" column>
-            <Flex :flex="1"> </Flex>
+            <Flex :flex="1">
+                <Coverage></Coverage>
+            </Flex>
             <div class="v-line"></div>
-            <Flex :flex="1"> </Flex>
+            <Flex :flex="1">
+                <JobType></JobType>
+            </Flex>
             <div class="v-line"></div>
         </Flex>
         <div class="h-line"></div>
         <Flex :flex="4" column>
             <Flex :flex="1">
-                <Flex :flex="1"> </Flex>
+                <Flex :flex="1"> 
+                    <Speed></Speed>
+                </Flex>
                 <div class="h-line"></div>
                 <Flex :flex="1"> </Flex>
                 <div class="h-line"></div>
             </Flex>
             <div class="v-line"></div>
-            <Flex :flex="1"> 8 </Flex>
+            <Flex :flex="1"> 
+                
+            </Flex>
             <div class="v-line"></div>
         </Flex>
         <div class="h-line"></div>
@@ -42,10 +50,16 @@
 <script>
 import Flex from "@/components/flex";
 import HeatDistribution from './components/heatDistribution.vue'
+import Coverage from "./components/coverage"
+import JobType from "./components/jobType.vue"
+import Speed from "./components/speed"
 export default {
     components: {
         Flex,
-        HeatDistribution
+        HeatDistribution,
+        Coverage,
+        JobType,
+        Speed
     }
 };
 </script>
