@@ -1,7 +1,9 @@
 <template>
     <div class="circle">
-        <moduleHeader title="S-T教学模式分析" autoHeight>
-            <Echart width="100%" :height="'240px'" :options="options"></Echart>
+        <moduleHeader title="S-T教学模式分析">
+            <div class="chart-box">
+                <Echart width="100%" :height="'100%'" :options="options"></Echart>
+            </div>
         </moduleHeader>
     </div>
 </template>
@@ -174,5 +176,13 @@ export default {
     display: flex;
     align-items: center;
     justify-content: space-around;
+}
+
+.chart-box {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 0.4rem 0;
+    box-sizing: border-box;
 }
 </style>

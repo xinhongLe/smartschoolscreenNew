@@ -1,7 +1,11 @@
 <template>
  <module-header title="学业水平指数">
-   <title-common :titleList="titleList"></title-common>
-   <echart  width="100%" height="100%" :options="options"></echart>
+   <Flex :flex="1" column>
+     <title-common :titleList="titleList"></title-common>
+     <Flex :flex="1">
+       <echart  width="100%" height="100%" :options="options"></echart>
+     </Flex>
+   </Flex>
  </module-header>
 </template>
 
@@ -10,9 +14,10 @@ import ModuleHeader from "@/components/moduleHeader";
 import TitleCommon from "@/components/titleCommon";
 import Echart from "@/components/echart";
 import * as echarts from "echarts";
+import Flex from "../../../../components/flex";
 export default {
   name: "rightAcademic",
-  components: {Echart, TitleCommon, ModuleHeader},
+  components: {Flex, Echart, TitleCommon, ModuleHeader},
   data() {
     return {
       options: {},

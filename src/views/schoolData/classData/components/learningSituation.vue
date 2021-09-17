@@ -31,8 +31,8 @@ export default {
         this.options = {
             grid: {
                 left: "3%",
-                right: "7%",
-                bottom: "12%",
+                right: "2%",
+                bottom: "2%",
                 containLabel: true
             },
             tooltip: {
@@ -275,5 +275,6 @@ export default {
     flex-direction: column;
     height: 100%;
     padding: 0.4rem 0;
+    box-sizing: border-box;
 }
 </style>

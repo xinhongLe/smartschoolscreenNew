@@ -1,6 +1,6 @@
 <template>
-  <module-header title="学生综合素质">
-    <echart :options="options"  width="100%" height="100%"></echart>
+  <module-header title="试题得分率分析">
+    <echart class="echart-box" :options="options"  width="100%" height="100%"></echart>
   </module-header>
 </template>
 
@@ -8,7 +8,7 @@
 import ModuleHeader from "@/components/moduleHeader";
 import Echart from "@/components/echart";
 export default {
-  name: "comprehensiveRadar",
+  name: "examRadar",
   components: {Echart, ModuleHeader},
   data() {
     return {
@@ -21,8 +21,9 @@ export default {
         trigger: 'axis'
       },
       legend: {
-        data: ['实际值', '参考值'],
+        data: ['三年级', '四年级', '五年级', '六年级'],
         icon: "diamond",
+        // orient: 'vertical',
         left: 10,
         top: 5,
         itemWidth: 8, // 图例标记的图形宽度。
@@ -30,7 +31,7 @@ export default {
         itemGap: 10, // 图例每项之间的间隔。
         textStyle: {
           color: "#96ACC3",
-          fontSize: 14, // 文字的字体大小。
+          fontSize: 12, // 文字的字体大小。
         },
       },
       radar: {
@@ -42,11 +43,11 @@ export default {
           lineHeight: -10
         },
         indicator: [
-          { name: '社会实践数据', max: 65000 },
-          { name: '思想品德数据', max: 65000 },
-          { name: '艺术素养数据', max: 65000 },
-          { name: '身心健康数据', max: 65000 },
-          { name: '学业水平数据', max: 65000 },
+          { name: '主观题', max: 65000 },
+          { name: '解答题', max: 65000 },
+          { name: '选择题', max: 65000 },
+          { name: '判断题', max: 65000 },
+          { name: '客观题', max: 65000 },
         ],
         axisLine : {
           show : true,
@@ -79,28 +80,47 @@ export default {
         },
         data: [
           {
-            value: [43000, 52000, 30000, 30000, 25000],
-            name: '参考值',
+            value: [40000, 40000, 40000, 30000, 45000],
+            name: '三年级',
             itemStyle: {
-              color: '#ad8526',
-            },
-            lineStyle:{
-              type: 'dashed'
+              color: '#0BFFFF',
             },
             areaStyle: {
-              color: 'rgba(173, 133, 38)',
-              opacity: 0.4
+              color: '#0BFFFF',
+              opacity: 0.2
             },
           },
           {
-            value: [45000, 50000, 15000, 30000, 45000],
-            name: '实际值',
+            value: [20000, 25000, 45000, 30000, 20000],
+            name: '四年级',
             itemStyle: {
-              color: '#5bffff',
+              color: '#D337D0',
             },
             areaStyle: {
-              color: 'rgba(99, 255, 255)',
-              opacity: 0.4
+              color: '#D337D0',
+              opacity: 0.2
+            },
+          },
+          {
+            value: [45000, 20000, 35000, 45000, 30000],
+            name: '五年级',
+            itemStyle: {
+              color: '#7AB3E2',
+            },
+            areaStyle: {
+              color: '#7AB3E2',
+              opacity: 0.2
+            },
+          },
+          {
+            value: [30000, 45000, 30000, 30000, 35000],
+            name: '六年级',
+            itemStyle: {
+              color: '#FFA500',
+            },
+            areaStyle: {
+              color: '#FFA500',
+              opacity: 0.2
             },
           },
         ]
@@ -113,5 +133,8 @@ export default {
 </script>
 
 <style scoped>
-
+.echart-box{
+  padding-top: 0.2rem;
+  box-sizing: border-box
+}
 </style>

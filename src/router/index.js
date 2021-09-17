@@ -36,7 +36,7 @@ const routes = [
             {
                 path: "exam",
                 name: "exam",
-                component: () => import("@/views/studentData/exam")
+                component: () => import("@/views/studentData/exam/index")
             },
 
             {
@@ -126,7 +126,7 @@ const routes = [
             {
                 path: "evaluationData",
                 name: "evaluationData",
-                component: () => import("@/views/areaData/evaluationData")
+                component: () => import("@/views/areaData/evaluationData/index")
             },
 
             {

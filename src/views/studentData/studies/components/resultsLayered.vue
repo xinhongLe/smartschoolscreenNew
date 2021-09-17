@@ -107,7 +107,7 @@ export default {
         left: "3%",
         right: "4%",
         bottom: "2%",
-        top: "15%",
+        top: "20%",
         containLabel: true,
       },
       xAxis: {
@@ -119,10 +119,11 @@ export default {
       },
       yAxis: {
         type: "value",
-        name: "单位:min",
+        name: "单位: 人",
+        splitNumber:3,
         nameTextStyle: {
           color: "#96ACC3",
-          align: "right",
+          align: "center",
         },
         splitLine: {
           lineStyle: {
@@ -135,9 +136,6 @@ export default {
           name: "收入",
           type: "bar",
           stack: "总量",
-          label: {
-            show: true,
-          },
           emphasis: {
             focus: "series",
           },
@@ -162,16 +160,12 @@ export default {
               global: false, // 缺省为 false
             },
           },
-          barWidth: "16",
+          barWidth: "24",
         },
         {
           name: "支出",
           type: "bar",
           stack: "总量",
-          label: {
-            show: true,
-            position: "left",
-          },
           emphasis: {
             focus: "series",
           },
@@ -195,7 +189,7 @@ export default {
               ],
               global: false, // 缺省为 false
             },
-            barWidth: "16",
+            barWidth: "24",
           },
         },
       ],
