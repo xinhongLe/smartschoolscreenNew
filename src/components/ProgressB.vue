@@ -1,14 +1,15 @@
 <template>
   <div class="progressBox" :class="{ mar_gin: m20 }">
-    <span class="progress_name">{{ progressData.name }}</span>
+    <span class="progress_name" v-if="islable">{{ progressData.name }}</span>
     <div class="progress_border">
       <div
         :id="`pregress_${progressData.id}`"
         class="progress_cont"
+        :style="styleObject"
         v-bind:class="{ progress_active: isActive }"
       ></div>
     </div>
-    <span class="progress_number">{{ progressData.progressNum }}</span>
+    <span class="progress_number" v-if="islable">{{ progressData.progressNum }}</span>
   </div>
 </template>
 <script>
@@ -23,9 +24,21 @@ export default {
       type: Boolean,
       default: false,
     },
-    max: {
-      type: Number,
-      default: 1000
+    ratioNum:{
+      type:Number,
+      default:1000
+    },
+    islable:{
+      type:Boolean,
+      default:true
+    },
+    styleObject: {
+      type:Object,
+      default:()=>{
+        return{
+          background: 'linear-gradient(90deg, #70bfff 0%, #0dffff 100%)'
+        }
+      }
     }
   },
   data() {
@@ -51,7 +64,7 @@ export default {
   methods: {
     initProgress() {
       let dompro = document.getElementById(`pregress_${this.progressData.id}`);
-      let num = (this.progressData.progressNum / this.max) * 100;
+      let num = (this.progressData.progressNum / this.ratioNum) * 100;
       this.Interval = setInterval(() => {
         dompro.style.width = 0 + "%";
         this.isActive = false;
@@ -94,6 +107,7 @@ export default {
     flex: 1;
     height: 50%;
     max-height: 0.25rem;
+    min-height: 0.15rem;
     margin: 0 0.1rem;
     display: flex;
     align-items: center;
@@ -102,6 +116,7 @@ export default {
   .progress_cont {
     width: 0px;
     height: 80%;
+    min-height: 0.1rem;
     position: relative;
     background: linear-gradient(90deg, #70bfff 0%, #0dffff 100%);
   }
@@ -109,10 +124,10 @@ export default {
     content: " ";
     display: block;
     width: 0.002rem;
-    height: 115%;
+    height: 120%;
     position: absolute;
     right: 0;
-    top: -0.01rem;
+    top: -0.02rem;
     background: #ffffff;
   }
   .progress_active {

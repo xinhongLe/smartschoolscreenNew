@@ -13,7 +13,15 @@ export default {
             type: Array,
             default: () => []
         },
-        scale: {}
+        scale: {},
+        hasPercentage: {
+            type: Boolean,
+            default: true
+        },
+        r: {
+            type: Number,
+            default: 0
+        }//需要增加的半径
     },
     created() {
         this.$nextTick(() => {
@@ -26,7 +34,7 @@ export default {
             var oB = new CollBox("container");
             oB.ballRun();
             this.list.forEach((element) => {
-                var b = element.count / this.scale;
+                var b = element.count / this.scale + this.r;
                 var x = rand(b, mxwidth / 10 - b);
                 var y = rand(b, mxheight - b);
                 let str1 =
@@ -41,13 +49,19 @@ export default {
                     "px;line-height:" +
                     parseInt(b / 3.5) +
                     "px;margin-top:4px"
+                let str = "";
+                if(this.hasPercentage) {
+                    str = `<p class="num" ${str1}><span>${element.count}</span><span>%</span></p><span ${str2}>${element.name}</span>`
+                }else{
+                    str = `<p class="num" ${str1}><span>${element.count}</span><span></span></p><span ${str2}>${element.name}</span>`
+                }
                 var ball = new Ball({
                     b: b,
                     x: x,
                     y: y,
                     sx: rand(1, 4),
                     sy: rand(1, 4),
-                    html: `<p class="num" ${str1}><span>${element.count}</span><span></span></p><span ${str2}>${element.name}</span>`
+                    html: str
                 });
                 oB.addBall(ball);
             });

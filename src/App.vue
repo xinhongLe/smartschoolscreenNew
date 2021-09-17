@@ -1,7 +1,7 @@
 <template>
     <div id="app">
         <div class="container">
-            <Title :title="`*州市教育信息化数据大屏`" :style="{position: ['educationData', 'areaEducationData', 'teacherBasic', 'studentBasic'].indexOf($route.name) > -1 ? 'relative' : 'absolute'}" />
+            <Title :title="`*州市教育信息化数据大屏`" :style="{position: ['schoolBasic', 'areaResource', 'schoolSecurity', 'lessonData', 'educationData', 'areaEducationData', 'teacherBasic', 'studentBasic','behavior'].indexOf($route.name) > -1 ? 'relative' : 'absolute'}" />
             <div class="route-content">
                 <router-view />
             </div>

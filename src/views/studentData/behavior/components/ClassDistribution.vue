@@ -35,7 +35,26 @@ export default {
                 data: data
             },
             yAxis: {
-                type: "value"
+                type: "value",
+                min:20,
+                max: 60,
+                axisLabel: {
+                    formatter: function (value) {
+                        var texts = [];
+                        if (value <= 20) {
+                            texts.push("20");
+                        } else if (value <= 30) {
+                            texts.push("30");
+                        } else if (value <= 40) {
+                            texts.push("40");
+                        }else if (value <= 50) {
+                            texts.push("50");
+                        }else if (value <= 60) {
+                            texts.push("60");
+                        }
+                        return texts;
+                    }
+                }
             },
             series: [
                 {
@@ -132,7 +151,7 @@ export default {
                             }
                         },
                         {
-                            value:34 ,
+                            value: 34,
                             itemStyle: {
                                 normal: {
                                     color: new echarts.graphic.LinearGradient(
