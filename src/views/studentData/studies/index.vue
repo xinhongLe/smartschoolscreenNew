@@ -17,8 +17,10 @@
     </Flex>
     <div class="h-line"></div>
     <Flex :flex="2" column>
-      <Flex :flex="1"> 4 </Flex>
-      <Flex :flex="1"> 
+      <Flex :flex="3">
+        <KnowledgeCoverage />
+      </Flex>
+      <Flex :flex="2"> 
           <knowledge></knowledge>
       </Flex>
     </Flex>
@@ -50,6 +52,7 @@ import Knowledge from './components/knowledge.vue';
 import ResultsContrast from './components/resultsContrast.vue';
 import GradeScores from './components/gradeScores.vue';
 import ResultsLayered from './components/resultsLayered.vue';
+import KnowledgeCoverage from "./components/knowledgeCoverage";
 export default {
   components: {
     Flex,
@@ -59,7 +62,8 @@ export default {
     Knowledge,
     ResultsContrast,
     GradeScores,
-    ResultsLayered
+    ResultsLayered,
+    KnowledgeCoverage
   },
 };
 

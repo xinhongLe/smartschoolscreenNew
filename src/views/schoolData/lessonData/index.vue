@@ -16,8 +16,10 @@
         </Flex>
         <div class="h-line"></div>
         <Flex :flex="2" column>
-            <Flex :flex="1"> 4 </Flex>
-            <Flex :flex="1"> <StudyTime></StudyTime> </Flex>
+            <Flex :flex="3">
+                <KnowledgeCoverage />
+            </Flex>
+            <Flex :flex="2"> <StudyTime></StudyTime> </Flex>
         </Flex>
         <div class="h-line"></div>
         <Flex :flex="1" column>
@@ -43,7 +45,8 @@ import DataAnalyse from "./components/dataAnalyse.vue"
 import Knoledge from "./components/knowledge.vue"
 import StudyTime from './components/studyTime.vue'
 import LeftRadar  from "./components/leftRadar";
-import Homework from './components/homework.vue'
+import Homework from './components/homework.vue';
+import KnowledgeCoverage from "../../studentData/studies/components/knowledgeCoverage";
 export default {
     components: {
       LeftRadar,
@@ -52,7 +55,8 @@ export default {
       Knoledge,
       StudyTime,
       CircleComponents,
-      Homework
+      Homework,
+      KnowledgeCoverage
     }
 };
 </script>
