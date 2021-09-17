@@ -22,7 +22,7 @@ export default {
         left: "3%",
         right: "4%",
         bottom: "2%",
-        top: "15%",
+        top: "20%",
         containLabel: true,
       },
       xAxis: {
@@ -34,7 +34,7 @@ export default {
       },
       yAxis: {
         type: "value",
-        name: "单位:%",
+        name: "单位: %",
         nameTextStyle: {
           color: "#96ACC3",
           align: "right",
@@ -49,6 +49,14 @@ export default {
         {
           data: [84, 89, 76, 80, 79, 78],
           type: "bar",
+          label: {
+            show: true,
+            position: "top",
+            // valueAnimation: true,
+            formatter: '{c}%',
+            color: '#0DFFFF',
+            fontSize: 16
+          },
           itemStyle: {
             color: {
               type: "linear",
@@ -69,6 +77,7 @@ export default {
               global: false, // 缺省为 false
             },
           },
+          barMaxWidth: "40%",
         },
       ],
     };

@@ -48,11 +48,12 @@ export default {
       },
       yAxis: {
         type: "value",
-        name: "单位:%",
+        name: "单位: %",
         nameTextStyle: {
           color: "#96ACC3",
-          align: "center",
+          align: "right",
         },
+        splitNumber:4,
         axisLabel: {
           // formatter:'{value}min',
           color: "#96ACC3",

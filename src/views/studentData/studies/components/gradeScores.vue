@@ -25,7 +25,7 @@ export default {
       legend: {
         type: "scroll",
         left: "1%",
-        data: ["[90,100]", "[80.90]", "[70,80]", "[60,70]", "[0,60]"],
+        data: ["[90,100]", "[80,90]", "[70,80]", "[60,70]", "[0,60]"],
         icon: "diamond",
         top: 10,
         itemWidth: 8, // 图例标记的图形宽度。
@@ -71,7 +71,13 @@ export default {
           name: "[90,100]",
           type: "bar",
           stack: "总量",
-          data: [32, 30, 31, 34, 39, 30, 32, 29, 33],
+          data: [30, 32, 29, 33],
+          label: {
+            show: true,
+            formatter: "{c}人",
+            position: "bottom",
+            color: "#0DFFFF",
+          },
           itemStyle: {
             color: {
               type: "linear",
@@ -98,7 +104,13 @@ export default {
           name: "[80,90]",
           type: "bar",
           stack: "总量",
-          data: [20, 32, 11, 14, 90, 30, 20, 20, 30],
+          data: [20, 32, 11, 14],
+          label: {
+            show: true,
+            formatter: "{c}人",
+            position: "bottom",
+            color: "#30A2FD",
+          },
           itemStyle: {
             color: {
               type: "linear",
@@ -125,7 +137,13 @@ export default {
           name: "[70,80]",
           type: "bar",
           stack: "总量",
-          data: [22, 12, 11, 24, 29, 33, 31, 29, 13],
+          data: [33, 31, 29, 13],
+          label: {
+            show: true,
+            formatter: "{c}人",
+            position: "bottom",
+            color: "#A962F3",
+          },
           itemStyle: {
             color: {
               type: "linear",
@@ -152,7 +170,13 @@ export default {
           name: "[60,70]",
           type: "bar",
           stack: "总量",
-          data: [12, 21, 21, 14, 19, 33, 41, 29, 33],
+          data: [33, 41, 29, 33],
+          label: {
+            show: true,
+            formatter: "{c}人",
+            position: "bottom",
+            color: "#FC5AD3",
+          },
           itemStyle: {
             color: {
               type: "linear",
@@ -179,20 +203,31 @@ export default {
           name: "[0,60]",
           type: "bar",
           stack: "总量",
-          data: [20, 32, 91, 34, 29, 33, 20, 20, 33],
-         itemStyle: {
+          data: [33, 20, 20, 33],
+          label: {
+            show: true,
+            formatter: "{c}人",
+            position: "bottom",
+            color: "#96ACC3",
+          },
+          itemStyle: {
             color: {
-              type: 'linear',
+              type: "linear",
               x: 0,
               y: 0,
               x2: 0,
               y2: 1,
-              colorStops: [{
-                  offset: 0, color: '#96ACC3' // 0% 处的颜色
-              }, {
-                  offset: 1, color: '#FFFFFF' // 100% 处的颜色
-              }],
-              global: false // 缺省为 false
+              colorStops: [
+                {
+                  offset: 0,
+                  color: "#96ACC3", // 0% 处的颜色
+                },
+                {
+                  offset: 1,
+                  color: "#FFFFFF", // 100% 处的颜色
+                },
+              ],
+              global: false, // 缺省为 false
             },
           },
           barWidth: 12, //柱图宽度
