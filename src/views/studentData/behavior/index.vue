@@ -27,7 +27,8 @@
         <Flex :flex="1" column>
             <Flex :flex="5"> </Flex>
             <div class="v-line"></div>
-            <Flex :flex="5"> </Flex>
+            <Flex :flex="5"> 
+            </Flex>
             <div class="v-line"></div>
         </Flex>
         <div class="h-line"></div>
@@ -36,13 +37,14 @@
 <script>
 import Flex from "@/components/flex";
 import ClassDistribution from "./components/ClassDistribution.vue";
+import SourceOfWrongQuestions from './components/sourceOfWrongQuestions'
 export default {
     data() {
         return {
             style: {}
         };
     },
-    components: { Flex,ClassDistribution },
+    components: { Flex,ClassDistribution, SourceOfWrongQuestions },
     methods: {
         imgLoad() {
             const imgScale =

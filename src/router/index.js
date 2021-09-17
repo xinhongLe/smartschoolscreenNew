@@ -62,7 +62,7 @@ const routes = [
             {
                 path: "teachingEvaluation",
                 name: "teachingEvaluation",
-                component: () => import("@/views/teacherData/teachingEvaluation")
+                component: () => import("@/views/teacherData/teachingEvaluation/index")
             },
 
             {
