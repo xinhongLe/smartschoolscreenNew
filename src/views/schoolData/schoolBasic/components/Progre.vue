@@ -8,7 +8,7 @@
         v-bind:class="{ progress_active: isActive }"
       ></div>
     </div>
-    <span class="progress_number">{{ progressData.progressNum }}</span>
+    <span class="progress_number">{{ progressData.progressNum }}<font v-if="percent">%</font></span>
   </div>
 </template>
 <script>
@@ -26,6 +26,10 @@ export default {
     style:{
         type:String,
         default:''
+    },
+    percent:{
+        type:Boolean,
+        default:false
     }
   },
   data() {

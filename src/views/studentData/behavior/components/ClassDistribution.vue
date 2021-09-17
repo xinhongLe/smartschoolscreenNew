@@ -28,7 +28,6 @@ export default {
             "物理",
             "生物"
         ];
-        // const itemStyle =
         const option = {
             xAxis: {
                 type: "category",
