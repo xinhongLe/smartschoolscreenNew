@@ -25,7 +25,7 @@ export default {
 .title-box{
   display: flex;
   justify-content: flex-start;
-  margin: 0.2rem 0.1rem;
+  margin: 0.1rem 0.1rem;
 .title{
   color: #fff;
   padding: 0.08rem 0.15rem;

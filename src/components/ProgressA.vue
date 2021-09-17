@@ -1,10 +1,11 @@
 <template>
   <div class="progressBox">
-    <span class="progress_number">{{ progressData.progressNum }}</span>
+    <span class="progress_number">{{ progressData.progressNum }}{{progressData[custom]}}</span>
     <div class="progress_border">
       <div
         :id="`progress${progressData.id}`"
         class="progress_cont"
+        :style="styleObject"
         v-bind:class="{ progress_active: isActive }"
       ></div>
     </div>
@@ -19,6 +20,14 @@ export default {
       type: Object,
       default: () => {},
     },
+    styleObject: {
+      type: Object,
+      default: () => {},
+    },
+    custom: {
+      type: String,
+      default: () => '',
+    }
   },
   data() {
     return {
@@ -68,7 +77,7 @@ export default {
 </script>
 <style lang="scss" scoped>
 .progressBox {
-  height: 2.5rem;
+  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
