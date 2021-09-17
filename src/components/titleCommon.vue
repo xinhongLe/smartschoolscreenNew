@@ -1,0 +1,40 @@
+<template>
+  <div class="title-box">
+    <div @click="activeIndex = index" :class="['title', activeIndex === index ? 'title-active' : '']" v-for="(item,index) in titleList" :key="index">{{item.name}}</div>
+  </div>
+</template>
+
+<script>
+export default {
+  name: "titleCommon",
+  props:{
+    titleList: {
+      type: Array,
+      default: () => []
+    }
+  },
+  data() {
+    return {
+      activeIndex: 0
+    }
+  },
+}
+</script>
+
+<style scoped lang="scss">
+.title-box{
+  display: flex;
+  justify-content: flex-start;
+  margin: 0.2rem 0.1rem;
+.title{
+  color: #fff;
+  padding: 0.08rem 0.15rem;
+  border: 1px solid rgba(16, 163, 190, 0.23);
+  margin-right: 0.2rem;
+  cursor: pointer;
+}
+.title-active{
+  background: rgba(3, 86, 176, 0.31);
+}
+}
+</style>

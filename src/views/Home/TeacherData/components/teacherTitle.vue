@@ -8,7 +8,7 @@
     </div>
     <div class="schoolData">
       <div class="progressitem" v-for="item in progressList" :key="item.id">
-        <ProgressB :proData="item" :max="50000"></ProgressB>
+        <ProgressB :proData="item" :ratioNum="50000"></ProgressB>
       </div>
     </div>
   </moduleHeader>
