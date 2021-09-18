@@ -62,6 +62,15 @@ export default {
       flex: 1;
       text-align: center;
     }
+    .text-left{
+      text-align: left;
+    }
+    .text-right{
+      text-align: right;
+    }
+    .text-center{
+      text-align: center;
+    }
   }
   .header-color{
     color: #70BFFF;
