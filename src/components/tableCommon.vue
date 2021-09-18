@@ -1,11 +1,11 @@
 <template>
   <div class="common-table">
       <slot name="table-header"></slot>
-    <div class="right-table" id="table">
-      <div :class="[animateScroll ? 'animate-scroll' : '']">
-        <slot></slot>
+      <div class="right-table" :ref="id">
+        <div :class="[animateScroll ? 'animate-scroll' : '']">
+          <slot></slot>
+        </div>
       </div>
-    </div>
   </div>
 </template>
 
@@ -20,6 +20,10 @@ export default {
     tableList: {
       type: Array,
       default: () => []
+    },
+    id: {
+      type:String,
+      default: () => 'table'
     }
   },
   data() {
@@ -28,7 +32,7 @@ export default {
     }
   },
   mounted() {
-    const marquee = document.getElementById('table');
+    const marquee = this.$refs[this.id];
     if(this.tableList.length >= marquee.offsetHeight / 80 / 0.6){
       this.animateScroll = true
       this.$nextTick(() => {
@@ -36,7 +40,6 @@ export default {
         marquee.innerHTML = contents + contents
       })
     }
-
   }
 }
 </script>
