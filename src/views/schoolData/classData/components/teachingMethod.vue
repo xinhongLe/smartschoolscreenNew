@@ -40,6 +40,9 @@ export default {
             },
             legend: {
                 icon: "diamond",
+                itemWidth: 8, 
+                itemHeight: 8,
+                itemGap: 20,
                 textStyle: {
                     color: "#96ACC3"
                 },

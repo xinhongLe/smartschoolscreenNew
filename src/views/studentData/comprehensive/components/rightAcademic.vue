@@ -30,6 +30,12 @@ export default {
   },
  mounted() {
    const options = {
+     grid: {
+       left: "50",
+       right: "0%",
+       bottom: "50",
+       top: "15%"
+     },
      xAxis: {
        type: "category",
        data: ["语文", "数学", "英语", "音乐", "美术", "体育"],

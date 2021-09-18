@@ -117,6 +117,7 @@ export default {
   margin-right: 1rem;
   color: #96acc3;
   cursor: pointer;
+  white-space: nowrap;
 }
 
 .tab-item.active {

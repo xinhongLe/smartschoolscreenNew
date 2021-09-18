@@ -2,35 +2,30 @@
     <div class="content">
         <div class="h-line"></div>
         <Flex :flex="1" column>
-            <!-- <Flex :flex="3"> </Flex>
             <div class="v-line"></div>
-            <Flex :flex="5"> </Flex>
+            <SchoolMessage />
             <div class="v-line"></div>
-            <Flex :flex="5"> 3 </Flex>
-            <div class="v-line"></div> -->
-            <security-rating></security-rating>
+            <PeopleLog />
+            <div class="v-line"></div>
+            <Device />
             <div class="v-line"></div>
         </Flex>
         <div class="h-line"></div>
         <Flex :flex="2" column>
-            <Flex :flex="1"> 
-                <Flex :flex="1"> </Flex>
-                <Flex :flex="1"> </Flex>
-            </Flex>
+            <div class="v-line"></div>
+            <SecurityArea />
             <Flex :flex="1"> <StudyTime></StudyTime> </Flex>
+            <div class="v-line"></div>
         </Flex>
         <div class="h-line"></div>
         <Flex :flex="1" column>
-            <Flex :flex="3">
-              <right-dynamic></right-dynamic>
+            <div class="v-line"></div>
+            <Flex :flex="1">
+                <AnomalyStatistics />
             </Flex>
             <div class="v-line"></div>
-            <Flex :flex="5">
-              <right-center></right-center>
-            </Flex>
-            <div class="v-line"></div>
-            <Flex :flex="5">
-              <right-situation></right-situation>
+            <Flex :flex="2">
+                <AnomalyTimeLine />
             </Flex>
             <div class="v-line"></div>
         </Flex>
@@ -40,19 +35,23 @@
 
 <script>
 import Flex from "@/components/flex";
-import StudyTime from './components/studyTime.vue'
-import SecurityRating from './components/SecurityRating.vue';
-import RightDynamic from "./components/rightDynamic";
-import RightCenter from "./components/rightSchool";
-import RightSituation from "./components/rightSituation";
+import SchoolMessage from "./components/schoolMessage";
+import PeopleLog from "./components/peopleLog";
+import Device from "./components/device";
+import SecurityArea from "./components/securityArea";
+import StudyTime from "./components/studyTime.vue";
+import AnomalyStatistics from "./components/anomalyStatistics";
+import AnomalyTimeLine from "./components/anomalyTimeLine";
 export default {
     components: {
-      RightSituation,
-      RightCenter,
-      RightDynamic,
+        SchoolMessage,
+        PeopleLog,
+        Device,
+        SecurityArea,
         Flex,
         StudyTime,
-        SecurityRating
+        AnomalyStatistics,
+        AnomalyTimeLine
     }
 };
 </script>

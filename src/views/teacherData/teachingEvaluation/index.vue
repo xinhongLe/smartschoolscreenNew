@@ -18,7 +18,9 @@
                     <Speed></Speed>
                 </Flex>
                 <div class="h-line"></div>
-                <Flex :flex="1"> </Flex>
+                <Flex :flex="1">
+                  <knowledge></knowledge>
+                </Flex>
                 <div class="h-line"></div>
             </Flex>
             <div class="v-line"></div>
@@ -29,9 +31,13 @@
         </Flex>
         <div class="h-line"></div>
         <Flex :flex="3" column>
-            <Flex :flex="3"> 7 </Flex>
+            <Flex :flex="3">
+              <satisfaction></satisfaction>
+            </Flex>
             <div class="v-line"></div>
-            <Flex :flex="5"> 8 </Flex>
+            <Flex :flex="5">
+              <year-evaluation></year-evaluation>
+            </Flex>
             <div class="v-line"></div>
             <Flex :flex="5"> 
                 <Flex :flex="1"> 
@@ -57,8 +63,14 @@ import JobType from "./components/jobType.vue"
 import Speed from "./components/speed"
 import Resources from "./components/resources"
 import PatternDistribution from "./components/patternDistribution"
+import YearEvaluation from "./components/yearEvaluation";
+import Knowledge from "./components/knowledge";
+import Satisfaction from "./components/satisfaction";
 export default {
     components: {
+      Satisfaction,
+      Knowledge,
+      YearEvaluation,
         Flex,
         HeatDistribution,
         Coverage,
