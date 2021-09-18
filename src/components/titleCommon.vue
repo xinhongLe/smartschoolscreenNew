@@ -33,7 +33,7 @@ export default {
   border: 1px solid rgba(16, 163, 190, 0.23);
   margin-right: 0.2rem;
   cursor: pointer;
-  margin-bottom: 0.1rem;
+  //margin-bottom: 0.1rem;
   color: #96ACC3;
 }
 .title-active{

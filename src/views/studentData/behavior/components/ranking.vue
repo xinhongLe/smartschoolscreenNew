@@ -3,7 +3,7 @@
         <template slot="table-header">
             <div class="header-color row">
                 <div
-                    :class="[index === 0 ? 'col-first' : 'col']"
+                    :class="[index === 0 ? 'text-left' : 'text-center', 'col']"
                     v-for="(item, index) in headerList"
                     :key="index"
                 >
@@ -13,8 +13,8 @@
         </template>
         <template>
             <div v-for="(item, index) in tableList" :key="index" class="row">
-                <div class="col-first">No.{{ index + 1 }}</div>
-                <div class="col">{{ item.name }}</div>
+                <div class="first col text-left">No.{{ index + 1 }}</div>
+                <div class="col text-center">{{ item.name }}</div>
             </div>
         </template>
     </table-common>
@@ -47,29 +47,13 @@ export default {
 
 <style scoped lang="scss">
 .ranking-box {
-    .row {
-        display: flex;
-        justify-content: space-evenly;
-        align-items: center;
-        padding: 0 15%;
-        .col, .col-first {
-            flex: 1;
-            color: #70BFFF
-        }
-        .col {
-            color: #96ACC3
-        }
-    }
-    .header-color .col-first {
-        color: #70BFFF!important
-    }
-    .row:nth-of-type(1) .col-first {
+    .row:nth-of-type(1) .first {
         color: #FA4A4F
     }
-    .row:nth-of-type(2) .col-first {
+    .row:nth-of-type(2) .first {
         color: #FFD01D
     }
-    .row:nth-of-type(3) .col-first {
+    .row:nth-of-type(3) .first {
         color: #0DFFFF
     }
 }

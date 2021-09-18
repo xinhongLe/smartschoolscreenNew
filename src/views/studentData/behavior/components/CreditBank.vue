@@ -1,11 +1,11 @@
 <template>
     <moduleHeader title="学分银行">
-        <table-common :headerList="headerList" :tableList="tableList" class="ranking-box">
+        <table-common id="creditBank" :tableList="tableList" class="ranking-box">
             <template>
                 <div v-for="(item, index) in tableList" :key="index" class="row">
-                    <div class="col-first">No.{{ index + 1 }}</div>
-                    <div class="col">{{ item.grade }}</div>
-                    <div class="col">{{ item.num }}</div>
+                    <div class="col first text-left">No.{{ index + 1 }}</div>
+                    <div class="col text-center">{{ item.grade }}</div>
+                    <div class="col text-right">{{ item.num }}</div>
                 </div>
             </template>
         </table-common>
@@ -27,7 +27,8 @@ export default {
                 {grade: "五年级", num: 1967},
                 {grade: "七年级", num: 1676},
                 {grade: "八年级", num: 1309},
-                {grade: "九年级", num: 1023}
+                {grade: "九年级", num: 1023},
+                {grade: "十年级", num: 1023},
             ]
         };
     }
@@ -36,30 +37,13 @@ export default {
 
 <style scoped lang="scss">
 .ranking-box {
-    margin-top: .5rem;
-    .row {
-        display: flex;
-        justify-content: space-evenly;
-        align-items: center;
-        padding: 0 15%;
-        .col, .col-first {
-            flex: 1;
-            color: #70BFFF
-        }
-        .col {
-            color: #96ACC3
-        }
-    }
-    .header-color .col-first {
-        color: #70BFFF!important
-    }
-    .row:nth-of-type(1) .col-first {
+    .row:nth-of-type(1) .first {
         color: #FA4A4F
     }
-    .row:nth-of-type(2) .col-first {
+    .row:nth-of-type(2) .first {
         color: #FFD01D
     }
-    .row:nth-of-type(3) .col-first {
+    .row:nth-of-type(3) .first {
         color: #0DFFFF
     }
 }
