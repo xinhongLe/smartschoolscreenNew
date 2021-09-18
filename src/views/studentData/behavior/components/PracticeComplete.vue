@@ -42,7 +42,7 @@ export default {
       },
       legend: {
         bottom: "1%",
-        data: ["顺利完成", "活跃", "一般", "不能完成"],
+        data: ["顺利完成", "不能完成"],
         icon: "diamond",
         itemWidth: 8, // 图例标记的图形宽度。
         itemHeight: 8, //  图例标记的图形高度。

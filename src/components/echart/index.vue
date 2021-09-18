@@ -71,6 +71,9 @@ export default {
     methods: {
         initChart() {
             // 初始化echart
+            if (this.chart != null && this.chart != "" && this.chart != undefined) {
+                this.chart.dispose();
+            }
             this.chart = this.$echarts.init(this.$el);
             this.chart.clear();
             this.chart.setOption(this.options, true);

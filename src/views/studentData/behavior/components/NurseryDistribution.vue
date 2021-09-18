@@ -23,20 +23,20 @@ export default {
           type: "shadow", // 默认为直线，可选为：'line' | 'shadow'
         },
       },
-      legend: {
-        type: "scroll",
-        right: "1%",
-        data: ["作答时间", "时间跨度"],
-        icon: "diamond",
-        top: 10,
-        itemWidth: 8, // 图例标记的图形宽度。
-        itemGap: 20, // 图例每项之间的间隔。
-        itemHeight: 8, //  图例标记的图形高度。
-        textStyle: {
-          color: "#96ACC3",
-          fontSize: 12, // 文字的字体大小。
-        },
-      },
+      // legend: {
+      //   type: "scroll",
+      //   right: "1%",
+      //   data: ["作答时间", "时间跨度"],
+      //   icon: "diamond",
+      //   top: 10,
+      //   itemWidth: 8, // 图例标记的图形宽度。
+      //   itemGap: 20, // 图例每项之间的间隔。
+      //   itemHeight: 8, //  图例标记的图形高度。
+      //   textStyle: {
+      //     color: "#96ACC3",
+      //     fontSize: 12, // 文字的字体大小。
+      //   },
+      // },
       grid: {
         left: "3%",
         right: "4%",
