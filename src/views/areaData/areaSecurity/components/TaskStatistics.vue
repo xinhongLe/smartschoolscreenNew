@@ -68,7 +68,7 @@ export default {
             title: [
                 {
                     text: "{name|" + "巡查任务" + "}",
-                    top: "center",
+                    top: "61%",
                     left: "center",
                     borderRadius: 50,
                     textStyle: {
@@ -132,8 +132,8 @@ export default {
                     name: "面积模式",
                     type: "pie",
                     // roseType: "angle",
-                    radius: [70, 110],
-                    center: ["50%", "50%"],
+                    radius: [70, 105],
+                    center: ["50%", "65%"],
                     itemStyle: {
                         borderRadius: 0
                         // borderWidth: 5,
@@ -227,7 +227,7 @@ export default {
 
     .header-list-item {
         text-align: center;
-        margin: 0.2rem 0.3rem 0 0.3rem;
+        margin: 0.25rem 0.3rem 0 0.3rem;
         p {
             margin: 0;
             padding: 0;
