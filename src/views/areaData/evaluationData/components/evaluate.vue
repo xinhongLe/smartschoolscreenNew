@@ -219,6 +219,7 @@ export default {
             font-size: 0.125rem;
             font-weight: 500;
             color: #70bfff;
+            white-space: nowrap;
         }
     }
     .active {
