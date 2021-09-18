@@ -40,6 +40,12 @@ export default {
   },
   mounted() {
     const options =  {
+      grid: {
+        left: "50",
+        right: "0%",
+        bottom: "50",
+        top: "15%"
+      },
       tooltip: {
         trigger: 'item'
       },
@@ -124,6 +130,7 @@ export default {
   height: 100%;
   display: flex;
   align-items: center;
+  margin-left: 0.2rem;
 }
 .row{
   .before{

@@ -11,13 +11,15 @@
       </Flex>
       <div class="v-line"></div>
       <Flex :flex="1">
-        <!-- <job-correct></job-correct> -->
+        <teach-evaluation></teach-evaluation>
       </Flex>
       <div class="v-line"></div>
     </Flex>
     <div class="h-line"></div>
     <Flex :flex="2" column>
-      <Flex :flex="1"> 4 </Flex>
+      <Flex :flex="1">
+        <teach-results></teach-results>
+      </Flex>
       <Flex :flex="1"> 
           <teach-radar></teach-radar>
       </Flex>
@@ -25,7 +27,7 @@
     <div class="h-line"></div>
     <Flex :flex="1" column>
       <Flex :flex="5">
-        <!-- <results-contrast></results-contrast> -->
+         <listen-lesson></listen-lesson>
       </Flex>
       <div class="v-line"></div>
         <Flex :flex="5"> 
@@ -48,8 +50,14 @@ import SchoolAgeDistribution from './components/schoolAgeDistribution.vue';
 import TeachingResearch from './components/teachingResearch.vue';
 import TeacherTraining from './components/teacherTraining.vue';
 import TeachRadar from "./components/teachRadar";
+import ListenLesson from "./components/listenLesson";
+import TeachResults from "./components/teachResults";
+import TeachEvaluation from "./components/teachEvaluation";
 export default {
   components: {
+    TeachEvaluation,
+    TeachResults,
+    ListenLesson,
     TeachRadar,
     Flex,
     TitleDistribution,

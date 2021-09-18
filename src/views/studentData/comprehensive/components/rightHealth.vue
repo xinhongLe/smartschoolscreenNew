@@ -31,6 +31,12 @@ export default {
   },
   mounted() {
     const options = {
+      grid: {
+        left: "50",
+        right: "0%",
+        bottom: "50",
+        top: "15%"
+      },
       xAxis: {
         type: "category",
         data: ["50米跑", "25*2往返", "立定跳远", "掷实心球", "坐立体前屈", "跳绳", "仰卧起坐"],
@@ -41,7 +47,12 @@ export default {
         },
       },
       yAxis: {
-        type: "value"
+        type: "value",
+        splitLine: {
+          lineStyle: {
+            color: "rgba(255, 255, 255, .1)"
+          }
+        },
       },
       series: [
         {

@@ -1,11 +1,12 @@
 <template>
-  <module-header title="知识点教学进度">
+  <module-header title="教学研讨 (年度)">
     <div class="schoolData">
       <div class="progressitem" v-for="item in progressList" :key="item.id">
         <ProgressB
           :proData="item"
-          :ratioNum="100"
+          :ratioNum="1000"
           :ispercent="true"
+          unit="次"
         ></ProgressB>
       </div>
     </div>
@@ -21,32 +22,32 @@ export default {
       progressList: [
         {
           name: "一年级",
-          progressNum: 5,
+          progressNum: 442,
           id: 1,
         },
         {
           name: "二年级",
-          progressNum: 6.1,
+          progressNum: 201,
           id: 2,
         },
         {
           name: "三年级",
-          progressNum: 2.5,
+          progressNum: 363,
           id: 3,
         },
         {
           name: "四年级",
-          progressNum: 7.1,
+          progressNum: 456,
           id: 4,
         },
         {
           name: "五年级",
-          progressNum: 6.7,
+          progressNum: 432,
           id: 5,
         },
         {
           name: "六年级",
-          progressNum: 3,
+          progressNum: 663,
           id: 6,
         },
       ],

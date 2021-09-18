@@ -95,7 +95,7 @@ export default {
       series: [
         {
           type: "bar",
-          data: [23, 23, 29, 70, 44, 30, 29, 70],
+          data: [240, 239, 260, 324, 290, 480, 370, 230],
           itemStyle: {
             color: {
               type: "linear",

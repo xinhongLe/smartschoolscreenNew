@@ -14,10 +14,10 @@ import ModuleHeader from "@/components/moduleHeader";
 import TitleCommon from "@/components/titleCommon";
 import Echart from "@/components/echart";
 import * as echarts from "echarts";
-import Flex from "../../../../components/flex";
+import Flex from "@/components/flex";
 export default {
   name: "rightAcademic",
-  components: {Flex, Echart, TitleCommon, ModuleHeader},
+  components: {Flex, Echart, TitleCommon, ModuleHeader}, //
   data() {
     return {
       options: {},
@@ -30,12 +30,23 @@ export default {
   },
  mounted() {
    const options = {
+     grid: {
+       left: "50",
+       right: "0%",
+       bottom: "50",
+       top: "15%"
+     },
      xAxis: {
        type: "category",
-       data: ["语文", "数学", "英语", "音乐", "美术", "体育"]
+       data: ["语文", "数学", "英语", "音乐", "美术", "体育"],
      },
      yAxis: {
-       type: "value"
+       type: "value",
+       splitLine: {
+         lineStyle: {
+           color: "rgba(255, 255, 255, .1)"
+         }
+       },
      },
      series: [
        {
