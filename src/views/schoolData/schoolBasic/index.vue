@@ -4,6 +4,7 @@
         <LeftRender />
         <div class="h-line"></div>
         <Flex :flex="1" column>
+            <div class="v-line"></div>
             <Flex :flex="1">
                 <PersonalComposition />
             </Flex>
@@ -15,6 +16,7 @@
         </Flex>
         <div class="h-line"></div>
         <Flex :flex="2" column>
+            <div class="v-line"></div>
             <Flex :flex="1">
                 <Flex :flex="1">
                     <GenderDistribution></GenderDistribution>
@@ -31,6 +33,7 @@
         <div class="h-line"></div>
 
         <Flex :flex="1" column>
+            <div class="v-line"></div>
             <Flex :flex="1">
                 <module-header
                     :title="['教师年龄分布', '教师职称分布']"
