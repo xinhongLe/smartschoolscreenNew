@@ -3,13 +3,13 @@
     <div class="knowledge_title">
       <div>
         <span>进度均值:</span>
-        <span>63%</span>
+        <span class="proNum">63%</span>
       </div>
       <span>本学期时间进度</span>
     </div>
     <div class="schoolData">
       <div class="progressitem" v-for="item in progressList" :key="item.id">
-        <ProgressB :proData="item"></ProgressB>
+        <ProgressB :proData="item" :ispercent="true"></ProgressB>
       </div>
     </div>
   </moduleHeader>
@@ -84,7 +84,12 @@ export default {
   display: flex;
   justify-content: space-between;
   span{
-      color: turquoise;
+    font-size: 0.125rem;
+    color:rgba(150, 172, 195, .7)
+  }
+  .proNum{    
+    color: #0DFFFF;
+    margin-left: 0.1rem;
   }
 }
 
