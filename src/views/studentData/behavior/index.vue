@@ -40,7 +40,14 @@
             </Flex>
             <div class="v-line"></div>
             <Flex :flex="5">
-                <OutsideReading></OutsideReading>
+                <module-header
+                    :title="['年平均课外阅读情况', '书籍类别喜好排行']"
+                    :selected="bookSelected"
+                    @change="(i) => (bookSelected = i)"
+                >
+                    <OutsideReading v-show="bookSelected == 0"></OutsideReading>
+                    <books-like v-show="bookSelected == 1"></books-like>
+                </module-header>
             </Flex>
             <div class="v-line"></div>
         </Flex>
@@ -71,11 +78,13 @@ import WrongQuestion from "./components/WrongQuestion.vue";
 import ClassActivity from "./components/ClassActivity.vue";
 import CreditBank from './components/CreditBank.vue';
 import ClassFocus from './components/ClassFocus.vue';
+import BooksLike from './components/BooksLike.vue';
 export default {
     data() {
         return {
             style: {},
-            trendSelected:0
+            trendSelected:0,
+            bookSelected:0
         };
     },
     components: {
@@ -91,6 +100,7 @@ export default {
         ClassActivity,
         CreditBank,
         ClassFocus,
+        BooksLike,
     },
     methods: {
         imgLoad() {
