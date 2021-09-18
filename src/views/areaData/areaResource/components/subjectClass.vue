@@ -7,7 +7,8 @@
                 alt=""
             />
             <div class="chart_bg">
-                <echart :options="options" height="40%" ref="echart"></echart>
+                <echart class="chart-box" :options="options" height="40%" ref="echart"></echart>
+                <div class="circle-bg"></div>
                 <div class="rate-box">
                     <div
                         v-for="(item, index) in list"
@@ -29,7 +30,7 @@
                             :y1="item.y"
                             :x2="item.x1"
                             :y2="item.y1"
-                            style="stroke: rgb(255, 0, 0); stroke-width: 2"
+                            style="stroke: rgba(56, 110, 205, 1); stroke-width: 2"
                         />
                     </svg>
                 </div>
@@ -257,5 +258,19 @@ export default {
 .svg-box {
     width: 100%;
     height: 100%;
+}
+.chart-box {
+    position: relative;
+    z-index: 2;
+}
+.circle-bg {
+    width: 1.2rem;
+    height: 1.2rem;
+    background: rgb(12, 46, 60);
+    position: absolute;
+    border-radius: 1rem;
+    top: 50%;
+    transform: translateY(-30%);
+    z-index: 1;
 }
 </style>

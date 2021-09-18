@@ -10,8 +10,13 @@
         <Flex :flex="2" column>
             <div class="v-line"></div>
             <Flex :flex="1"> 
-                <Flex :flex="1"> </Flex>
-                <Flex :flex="1"> </Flex>
+                <Flex :flex="1">
+                    <DangerStatistics></DangerStatistics>
+                </Flex>
+                <div class="h-line"></div>
+                <Flex :flex="1">
+                    <TaskStatistics></TaskStatistics>
+                </Flex>
             </Flex>
             <div class="v-line"></div>
             <Flex :flex="1"> <StudyTime></StudyTime> </Flex>
@@ -43,6 +48,8 @@ import SecurityRating from './components/SecurityRating.vue';
 import RightDynamic from "./components/rightDynamic";
 import RightCenter from "./components/rightSchool";
 import RightSituation from "./components/rightSituation";
+import DangerStatistics from './components/DangerStatistics.vue';
+import TaskStatistics from './components/TaskStatistics.vue'
 export default {
     components: {
       RightSituation,
@@ -50,7 +57,9 @@ export default {
       RightDynamic,
         Flex,
         StudyTime,
-        SecurityRating
+        SecurityRating,
+        DangerStatistics,
+        TaskStatistics
     }
 };
 </script>

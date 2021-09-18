@@ -1,34 +1,75 @@
 <template>
-    <moduleHeader title="S-T教学模式分析">
-        <Echart width="100%" height="100%" :options="options"></Echart>
+    <moduleHeader title="巡查任务统计">
+        <div class="header-title">
+            <div
+                class="header-list-item"
+                v-for="(item, index) in headerList"
+                :key="index"
+            >
+                <p :style="item.color" class="num">{{ item.number }}</p>
+                <p class="font">{{ item.font }}</p>
+            </div>
+        </div>
+        <Echart
+            class="echart"
+            width="100%"
+            height="100%"
+            :options="options"
+        ></Echart>
     </moduleHeader>
 </template>
 <script>
 import moduleHeader from "@/components/moduleHeader.vue";
-import * as echarts from "echarts";
 import Echart from "@/components/echart";
+import * as echarts from "echarts";
 export default {
     data() {
         return {
-            options: {}
+            options: {},
+            headerList: [
+                {
+                    number: 198,
+                    font: "日常巡查(次)",
+                    color: "color: #0DFFFF;"
+                },
+                {
+                    number: 135,
+                    font: "设备巡检(次)",
+                    color: "color: #C127D1;"
+                },
+                {
+                    number: 45,
+                    font: "安全督导(次)",
+                    color: "color: #07E99A;"
+                }
+            ]
         };
     },
-    components: { moduleHeader,Echart },
+    components: { moduleHeader, Echart },
     created() {},
     computed: {},
     mounted() {
-        let title = "S-T";
-        let total = "教学分析";
         let option = {
+            toolbox: {
+                show: false,
+                feature: {
+                    mark: { show: true },
+                    dataView: { show: false, readOnly: false },
+                    restore: { show: false },
+                    saveAsImage: { show: false }
+                }
+            },
+            grid: {
+                left: "-10%",
+                right: 10,
+                bottom: 10,
+                top: 10
+            },
             title: [
                 {
-                    text: "{name|" + title + "}\n{val|" + total + "}",
-                    top: "center",
+                    text: "{name|" + "巡查任务" + "}",
+                    top: "61%",
                     left: "center",
-                    borderWidth: 1,
-                    borderColor: "rgba(20, 46, 82, 1)",
-                    // backgroundColor:'rgba(20, 46, 82, 0.7)',
-                    padding: [0, 10, 22, 10],
                     borderRadius: 50,
                     textStyle: {
                         rich: {
@@ -36,10 +77,10 @@ export default {
                                 // width: 100,
                                 height: 60,
                                 lineHeight: 20,
-                                fontSize: 14,
+                                fontSize: 20,
                                 fontWeight: "normal",
-                                color: "#fff",
-                                padding: [-10, 5, -10, 5]
+                                color: "#ffff",
+                                padding: [10, 0, 0, -6]
                             },
                             val: {
                                 width: 100,
@@ -47,28 +88,18 @@ export default {
                                 fontSize: 14,
                                 fontWeight: "normal",
                                 color: "#fff",
-                                padding: [-10, 5, -10, 10]
+                                padding: [-10, 0, -10, 0]
                             }
                         }
                     }
                 }
             ],
-
             series: [
                 {
-                    name: "面积模式",
-                    type: "pie",
-                    radius: [50, 70],
-                    center: ["50%", "50%"],
-                    itemStyle: {
-                        borderRadius: 0,
-                        borderWidth: 5,
-                        borderColor: "#000000"
-                    },
                     label: {
                         // 线上文字的样式
                         normal: {
-                            formatter: "{a|{b}}\n{c|{d}}%\r\r", // 线上文字
+                            formatter: "{a|{b}}\n{value|{d}}%\r\r", // 线上文字
                             borderWidth: 0,
                             borderRadius: 0,
                             // padding: [0, -80],
@@ -96,10 +127,48 @@ export default {
                             }
                         }
                     },
+                    animation: true,
+                    hoverAnimation: false,
+                    name: "面积模式",
+                    type: "pie",
+                    // roseType: "angle",
+                    radius: [70, 105],
+                    center: ["50%", "65%"],
+                    itemStyle: {
+                        borderRadius: 0
+                        // borderWidth: 5,
+                        // borderColor: "#000000"
+                    },
+                    startAngle: 135,
                     data: [
                         {
-                            value: 45,
-                            name: "讲授型",
+                            value: 20,
+                            name: "安全督导",
+                            label: {
+                                color: "#07E99A"
+                            },
+                            itemStyle: {
+                                normal: {
+                                    color: new echarts.graphic.LinearGradient(
+                                        0,
+                                        0,
+                                        0,
+                                        1,
+                                        [
+                                            { offset: 0, color: "#31F0B3" },
+                                            { offset: 0.8, color: "#31F0B3" },
+                                            { offset: 1, color: "#00D88C" }
+                                        ]
+                                    )
+                                }
+                            }
+                        },
+                        {
+                            value: 50,
+                            name: "日常巡查",
+                            label: {
+                                color: "#0DFFFF"
+                            },
                             itemStyle: {
                                 normal: {
                                     color: new echarts.graphic.LinearGradient(
@@ -109,17 +178,18 @@ export default {
                                         1,
                                         [
                                             { offset: 0, color: "#0DFFFF" },
-                                            { offset: 0.6, color: "#70BFFF" },
                                             { offset: 1, color: "#70BFFF" }
                                         ]
                                     )
                                 }
                             }
                         },
-
                         {
-                            value: 15,
-                            name: "练习型",
+                            value: 30,
+                            name: "设备巡检",
+                            label: {
+                                color: "#C128D0"
+                            },
                             itemStyle: {
                                 normal: {
                                     color: new echarts.graphic.LinearGradient(
@@ -129,45 +199,8 @@ export default {
                                         1,
                                         [
                                             { offset: 0, color: "#FC5AD3" },
+                                            { offset: 0.2, color: "#FC5AD3" },
                                             { offset: 1, color: "#B921D0" }
-                                        ]
-                                    )
-                                }
-                            }
-                        },
-                        {
-                            value: 30,
-                            name: "混合型",
-                            itemStyle: {
-                                normal: {
-                                    color: new echarts.graphic.LinearGradient(
-                                        0,
-                                        0,
-                                        0,
-                                        1,
-                                        [
-                                            { offset: 0, color: "#FFFF00FF" },
-                                            { offset: 0.2, color: "#FFFF00FF" },
-                                            { offset: 1, color: "#DBB001FF" }
-                                        ]
-                                    )
-                                }
-                            }
-                        },
-                        {
-                            value: 10,
-                            name: "对话型",
-                            itemStyle: {
-                                normal: {
-                                    color: new echarts.graphic.LinearGradient(
-                                        0,
-                                        0.4,
-                                        0.8,
-                                        1,
-                                        [
-                                            { offset: 0, color: "#FFFFFFFF" },
-                                            { offset: 0.9, color: "#96ACC3FF" },
-                                            { offset: 1, color: "#96ACC3FF" }
                                         ]
                                     )
                                 }
@@ -183,4 +216,33 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
+.header-title {
+    position: absolute;
+    left: 0;
+    right: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .header-list-item {
+        text-align: center;
+        margin: 0.25rem 0.3rem 0 0.3rem;
+        p {
+            margin: 0;
+            padding: 0;
+        }
+        .font {
+            font-size: 0.15rem;
+            font-family: PingFangSC-Regular, PingFang SC;
+            font-weight: 400;
+            color: #96acc3;
+        }
+        .num {
+            font-size: 0.4rem;
+            font-family: Bahnschrift_SemiBold;
+            color: #0dffff;
+        }
+    }
+}
 </style>
