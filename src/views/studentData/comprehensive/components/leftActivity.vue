@@ -1,7 +1,7 @@
 <template>
   <module-header title="社会活动指数">
     <Flex :flex="1">
-      <Flex :flex="2">
+      <Flex :flex="2" class="margin-class">
         <echart :options="options"  width="100%" height="100%"></echart>
       </Flex>
       <Flex :flex="1">
@@ -126,6 +126,9 @@ export default {
 </script>
 
 <style scoped lang="scss">
+.margin-class{
+  margin-top: 0.1rem;
+}
 .legend{
   height: 100%;
   display: flex;
