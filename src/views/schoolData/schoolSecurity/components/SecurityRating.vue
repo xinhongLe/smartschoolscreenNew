@@ -16,8 +16,8 @@
             :proData="item"
             :ratioNum="100"
             :islable="false"
-            :isNum="false"
             :styleObject="item.styleObject"
+            :isNum="false"
           ></progress-b>
         </div>
       </div>

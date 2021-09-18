@@ -3,12 +3,7 @@
         <div class="h-line"></div>
         <Flex :flex="1" column>
             <div class="v-line"></div>
-            <CountScroll
-                :schoolSum="schoolSum"
-                :studentSum="studentSum"
-                :teacherSum="teacherSum"
-                :workerSum="workerSum"
-            ></CountScroll>
+            <CountScroll></CountScroll>
             <div class="v-line"></div>
             <Flex :flex="5">
                 <CitySchool></CitySchool>

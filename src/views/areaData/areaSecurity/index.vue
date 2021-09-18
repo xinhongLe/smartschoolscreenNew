@@ -2,17 +2,13 @@
     <div class="content">
         <div class="h-line"></div>
         <Flex :flex="1" column>
-            <!-- <Flex :flex="3"> </Flex>
             <div class="v-line"></div>
-            <Flex :flex="5"> </Flex>
-            <div class="v-line"></div>
-            <Flex :flex="5"> 3 </Flex>
-            <div class="v-line"></div> -->
             <security-rating></security-rating>
             <div class="v-line"></div>
         </Flex>
         <div class="h-line"></div>
         <Flex :flex="2" column>
+            <div class="v-line"></div>
             <Flex :flex="1"> 
                 <Flex :flex="1">
                     <DangerStatistics></DangerStatistics>
@@ -22,10 +18,12 @@
                     <TaskStatistics></TaskStatistics>
                 </Flex>
             </Flex>
+            <div class="v-line"></div>
             <Flex :flex="1"> <StudyTime></StudyTime> </Flex>
         </Flex>
         <div class="h-line"></div>
         <Flex :flex="1" column>
+            <div class="v-line"></div>
             <Flex :flex="3">
               <right-dynamic></right-dynamic>
             </Flex>
