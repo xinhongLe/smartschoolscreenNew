@@ -63,7 +63,7 @@ export default {
 
 <style scoped>
 .v-line {
-    height: 0.4rem;
+    height: 0.2rem;
 }
 
 .left-box {

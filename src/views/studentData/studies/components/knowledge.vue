@@ -4,7 +4,7 @@
       <div class="knowledge_title">
         <div>
           <span>进度均值:</span>
-          <span>5.2%</span>
+          <span class="proNum">5.2%</span>
         </div>
         <span>本学期教学进度</span>
       </div>
@@ -19,7 +19,7 @@
       <div class="knowledge_title">
         <div>
           <span>掌握均值:</span>
-          <span>87.8%</span>
+          <span class="proNumP">87.8%</span>
         </div>
         <span>本学期教学进度</span>
       </div>
@@ -140,8 +140,16 @@ export default {
 span{
     font-size: 0.125rem;
     font-weight: 400;
-    color: #96ACC3;
+    color: rgba(150, 172, 195, .7);
     line-height: 1.2;
+}
+.proNum{
+  color: #0DFFFF;
+  margin-left: 0.1rem;
+}
+.proNumP{
+  color: #B921D0;
+  margin-left: 0.1rem;
 }
 .h-line {
   width: 2rem;

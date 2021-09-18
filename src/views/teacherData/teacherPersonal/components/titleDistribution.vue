@@ -24,8 +24,8 @@ export default {
       },
       legend: {
         type: "scroll",
-        left: "1%",
-        data: ["正高级", "[80,90]", "[70,80]", "[60,70]", "[0,60]"],
+        left: "2%",
+        data: ["正高级", "高级", "一级", "二级", "三级"],
         icon: "diamond",
         top: 10,
         itemWidth: 8, // 图例标记的图形宽度。
@@ -37,11 +37,11 @@ export default {
         },
       },
       grid: {
-        left: "3%",
-        right: "4%",
-        bottom: "1%",
+        left: "15%",
+        right: "2%",
+        bottom: "0%",
         top: "15%",
-        containLabel: true,
+        // containLabel: true,
       },
       xAxis: {
         type: "value",
@@ -49,7 +49,7 @@ export default {
       },
       yAxis: {
         type: "category",
-        data: ["三年级", "四年级", "五年级", "六年级"],
+        data: ["一年级", "二年级","三年级", "四年级", "五年级"],
         axisLine: {
           show: false,
         },
@@ -71,13 +71,7 @@ export default {
           name: "正高级",
           type: "bar",
           stack: "总量",
-          data: [30, 32, 29, 33],
-          label: {
-            show: true,
-            formatter: "{c}人",
-            position: "bottom",
-            color: "#0DFFFF",
-          },
+          data: [17, 25, 20, 22, 34],
           itemStyle: {
             color: {
               type: "linear",
@@ -101,16 +95,10 @@ export default {
           barWidth: 12, //柱图宽度
         },
         {
-          name: "[80,90]",
+          name: "高级",
           type: "bar",
           stack: "总量",
-          data: [20, 32, 11, 14],
-          label: {
-            show: true,
-            formatter: "{c}人",
-            position: "bottom",
-            color: "#30A2FD",
-          },
+          data: [21, 20, 21, 24, 21],
           itemStyle: {
             color: {
               type: "linear",
@@ -134,16 +122,10 @@ export default {
           barWidth: 12, //柱图宽度
         },
         {
-          name: "[70,80]",
+          name: "一级",
           type: "bar",
           stack: "总量",
-          data: [33, 31, 29, 13],
-          label: {
-            show: true,
-            formatter: "{c}人",
-            position: "bottom",
-            color: "#A962F3",
-          },
+          data: [14, 19, 15, 18, 22],
           itemStyle: {
             color: {
               type: "linear",
@@ -167,16 +149,10 @@ export default {
           barWidth: 12, //柱图宽度
         },
         {
-          name: "[60,70]",
+          name: "二级",
           type: "bar",
           stack: "总量",
-          data: [33, 41, 29, 33],
-          label: {
-            show: true,
-            formatter: "{c}人",
-            position: "bottom",
-            color: "#FC5AD3",
-          },
+          data: [34, 19, 29, 33, 20],
           itemStyle: {
             color: {
               type: "linear",
@@ -200,16 +176,10 @@ export default {
           barWidth: 12, //柱图宽度
         },
         {
-          name: "[0,60]",
+          name: "三级",
           type: "bar",
           stack: "总量",
-          data: [33, 20, 20, 33],
-          label: {
-            show: true,
-            formatter: "{c}人",
-            position: "bottom",
-            color: "#96ACC3",
-          },
+          data: [34, 37, 35, 23, 23],
           itemStyle: {
             color: {
               type: "linear",

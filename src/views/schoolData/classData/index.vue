@@ -2,10 +2,12 @@
     <div class="content">
         <div class="h-line"></div>
         <Flex :flex="3" column>
+            <div class="v-line"></div>
             <ClassRank />
         </Flex>
         <div class="h-line"></div>
         <Flex :flex="5" column>
+            <div class="v-line"></div>
             <Flex :flex="1">
                 <StudentBehavior />
             </Flex>
@@ -20,6 +22,7 @@
         </Flex>
         <div class="h-line"></div>
         <Flex :flex="2" column>
+            <div class="v-line"></div>
             <Flex :flex="1">
                 <TeachingMethod />
             </Flex>

@@ -97,7 +97,8 @@ export default {
           name: "非常活跃",
           type: "bar",
           stack: "总量",
-          data: [30, 32, 29, 33,30, 32, 29, 33,66],
+          // data: [30, 32, 29, 33,30, 32, 29, 33,66],
+           data:  [38, 30, 24, 39, 18, 22, 22,24,24],
           itemStyle: {
             color: {
               type: "linear",
@@ -124,7 +125,8 @@ export default {
           name: "活跃",
           type: "bar",
           stack: "总量",
-          data: [20, 32, 11, 14, 20, 32, 11, 14, 56],
+          // data: [20, 32, 11, 14, 20, 32, 11, 14, 56],
+           data: [22, 20, 22, 12, 38, 20, 32,16,26],
           itemStyle: {
             color: {
               type: "linear",
@@ -151,7 +153,8 @@ export default {
           name: "一般",
           type: "bar",
           stack: "总量",
-          data: [33, 31, 29, 13, 33, 31, 29, 13,36],
+          // data: [33, 31, 29, 13, 33, 31, 29, 13,36],
+          data: [18, 33, 29, 33, 14, 32, 18,33,14],
           itemStyle: {
             color: {
               type: "linear",
@@ -178,7 +181,8 @@ export default {
           name: "不活跃",
           type: "bar",
           stack: "总量",
-          data: [33, 41, 29, 33, 33, 41, 29, 33, 15],
+          // data: [33, 41, 29, 33, 33, 41, 29, 33, 15],
+          data:  [22, 17, 25, 16, 30, 26, 28,27,36],
           itemStyle: {
             color: {
               type: "linear",

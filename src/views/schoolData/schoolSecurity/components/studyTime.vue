@@ -1,6 +1,13 @@
 <template>
-    <module-header title="人均学习时间监控">
-        <echart :options="options" height="100%" width="100%"></echart>
+    <module-header title="校园隐患趋势图">
+        <div class="chart-box" ref="chart">
+            <echart
+                v-if="height > 0"
+                :options="options"
+                :height="height + 'px'"
+                width="100%"
+            ></echart>
+        </div>
     </module-header>
 </template>
 
@@ -14,10 +21,11 @@ export default {
     },
     data() {
         return {
-            options: {}
+            options: {},
+            height: 0
         };
     },
-    mounted() {
+    async mounted() {
         const options = {
             color: ["#4DD5FF", "#E949D1", "#EBD401", "#376CCB", "#A962F3"],
             tooltip: {
@@ -258,12 +266,27 @@ export default {
                 }
             ]
         };
-        // this.options.xAxis.data = this.echartsData.map(item => item[0])
-        // this.options.series.data = this.echartsData.map(item => item[1])
+
+        await this.sleep(2000);
+        this.height = this.$refs.chart.clientHeight;
+
         this.options = options;
+    },
+
+    methods: {
+        sleep(time) {
+            return new Promise((resolve) => {
+                setTimeout(() => {
+                    resolve();
+                }, time);
+            })
+        }
     }
 };
 </script>
 
 <style scoped>
+.chart-box {
+    height: 100%;
+}
 </style>
