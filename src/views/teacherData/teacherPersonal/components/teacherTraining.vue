@@ -1,5 +1,5 @@
 <template>
-  <moduleHeader title="作业正确率">
+  <moduleHeader title="教师培训年度 (年度)">
     <Echart :options="options" height="100%"></Echart>
   </moduleHeader>
 </template>
@@ -34,7 +34,7 @@ export default {
       },
       yAxis: {
         type: "value",
-        name: "单位: %",
+        name: "单位: 课时",
         nameTextStyle: {
           color: "#96ACC3",
           align: "right",
@@ -47,16 +47,8 @@ export default {
       },
       series: [
         {
-          data: [84, 89, 76, 80, 79, 78],
+          data: [110, 67, 76, 140, 39, 88],
           type: "bar",
-          label: {
-            show: true,
-            position: "top",
-            // valueAnimation: true,
-            formatter: '{c}%',
-            color: '#0DFFFF',
-            fontSize: 16
-          },
           itemStyle: {
             color: {
               type: "linear",

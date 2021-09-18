@@ -1,5 +1,5 @@
 <template>
-  <moduleHeader title="课堂活跃度">
+  <moduleHeader title="课堂练习完成情况">
     <div class="title_info">
       <ul class="nav_ul">
         <li class="zonghe_box">
@@ -87,7 +87,7 @@ export default {
           name: "顺利完成",
           type: "bar",
           stack: "总量",
-          data: [30, 32, 29, 33, 30, 32],
+          data: [70, 72, 72, 73, 75, 73],
           itemStyle: {
             color: {
               type: "linear",
@@ -114,7 +114,7 @@ export default {
           name: "不能完成",
           type: "bar",
           stack: "总量",
-          data: [33, 41, 29, 33, 33, 41],
+          data: [30, 28, 28, 27, 25, 27],
           itemStyle: {
             color: {
               type: "linear",

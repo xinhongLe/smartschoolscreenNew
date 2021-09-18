@@ -1,5 +1,5 @@
 <template>
-  <moduleHeader title="作业类型">
+  <moduleHeader title="教龄分布">
     <Echart :options="options" height="100%"></Echart>
   </moduleHeader>
 </template>
@@ -28,7 +28,7 @@ export default {
       legend: {
         type: "scroll",
         left: "1%",
-        data: ["巩固型作业", "创造型作业", "实践型作业", "综合性作业"],
+        data: ["0~3年", "3~10年", "10~15年", "15~20年", "20年以上"],
         icon: "diamond",
         top: 10,
         itemWidth: 8, // 图例标记的图形宽度。
@@ -48,7 +48,7 @@ export default {
       },
       yAxis: {
         type: "value",
-        name: "单位: %",
+        name: "单位: 人",
         nameTextStyle: {
           color: "#96ACC3",
           align: "right",
@@ -72,10 +72,7 @@ export default {
           "三年级",
           "四年级",
           "五年级",
-          "六年级",
-          "七年级",
-          "八年级",
-          "九年级",
+          "六年级"
         ],
         axisLabel: {
           show: true,
@@ -92,10 +89,10 @@ export default {
       },
       series: [
         {
-          name: "巩固型作业",
+          name: "0~3年",
           type: "bar",
           stack: "总量",
-          data: [32, 30, 31, 34, 39, 30, 32, 29, 33],
+          data: [32, 30, 31, 34, 39, 30],
           itemStyle: {
             color: {
               type: "linear",
@@ -119,10 +116,10 @@ export default {
           barWidth: 12, //柱图宽度
         },
         {
-          name: "创造型作业",
+          name: "3~10年",
           type: "bar",
           stack: "总量",
-          data: [20, 32, 11, 14, 90, 30, 20, 20, 30],
+          data: [20, 32, 11, 14, 90, 30],
           itemStyle: {
             color: {
               type: "linear",
@@ -146,10 +143,10 @@ export default {
           barWidth: 12, //柱图宽度
         },
         {
-          name: "实践型作业",
+          name: "10~15年",
           type: "bar",
           stack: "总量",
-          data: [22, 12, 11, 24, 29, 33, 31, 29, 13],
+          data: [22, 12, 11, 24, 29, 33],
           itemStyle: {
             color: {
               type: "linear",
@@ -173,10 +170,10 @@ export default {
           barWidth: 12, //柱图宽度
         },
         {
-          name: "综合性作业",
+          name: "15~20年",
           type: "bar",
           stack: "总量",
-          data: [12, 21, 21, 14, 19, 33, 41, 29, 33],
+          data: [12, 21, 21, 14, 19, 33],
           itemStyle: {
             color: {
               type: "linear",
@@ -199,50 +196,28 @@ export default {
           },
           barWidth: 12, //柱图宽度
         },
-        // {
-        //   name: "作业环节",
-        //   type: "bar",
-        //   stack: "总量",
-        //   data: [20, 32, 91, 34, 29, 33, 20, 20, 33],
-        //  itemStyle: {
-        //     color: {
-        //       type: 'linear',
-        //       x: 0,
-        //       y: 0,
-        //       x2: 0,
-        //       y2: 1,
-        //       colorStops: [{
-        //           offset: 0, color: '#96ACC3' // 0% 处的颜色
-        //       }, {
-        //           offset: 1, color: '#FFFFFF' // 100% 处的颜色
-        //       }],
-        //       global: false // 缺省为 false
-        //     },
-        //   },
-        //   barWidth: 12, //柱图宽度
-        // },
-        // {
-        //   name: "其他",
-        //   type: "bar",
-        //   stack: "总量",
-        //   data: [20, 32, 91, 34, 29, 30, 32, 20, 33],
-        //  itemStyle: {
-        //     color: {
-        //       type: 'linear',
-        //       x: 0,
-        //       y: 0,
-        //       x2: 0,
-        //       y2: 1,
-        //       colorStops: [{
-        //           offset: 0, color: '#FFFF00' // 0% 处的颜色
-        //       }, {
-        //           offset: 1, color: '#DBB001' // 100% 处的颜色
-        //       }],
-        //       global: false // 缺省为 false
-        //     },
-        //   },
-        //   barWidth: 12, //柱图宽度
-        // },
+        {
+          name: "20年以上",
+          type: "bar",
+          stack: "总量",
+          data: [20, 32, 91, 34, 29, 30, 32, 20, 33],
+         itemStyle: {
+            color: {
+              type: 'linear',
+              x: 0,
+              y: 0,
+              x2: 0,
+              y2: 1,
+              colorStops: [{
+                  offset: 0, color: '#FFFF00' // 0% 处的颜色
+              }, {
+                  offset: 1, color: '#DBB001' // 100% 处的颜色
+              }],
+              global: false // 缺省为 false
+            },
+          },
+          barWidth: 12, //柱图宽度
+        },
       ],
     };
 
