@@ -7,7 +7,7 @@
         <exam-radar></exam-radar>
       </Flex>
       <Flex :flex="1">
-        2
+        <KnowledgeCoverage></KnowledgeCoverage>
       </Flex>
       <div class="v-line"></div>
       <div class="v-line"></div>
@@ -17,26 +17,27 @@
       <div class="v-line"></div>
       <Flex :flex="1">
         <Flex :flex="2" column>
-          <Flex :flex="1">
-            4
+          <Flex :flex="3">
+            <ExaminationOverview></ExaminationOverview>
+          </Flex>
+          <div class="v-line" style="height:0.2rem"></div>
+          <Flex :flex="4">
+            <GradeScores></GradeScores>
           </Flex>
           <div class="v-line"></div>
-          <Flex :flex="1">
-            5
+          <Flex :flex="4">
+             <CriticalDistribution></CriticalDistribution>
           </Flex>
         </Flex>
         <div class="h-line"></div>
         <Flex :flex="1" column>
+          
           <Flex :flex="1">
-            6
+            <ResultsContrast></ResultsContrast>
           </Flex>
           <div class="v-line"></div>
           <Flex :flex="1">
-            7
-          </Flex>
-          <div class="v-line"></div>
-          <Flex :flex="1">
-            8
+             <AcademicDistribution></AcademicDistribution>
           </Flex>
         </Flex>
       </Flex>
@@ -49,11 +50,23 @@
 <script>
 import Flex from "@/components/flex";
 import ExamRadar from "./components/examRadar";
+import KnowledgeCoverage from './components/knowledgeCoverage.vue'
+import GradeScores from './components/gradeScores.vue'
+import ExaminationOverview from './components/ExaminationOverview.vue'
+import CriticalDistribution from './components/CriticalDistribution.vue'
+import ResultsContrast from './components/resultsContrast.vue'
+import AcademicDistribution from './components/AcademicDistribution.vue'
 export default {
   name: "index",
   components: {
     ExamRadar,
-    Flex
+    Flex,
+    KnowledgeCoverage,
+    GradeScores,
+    ExaminationOverview,
+    CriticalDistribution,
+    ResultsContrast,
+    AcademicDistribution
   }
 }
 </script>
