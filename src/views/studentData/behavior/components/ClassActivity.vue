@@ -219,9 +219,9 @@ export default {
   height: 100%;
 }
 .title_info{
-    width: 100%;
+    width: 95%;
     height: 1rem;
-    margin-top: 0.2rem;
+    margin: 0.2rem auto 0;
     background: rgba(3, 86, 176, 0.1);
     border: 1px solid rgba(16, 163, 190, 0.23);
 }
@@ -234,12 +234,11 @@ li{
     height: 100%;
     display: flex;
 }
-span{
-    font-size: 12px;
-    font-family: PingFangSC-Regular, PingFang SC;
-    font-weight: 400;
-    color: #96ACC3;
-    line-height: 17px;
+span {
+  font-size: 0.125rem;
+  font-weight: 400;
+  color: rgba(150, 172, 195, .7);
+  line-height: 1.5;
 }
 .very_activity{
     color: #0DFFFF;

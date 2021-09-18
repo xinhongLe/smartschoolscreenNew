@@ -64,14 +64,14 @@ export default {
     },
     cityNmae: {
       type: String,
-      default: "苏州",
+      default: "**州",
     },
     schoolSum: {
       type: Object,
       default: () => {
         return {
           startval: 0,
-          endval: 978,
+          endval: 1646,
           duration: 3000,
           name:'学校总数'
         };
@@ -82,7 +82,7 @@ export default {
       default: () => {
         return {
           startval: 0,
-          endval: 1234098,
+          endval: 1767744,
           duration: 3000,
           name:'总学生人数'
         };
@@ -93,7 +93,7 @@ export default {
       default: () => {
         return {
           startval: 0,
-          endval: 52345,
+          endval: 117746,
           duration: 3000,
           name:'总教师人数'
         };
@@ -104,7 +104,7 @@ export default {
       default: () => {
         return {
           startval: 0,
-          endval: 73301,
+          endval: 15266,
           duration: 3000,
           name:'总职工人数'
         };
