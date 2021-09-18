@@ -28,9 +28,13 @@
                 </Flex>
                 <div class="h-line"></div>
                 <Flex :flex="2" column>
-                    <!-- 文字泡 -->
-                    <Flex :flex="1">
-                        <Evaluate></Evaluate>
+                    <Flex :flex="1" column>
+                        <Flex :flex="5">
+                            <Evaluate></Evaluate>
+                        </Flex>
+                        <Flex :flex="2">
+                            <RightFooter></RightFooter>
+                        </Flex>
                     </Flex>
                 </Flex>
             </Flex>
@@ -49,6 +53,7 @@ import MasterTheSituation from "./components/masterTheSituation";
 import Ranking from "./components/ranking";
 import Speed from "./components/speed";
 import Evaluate from "./components/evaluate"
+import RightFooter from "./components/rightFooter.vue"
 export default {
     components: {
         Flex,
@@ -58,7 +63,8 @@ export default {
         MasterTheSituation,
         Ranking,
         Speed,
-        Evaluate
+        Evaluate,
+        RightFooter
     }
 };
 </script>

@@ -3,11 +3,11 @@
         <div class="h-line"></div>
         <Flex :flex="2" column>
             <div class="v-line"></div>
-            <Flex :flex="1">
+            <Flex :flex="3">
                 <Coverage></Coverage>
             </Flex>
             <div class="v-line"></div>
-            <Flex :flex="1">
+            <Flex :flex="2">
                 <JobType></JobType>
             </Flex>
             <div class="v-line"></div>
