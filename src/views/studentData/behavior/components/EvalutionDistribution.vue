@@ -2,14 +2,13 @@
     <moduleHeader title="课堂评价分布">
         <div class="knowledge_title">
         <div>
-          <span>进度均值:</span>
-          <span>5.2%</span>
+          <span>评价覆盖率:</span>
+          <span>73%</span>
         </div>
-        <span>本学期教学进度</span>
       </div>
       <div class="schoolData">
         <div class="progressitem" v-for="item in progressList" :key="item.id">
-          <ProgressB :proData="item" :ratioNum="100" :ispercent="true"></ProgressB>
+          <ProgressB :proData="item" :ratioNum="100" :isNum="false"></ProgressB>
         </div>
       </div>
     </moduleHeader>
@@ -23,17 +22,17 @@ export default {
             progressList: [
         {
           name: "经常鼓励",
-          progressNum: 5,
+          progressNum: 45,
           id: 1,
         },
         {
           name: "偶尔奖励",
-          progressNum: 6.1,
+          progressNum:56,
           id: 2,
         },
         {
           name: "几乎不鼓励",
-          progressNum: 2.5,
+          progressNum: 35,
           id: 3,
         }
       ],
@@ -68,7 +67,7 @@ span{
 }
 .schoolData {
   width: 100%;
-  height: calc(100% - 1rem);
+  height: calc(100% - 0.6rem);
   padding-left: 0.3rem;
   margin-top: 0.2rem;
   box-sizing: border-box;

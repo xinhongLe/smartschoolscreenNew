@@ -9,8 +9,8 @@
         v-bind:class="{ progress_active: isActive }"
       ></div>
     </div>
-    <span class="progress_number" v-if="islable"
-      >{{ progressData.progressNum }}<i v-if="ispercent">%</i>
+    <span class="progress_number" v-if="isNum"
+      >{{ progressData.progressNum }}<i v-if="ispercent">{{unit}}</i>
     </span>
   </div>
 </template>
@@ -29,7 +29,12 @@ export default {
       default: 1000,
     },
     islable: {
-      // 是否显示进度条的名字和占比数 默认显示
+      // 是否显示进度条的名字 默认显示
+      type: Boolean,
+      default: true,
+    },
+    isNum:{
+      // 是否显示进度条的占比数 默认显示
       type: Boolean,
       default: true,
     },
@@ -37,6 +42,10 @@ export default {
       // 是否显示百分号 默认不显示
       type: Boolean,
       default: false,
+    },
+    unit:{
+      type:String,
+      default:"%"
     },
     styleObject: {
       // 控制进度条颜色的对象 默认为蓝色渐变
@@ -108,7 +117,7 @@ export default {
     color: #96acc3;
   }
   .progress_number {
-    width: 0.4rem;
+    // width: 0.4rem;
     text-align: center;
     font-size: 0.15rem;
     color: #7ab3e2;

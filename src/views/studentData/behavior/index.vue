@@ -2,11 +2,11 @@
     <div class="img-content">
         <div class="h-line"></div>
         <Flex :flex="1" column>
-            <Flex :flex="1">
+            <Flex :flex="2">
                 <ClassDistribution></ClassDistribution>
             </Flex>
             <div class="v-line"></div>
-            <Flex :flex="1">
+            <Flex :flex="3">
                  <module-header
                     :title="['课堂活跃度', '课堂专注度']"
                     :selected="trendSelected"
@@ -20,15 +20,15 @@
         </Flex>
         <div class="h-line"></div>
         <Flex :flex="1" column>
-            <Flex :flex="1">
+            <Flex :flex="3">
                 <EvalutionDistribution></EvalutionDistribution>
             </Flex>
             <div class="v-line"></div>
-            <Flex :flex="1">
+            <Flex :flex="5">
                 <PracticeComplete></PracticeComplete>
             </Flex>
             <div class="v-line"></div>
-            <Flex :flex="1">
+            <Flex :flex="4">
                 <TeachingModel></TeachingModel>
             </Flex>
             <div class="v-line"></div>
