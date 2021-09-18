@@ -2,7 +2,7 @@
     <moduleHeader title="S-T教学模式分布">
         <div class="patter-box">
             <div style="width: 100%; position: relative">
-                <Echart width="100%" height="100%" :options="options1"></Echart>
+                <Echart width="60%" height="60%" :options="options1"></Echart>
                 <div class="text">
                     <span>S-T</span>
                     <span>教学分析</span>
@@ -367,6 +367,9 @@ export default {
     justify-content: space-between;
     >div {
         flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
     .text {
         position: absolute;
@@ -374,8 +377,8 @@ export default {
         right: 0;
         top: 0;
         margin: auto;
-        width: 1.5rem;
-        height: 1.5rem;
+        width: 1rem;
+        height: 1rem;
         bottom: 0;
         border: 1px solid #142E52;
         display: flex;
@@ -385,6 +388,20 @@ export default {
         border-radius: 50%;
         span:nth-of-type(1) {
             font-size: 0.225rem;
+        }
+        &:after {
+            content: "";
+            left: 0;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            margin: auto;
+            z-index: -1;
+            width: .6rem;
+            height: .6rem;
+            position: absolute;
+            background: #142E52;
+            filter: blur(14.4px);
         }
     }
 }
