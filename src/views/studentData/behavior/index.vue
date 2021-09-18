@@ -13,8 +13,8 @@
                     :selected="trendSelected"
                     @change="(i) => (trendSelected = i)"
                 >
-                    <class-activity v-show="trendSelected == 0"></class-activity>
-                    <ClassFocus v-show="trendSelected == 1"></ClassFocus>
+                    <class-activity v-if="trendSelected == 0"></class-activity>
+                    <ClassFocus v-if="trendSelected == 1"></ClassFocus>
                 </module-header>
             </Flex>
             <div class="v-line"></div>
