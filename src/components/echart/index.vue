@@ -47,6 +47,7 @@ export default {
     watch: {
         options: {
             handler(options) {
+                console.log("2222222222222222222222",options)
                 // 设置true清空echart缓存
                 this.chart && this.chart.setOption(options, true);
             },

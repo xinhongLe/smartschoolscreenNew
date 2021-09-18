@@ -27,8 +27,11 @@ export default {
       animateScroll: false
     }
   },
-  mounted() {
+  created() {
+      this.$nextTick(() => {
+
     const marquee = document.getElementById('table');
+    console.log(marquee,marquee.clientHeight)
     if(this.tableList.length >= marquee.offsetHeight / 80 / 0.6){
       this.animateScroll = true
       this.$nextTick(() => {
@@ -36,6 +39,7 @@ export default {
         marquee.innerHTML = contents + contents
       })
     }
+      })
 
   }
 }
