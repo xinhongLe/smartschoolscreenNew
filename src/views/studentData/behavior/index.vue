@@ -7,7 +7,14 @@
             </Flex>
             <div class="v-line"></div>
             <Flex :flex="1">
-                <class-activity1></class-activity1>
+                 <module-header
+                    :title="['课堂活跃度', '课堂专注度']"
+                    :selected="trendSelected"
+                    @change="(i) => (trendSelected = i)"
+                >
+                    <class-activity v-show="trendSelected == 0"></class-activity>
+                    <ClassFocus v-show="trendSelected == 1"></ClassFocus>
+                </module-header>
             </Flex>
             <div class="v-line"></div>
         </Flex>
@@ -33,7 +40,14 @@
             </Flex>
             <div class="v-line"></div>
             <Flex :flex="5">
-                <OutsideReading></OutsideReading>
+                <module-header
+                    :title="['年平均课外阅读情况', '书籍类别喜好排行']"
+                    :selected="bookSelected"
+                    @change="(i) => (bookSelected = i)"
+                >
+                    <OutsideReading v-show="bookSelected == 0"></OutsideReading>
+                    <books-like v-show="bookSelected == 1"></books-like>
+                </module-header>
             </Flex>
             <div class="v-line"></div>
         </Flex>
@@ -53,6 +67,7 @@
 </template>
 <script>
 import Flex from "@/components/flex";
+import ModuleHeader from '@/components/moduleHeader.vue';
 import ClassDistribution from "./components/ClassDistribution.vue";
 import EvalutionDistribution from "./components/EvalutionDistribution.vue";
 import NurseryDistribution from "./components/NurseryDistribution.vue";
@@ -60,16 +75,21 @@ import OutsideReading from "./components/OutsideReading.vue";
 import PracticeComplete from "./components/PracticeComplete.vue";
 import TeachingModel from "./components/TeachingModel.vue";
 import WrongQuestion from "./components/WrongQuestion.vue";
-import ClassActivity1 from "./components/ClassActivity1.vue";
-import CreditBank from './components/CreditBank.vue'
+import ClassActivity from "./components/ClassActivity.vue";
+import CreditBank from './components/CreditBank.vue';
+import ClassFocus from './components/ClassFocus.vue';
+import BooksLike from './components/BooksLike.vue';
 export default {
     data() {
         return {
-            style: {}
+            style: {},
+            trendSelected:0,
+            bookSelected:0
         };
     },
     components: {
         Flex,
+        ModuleHeader,
         ClassDistribution,
         EvalutionDistribution,
         NurseryDistribution,
@@ -77,8 +97,10 @@ export default {
         PracticeComplete,
         TeachingModel,
         WrongQuestion,
-        ClassActivity1,
-        CreditBank
+        ClassActivity,
+        CreditBank,
+        ClassFocus,
+        BooksLike,
     },
     methods: {
         imgLoad() {

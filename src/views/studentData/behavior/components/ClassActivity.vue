@@ -1,6 +1,6 @@
 <template>
-  <moduleHeader title="课堂活跃度">
-    <div class="title_info">
+    <div class="activity_box">
+      <div class="title_info">
           <ul class="nav_ul">
               <li class="zonghe_box">
                 <span class="zonghe">综合活跃度</span>
@@ -26,10 +26,10 @@
     <div class="echart_box">
       <Echart width="100%" height="100%" :options="options"></Echart>
     </div>
-  </moduleHeader>
+    </div>
+    
 </template>
 <script>
-import moduleHeader from "@/components/moduleHeader.vue";
 import Echart from "@/components/echart";
 export default {
   data() {
@@ -38,7 +38,7 @@ export default {
 
     };
   },
-  components: { moduleHeader, Echart },
+  components: { Echart },
   created() {},
   mounted() {
     const options = {
@@ -210,6 +210,10 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
+.activity_box{
+  width: 100%;
+  height: 100%;
+}
 .title_info{
     width: 100%;
     height: 1rem;
