@@ -44,7 +44,7 @@ export default {
             title: [
                 {
                     text: "{name|" + "100%" + "}",
-                    top: "center",
+                    top: "60%",
                     left: "center",
                     borderRadius: 50,
                     textStyle: {
@@ -109,7 +109,7 @@ export default {
                     type: "pie",
                     roseType: "angle",
                     radius: [70, 110],
-                    center: ["50%", "50%"],
+                    center: ["50%", "65%"],
                     itemStyle: {
                         borderRadius: 0
                         // borderWidth: 5,
@@ -245,6 +245,7 @@ export default {
     line-height: 0.65rem;
     font-family: PingFangSC-Semibold, PingFang SC;
     font-weight: 600;
+    margin-top: 0.25rem;
     color: #edf2f8;
     span {
         font-size: 0.3rem;
