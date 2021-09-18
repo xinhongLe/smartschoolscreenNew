@@ -2,6 +2,7 @@
     <div class="content">
         <div class="h-line"></div>
         <Flex :flex="1" column>
+            <div class="v-line"></div>
             <Flex :flex="1">
                 <DataAnalyse></DataAnalyse>
             </Flex>
@@ -16,6 +17,7 @@
         </Flex>
         <div class="h-line"></div>
         <Flex :flex="2" column>
+            <div class="v-line"></div>
             <Flex :flex="3">
                 <KnowledgeCoverage />
             </Flex>
@@ -23,6 +25,7 @@
         </Flex>
         <div class="h-line"></div>
         <Flex :flex="1" column>
+            <div class="v-line"></div>
             <Flex :flex="5">
                 <Knoledge></Knoledge>
             </Flex>

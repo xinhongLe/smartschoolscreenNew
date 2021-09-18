@@ -193,6 +193,9 @@ export default {
     height: 100%;
     padding: 0.4rem 0.2rem;
     box-sizing: border-box;
+    background: url(~./imgs/pic_yuanhuan_bg@2x.png) no-repeat;
+    background-size: auto 100%;
+    background-position: center;
 }
 
 .coverage-list {

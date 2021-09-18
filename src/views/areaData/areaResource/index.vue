@@ -2,7 +2,8 @@
     <div class="content">
         <div class="h-line"></div>
         <Flex :flex="1" column>
-                <countScroll cityNmae="**市教育资源概览" :istrnum="false"></countScroll>
+            <div class="v-line"></div>
+            <countScroll cityNmae="**市教育资源概览" :istrnum="false"></countScroll>
             <div class="v-line"></div>
             <Flex :flex="5"> 
                 <Ranking></Ranking>
@@ -15,6 +16,7 @@
         </Flex>
         <div class="h-line"></div>
         <Flex :flex="2" column>
+            <div class="v-line"></div>
             <Flex :flex="1">  
                 <subject-class></subject-class>
             </Flex>
@@ -30,6 +32,7 @@
         </Flex>
         <div class="h-line"></div>
         <Flex :flex="1" column>
+            <div class="v-line"></div>
             <Flex :flex="5">
                 <Rate></Rate>
             </Flex>
