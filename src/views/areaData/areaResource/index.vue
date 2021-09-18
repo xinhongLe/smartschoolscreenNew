@@ -2,8 +2,12 @@
     <div class="content">
         <div class="h-line"></div>
         <Flex :flex="1" column>
-            <div class="v-line"></div>
-            <countScroll cityNmae="**市教育资源概览" :istrnum="false"></countScroll>
+                <countScroll cityNmae="**市教育资源概览"
+                :schoolSum="schoolSum"
+                :studentSum="studentSum"
+                :teacherSum="teacherSum"
+                :workerSum="workerSum"
+                :istrnum="false"></countScroll>
             <div class="v-line"></div>
             <Flex :flex="5"> 
                 <Ranking></Ranking>
@@ -76,7 +80,25 @@ export default {
     },
     data() {
         return {
-            trendSelected: 0
+            trendSelected: 0,
+            studentSum: {
+                startval: 0,
+                endval: 12252345,
+                duration: 3000,
+                name:"资源总量"
+            },
+            teacherSum: {
+                startval: 0,
+                endval: 673301,
+                duration: 3000,
+                name:"参与人数"
+            },
+            workerSum: {
+                startval: 0,
+                endval: 87827,
+                duration: 3000,
+                name:"本月更新数量"
+            }
         };
     }
 };

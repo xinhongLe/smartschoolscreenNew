@@ -3,7 +3,7 @@
         <div class="knowledge_title">
         <div>
           <span>评价覆盖率:</span>
-          <span>73%</span>
+          <span class="proNum">73%</span>
         </div>
       </div>
       <div class="schoolData">
@@ -59,8 +59,12 @@ export default {
 span{
     font-size: 0.125rem;
     font-weight: 400;
-    color: #96ACC3;
+    color: rgba(150, 172, 195, .7);
     line-height: 1.2;
+}
+.proNum{
+  color: #0DFFFF;
+  margin-left: 0.1rem;
 }
 .h-line {
   width: 2rem;

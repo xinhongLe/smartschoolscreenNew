@@ -1,7 +1,7 @@
 <template>
   <module-header title="家长对教师工作满意度">
     <Flex :flex="1">
-      <Flex :flex="2">
+      <Flex :flex="2" class="margin-bottom-class">
         <Echart :options="options"  width="100%" height="100%"></Echart>
       </Flex>
       <Flex :flex="3" column>
@@ -46,12 +46,6 @@ export default {
   },
   mounted() {
     const options =  {
-      grid: {
-        left: "50",
-        right: "0%",
-        bottom: "50",
-        top: "15%"
-      },
       tooltip: {
         trigger: 'item'
       },
@@ -61,7 +55,7 @@ export default {
           animation: false,
           color: ["rgba(20,46,82,0.4)"],
           selectedMode: 'single',
-          radius: [0, '35%'],
+          radius: [0, '30%'],
           label: {
             position: 'center',
             fontSize: 14,
@@ -132,6 +126,9 @@ export default {
 </script>
 
 <style scoped lang="scss">
+.margin-bottom-class{
+  margin-top: 0.1rem;
+}
 .satisfaction-box{
   display: flex;
   justify-content: flex-start;
