@@ -13,7 +13,7 @@
                     @change="(i) => (trendSelected = i)"
                 >
                     <class-activity v-show="trendSelected == 0"></class-activity>
-                    <class-focus v-show="trendSelected == 1"></class-focus>
+                    <ClassFocus v-show="trendSelected == 1"></ClassFocus>
                 </module-header>
             </Flex>
             <div class="v-line"></div>
@@ -69,7 +69,7 @@ import PracticeComplete from "./components/PracticeComplete.vue";
 import TeachingModel from "./components/TeachingModel.vue";
 import WrongQuestion from "./components/WrongQuestion.vue";
 import ClassActivity from "./components/ClassActivity.vue";
-import CreditBank from './components/CreditBank.vue'
+import CreditBank from './components/CreditBank.vue';
 import ClassFocus from './components/ClassFocus.vue';
 export default {
     data() {
