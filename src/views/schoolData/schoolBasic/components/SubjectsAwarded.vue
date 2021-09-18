@@ -1,6 +1,6 @@
 <template>
     <moduleHeader title="教师所授科目">
-        <Echart width="100%" :options="options"></Echart>
+        <Echart width="100%" height="100%" :options="options"></Echart>
     </moduleHeader>
 </template>
 <script>
@@ -28,12 +28,21 @@ export default {
         ];
         // const itemStyle =
         const option = {
+            grid: {
+                top: "15%",
+                bottom: "15%"
+            },
             xAxis: {
                 type: "category",
                 data: data
             },
             yAxis: {
                 type: "value",
+                splitLine: {
+                    lineStyle: {
+                        color: "rgba(255, 255, 255, .1)"
+                    }
+                }
                 // min:0,
                 // max: 30,
                 // axisLabel: {
