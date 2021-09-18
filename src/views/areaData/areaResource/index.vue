@@ -20,6 +20,7 @@
         </Flex>
         <div class="h-line"></div>
         <Flex :flex="2" column>
+            <div class="v-line"></div>
             <Flex :flex="1">  
                 <subject-class></subject-class>
             </Flex>
@@ -35,6 +36,7 @@
         </Flex>
         <div class="h-line"></div>
         <Flex :flex="1" column>
+            <div class="v-line"></div>
             <Flex :flex="5">
                 <Rate></Rate>
             </Flex>

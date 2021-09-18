@@ -2,6 +2,7 @@
     <div class="img-content">
         <div class="h-line"></div>
         <Flex :flex="1" column>
+            <div class="v-line"></div>
             <Flex :flex="1"> <CorrectRate /> </Flex>
             <div class="v-line"></div>
             <Flex :flex="1"> <Seriousness /></Flex>
@@ -9,6 +10,7 @@
         </Flex>
         <div class="h-line"></div>
         <Flex :flex="1" column>
+            <div class="v-line"></div>
             <Flex :flex="1"> <CompletionStatus/></Flex>
             <div class="v-line"></div>
             <Flex :flex="1"> <TimeUse/></Flex>
@@ -16,6 +18,7 @@
         </Flex>
         <div class="h-line"></div>
         <Flex :flex="1" column>
+            <div class="v-line"></div>
             <Flex :flex="1"><Coverage/> </Flex>
             <div class="v-line"></div>
             <Flex :flex="1"><HomeworkType/> </Flex>

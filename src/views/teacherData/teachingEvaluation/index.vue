@@ -2,6 +2,7 @@
     <div class="content">
         <div class="h-line"></div>
         <Flex :flex="2" column>
+            <div class="v-line"></div>
             <Flex :flex="1">
                 <Coverage></Coverage>
             </Flex>
@@ -13,6 +14,7 @@
         </Flex>
         <div class="h-line"></div>
         <Flex :flex="4" column>
+            <div class="v-line"></div>
             <Flex :flex="1">
                 <Flex :flex="1"> 
                     <Speed></Speed>
@@ -31,6 +33,7 @@
         </Flex>
         <div class="h-line"></div>
         <Flex :flex="3" column>
+            <div class="v-line"></div>
             <Flex :flex="3">
               <satisfaction></satisfaction>
             </Flex>

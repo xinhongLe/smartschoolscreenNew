@@ -2,6 +2,7 @@
     <div class="img-content">
         <div class="h-line"></div>
         <Flex :flex="1" column>
+            <div class="v-line"></div>
             <Flex :flex="2">
                 <ClassDistribution></ClassDistribution>
             </Flex>
@@ -20,6 +21,7 @@
         </Flex>
         <div class="h-line"></div>
         <Flex :flex="1" column>
+            <div class="v-line"></div>
             <Flex :flex="3">
                 <EvalutionDistribution></EvalutionDistribution>
             </Flex>
@@ -35,6 +37,7 @@
         </Flex>
         <div class="h-line"></div>
         <Flex :flex="1" column>
+            <div class="v-line"></div>
             <Flex :flex="5">
                 <NurseryDistribution></NurseryDistribution>
             </Flex>
@@ -53,6 +56,7 @@
         </Flex>
         <div class="h-line"></div>
         <Flex :flex="1" column>
+            <div class="v-line"></div>
             <Flex :flex="5">
                 <WrongQuestion></WrongQuestion>
             </Flex>
