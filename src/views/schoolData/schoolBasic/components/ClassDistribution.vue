@@ -3,7 +3,7 @@
         <Echart width="100%" height="100%" :options="options"></Echart>
         <div class='header-title'>
             <p class='number'>89</p>
-            <p class="class">班级总书(个)</p>
+            <p class="class">班级总数(个)</p>
         </div>
     </moduleHeader>
 </template>

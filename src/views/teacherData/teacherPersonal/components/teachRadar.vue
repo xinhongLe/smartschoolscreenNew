@@ -1,5 +1,5 @@
 <template>
-  <module-header title="试题得分率分析">
+  <module-header title="数学竞赛及荣誉">
     <echart class="echart-box" :options="options"  width="100%" height="100%"></echart>
   </module-header>
 </template>

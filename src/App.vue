@@ -5,7 +5,7 @@
             <div class="route-content">
                 <router-view />
             </div>
-            <Header />
+            <Header v-if="!$route.query.noFooter" />
         </div>
     </div>
 </template>
