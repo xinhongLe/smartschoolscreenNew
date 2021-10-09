@@ -1,10 +1,14 @@
 <template>
     <div class="title-header">
         <div class="title-bg" ref="ani"></div>
+        <div class="back" v-if="$route.query.hasback" @click="goBack()">
+            <i></i>
+            返回
+        </div>
         <div class="title">{{ title }}</div>
         <div class="header-right-box" v-if="showSelect">
             <VSelect v-model="addreessValue" :options="addressList" />
-            <div style="width: .25rem"></div>
+            <div style="width: 0.25rem"></div>
             <VSelect v-model="schoolValue" :options="schoolList" />
             <div class="reset-btn">重置</div>
         </div>
@@ -60,7 +64,7 @@ export default {
                 }
             ],
             schoolValue: "1"
-        }
+        };
     },
 
     mounted() {
@@ -74,6 +78,12 @@ export default {
                 animationData: animationData
             });
         });
+    },
+
+    methods: {
+        goBack() {
+            history.back();
+        }
     },
 
     beforeDestroy() {
@@ -102,7 +112,7 @@ export default {
 
 .header-right-box {
     position: absolute;
-    right: .5rem;
+    right: 0.5rem;
     display: flex;
     top: 50%;
     transform: translateY(-50%);
@@ -110,9 +120,30 @@ export default {
 }
 
 .reset-btn {
-    font-size: .15rem;
+    font-size: 0.15rem;
     color: #fff;
     cursor: pointer;
-    margin-left: .25rem;
+    margin-left: 0.25rem;
+}
+
+.back {
+    position: absolute;
+    left: 0.25rem;
+    z-index: 10;
+    top: 0.25rem;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    font-size: 0.25rem;
+    cursor: pointer;
+}
+
+.back i {
+    display: block;
+    width: 0.16rem;
+    height: 0.16rem;
+    border: 0.02rem solid;
+    border-color: #ffffff #ffffff transparent transparent;
+    transform: rotate(-135deg);
 }
 </style>
