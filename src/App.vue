@@ -1,11 +1,11 @@
 <template>
     <div id="app">
         <div class="container">
-            <Title :title="`*州市教育信息化数据大屏`" />
+            <Title :title="`*州市教育信息化数据大屏`" v-if="$route.name != 'other'"/>
             <div class="route-content">
                 <router-view />
             </div>
-            <Header v-if="!$route.query.noFooter" />
+            <Header v-if="!$route.query.noFooter && $route.name != 'other'" />
         </div>
     </div>
 </template>

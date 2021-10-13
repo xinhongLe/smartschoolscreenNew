@@ -8,7 +8,12 @@ const routes = [
         path: "/",
         redirect: "/studentData"
     },
-
+    {
+        // 备教端没有导航单页面
+        path: "/other", 
+        name: "other",
+        component: () => import("@/views/other/index")
+    }, 
     {
         path: "/studentData",
         name: "studentData",
@@ -126,7 +131,7 @@ const routes = [
             {
                 path: "evaluationData",
                 name: "evaluationData",
-                component: () => import("@/views/areaData/evaluationData")
+                component: () => import("@/views/areaData/evaluationData/index")
             },
 
             {
