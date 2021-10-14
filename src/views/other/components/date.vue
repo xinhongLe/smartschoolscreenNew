@@ -6,6 +6,7 @@
         value-format="yyyy-MM-dd"
         start-placeholder="开始日期"
         end-placeholder="结束日期"
+        :picker-options="pickerOptions"
         @change="change"
     >
     </el-date-picker>
@@ -14,8 +15,17 @@
 export default {
     data() {
         return {
-            date: []
+            date: ["2021-09-01", "2021-10-15"],
+            pickerOptions: {
+                disabledDate(time) {
+                    // 默认范围区间  9.1 - 10.15
+                    return time.getTime() < 1630425600000  ||  time.getTime() > 1634313600000 - 1;
+                }
+            }
         }
+    },
+    created() {
+        this.change();
     },
     methods: {
         change() {

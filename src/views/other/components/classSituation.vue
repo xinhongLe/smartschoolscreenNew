@@ -5,9 +5,9 @@
         </div>
         <echart :options="options" height="100%" width="100%"></echart>
         <p class="status">
-            <span>上课人数： 56</span> 
-            <span> / 总人数： 120</span>
-            <span>偏低</span>
+            <span>上课人数： {{ averageCount }}</span>
+            <span> / 总人数： 11</span>
+            <span :style="{color: (averageCount / 11) > 0.4 ? '#16E39E' : '#FB5959'}">{{ (averageCount / 11) > 0.4 ? "正常" : "偏低" }}</span>
         </p>
     </module-header>
 </template>
@@ -26,15 +26,12 @@ export default {
     data() {
         return {
             options: {},
-            list: []
+            list: [],
+            averageCount: 0
         };
-    },
-    mounted() {
-        this.getData("", "");
     },
     methods: {
         change(date) {
-            console.log(date)
             this.getData(date[0], date[1])
         },
         getData(date1, date2) {
@@ -52,13 +49,13 @@ export default {
                         color1: "#376CCB",
                         color2: "#30A2FD"
                     }
-                    const chemistryData = {
-                        data: this.list.map(v => v.chemistry),
-                        name: "化学",
-                        color: "#EFDC00",
-                        color1: "#FFFF00",
-                        color2: "#DBB001"
-                    }
+                    // const chemistryData = {
+                    //     data: this.list.map(v => v.chemistry),
+                    //     name: "化学",
+                    //     color: "#EFDC00",
+                    //     color1: "#FFFF00",
+                    //     color2: "#DBB001"
+                    // }
                     const englishData = {
                         data: this.list.map(v => v.english),
                         name: "英语",
@@ -73,25 +70,30 @@ export default {
                         color1: "#A962F3",
                         color2: "#7833E2"
                     }
-                    const physicsData = {
-                        data: this.list.map(v => v.physics),
-                        name: "物理",
-                        color: "#FFFFFF",
-                        color1: "#96ACC3",
-                        color2: "#FFFFFF"
-                    }
+                    // const physicsData = {
+                    //     data: this.list.map(v => v.physics),
+                    //     name: "物理",
+                    //     color: "#FFFFFF",
+                    //     color1: "#96ACC3",
+                    //     color2: "#FFFFFF"
+                    // }
                     const allData = {
-                        data: this.list.map(v => v.chinese +  v.chemistry + v.english + v.mathematics + v.physics),
+                        data: this.list.map(v => v.chinese + v.english + v.mathematics),
                         name: "全部",
                         color: "#12FCFF",
                         color1: "#70BFFF",
                         color2: "#0DFFFF"
                     }
-                    const seriesData = [allData, chineseData, mathematicsData, englishData, physicsData, chemistryData]
+                    const seriesData = [allData, chineseData, mathematicsData, englishData]
                     const xData = this.list.map(v => v.dataTime)
                     const series = [];
                     const legendData = [];
                     const color = [];
+                    let count = 0;
+                    allData.data.map(v => {
+                        count = count + v;
+                    })
+                    this.averageCount = parseInt(count / allData.data.length)
                     seriesData.forEach(v => {
                         color.push(v.color)
                         legendData.push({

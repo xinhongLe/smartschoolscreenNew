@@ -24,12 +24,8 @@ export default {
             list: []
         };
     },
-    mounted() {
-        this.getData("", "");
-    },
     methods: {
         change(date) {
-            console.log(date)
             this.getData(date[0], date[1])
         },
         getData(date1, date2) {
@@ -47,13 +43,13 @@ export default {
                         color1: "#376CCB",
                         color2: "#30A2FD"
                     }
-                    const chemistryData = {
-                        data: this.list.map(v => v.courseMap.chemistry),
-                        name: "化学",
-                        color: "#EFDC00",
-                        color1: "#FFFF00",
-                        color2: "#DBB001"
-                    }
+                    // const chemistryData = {
+                    //     data: this.list.map(v => v.courseMap.chemistry),
+                    //     name: "化学",
+                    //     color: "#EFDC00",
+                    //     color1: "#FFFF00",
+                    //     color2: "#DBB001"
+                    // }
                     const englishData = {
                         data: this.list.map(v => v.courseMap.english),
                         name: "英语",
@@ -68,21 +64,21 @@ export default {
                         color1: "#A962F3",
                         color2: "#7833E2"
                     }
-                    const physicsData = {
-                        data: this.list.map(v => v.courseMap.physics),
-                        name: "物理",
-                        color: "#FFFFFF",
-                        color1: "#96ACC3",
-                        color2: "#FFFFFF"
-                    }
+                    // const physicsData = {
+                    //     data: this.list.map(v => v.courseMap.physics),
+                    //     name: "物理",
+                    //     color: "#FFFFFF",
+                    //     color1: "#96ACC3",
+                    //     color2: "#FFFFFF"
+                    // }
                     const allData = {
-                        data: this.list.map(v => v.courseMap.chinese +  v.courseMap.chemistry + v.courseMap.english + v.courseMap.mathematics + v.courseMap.physics),
+                        data: this.list.map(v => v.courseMap.chinese + v.courseMap.english + v.courseMap.mathematics),
                         name: "全部",
                         color: "#12FCFF",
                         color1: "#70BFFF",
                         color2: "#0DFFFF"
                     }
-                    const seriesData = [allData, chineseData, mathematicsData, englishData, physicsData, chemistryData]
+                    const seriesData = [allData, chineseData, mathematicsData, englishData]
                     const xData = this.list.map(v => v.courseMap.dataTime)
                     const series = [];
                     const legendData = [];
