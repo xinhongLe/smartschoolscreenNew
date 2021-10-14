@@ -15,9 +15,9 @@
                 >
                     <div class="col">{{ item.teacherName }}</div>
                     <div class="col">{{ item.teacherGroup }}</div>
-                    <div class="col" style="color: #0DFFFF">{{ (item.oneTime + item.twoTime + item.threeTime) / 3 }}min</div>
-                    <div class="col" v-if="index < 2">
-                        <img src="./../images/icon_zan@2x.png" />
+                    <div class="col" style="color: #0DFFFF">{{ parseInt((item.oneTime + item.twoTime + item.threeTime) / 3) }}min</div>
+                    <div class="col-first">
+                        <img v-if="index < 2" src="./../images/icon_zan@2x.png" />
                     </div>
                 </div>
       </template>

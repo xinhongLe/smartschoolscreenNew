@@ -20,10 +20,10 @@
                 >
                     <div class="col">{{ item.teacherName }}</div>
                     <div class="col">{{ item.teacherGroup }}</div>
-                    <div class="col">{{ item.onlineFrequency }}</div>
-                    <div class="col">{{ item.onlineTime }}</div>
-                    <div class="col-first" v-if="index < 2">
-                        <img src="./../images/icon_zan@2x.png" />
+                    <div class="col">{{ item.onlineFrequency }}次</div>
+                    <div class="col">{{ item.onlineTime }}min</div>
+                    <div class="col-first">
+                        <img v-if="index < 2" src="./../images/icon_zan@2x.png" />
                     </div>
                 </div>
             </template>

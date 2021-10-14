@@ -16,8 +16,8 @@
                     <div class="col">{{ item.teacherName }}</div>
                     <div class="col">{{ item.teacherGroup }}</div>
                     <div class="col" style="color: #0DFFFF">{{ (item.oneTimeNum + item.twoTimeNum + item.threeTimeNum) / 3 }}次</div>
-                    <div class="col" v-if="index < 1">
-                        <img src="./../images/icon_zan@2x.png" />
+                    <div class="col-first">
+                        <img v-if="index < 2" src="./../images/icon_zan@2x.png" />
                     </div>
                 </div>
       </template>

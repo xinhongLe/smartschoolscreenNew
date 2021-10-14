@@ -19,8 +19,8 @@
                         <ProgressB :proData="{progressNum: item.oneNum + item.twoNum + item.threeNum}" :ratioNum="3" :isNum="false" style="float: left"></ProgressB>
                         <span>{{ item.oneNum + item.twoNum + item.threeNum }}/3</span>
                     </div>
-                    <div class="col-first" v-if="index < 2">
-                        <img src="./../images/icon_zan@2x.png" />
+                    <div class="col-first">
+                        <img v-if="index < 2" src="./../images/icon_zan@2x.png" />
                     </div>
                 </div>
       </template>
