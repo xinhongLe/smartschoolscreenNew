@@ -56,7 +56,10 @@ export default {
         getData() {
             selectAxsTeacherUsage().then((res) => {
                 if (res.data.success) {
-                    this.tableList = res.data.result;
+                    this.tableList = res.data.result
+                        .sort(function (a, b) {
+                            return b.onlineTime - a.onlineTime;
+                        });
                 }
             });
         }
