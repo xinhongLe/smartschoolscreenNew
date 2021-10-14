@@ -1,156 +1,160 @@
 <template>
-  <div class="progressBox">
-    <span class="progress_name" v-if="islable">{{ progressData.name }}</span>
-    <div class="progress_border">
-      <div
-        class="progress_cont"
-        ref="pregressref"
-        :style="styleObject"
-        v-bind:class="{ progress_active: isActive }"
-      ></div>
+    <div class="progressBox">
+        <span class="progress_name" v-if="islable">{{
+            progressData.name
+        }}</span>
+        <div class="progress_border">
+            <div
+                class="progress_cont"
+                :style="{ width: progress + '%', ...styleObject }"
+                v-bind:class="{ progress_active: isActive }"
+            >
+            </div>
+        </div>
+        <span class="progress_number" v-if="isNum"
+            >{{ progressData.progressNum }}<i v-if="ispercent">{{ unit }}</i>
+        </span>
     </div>
-    <span class="progress_number" v-if="isNum"
-      >{{ progressData.progressNum }}<i v-if="ispercent">{{unit}}</i>
-    </span>
-  </div>
 </template>
 <script>
 export default {
-  name: "progressB",
-  props: {
-    proData: {
-      // 进度条数据对象
-      type: Object,
-      default: () => {},
+    name: "progressB",
+    props: {
+        proData: {
+            // 进度条数据对象
+            type: Object,
+            default: () => {}
+        },
+        ratioNum: {
+            // 计算进度条的比例值
+            type: Number,
+            default: 1000
+        },
+        islable: {
+            // 是否显示进度条的名字 默认显示
+            type: Boolean,
+            default: true
+        },
+        isNum: {
+            // 是否显示进度条的占比数 默认显示
+            type: Boolean,
+            default: true
+        },
+        ispercent: {
+            // 是否显示百分号 默认不显示
+            type: Boolean,
+            default: false
+        },
+        unit: {
+            type: String,
+            default: "%"
+        },
+        styleObject: {
+            // 控制进度条颜色的对象 默认为蓝色渐变
+            type: Object,
+            default: () => {
+                return {
+                    background:
+                        "linear-gradient(90deg, #70bfff 0%, #0dffff 100%)"
+                };
+            }
+        }
     },
-    ratioNum: {
-      // 计算进度条的比例值
-      type: Number,
-      default: 1000,
-    },
-    islable: {
-      // 是否显示进度条的名字 默认显示
-      type: Boolean,
-      default: true,
-    },
-    isNum:{
-      // 是否显示进度条的占比数 默认显示
-      type: Boolean,
-      default: true,
-    },
-    ispercent: {
-      // 是否显示百分号 默认不显示
-      type: Boolean,
-      default: false,
-    },
-    unit:{
-      type:String,
-      default:"%"
-    },
-    styleObject: {
-      // 控制进度条颜色的对象 默认为蓝色渐变
-      type: Object,
-      default: () => {
+    data() {
         return {
-          background: "linear-gradient(90deg, #70bfff 0%, #0dffff 100%)",
+            isActive: true,
+            Interval: null,
+            progressData: this.proData,
+            progress: 2
         };
-      },
     },
-  },
-  data() {
-    return {
-      isActive: true,
-      Interval: null,
-      progressData: this.proData,
-    };
-  },
-  mounted() {
-    this.initProgress();
-  },
-  watch: {
-    proData: {
-      handler(data) {
-        this.progressData = data;
-        clearInterval(this.Interval);
+    mounted() {
         this.initProgress();
-      },
-      deep: true,
     },
-  },
-  methods: {
-    initProgress() {
-      // let dompro = document.getElementById(`pregress_${this.progressData.id}`);
-      this.$nextTick(() => {
-        let dompro = this.$refs.pregressref;
-        let num = (this.progressData.progressNum / this.ratioNum) * 100;
-        this.Interval = setInterval(() => {
-          dompro.style.width = 0 + "%";
-          this.isActive = false;
-          setTimeout(() => {
-            this.isActive = true;
-            dompro.style.width = num.toFixed(0) + "%";
-          }, 100);
-        }, 5000);
-        setTimeout(() => {
-          dompro.style.width = num.toFixed(0) + "%";
-        }, 100);
-      });
+    watch: {
+        proData: {
+            handler(data) {
+                this.progressData = data;
+                this.initProgress();
+            },
+            deep: true
+        }
     },
-  },
-  beforeDestroy() {
-    clearInterval(this.Interval);
-  },
+    methods: {
+        initProgress() {
+            // let dompro = document.getElementById(`pregress_${this.progressData.id}`);
+            let num = (this.progressData.progressNum / this.ratioNum) * 100;
+            clearInterval(this.Interval);
+            this.Interval = setInterval(() => {
+                this.progress = 0;
+                this.isActive = false;
+                this.$forceUpdate()
+                setTimeout(() => {
+                    this.isActive = true;
+                    // dompro.style.width = num.toFixed(0) + "%";
+                    this.progress = num;
+                }, 100);
+            }, 5000);
+            // setTimeout(() => {
+                this.progress = num;
+                // this.$forceUpdate()
+            // }, 100);
+        }
+    },
+    beforeDestroy() {
+        clearInterval(this.Interval);
+    }
 };
 </script>
 <style lang="scss" scoped>
 .progressBox {
-  width: 100%;
-  height: 100%;
-  box-sizing: border-box;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  // margin: 0.2rem auto;
-  .progress_name {
-    width: 0.9rem;
-    font-size: 0.15rem;
-    color: #96acc3;
-  }
-  .progress_number {
-    // width: 0.4rem;
-    text-align: center;
-    font-size: 0.15rem;
-    color: #7ab3e2;
-  }
-  .progress_border {
-    flex: 1;
-    height: 50%;
-    max-height: 0.25rem;
-    min-height: 0.15rem;
-    margin: 0 0.1rem;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    background: rgba(255, 255, 255, 0.1);
-  }
-  .progress_cont {
-    width: 0px;
-    height: 80%;
-    min-height: 0.1rem;
-    position: relative;
-    background: linear-gradient(90deg, #70bfff 0%, #0dffff 100%);
-  }
-  .progress_cont::after {
-    content: " ";
-    display: block;
-    width: 0.002rem;
-    height: 120%;
-    position: absolute;
-    right: 0;
-    top: -0.02rem;
-    background: #ffffff;
-  }
-  .progress_active {
-    transition: width 2s;
-  }
+    // margin: 0.2rem auto;
+    .progress_name {
+        width: 0.9rem;
+        font-size: 0.15rem;
+        color: #96acc3;
+    }
+    .progress_number {
+        // width: 0.4rem;
+        text-align: center;
+        font-size: 0.15rem;
+        color: #7ab3e2;
+    }
+    .progress_border {
+        flex: 1;
+        height: 50%;
+        max-height: 0.25rem;
+        min-height: 0.15rem;
+        margin: 0 0.1rem;
+        display: flex;
+        align-items: center;
+        background: rgba(255, 255, 255, 0.1);
+    }
+    .progress_cont {
+        width: 0px;
+        height: 80%;
+        min-height: 0.1rem;
+        position: relative;
+        background: linear-gradient(90deg, #70bfff 0%, #0dffff 100%);
+    }
+    .progress_cont::after {
+        content: " ";
+        display: block;
+        width: 0.002rem;
+        height: 120%;
+        position: absolute;
+        right: 0;
+        top: -0.02rem;
+        background: #ffffff;
+    }
+    .progress_active {
+        transition: width 2s;
+    }
 }
 </style>

@@ -32,22 +32,22 @@ export default {
                         "#12FCFF",
                         "#E949D1",
                         "#EFDC00",
-                        "#FFFFFF",
-                        "#30A2FD"
+                        "#30A2FD",
+                        "#FFFFFF"
                     ];
                     const color1 = [
                         "#70BFFF",
                         "#FB59D2",
                         "#FFFF00",
-                        "#96ACC3",
-                        "#376CCB"
+                        "#376CCB",
+                        "#96ACC3"
                     ];
                     const color2 = [
                         "#0DFFFF",
                         "#B921D0",
                         "#DBB001",
-                        "#FFFFFF",
-                        "#30A2FD"
+                        "#30A2FD",
+                        "#FFFFFF"
                     ];
                     res.data.result.map((v, i) => {
                         seriesData.push({

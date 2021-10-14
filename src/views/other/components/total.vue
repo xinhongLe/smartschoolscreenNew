@@ -153,7 +153,7 @@ export default {
                     data: xData,
                     axisLabel: {
                         lineHeight: 20,
-                        color: "#96ACC3"
+                        color: "#96ACC3",
                     },
                     splitNumber: 10,
                     axisLine: {
