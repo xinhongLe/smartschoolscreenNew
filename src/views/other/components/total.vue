@@ -53,9 +53,9 @@ export default {
                     const englishData = {
                         data: this.list.map(v => v.courseMap.english),
                         name: "英语",
-                        color: "#E949D1",
-                        color1: "#B921D0",
-                        color2: "#FB59D2"
+                        color: "#EFDC00",
+                        color1: "#FFFF00",
+                        color2: "#DBB001"
                     }
                     const mathematicsData = {
                         data: this.list.map(v => v.courseMap.mathematics),
@@ -128,7 +128,12 @@ export default {
             const options = {
                 color,
                 tooltip: {
-                    trigger: "axis"
+                    trigger: "axis",
+                    backgroundColor: "rgba(0, 0, 0, .8)",
+                    borderColor: "rgba(104, 244, 250, .3)",
+                     textStyle: {
+                         color: "rgba(255, 255, 255, .8)"
+                     }
                 },
                 legend: {
                     data: legendData,

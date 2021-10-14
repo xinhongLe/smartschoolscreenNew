@@ -6,8 +6,8 @@
         <echart :options="options" height="100%" width="100%"></echart>
         <p class="status">
             <span>备课人数： {{ averageCount }}</span>
-            <span> / 总人数： 11</span>
-            <span :style="{color: (averageCount / 11) > 0.4 ? '#16E39E' : '#FB5959'}">{{ (averageCount / 11) > 0.4 ? "正常" : "偏低" }}</span>
+            <span> / 总人数： 10</span>
+            <span :style="{color: (averageCount / 10) > 0.4 ? '#16E39E' : '#FB5959'}">{{ (averageCount / 10) > 0.4 ? "正常" : "偏低" }}</span>
         </p>
     </module-header>
 </template>
@@ -59,9 +59,9 @@ export default {
                     const englishData = {
                         data: this.list.map(v => v.english),
                         name: "英语",
-                        color: "#E949D1",
-                        color1: "#B921D0",
-                        color2: "#FB59D2"
+                        color: "#EFDC00",
+                        color1: "#FFFF00",
+                        color2: "#DBB001"
                     }
                     const mathematicsData = {
                         data: this.list.map(v => v.mathematics),
@@ -88,7 +88,7 @@ export default {
                     allData.data.map(v => {
                         count = count + v;
                     })
-                    this.averageCount = parseInt(count / allData.data.length)
+                    this.averageCount = parseInt(count / allData.data.length) ? parseInt(count / allData.data.length) : 0
                     const seriesData = [allData, chineseData, mathematicsData, englishData]
                     const xData = this.list.map(v => v.dataTime)
                     const series = [];
@@ -139,7 +139,12 @@ export default {
             const options = {
                 color,
                 tooltip: {
-                    trigger: "axis"
+                    trigger: "axis",
+                    backgroundColor: "rgba(0, 0, 0, .8)",
+                    borderColor: "rgba(104, 244, 250, .3)",
+                     textStyle: {
+                         color: "rgba(255, 255, 255, .8)"
+                     }
                 },
                 legend: {
                     data: legendData,

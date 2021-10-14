@@ -11,7 +11,7 @@
     >
     </el-date-picker>
 </template>
-<script>
+<script> 
 export default {
     data() {
         return {

@@ -15,7 +15,7 @@
                 >
                     <div class="col">{{ item.teacherName }}</div>
                     <div class="col">{{ item.teacherGroup }}</div>
-                    <div class="col" style="color: #0DFFFF">{{ (item.oneReflectNum + item.twoReflectNum + item.threeReflectNum) / 3 }}min</div>
+                    <div class="col" style="color: #0DFFFF">{{ parseInt((item.oneReflectNum + item.twoReflectNum + item.threeReflectNum) / 3) }}min</div>
                     <div class="col-first">
                         <img v-if="index < 2" src="./../images/icon_zan@2x.png" />
                     </div>

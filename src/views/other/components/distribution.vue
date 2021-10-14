@@ -29,25 +29,25 @@ export default {
                 if (res.data.success) {
                     const seriesData = [];
                     const color = [
-                        "#30A2FD",
-                        "#EFDC00",
+                        "#12FCFF",
                         "#E949D1",
+                        "#EFDC00",
                         "#FFFFFF",
-                        "#12FCFF"
+                        "#30A2FD"
                     ];
                     const color1 = [
-                        "#376CCB",
+                        "#70BFFF",
+                        "#FB59D2",
                         "#FFFF00",
-                        "#B921D0",
                         "#96ACC3",
-                        "#70BFFF"
+                        "#376CCB"
                     ];
                     const color2 = [
-                        "#30A2FD",
+                        "#0DFFFF",
+                        "#B921D0",
                         "#DBB001",
-                        "#FB59D2",
                         "#FFFFFF",
-                        "#0DFFFF"
+                        "#30A2FD"
                     ];
                     res.data.result.map((v, i) => {
                         seriesData.push({
