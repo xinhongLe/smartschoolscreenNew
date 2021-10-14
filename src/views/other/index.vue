@@ -1,9 +1,15 @@
 <template>
     <div class="content">
-        <div class="h-line"></div>
+        <div class="v-line"></div>
         <Flex
             :flex="1"
-            style="background: linear-gradient(180deg,rgba(13, 255, 255, 0) 0%,rgba(13, 255, 255, 0.09) 100%);"
+            style="
+                background: linear-gradient(
+                    180deg,
+                    rgba(13, 255, 255, 0) 0%,
+                    rgba(13, 255, 255, 0.09) 100%
+                );
+            "
         >
             <Flex :flex="1">
                 <div class="platform">平<br />台</div>
@@ -12,19 +18,27 @@
                 <Total></Total>
             </Flex>
             <div class="h-line"></div>
+            <div class="h-line"></div>
             <Flex :flex="4">
                 <Usage></Usage>
             </Flex>
+            <div class="h-line"></div>
             <div class="h-line"></div>
             <Flex :flex="4">
                 <Distribution></Distribution>
             </Flex>
             <div class="h-line"></div>
         </Flex>
-        <div class="h-line"></div>
+        <div class="v-line"></div>
         <Flex
             :flex="2"
-            style="background: linear-gradient(180deg,rgba(54, 157, 243, 0) 0%,rgba(49, 153, 244, 0.21) 100%);"
+            style="
+                background: linear-gradient(
+                    180deg,
+                    rgba(54, 157, 243, 0) 0%,
+                    rgba(49, 153, 244, 0.21) 100%
+                );
+            "
         >
             <Flex :flex="1">
                 <div class="platform platform1">教<br />学<br />环<br />节</div>
@@ -35,25 +49,30 @@
                         <LessonPreparation></LessonPreparation>
                     </Flex>
                     <div class="h-line"></div>
-                    <Flex :flex="4"> 
+                    <div class="h-line"></div>
+                    <Flex :flex="4">
                         <ClassSituation></ClassSituation>
                     </Flex>
                     <div class="h-line"></div>
-                    <Flex :flex="4"> 
+                    <div class="h-line"></div>
+                    <Flex :flex="4">
                         <RightBox></RightBox>
                     </Flex>
                     <div class="h-line"></div>
                 </Flex>
+                <div class="v-line"></div>
                 <Flex :flex="1">
                     <Flex :flex="4">
                         <FooterBox1></FooterBox1>
                     </Flex>
                     <div class="h-line"></div>
-                    <Flex :flex="4"> 
+                    <div class="h-line"></div>
+                    <Flex :flex="4">
                         <FooterBox2></FooterBox2>
                     </Flex>
                     <div class="h-line"></div>
-                    <Flex :flex="4"> 
+                    <div class="h-line"></div>
+                    <Flex :flex="4">
                         <FooterBox3></FooterBox3>
                     </Flex>
                     <div class="h-line"></div>

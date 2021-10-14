@@ -53,9 +53,9 @@ export default {
                     const englishData = {
                         data: this.list.map(v => v.courseMap.english),
                         name: "英语",
-                        color: "#EFDC00",
-                        color1: "#FFFF00",
-                        color2: "#DBB001"
+                        color: "#FFFFFF",
+                        color1: "#96ACC3",
+                        color2: "#FFFFFF"
                     }
                     const mathematicsData = {
                         data: this.list.map(v => v.courseMap.mathematics),

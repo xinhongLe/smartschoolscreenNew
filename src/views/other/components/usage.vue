@@ -69,6 +69,9 @@ export default {
     width: 1vw;
     margin: auto;
 }
+.row {
+    height: 0.2rem!important;
+}
 .col {
     text-align: left !important;
 }

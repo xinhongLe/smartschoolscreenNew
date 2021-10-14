@@ -82,7 +82,7 @@ export default {
                 series: [
                     {
                         type: 'pie',
-                        radius: [35, 36],
+                        radius: [49, 50],
                         center: ["40%", "50%"],
                         label: {
                             show: false,
@@ -102,11 +102,8 @@ export default {
                         hoverAnimation: false,
                         type: "pie",
                         roseType: "area",
-                        radius: [50, 80],
+                        radius: [60, 100],
                         center: ["40%", "50%"],
-                        itemStyle: {
-                            borderRadius: 5
-                        },
                         data: seriesData
                     }
                 ]

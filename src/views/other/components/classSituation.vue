@@ -7,7 +7,7 @@
         <p class="status">
             <span>上课人数： {{ averageCount }}</span>
             <span> / 总人数： 10</span>
-            <span :style="{color: (averageCount / 10) > 0.4 ? '#16E39E' : '#FB5959'}">{{ (averageCount / 10) > 0.4 ? "正常" : "偏低" }}</span>
+            <span :style="{color: (averageCount / 10) > 0.5 ? '#16E39E' : '#FB5959'}">{{ (averageCount / 10) > 0.5 ? "正常" : "偏低" }}</span>
         </p>
     </module-header>
 </template>
@@ -59,9 +59,9 @@ export default {
                     const englishData = {
                         data: this.list.map(v => v.english),
                         name: "英语",
-                        color: "#EFDC00",
-                        color1: "#FFFF00",
-                        color2: "#DBB001"
+                        color: "#FFFFFF",
+                        color1: "#96ACC3",
+                        color2: "#FFFFFF"
                     }
                     const mathematicsData = {
                         data: this.list.map(v => v.mathematics),

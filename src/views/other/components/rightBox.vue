@@ -83,6 +83,10 @@ export default {
 .col-first {
     width: .8rem!important;
 }
+
+.row {
+    height: 0.2rem!important;
+}
 .col-process {
     display: flex;
     justify-content: flex-start;
