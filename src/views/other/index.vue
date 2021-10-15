@@ -4,11 +4,7 @@
         <Flex
             :flex="1"
             style="
-                background: linear-gradient(
-                    180deg,
-                    rgba(13, 255, 255, 0) 0%,
-                    rgba(13, 255, 255, 0.09) 100%
-                );
+                background: linear-gradient(180deg, rgba(13, 255, 255, 0) 0%, rgba(13, 255, 255, 0.09) 100% );
             "
         >
             <Flex :flex="1">
@@ -33,11 +29,7 @@
         <Flex
             :flex="2"
             style="
-                background: linear-gradient(
-                    180deg,
-                    rgba(54, 157, 243, 0) 0%,
-                    rgba(49, 153, 244, 0.21) 100%
-                );
+                background: linear-gradient(180deg, rgba(54, 157, 243, 0) 0%, rgba(49, 153, 244, 0.21) 100% );
             "
         >
             <Flex :flex="1">
