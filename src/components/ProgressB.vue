@@ -65,42 +65,46 @@ export default {
             isActive: true,
             Interval: null,
             progressData: this.proData,
-            progress: 2
+            progress: 0
         };
     },
     mounted() {
         this.initProgress();
     },
     watch: {
-        proData: {
-            handler(data) {
-                this.progressData = data;
-                this.initProgress();
-            },
-            deep: true
-        }
+        // proData: {
+        //     handler(data) {
+        //         this.progressData = data;
+        //         this.initProgress();
+        //     },
+        //     deep: true
+        // }
     },
     methods: {
-        initProgress() {
-            // let dompro = document.getElementById(`pregress_${this.progressData.id}`);
+        async initProgress() {
             let num = (this.progressData.progressNum / this.ratioNum) * 100;
             clearInterval(this.Interval);
             this.Interval = setInterval(() => {
                 this.progress = 0;
                 this.isActive = false;
-                this.$forceUpdate()
                 setTimeout(() => {
                     this.isActive = true;
-                    // dompro.style.width = num.toFixed(0) + "%";
                     this.progress = num;
-                }, 100);
+                }, 200);
             }, 5000);
-            // setTimeout(() => {
-                this.progress = num;
-                // this.$forceUpdate()
-            // }, 100);
+            await this.sleep(200);
+            this.progress = num;
+        },
+
+        sleep(time) {
+            return new Promise(resolve => {
+                setTimeout(() => {
+                    resolve();
+                }, time);
+            })
         }
     },
+
     beforeDestroy() {
         clearInterval(this.Interval);
     }

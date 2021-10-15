@@ -1,7 +1,7 @@
 <template>
     <div class="box">
         <p>最近3节课的使用率</p>
-        <table-common :headerList="headerList" :tableList="tableList">
+        <table-common :marquee="false" :headerList="headerList" :tableList="tableList">
             <template slot="table-header">
                 <div class="header-color row">
                     <div
@@ -34,6 +34,7 @@
                             :ratioNum="3"
                             :isNum="false"
                             style="float: left"
+                            :key="`progress_${index}`"
                         ></ProgressB>
                          <span>{{ item.oneNum + item.twoNum + item.threeNum }}/3</span>
                     </div>
@@ -80,7 +81,7 @@ export default {
                         })
                         .sort(function (a, b) {
                             return b.all - a.all;
-                        });
+                        })
                 }
             });
         }

@@ -24,6 +24,10 @@ export default {
         id: {
             type: String,
             default: () => "table"
+        },
+        marquee: {
+            type: Boolean,
+            default: true
         }
     },
     data() {
@@ -39,6 +43,7 @@ export default {
                     if (this.tableList.length >= marquee.offsetHeight / 80 / 0.6) {
                         this.animateScroll = true;
                         this.$nextTick(() => {
+                            if (!this.marquee) return;
                             const contents = marquee.innerHTML;
                             marquee.innerHTML = contents + contents;
                         });
@@ -49,6 +54,17 @@ export default {
         }
     },
     mounted() {
+        this.$nextTick(() => {
+            const marquee = this.$refs[this.id];
+            if (this.tableList.length >= marquee.offsetHeight / 80 / 0.6) {
+                this.animateScroll = true;
+                this.$nextTick(() => {
+                    if (!this.marquee) return;
+                    const contents = marquee.innerHTML;
+                    marquee.innerHTML = contents + contents;
+                });
+            }
+        });
     }
 };
 </script>
