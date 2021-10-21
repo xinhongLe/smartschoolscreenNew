@@ -106,6 +106,7 @@ export default {
                         series.push({
                             name: v.name,
                             type: "line",
+                            smooth: true,
                             data: v.data,
                             symbol: "none",
                             lineStyle: {

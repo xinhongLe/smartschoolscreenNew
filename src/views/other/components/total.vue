@@ -96,6 +96,7 @@ export default {
                             name: v.name,
                             type: "line",
                             data: v.data,
+                            smooth: true,
                             symbol: "none",
                             lineStyle: {
                                 width: 2,
