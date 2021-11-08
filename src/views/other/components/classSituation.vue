@@ -178,7 +178,7 @@ export default {
                     }
                 },
                 yAxis: {
-                    name: "备课人数",
+                    name: "上课人数",
                     nameTextStyle: {
                         padding: [0, 0, 10, -40],
                         color: "#70BFFF"
