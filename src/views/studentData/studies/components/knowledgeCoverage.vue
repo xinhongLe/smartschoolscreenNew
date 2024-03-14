@@ -96,9 +96,9 @@ export default {
     mounted() {
         this.selectCoverage(0);
 
-        this.timer = setInterval(() => {
-            this.selectCoverage(this.selected < this.list.length - 1 ? this.selected + 1 : 0);
-        }, 6000);
+        // this.timer = setInterval(() => {
+        //     this.selectCoverage(this.selected < this.list.length - 1 ? this.selected + 1 : 0);
+        // }, 6000);
     },
 
     beforeDestroy() {
@@ -122,7 +122,6 @@ export default {
                                 color: "#ffffff",
                                 formatter: function (params) {
                                     return (
-                                        "{value|" +
                                         (params.name == "value"
                                             ? params.value
                                             : 100 - params.value) +
